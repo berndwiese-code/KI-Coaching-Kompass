@@ -9,8 +9,13 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? requested
     : routing.defaultLocale;
 
-  return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default,
-  };
+  // Use explicit imports so bundlers (Turbopack/Webpack) can statically
+  // analyse the module graph – dynamic template-literal imports are not supported.
+  const messages = (
+    await (locale === "de"
+      ? import("../messages/de.json")
+      : import("../messages/en.json"))
+  ).default;
+
+  return { locale, messages };
 });
