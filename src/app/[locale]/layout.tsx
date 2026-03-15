@@ -34,10 +34,12 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  // Pass locale explicitly – without middleware there is no x-next-intl-locale
+  // header, so getMessages() without args would receive requestLocale=undefined.
+  const messages = await getMessages({ locale });
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       {children}
     </NextIntlClientProvider>
   );
