@@ -1,14 +1,15 @@
 import createMiddleware from "next-intl/middleware";
-import { routing } from "./src/i18n/routing";
 
-export default createMiddleware(routing);
+export default createMiddleware({
+  locales: ["de", "en"],
+  defaultLocale: "de",
+  localePrefix: "always",
+
+  // Disable Accept-Language / cookie-based locale detection to avoid
+  // `negotiator` (CJS) being called in Vercel Edge Runtime.
+  localeDetection: false,
+});
 
 export const config = {
-  // Match all pathnames except:
-  // - /api/* (API routes)
-  // - /_next/* (Next.js internals)
-  // - /_vercel/* (Vercel internals)
-  // - Paths with a dot (static files like favicon.ico)
   matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
-
 };
