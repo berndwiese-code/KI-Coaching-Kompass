@@ -8,6 +8,7 @@ export const config = {
   // - /api/* (API routes)
   // - /_next/* (Next.js internals)
   // - /_vercel/* (Vercel internals)
-  // - Paths containing a dot (static files like favicon.ico)
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*) "],
+  // - Paths with a dot (static files like favicon.ico)
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+
 };

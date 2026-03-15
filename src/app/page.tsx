@@ -1,6 +1,8 @@
-// This file intentionally left minimal.
-// All routing is handled via src/app/[locale]/ with next-intl.
-// The middleware.ts redirects the root path to the default locale.
+// Fallback redirect: the middleware handles / → /de in normal operation.
+// This page-level redirect is a safety net in case the middleware does not run
+// (e.g. during static generation or when the matcher doesn't fire).
+import { redirect } from "next/navigation";
+
 export default function RootPage() {
-  return null;
+  redirect("/de");
 }
