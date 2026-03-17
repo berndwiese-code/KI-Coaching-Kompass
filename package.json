@@ -9,14 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@sanity/client": "^7.17.0",
-    "@sanity/image-url": "^2.0.3",
+    "@sanity/client": "^6.22.2",
+    "@sanity/image-url": "^1.0.2",
     "geist": "^1.7.0",
     "next": "15.5.12",
-    "next-sanity": "^11.6.12",
+    "next-sanity": "9.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sanity": "^5.16.0",
+    "sanity": "3.67.1",
     "styled-components": "^6.3.11"
   },
   "devDependencies": {
