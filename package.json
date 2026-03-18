@@ -11,6 +11,7 @@
   "dependencies": {
     "@sanity/client": "^7.17.0",
     "@sanity/image-url": "^2.0.3",
+    "@sanity/visual-editing": "^5.3.0",
     "@tanstack/react-table": "^8.21.3",
     "geist": "^1.7.0",
     "next": "15.5.12",

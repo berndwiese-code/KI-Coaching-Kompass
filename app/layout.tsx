@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { draftMode } from "next/headers";
-import { VisualEditing } from "next-sanity";
+import { VisualEditing } from "@sanity/visual-editing/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,19 +15,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { isEnabled: isDraftMode } = await draftMode();
-
   return (
     <html lang="de">
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
         {children}
-        {isDraftMode && (
-          <VisualEditing
-            zIndex={1000}
-          />
-        )}
+        {(await draftMode()).isEnabled && <VisualEditing />}
       </body>
     </html>
   );
