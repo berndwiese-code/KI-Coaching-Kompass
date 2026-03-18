@@ -6,4 +6,7 @@ import { client } from './client'
 
 export const { sanityFetch, SanityLive } = defineLive({
   client,
+  // Token required for draft-mode preview (generate at sanity.io/manage → API → Tokens)
+  serverToken: process.env.SANITY_API_READ_TOKEN,
+  browserToken: process.env.SANITY_API_READ_TOKEN,
 });
