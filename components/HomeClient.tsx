@@ -486,7 +486,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         {/* HERO */}
         <div className="hero">
           <div className="hero-orb" />
-          <p className="hero-eyebrow">KI-Coaching Orientierungsplattform</p>
+          <p className="hero-eyebrow">{startseite?.heroEyebrow ?? "KI-Coaching Orientierungsplattform"}</p>
           <h1 className="hero-title">
             {startseite?.heroTitel ?? <>KI hat kein Ego.<br />Aber es braucht <em>Präsenz.</em></>}
           </h1>
@@ -503,10 +503,10 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
                 />
                 <button type="submit">{startseite?.ctaText ?? "Auf die Warteliste"}</button>
               </form>
-              <p className="hero-note">Kein Spam. Kein Algorithmus. Nur echte Impulse.</p>
+              <p className="hero-note">{startseite?.heroNote ?? "Kein Spam. Kein Algorithmus. Nur echte Impulse."}</p>
             </>
           ) : (
-            <p className="success-msg">Willkommen im Kompass-Kreis. Wir melden uns.</p>
+            <p className="success-msg">{startseite?.heroSuccessMsg ?? "Willkommen im Kompass-Kreis. Wir melden uns."}</p>
           )}
           <div className="hero-scroll">
             <span>Weiter</span>
@@ -519,16 +519,19 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         {/* STAFFELSTAB */}
         <section id="methode" className="sec">
           <div className="sec-in">
-            <p className="eyebrow">Das Staffelstab-Modell</p>
-            <h2 className="sec-title">Vom Gespräch zur KI —<br /><em>und zurück zum Menschen.</em></h2>
-            <p className="sec-lead">Ein hybrides Begleitformat in vier Phasen: echte menschliche Tiefenarbeit, nahtlos übergeben an einen personalisierten KI-Begleiter — und zurück.</p>
+            <p className="eyebrow">{startseite?.staffelEyebrow ?? "Das Staffelstab-Modell"}</p>
+            <h2 className="sec-title">{startseite?.staffelTitel ?? <>Vom Gespräch zur KI —<br /><em>und zurück zum Menschen.</em></>}</h2>
+            <p className="sec-lead">{startseite?.staffelLead ?? "Ein hybrides Begleitformat in vier Phasen: echte menschliche Tiefenarbeit, nahtlos übergeben an einen personalisierten KI-Begleiter — und zurück."}</p>
             <div className="staffel-grid">
-              {[
-                { n: "01", icon: "◎", t: "Tiefenhören", d: "1,5–2 Stunden Einzelsitzung. Kein Ratschlag, keine Agenda. Nur der Raum, der entsteht, wenn jemand wirklich zuhört." },
-                { n: "02", icon: "⟶", t: "Staffelübergabe", d: "Das Transkript der Session wird zur Basis deines persönlichen CoachBots — kontextualisiert, anonymisiert, übergeben." },
-                { n: "03", icon: "◈", t: "KI-Begleitung", d: "Ein Monat strukturierte Bot-Begleitung: tägliche Reflexionsfragen, Anker-Calls, eigenem Tempo folgen." },
-                { n: "04", icon: "◯", t: "Integration", d: "Abschlusssitzung mit dem Coach: Was hat sich bewegt? Was bleibt? Was trägt dich weiter?" },
-              ].map(s => (
+              {(startseite?.staffelSchritte?.length
+                ? startseite.staffelSchritte.map(s => ({ n: s.nummer, icon: s.icon, t: s.titel, d: s.beschreibung }))
+                : [
+                  { n: "01", icon: "◎", t: "Tiefenhören", d: "1,5–2 Stunden Einzelsitzung. Kein Ratschlag, keine Agenda. Nur der Raum, der entsteht, wenn jemand wirklich zuhört." },
+                  { n: "02", icon: "⟶", t: "Staffelübergabe", d: "Das Transkript der Session wird zur Basis deines persönlichen CoachBots — kontextualisiert, anonymisiert, übergeben." },
+                  { n: "03", icon: "◈", t: "KI-Begleitung", d: "Ein Monat strukturierte Bot-Begleitung: tägliche Reflexionsfragen, Anker-Calls, eigenem Tempo folgen." },
+                  { n: "04", icon: "◯", t: "Integration", d: "Abschlusssitzung mit dem Coach: Was hat sich bewegt? Was bleibt? Was trägt dich weiter?" },
+                ]
+              ).map(s => (
                 <div key={s.n} className="staffel-step">
                   <div className="step-num">{s.n}</div>
                   <div className="step-icon">{s.icon}</div>
@@ -539,10 +542,10 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
             </div>
             <div className="staffel-foot">
               <div>
-                <span className="price-amt">490 €</span>
-                <span className="price-lbl">Einstiegsangebot · inkl. MwSt.</span>
+                <span className="price-amt">{startseite?.staffelPreis ?? "490 €"}</span>
+                <span className="price-lbl">{startseite?.staffelPreisLabel ?? "Einstiegsangebot · inkl. MwSt."}</span>
               </div>
-              <a href="#newsletter" className="btn-primary">Platz sichern</a>
+              <a href="#newsletter" className="btn-primary">{startseite?.staffelCtaText ?? "Platz sichern"}</a>
             </div>
           </div>
         </section>
@@ -554,8 +557,8 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           <div className="sec-in">
             <div className="tool-hdr">
               <div>
-                <p className="eyebrow">KI-Tool-Kompass</p>
-                <h2 className="sec-title" style={{marginBottom: 0}}>Welches Tool passt<br /><em>zu dir?</em></h2>
+                <p className="eyebrow">{startseite?.toolsEyebrow ?? "KI-Tool-Kompass"}</p>
+                <h2 className="sec-title" style={{marginBottom: 0}}>{startseite?.toolsTitel ?? <>Welches Tool passt<br /><em>zu dir?</em></>}</h2>
               </div>
               <div className="filters">
                 {["Alle", "Reflexion", "Journaling", "Therapienah", "Gesprächs-KI"].map(f => (
@@ -588,8 +591,8 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
               ))}
             </div>
             <div className="tool-foot">
-              <span style={{fontSize: "0.79rem", color: "var(--muted)"}}>12 Tools im Vergleich — gefiltert nach deinem Kontext.</span>
-              <a href="/tools" className="btn-outline">Alle Tools entdecken</a>
+              <span style={{fontSize: "0.79rem", color: "var(--muted)"}}>{startseite?.toolsFooterText ?? "12 Tools im Vergleich — gefiltert nach deinem Kontext."}</span>
+              <a href="/tools" className="btn-outline">{startseite?.toolsFooterCta ?? "Alle Tools entdecken"}</a>
             </div>
           </div>
         </section>
@@ -599,8 +602,8 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         {/* ARTIKEL */}
         <section id="artikel" className="sec">
           <div className="sec-in">
-            <p className="eyebrow">Meine Sicht · Artikel</p>
-            <h2 className="sec-title">Denken über KI —<br /><em>ohne Euphorie, ohne Angst.</em></h2>
+            <p className="eyebrow">{startseite?.artikelEyebrow ?? "Meine Sicht · Artikel"}</p>
+            <h2 className="sec-title">{startseite?.artikelTitel ?? <>Denken über KI —<br /><em>ohne Euphorie, ohne Angst.</em></>}</h2>
             <div className="artikel-grid">
               {(artikel.length > 0 ? artikel.map((a, i) => (
                 <a key={a._id} href={`/artikel/${a._id}`} className={`artikel-card${i === 0 ? " feat" : ""}`}>
@@ -635,8 +638,8 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         {/* TESTIMONIALS */}
         <section className="sec alt">
           <div className="sec-in">
-            <p className="eyebrow">Stimmen</p>
-            <h2 className="sec-title">Was Menschen sagen,<br /><em>die dabei waren.</em></h2>
+            <p className="eyebrow">{startseite?.testimonialsEyebrow ?? "Stimmen"}</p>
+            <h2 className="sec-title">{startseite?.testimonialsTitel ?? <>Was Menschen sagen,<br /><em>die dabei waren.</em></>}</h2>
             <div className="trust-row">
               {(testimonials.length > 0 ? testimonials.map(t => ({
                 q: t.zitat, name: t.name, role: t.rolle ?? "", id: t._id,
@@ -652,7 +655,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
               ))}
             </div>
             <div className="trust-logos">
-              {["ICF Member", "Nancy Kline · Thinking Environment", "Theory U · Otto Scharmer", "Viktor Frankl Institut"].map(l => (
+              {(startseite?.trustLogos ?? ["ICF Member", "Nancy Kline · Thinking Environment", "Theory U · Otto Scharmer", "Viktor Frankl Institut"]).map(l => (
                 <span key={l} className="trust-logo">{l}</span>
               ))}
             </div>
@@ -662,18 +665,18 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         {/* FOOTER CTA */}
         <section className="sec" id="newsletter-footer">
           <div className="sec-in" style={{textAlign: "center"}}>
-            <p className="eyebrow" style={{justifyContent: "center"}}>Warteliste</p>
-            <h2 className="sec-title" style={{textAlign: "center"}}>Bereit, wenn du es bist.<br /><em>Kein Druck.</em></h2>
+            <p className="eyebrow" style={{justifyContent: "center"}}>{startseite?.newsletterEyebrow ?? "Warteliste"}</p>
+            <h2 className="sec-title" style={{textAlign: "center"}}>{startseite?.newsletterTitel ?? <>Bereit, wenn du es bist.<br /><em>Kein Druck.</em></>}</h2>
             <p className="sec-lead" style={{margin: "0 auto", textAlign: "center"}}>
-              Trag dich ein und erfahre als Erste/r, wenn das Staffelstab-Bundle und der vollständige Tool-Kompass live gehen.
+              {startseite?.newsletterLead ?? "Trag dich ein und erfahre als Erste/r, wenn das Staffelstab-Bundle und der vollständige Tool-Kompass live gehen."}
             </p>
             {!submitted ? (
               <form className="hero-form" onSubmit={handleSubmit} style={{margin: "2.25rem auto 0"}}>
                 <input type="email" placeholder="Deine E-Mail-Adresse" value={email} onChange={e => setEmail(e.target.value)} required />
-                <button type="submit">Eintragen</button>
+                <button type="submit">{startseite?.newsletterCtaText ?? "Eintragen"}</button>
               </form>
             ) : (
-              <p className="success-msg" style={{marginTop: "2rem"}}>Du bist dabei. Bis bald.</p>
+              <p className="success-msg" style={{marginTop: "2rem"}}>{startseite?.newsletterSuccessMsg ?? "Du bist dabei. Bis bald."}</p>
             )}
           </div>
         </section>
@@ -686,7 +689,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           transition: "background 0.35s",
         }}>
           <span style={{fontSize: "0.7rem", color: "var(--muted)", letterSpacing: "0.04em"}}>
-            © 2025 KI-Coaching Kompass · Bernd Schmid · Freiburg
+            {startseite?.footerCopyright ?? "© 2025 KI-Coaching Kompass · Bernd Schmid · Freiburg"}
           </span>
           <ul style={{display: "flex", gap: "2rem", listStyle: "none"}}>
             {["Impressum", "Datenschutz", "Kontakt"].map(l => (
