@@ -501,7 +501,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
                   type="email" placeholder="Deine E-Mail-Adresse"
                   value={email} onChange={e => setEmail(e.target.value)} required
                 />
-                <button type="submit">Auf die Warteliste</button>
+                <button type="submit">{startseite?.ctaText ?? "Auf die Warteliste"}</button>
               </form>
               <p className="hero-note">Kein Spam. Kein Algorithmus. Nur echte Impulse.</p>
             </>
