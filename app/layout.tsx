@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { SanityLive } from "@/sanity/lib/live";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,8 +19,6 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
         {children}
-        {/* Keeps all sanityFetch calls live-updated via Sanity Content Lake */}
-        <SanityLive />
       </body>
     </html>
   );

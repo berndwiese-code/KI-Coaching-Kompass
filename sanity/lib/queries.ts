@@ -1,4 +1,4 @@
-import { sanityFetch } from "./live";
+import { client } from "./client";
 
 export type Startseite = {
   heroTitel: string;
@@ -32,29 +32,17 @@ export type Testimonial = {
 };
 
 export async function getStartseite(): Promise<Startseite | null> {
-  const { data } = await sanityFetch({
-    query: `*[_type == "startseite"][0]{ heroTitel, heroUntertitel, ctaText }`,
-  });
-  return (data as Startseite | null) ?? null;
+  return client.fetch(`*[_type == "startseite"][0]{ heroTitel, heroUntertitel, ctaText }`);
 }
 
 export async function getTools(): Promise<Tool[]> {
-  const { data } = await sanityFetch({
-    query: `*[_type == "tools"] | order(_createdAt asc){ _id, name, beschreibung, badge, tags, featured }`,
-  });
-  return (data as Tool[]) ?? [];
+  return client.fetch(`*[_type == "tools"] | order(_createdAt asc){ _id, name, beschreibung, badge, tags, featured }`);
 }
 
 export async function getArtikel(): Promise<Artikel[]> {
-  const { data } = await sanityFetch({
-    query: `*[_type == "artikel"] | order(datum desc){ _id, titel, kategorie, excerpt, datum, autor }`,
-  });
-  return (data as Artikel[]) ?? [];
+  return client.fetch(`*[_type == "artikel"] | order(datum desc){ _id, titel, kategorie, excerpt, datum, autor }`);
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  const { data } = await sanityFetch({
-    query: `*[_type == "testimonials"] | order(_createdAt asc){ _id, zitat, name, rolle }`,
-  });
-  return (data as Testimonial[]) ?? [];
+  return client.fetch(`*[_type == "testimonials"] | order(_createdAt asc){ _id, zitat, name, rolle }`);
 }
