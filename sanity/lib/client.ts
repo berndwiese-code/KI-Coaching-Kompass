@@ -8,6 +8,7 @@ export const client = createClient({
   apiVersion,
   useCdn: true,
   stega: {
+    enabled: true,
     // Tells Visual Editing overlays where to open the studio
     studioUrl: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL || 'https://ki-coaching-kompass.sanity.studio',
   },
