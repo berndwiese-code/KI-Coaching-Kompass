@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Sanity CLI cache and studio build output
+.sanity/
+dist/
