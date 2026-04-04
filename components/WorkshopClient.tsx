@@ -8,6 +8,7 @@ type Theme = "light" | "dark";
 export default function WorkshopClient() {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("kck-theme") as Theme | null;
@@ -410,13 +411,47 @@ export default function WorkshopClient() {
         }
         .footer-links a:hover { color: var(--gold); }
 
+        /* ── HAMBURGER + MOBILE-MENU ── */
+        .hamburger {
+          display: none; flex-direction: column; gap: 5px;
+          background: none; border: none; cursor: pointer; padding: 6px;
+        }
+        .hamburger span {
+          display: block; width: 22px; height: 2px;
+          background: var(--text2); border-radius: 1px;
+          transition: transform 0.25s, opacity 0.25s;
+        }
+        .mobile-menu {
+          display: none; position: absolute; top: 100%; left: 0; right: 0;
+          background: var(--surface); border-bottom: 1px solid var(--border);
+          flex-direction: column; padding: 0.5rem 1.5rem 1rem;
+          box-shadow: var(--shadow); z-index: 99;
+          transition: background 0.35s;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+          font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+          color: var(--text2); text-decoration: none;
+          padding: 0.85rem 0; border-bottom: 1px solid var(--border2);
+          transition: color 0.2s;
+        }
+        .mobile-menu a:last-child { border-bottom: none; }
+        .mobile-menu a:hover { color: var(--gold); }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
           .nav-center { display: none; }
+          .hamburger { display: flex; }
+          .ws-nav { padding: 0.9rem 1.2rem; }
           .approach-inner { grid-template-columns: 1fr; gap: 3rem; }
           .ueber-inner { grid-template-columns: 1fr; gap: 2.5rem; }
           .enthalten-grid { grid-template-columns: 1fr; }
           .fragen-grid { grid-template-columns: 1fr; }
+          .ws-hero { padding: 7rem 1.2rem 4rem; }
+          .ws-hero-facts { gap: 0.5rem; }
+          .ws-section, .ws-mitnahmen, .ws-approach,
+          .ws-enthalten, .ws-forschung, .ws-ueber, .ws-cta { padding: 4rem 1.2rem; }
+          .forschung-stat { gap: 2rem; }
         }
 
         @keyframes fadeUp {
@@ -441,6 +476,16 @@ export default function WorkshopClient() {
             <span className="theme-label">{theme === "light" ? "Hell" : "Dunkel"}</span>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
             <a href="mailto:kontakt@ki-coaching-kompass.de" className="nav-cta">Anmelden</a>
+            <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">
+              <span /><span /><span />
+            </button>
+          </div>
+          <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+            <a href="#" onClick={() => setMenuOpen(false)}>Beratung</a>
+            <a href="/workshop" className="active" onClick={() => setMenuOpen(false)}>Workshop</a>
+            <a href="https://isha.de" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Zuhören ↗</a>
+            <a href="/kompass" onClick={() => setMenuOpen(false)}>Kompass</a>
+            <a href="#" onClick={() => setMenuOpen(false)}>Kontakt</a>
           </div>
         </nav>
 

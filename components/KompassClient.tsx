@@ -88,6 +88,8 @@ const CLUSTER_SCHWERPUNKT: Record<string, string> = {
 export default function KompassClient() {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [sidebarOffen, setSidebarOffen] = useState(false);
 
   // Data
   const cacheRef = useRef<Partial<Record<Entitaet, AnyEntry[]>>>({});
@@ -429,6 +431,66 @@ export default function KompassClient() {
           color: var(--muted); user-select: none;
         }
 
+        /* HAMBURGER + MOBILE-MENU */
+        .hamburger {
+          display: none; flex-direction: column; gap: 5px;
+          background: none; border: none; cursor: pointer; padding: 6px;
+        }
+        .hamburger span {
+          display: block; width: 22px; height: 2px;
+          background: var(--text2); border-radius: 1px;
+          transition: transform 0.25s, opacity 0.25s;
+        }
+        .mobile-menu {
+          display: none; position: absolute; top: 100%; left: 0; right: 0;
+          background: var(--surface); border-bottom: 1px solid var(--border);
+          flex-direction: column; padding: 0.5rem 1.5rem 1rem;
+          box-shadow: var(--shadow); z-index: 99;
+          transition: background 0.35s;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+          font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+          color: var(--text2); text-decoration: none;
+          padding: 0.85rem 0; border-bottom: 1px solid var(--border2);
+          transition: color 0.2s;
+        }
+        .mobile-menu a:last-child { border-bottom: none; }
+        .mobile-menu a:hover { color: var(--gold); }
+
+        /* MOBILE FILTER-TOGGLE */
+        .filter-toggle-btn {
+          display: none; width: 100%; padding: 10px 16px;
+          background: var(--bg2); border: none; border-bottom: 1px solid var(--border);
+          font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+          font-weight: 500; color: var(--text2); cursor: pointer;
+          text-align: left; letter-spacing: 0.04em;
+          transition: background 0.2s;
+        }
+        .filter-toggle-btn:hover { background: var(--bg3); }
+
+        @media (max-width: 768px) {
+          .hamburger { display: flex; }
+          .kck-nav { padding: 0.9rem 1.2rem; }
+          .kompass-app { flex-direction: column; overflow: visible; }
+          .k-sidebar {
+            width: 100%; border-right: none;
+            border-bottom: 1px solid var(--border);
+            overflow: visible; flex-shrink: 0;
+          }
+          .k-sidebar-body { display: none; }
+          .k-sidebar-body.open { display: block; }
+          .filter-toggle-btn { display: flex; align-items: center; justify-content: space-between; }
+          .k-main { overflow: visible; }
+          .kacheln-container { overflow: visible; padding: 12px 14px; }
+          .kacheln-grid { max-width: 100%; }
+          .detail-container { padding: 14px; }
+          .detail-card { padding: 18px; }
+          .detail-grid { grid-template-columns: 1fr; }
+          .listen-container { overflow-x: auto; }
+          .sub-tabs { padding: 0 14px; }
+        }
+
         /* APP LAYOUT */
         .kompass-app {
           display: flex; flex: 1; overflow: hidden;
@@ -751,6 +813,16 @@ export default function KompassClient() {
           <div className="nav-right">
             <span className="theme-label">{theme === "light" ? "Hell" : "Dunkel"}</span>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Farbschema wechseln" />
+            <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">
+              <span /><span /><span />
+            </button>
+          </div>
+          <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+            <a href="#" onClick={() => setMenuOpen(false)}>Beratung</a>
+            <a href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</a>
+            <a href="https://isha.de" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Zuhören ↗</a>
+            <a className="active" onClick={() => setMenuOpen(false)}>Kompass</a>
+            <a href="#" onClick={() => setMenuOpen(false)}>Kontakt</a>
           </div>
         </nav>
 
@@ -759,6 +831,14 @@ export default function KompassClient() {
 
           {/* SIDEBAR */}
           <aside className="k-sidebar">
+            <button
+              className="filter-toggle-btn"
+              onClick={() => setSidebarOffen(o => !o)}
+            >
+              <span>Filter {sidebarOffen ? "ausblenden" : "anzeigen"}</span>
+              <span>{sidebarOffen ? "▲" : "▼"}</span>
+            </button>
+            <div className={`k-sidebar-body${sidebarOffen ? " open" : ""}`}>
             <div className="entity-tabs">
               {(["tools", "studien", "artikel", "ausbildung"] as Entitaet[]).map((e) => {
                 const isAktiv = aktEntitaet === e;
@@ -866,6 +946,7 @@ export default function KompassClient() {
                 Wählen Sie links eine Kategorie, filtern Sie nach Ihren Bedürfnissen und klicken Sie auf eine Kachel für Details.
               </div>
             </div>
+            </div>{/* end k-sidebar-body */}
           </aside>
 
           {/* MAIN */}
