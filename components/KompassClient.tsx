@@ -453,12 +453,13 @@ export default function KompassClient() {
           display: flex; align-items: center; gap: 10px;
           padding: 10px 14px;
           border: 1.5px solid var(--border2);
+          border-radius: 8px;
           background: var(--surface);
           cursor: pointer; width: 100%; text-align: left;
           font-family: 'DM Sans', sans-serif;
           font-size: 0.86rem; font-weight: 400;
           color: var(--text2);
-          transition: all 0.2s;
+          transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
         }
         .entity-tab:hover { border-color: var(--gold); color: var(--text2); }
         .entity-tab.active {
@@ -498,8 +499,9 @@ export default function KompassClient() {
         .filter-group select {
           width: 100%; padding: 6px 9px; font-size: 0.78rem;
           background: var(--bg2); border: 1px solid var(--border2);
+          border-radius: 6px;
           color: var(--text); font-family: 'DM Sans', sans-serif;
-          outline: none; transition: border-color 0.2s, background 0.35s;
+          outline: none; transition: border-color 0.22s, background 0.35s;
           appearance: none;
         }
         .filter-group input:focus,
@@ -553,12 +555,16 @@ export default function KompassClient() {
         .kacheln-container { flex: 1; overflow-y: auto; padding: 20px 24px; }
         .kacheln-grid { display: flex; flex-direction: column; gap: 10px; max-width: 900px; }
 
-        /* B: Kacheln mit Goldakzent-Linie und besserem Kontrast */
+        /* B: Kacheln mit Goldakzent-Linie, abgerundeten Ecken */
         .kachel {
           background: var(--surface); border: 1px solid var(--border2);
           border-left: 3px solid var(--border2);
+          border-radius: 10px;
           padding: 16px 18px; cursor: pointer;
-          transition: border-color 0.2s, border-left-color 0.2s, box-shadow 0.2s, background 0.35s;
+          transition: border-color 0.22s cubic-bezier(0.4,0,0.2,1),
+                      border-left-color 0.22s cubic-bezier(0.4,0,0.2,1),
+                      box-shadow 0.22s cubic-bezier(0.4,0,0.2,1),
+                      transform 0.22s cubic-bezier(0.4,0,0.2,1);
           display: flex; gap: 14px; align-items: flex-start;
         }
         .kachel:hover { border-color: var(--border); border-left-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-1px); }
@@ -584,7 +590,8 @@ export default function KompassClient() {
         /* BADGES */
         .badge {
           font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
-          padding: 2px 7px; border: 1px solid; white-space: nowrap;
+          padding: 2px 8px; border: 1px solid; white-space: nowrap;
+          border-radius: 4px;
         }
         .badge-gold { border-color: var(--gold); color: var(--gold); }
         .badge-green { border-color: #5a9a50; color: #5a9a50; }
@@ -593,14 +600,16 @@ export default function KompassClient() {
         /* BUTTONS */
         .btn {
           font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
-          padding: 5px 12px; cursor: pointer; font-family: 'DM Sans', sans-serif;
+          padding: 6px 14px; cursor: pointer; font-family: 'DM Sans', sans-serif;
           font-weight: 400; text-decoration: none; display: inline-block;
-          transition: all 0.2s; border: 1px solid var(--border); color: var(--muted);
-          background: transparent;
+          transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+          border: 1px solid var(--border); color: var(--muted);
+          background: transparent; border-radius: 6px;
         }
         .btn:hover { border-color: var(--gold); color: var(--gold); }
         .btn-primary {
-          background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 500;
+          background: var(--gold); color: var(--bg); border-color: var(--gold);
+          font-weight: 500; border-radius: 6px;
         }
         .btn-primary:hover { background: var(--gold2); border-color: var(--gold2); color: var(--bg);
           transform: translateY(-1px);
