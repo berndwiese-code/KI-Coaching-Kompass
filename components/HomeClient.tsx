@@ -514,7 +514,6 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
             <li><a href="#">Kontakt</a></li>
           </ul>
           <div className="nav-right">
-            <span className="theme-label">{theme === "light" ? "Hell" : "Dunkel"}</span>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Farbschema wechseln" />
             <a href="#newsletter" className="nav-cta">Warteliste</a>
             <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">

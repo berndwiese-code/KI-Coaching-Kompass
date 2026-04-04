@@ -629,30 +629,31 @@ export default function KompassClient() {
           border-left: 3px solid var(--border2);
           border-radius: 10px;
           padding: 16px 18px; cursor: pointer;
+          box-shadow: var(--shadow);
+          overflow: hidden;
           transition: border-color 0.22s cubic-bezier(0.4,0,0.2,1),
                       border-left-color 0.22s cubic-bezier(0.4,0,0.2,1),
                       box-shadow 0.22s cubic-bezier(0.4,0,0.2,1),
                       transform 0.22s cubic-bezier(0.4,0,0.2,1);
           display: flex; gap: 14px; align-items: flex-start;
         }
-        .kachel:hover { border-color: var(--border); border-left-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-1px); }
-        .kachel-body { flex: 1; min-width: 0; }
-        .kachel-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
-        /* A: URL besser lesbar — größer und etwas fetter */
+        .kachel:hover { border-color: var(--border); border-left-color: var(--gold); box-shadow: 0 6px 24px rgba(28,22,14,0.13), 0 2px 8px rgba(28,22,14,0.07); transform: translateY(-1px); }
+        .kck-root.dark .kachel:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3); }
+        .kachel-body { flex: 1; min-width: 0; overflow: hidden; }
+        .kachel-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; overflow: hidden; }
         .kachel-url {
           font-size: 0.8rem; font-weight: 500; color: var(--gold);
-          overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
+          overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0;
         }
-        /* A: Beschreibungstext dunkler für bessere Lesbarkeit */
         .kachel-zusammenfassung {
           font-size: 0.85rem; color: var(--text2); line-height: 1.6; margin-bottom: 9px;
           display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+          word-break: break-word;
         }
-        .kachel-meta { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-        /* A: Meta-Zeile mit besserem Kontrast */
-        .meta-item { display: flex; align-items: center; gap: 3px; font-size: 0.72rem; color: var(--text2); }
-        .meta-label { font-weight: 500; color: var(--muted); }
-        .meta-sep { color: var(--border); font-size: 0.8rem; margin: 0 2px; }
+        .kachel-meta { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; overflow: hidden; }
+        .meta-item { display: flex; align-items: center; gap: 3px; font-size: 0.72rem; color: var(--text2); flex-wrap: wrap; }
+        .meta-label { font-weight: 500; color: var(--muted); white-space: nowrap; }
+        .meta-sep { color: var(--border); font-size: 0.8rem; margin: 0 2px; flex-shrink: 0; }
         .kachel-actions { flex-shrink: 0; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
 
         /* BADGES */
@@ -817,7 +818,6 @@ export default function KompassClient() {
             <li><a href="#">Kontakt</a></li>
           </ul>
           <div className="nav-right">
-            <span className="theme-label">{theme === "light" ? "Hell" : "Dunkel"}</span>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Farbschema wechseln" />
             <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">
               <span /><span /><span />
@@ -1017,13 +1017,6 @@ export default function KompassClient() {
                               className="btn btn-primary"
                               onClick={(e) => { e.stopPropagation(); zeigeDetail(row); }}
                             >Details →</button>
-                            <a
-                              className="btn"
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                            >↗ Website</a>
                           </div>
                         </div>
                       );

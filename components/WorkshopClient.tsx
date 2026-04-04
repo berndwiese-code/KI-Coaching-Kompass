@@ -474,7 +474,6 @@ export default function WorkshopClient() {
             <li><a href="#">Kontakt</a></li>
           </ul>
           <div className="nav-right">
-            <span className="theme-label">{theme === "light" ? "Hell" : "Dunkel"}</span>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
             <a href="mailto:kontakt@ki-coaching-kompass.de" className="nav-cta">Anmelden</a>
             <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">
