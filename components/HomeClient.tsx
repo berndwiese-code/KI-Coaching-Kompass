@@ -173,6 +173,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           font-weight: 500;
           transition: background 0.2s;
           white-space: nowrap;
+          border-radius: 6px;
         }
         .nav-cta:hover { background: var(--gold2); }
 
@@ -295,7 +296,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           display: inline-block; background: var(--gold); color: var(--bg);
           padding: 0.65rem 1.6rem; font-size: 0.75rem; font-weight: 500;
           letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
-          transition: background 0.2s;
+          transition: background 0.2s; border-radius: 6px;
         }
         .btn-primary:hover { background: var(--gold2); }
 
@@ -303,7 +304,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           display: inline-block; border: 1px solid var(--border); color: var(--gold);
           padding: 0.65rem 1.6rem; font-size: 0.75rem; letter-spacing: 0.1em;
           text-transform: uppercase; text-decoration: none;
-          transition: border-color 0.2s, color 0.2s;
+          transition: border-color 0.2s, color 0.2s; border-radius: 6px;
         }
         .btn-outline:hover { border-color: var(--gold2); color: var(--gold2); }
 
@@ -352,7 +353,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
           padding: 0.38rem 0.85rem; border: 1px solid var(--border);
           background: transparent; color: var(--muted); cursor: pointer;
-          transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+          transition: all 0.2s; font-family: 'DM Sans', sans-serif; border-radius: 6px;
         }
         .filter-btn.on, .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
 
@@ -361,7 +362,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           gap: 1px; background: var(--border);
         }
         .tool-card {
-          background: var(--surface); padding: 1.6rem; transition: background 0.2s;
+          background: var(--surface); padding: 1.6rem; transition: background 0.2s; border-radius: 8px;
         }
         .tool-card:hover { background: var(--bg3); }
         .tool-card-hdr {
@@ -393,6 +394,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         .artikel-card {
           background: var(--surface); padding: 2rem; transition: background 0.2s;
           text-decoration: none; color: inherit; display: flex; flex-direction: column;
+          border-radius: 8px;
         }
         .artikel-card:hover { background: var(--bg3); }
         .artikel-card.feat { grid-row: span 2; }
@@ -419,7 +421,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           display: grid; grid-template-columns: repeat(3, 1fr);
           gap: 1px; background: var(--border); margin-top: 2.75rem;
         }
-        .trust-card { background: var(--surface); padding: 2rem; transition: background 0.35s; }
+        .trust-card { background: var(--surface); padding: 2rem; transition: background 0.35s; border-radius: 8px; }
         .trust-q {
           font-family: 'Cormorant Garamond', serif;
           font-size: 1.08rem; font-weight: 300; font-style: italic;
