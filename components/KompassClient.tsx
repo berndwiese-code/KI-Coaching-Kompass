@@ -699,13 +699,7 @@ export default function KompassClient() {
         .mbubble { cursor: pointer; transition: opacity 0.2s; }
         .mbubble:hover { opacity: 0.8; }
 
-        /* RESULT INFO */
-        .result-info {
-          margin: 0 12px 10px; background: var(--bg2);
-          border: 1px solid var(--border2);
-          padding: 8px 13px; font-size: 0.76rem; color: var(--muted);
-        }
-        .result-info strong { color: var(--gold2); font-size: 1rem; font-family: 'Cormorant Garamond', serif; display: block; }
+
       `}</style>
 
       <div className={`kck-root ${theme}`}>
@@ -732,30 +726,25 @@ export default function KompassClient() {
           {/* SIDEBAR */}
           <aside className="k-sidebar">
             <div className="entity-tabs">
-              {(["tools", "studien", "artikel", "ausbildung"] as Entitaet[]).map((e) => (
-                <button
-                  key={e}
-                  className={`entity-tab${aktEntitaet === e ? " active" : ""}`}
-                  onClick={() => wechselEntitaet(e)}
-                >
-                  <span className="icon">{ICONS[e]}</span>
-                  <span className="label">{LABELS[e]}</span>
-                  <span className="count">{counts[e] ?? "—"}</span>
-                </button>
-              ))}
+              {(["tools", "studien", "artikel", "ausbildung"] as Entitaet[]).map((e) => {
+                const isAktiv = aktEntitaet === e;
+                const gesamt = counts[e];
+                const countLabel = isAktiv && gesamt !== undefined && gefiltertAnzahl !== gesamt
+                  ? `${gefiltertAnzahl}/${gesamt}`
+                  : (gesamt ?? "—");
+                return (
+                  <button
+                    key={e}
+                    className={`entity-tab${isAktiv ? " active" : ""}`}
+                    onClick={() => wechselEntitaet(e)}
+                  >
+                    <span className="icon">{ICONS[e]}</span>
+                    <span className="label">{LABELS[e]}</span>
+                    <span className="count">{countLabel}</span>
+                  </button>
+                );
+              })}
             </div>
-
-            {/* Result info */}
-            {gesamtAnzahl > 0 && (
-              <div className="result-info">
-                <strong>
-                  {gefiltertAnzahl === gesamtAnzahl
-                    ? gesamtAnzahl
-                    : `${gefiltertAnzahl} / ${gesamtAnzahl}`}
-                </strong>
-                {LABELS[aktEntitaet]}
-              </div>
-            )}
 
             {/* Themenlandkarte */}
             <div className="landkarte-btn-wrap">
