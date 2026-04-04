@@ -443,6 +443,7 @@ export default function WorkshopClient() {
           .nav-center { display: none; }
           .hamburger { display: flex; }
           .ws-nav { padding: 0.9rem 1.2rem; }
+          .nav-logo { font-size: 0.88rem; white-space: nowrap; }
           .approach-inner { grid-template-columns: 1fr; gap: 3rem; }
           .ueber-inner { grid-template-columns: 1fr; gap: 2.5rem; }
           .enthalten-grid { grid-template-columns: 1fr; }

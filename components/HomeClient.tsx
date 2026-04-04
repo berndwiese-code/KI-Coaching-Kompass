@@ -484,6 +484,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           .kck-nav { padding: 1rem 1.5rem; }
           .nav-center { display: none; }
           .hamburger { display: flex; }
+          .nav-logo { font-size: 0.88rem; white-space: nowrap; }
           .staffel-grid { grid-template-columns: repeat(2, 1fr); }
           .tool-grid { grid-template-columns: 1fr 1fr; }
           .artikel-grid { grid-template-columns: 1fr; }

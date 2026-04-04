@@ -471,7 +471,9 @@ export default function KompassClient() {
 
         @media (max-width: 768px) {
           .hamburger { display: flex; }
+          .nav-center { display: none; }
           .kck-nav { padding: 0.9rem 1.2rem; }
+          .nav-logo { font-size: 0.88rem; white-space: nowrap; }
           .kompass-app { flex-direction: column; overflow: visible; }
           .k-sidebar {
             width: 100%; border-right: none;
@@ -483,7 +485,11 @@ export default function KompassClient() {
           .filter-toggle-btn { display: flex; align-items: center; justify-content: space-between; }
           .k-main { overflow: visible; }
           .kacheln-container { overflow: visible; padding: 12px 14px; }
-          .kacheln-grid { max-width: 100%; }
+          .kacheln-grid { max-width: 100%; gap: 12px; }
+          /* Kacheln auf Mobile: vertikal statt nebeneinander */
+          .kachel { flex-direction: column; gap: 12px; padding: 14px; }
+          .kachel-actions { flex-direction: row; align-items: center; gap: 8px; justify-content: flex-start; }
+          .kachel-zusammenfassung { -webkit-line-clamp: 3; }
           .detail-container { padding: 14px; }
           .detail-card { padding: 18px; }
           .detail-grid { grid-template-columns: 1fr; }
