@@ -437,7 +437,7 @@ export default function KompassClient() {
 
         /* SIDEBAR — C: eigener Hintergrund für klarere Trennung */
         .k-sidebar {
-          width: 260px; flex-shrink: 0;
+          width: 280px; flex-shrink: 0;
           background: var(--bg2);
           border-right: 1px solid var(--border);
           display: flex; flex-direction: column;
@@ -553,7 +553,7 @@ export default function KompassClient() {
 
         /* KACHELN */
         .kacheln-container { flex: 1; overflow-y: auto; padding: 20px 24px; }
-        .kacheln-grid { display: flex; flex-direction: column; gap: 10px; max-width: 900px; }
+        .kacheln-grid { display: flex; flex-direction: column; gap: 16px; max-width: 900px; }
 
         /* B: Kacheln mit Goldakzent-Linie, abgerundeten Ecken */
         .kachel {
@@ -600,13 +600,13 @@ export default function KompassClient() {
         /* BUTTONS */
         .btn {
           font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
-          padding: 6px 14px; cursor: pointer; font-family: 'DM Sans', sans-serif;
-          font-weight: 400; text-decoration: none; display: inline-block;
+          padding: 7px 16px; cursor: pointer; font-family: 'DM Sans', sans-serif;
+          font-weight: 500; text-decoration: none; display: inline-block;
           transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
-          border: 1px solid var(--border); color: var(--muted);
+          border: 1px solid var(--border); color: var(--text2);
           background: transparent; border-radius: 6px;
         }
-        .btn:hover { border-color: var(--gold); color: var(--gold); }
+        .btn:hover { border-color: var(--gold); color: var(--gold); background: var(--bg2); }
         .btn-primary {
           background: var(--gold); color: var(--bg); border-color: var(--gold);
           font-weight: 500; border-radius: 6px;
@@ -658,7 +658,7 @@ export default function KompassClient() {
           font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em;
           color: var(--muted); font-weight: 500; margin-bottom: 2px;
         }
-        .detail-field-value { font-size: 0.84rem; color: var(--text); }
+        .detail-field-value { font-size: 0.84rem; color: var(--text); font-weight: 500; }
         .detail-empty { text-align: center; padding: 80px 40px; color: var(--muted); }
         .detail-actions { margin-top: 20px; display: flex; gap: 10px; }
         .detail-back { margin-bottom: 16px; }

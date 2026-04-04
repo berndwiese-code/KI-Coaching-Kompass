@@ -218,7 +218,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         .hero-title em { font-style: italic; color: var(--gold2); }
         .hero-sub {
           margin-top: 1.75rem;
-          font-size: 1.02rem; font-weight: 300; color: var(--muted);
+          font-size: 1.12rem; font-weight: 400; color: var(--text2);
           max-width: 520px; line-height: 1.8;
           animation: fadeUp 0.7s 0.16s ease both;
         }
@@ -290,7 +290,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         }
         .sec-title em { font-style: italic; color: var(--gold2); }
 
-        .sec-lead { font-size: 0.97rem; color: var(--muted); max-width: 520px; line-height: 1.8; }
+        .sec-lead { font-size: 1.05rem; font-weight: 400; color: var(--text2); max-width: 520px; line-height: 1.8; }
 
         .btn-primary {
           display: inline-block; background: var(--gold); color: var(--bg);
