@@ -432,11 +432,11 @@ export default function KompassClient() {
           background: var(--bg);
         }
 
-        /* SIDEBAR */
+        /* SIDEBAR — C: eigener Hintergrund für klarere Trennung */
         .k-sidebar {
           width: 260px; flex-shrink: 0;
-          background: var(--surface);
-          border-right: 1px solid var(--border2);
+          background: var(--bg2);
+          border-right: 1px solid var(--border);
           display: flex; flex-direction: column;
           overflow-y: auto;
           transition: background 0.35s, border-color 0.35s;
@@ -450,11 +450,11 @@ export default function KompassClient() {
           display: flex; align-items: center; gap: 10px;
           padding: 10px 14px;
           border: 1.5px solid var(--border2);
-          background: var(--bg);
+          background: var(--surface);
           cursor: pointer; width: 100%; text-align: left;
           font-family: 'DM Sans', sans-serif;
           font-size: 0.86rem; font-weight: 400;
-          color: var(--muted);
+          color: var(--text2);
           transition: all 0.2s;
         }
         .entity-tab:hover { border-color: var(--gold); color: var(--text2); }
@@ -513,8 +513,8 @@ export default function KompassClient() {
 
         .erklaerung { padding: 0 12px 12px; }
         .erklaerung-box {
-          background: var(--bg2); border: 1px solid var(--border2);
-          padding: 12px 14px; font-size: 0.74rem; color: var(--muted); line-height: 1.6;
+          background: var(--surface); border: 1px solid var(--border2);
+          padding: 12px 14px; font-size: 0.74rem; color: var(--text2); line-height: 1.6;
         }
         .erklaerung-box strong {
           display: block; font-family: 'Cormorant Garamond', serif;
@@ -550,26 +550,31 @@ export default function KompassClient() {
         .kacheln-container { flex: 1; overflow-y: auto; padding: 20px 24px; }
         .kacheln-grid { display: flex; flex-direction: column; gap: 10px; max-width: 900px; }
 
+        /* B: Kacheln mit Goldakzent-Linie und besserem Kontrast */
         .kachel {
           background: var(--surface); border: 1px solid var(--border2);
+          border-left: 3px solid var(--border2);
           padding: 16px 18px; cursor: pointer;
-          transition: border-color 0.2s, box-shadow 0.2s, background 0.35s;
+          transition: border-color 0.2s, border-left-color 0.2s, box-shadow 0.2s, background 0.35s;
           display: flex; gap: 14px; align-items: flex-start;
         }
-        .kachel:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+        .kachel:hover { border-color: var(--border); border-left-color: var(--gold); box-shadow: var(--shadow); }
         .kachel-body { flex: 1; min-width: 0; }
         .kachel-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+        /* A: URL besser lesbar — größer und etwas fetter */
         .kachel-url {
-          font-size: 0.74rem; color: var(--gold);
+          font-size: 0.8rem; font-weight: 500; color: var(--gold);
           overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
         }
+        /* A: Beschreibungstext dunkler für bessere Lesbarkeit */
         .kachel-zusammenfassung {
-          font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin-bottom: 9px;
+          font-size: 0.85rem; color: var(--text2); line-height: 1.6; margin-bottom: 9px;
           display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
         }
         .kachel-meta { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-        .meta-item { display: flex; align-items: center; gap: 3px; font-size: 0.7rem; color: var(--muted); }
-        .meta-label { font-weight: 500; color: var(--text2); }
+        /* A: Meta-Zeile mit besserem Kontrast */
+        .meta-item { display: flex; align-items: center; gap: 3px; font-size: 0.72rem; color: var(--text2); }
+        .meta-label { font-weight: 500; color: var(--muted); }
         .meta-sep { color: var(--border); font-size: 0.8rem; margin: 0 2px; }
         .kachel-actions { flex-shrink: 0; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
 
