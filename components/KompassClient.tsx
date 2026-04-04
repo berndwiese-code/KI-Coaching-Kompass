@@ -350,40 +350,43 @@ export default function KompassClient() {
         .kck-root {
           font-family: 'DM Sans', sans-serif;
           font-weight: 300;
-          line-height: 1.65;
+          line-height: 1.72;
           overflow: hidden;
           height: 100vh;
           display: flex;
           flex-direction: column;
           transition: background 0.35s, color 0.35s;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
         }
         .kck-root.light {
-          --bg:      #f7f4ef;
-          --bg2:     #f0ece4;
-          --bg3:     #e8e2d8;
-          --surface: #ffffff;
-          --text:    #1a1815;
-          --text2:   #2a2722;
-          --muted:   #3a3530;
-          --gold:    #a07830;
-          --gold2:   #c49a40;
-          --border:  rgba(160,120,48,0.22);
-          --border2: rgba(160,120,48,0.12);
-          --shadow:  0 2px 20px rgba(28,26,23,0.08);
+          --bg:      #f6f3ee;
+          --bg2:     #ede9e0;
+          --bg3:     #e2dbd0;
+          --surface: #fdfcf9;
+          --text:    #1c1916;
+          --text2:   #2d2924;
+          --muted:   #6b5f54;
+          --gold:    #8c6820;
+          --gold2:   #a87e28;
+          --border:  rgba(140,104,32,0.20);
+          --border2: rgba(140,104,32,0.10);
+          --shadow:  0 2px 16px rgba(28,22,14,0.07), 0 1px 4px rgba(28,22,14,0.04);
         }
         .kck-root.dark {
-          --bg:      #0f0e0c;
-          --bg2:     #161410;
-          --bg3:     #1e1b16;
-          --surface: #1a1815;
-          --text:    #ede8de;
-          --text2:   #c8c0b0;
-          --muted:   #6b6458;
-          --gold:    #c9a84c;
-          --gold2:   #e8c96d;
-          --border:  rgba(201,168,76,0.15);
-          --border2: rgba(201,168,76,0.08);
-          --shadow:  0 2px 24px rgba(0,0,0,0.35);
+          --bg:      #141210;
+          --bg2:     #1b1815;
+          --bg3:     #232019;
+          --surface: #1e1b17;
+          --text:    #ece7db;
+          --text2:   #c8bfad;
+          --muted:   #8c8274;
+          --gold:    #c2a03c;
+          --gold2:   #d4b24a;
+          --border:  rgba(194,160,60,0.14);
+          --border2: rgba(194,160,60,0.07);
+          --shadow:  0 4px 24px rgba(0,0,0,0.40), 0 1px 6px rgba(0,0,0,0.20);
         }
 
         /* NAV */
@@ -558,7 +561,7 @@ export default function KompassClient() {
           transition: border-color 0.2s, border-left-color 0.2s, box-shadow 0.2s, background 0.35s;
           display: flex; gap: 14px; align-items: flex-start;
         }
-        .kachel:hover { border-color: var(--border); border-left-color: var(--gold); box-shadow: var(--shadow); }
+        .kachel:hover { border-color: var(--border); border-left-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-1px); }
         .kachel-body { flex: 1; min-width: 0; }
         .kachel-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
         /* A: URL besser lesbar — größer und etwas fetter */
@@ -599,7 +602,24 @@ export default function KompassClient() {
         .btn-primary {
           background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 500;
         }
-        .btn-primary:hover { background: var(--gold2); border-color: var(--gold2); color: var(--bg); }
+        .btn-primary:hover { background: var(--gold2); border-color: var(--gold2); color: var(--bg);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 14px rgba(140,104,32,0.28);
+        }
+        .kck-root.dark .btn-primary:hover {
+          box-shadow: 0 4px 14px rgba(194,160,60,0.22);
+        }
+
+        /* Premium Transitions */
+        .entity-tab, .landkarte-btn,
+        .filter-group input, .filter-group select {
+          transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Typografie-Feinschliff */
+        .meta-item { letter-spacing: 0.015em; }
+        .meta-label { letter-spacing: 0.04em; }
+        .kachel-url { letter-spacing: 0.01em; }
 
         /* DETAIL */
         .detail-container { flex: 1; overflow-y: auto; padding: 24px; }
