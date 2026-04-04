@@ -478,7 +478,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           <Link href="/" className="nav-logo">KI-Coaching<span> Kompass</span></Link>
           <ul className="nav-center">
             <li><a href="#">Beratung</a></li>
-            <li><a href="#">Workshop</a></li>
+            <li><Link href="/workshop">Workshop</Link></li>
             <li><a href="https://isha.de" target="_blank" rel="noopener noreferrer">Zuhören</a></li>
             <li><Link href="/kompass">Kompass</Link></li>
             <li><a href="#">Kontakt</a></li>
