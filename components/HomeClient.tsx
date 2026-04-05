@@ -120,16 +120,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         }
         .nav-logo span { color: var(--text2); font-weight: 300; }
 
-        .nav-center { display: flex; gap: 2.25rem; list-style: none; }
-        .nav-center a {
-          font-size: 0.76rem;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: var(--muted);
-          text-decoration: none;
-          transition: color 0.2s;
-        }
-        .nav-center a:hover { color: var(--gold); }
+        .nav-center { display: none; }
 
         .nav-right { display: flex; align-items: center; gap: 1rem; }
 
@@ -455,7 +446,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         /* ── RESPONSIVE ── */
         /* HAMBURGER + MOBILE-MENU */
         .hamburger {
-          display: none; flex-direction: column; gap: 5px;
+          display: flex; flex-direction: column; gap: 5px;
           background: none; border: none; cursor: pointer; padding: 6px;
         }
         .hamburger span {
@@ -482,8 +473,6 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
 
         @media (max-width: 900px) {
           .kck-nav { padding: 1rem 1.5rem; }
-          .nav-center { display: none; }
-          .hamburger { display: flex; }
           .nav-logo { font-size: 0.88rem; white-space: nowrap; }
           .staffel-grid { grid-template-columns: repeat(2, 1fr); }
           .tool-grid { grid-template-columns: 1fr 1fr; }

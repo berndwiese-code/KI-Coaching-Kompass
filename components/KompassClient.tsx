@@ -407,12 +407,7 @@ export default function KompassClient() {
           color: var(--gold2); text-decoration: none;
         }
         .nav-logo span { color: var(--text2); font-weight: 300; }
-        .nav-center { display: flex; gap: 2.25rem; list-style: none; }
-        .nav-center a {
-          font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
-          color: var(--muted); text-decoration: none; transition: color 0.2s;
-        }
-        .nav-center a:hover, .nav-center a.active { color: var(--gold); }
+        .nav-center { display: none; }
         .nav-right { display: flex; align-items: center; gap: 1rem; }
         .theme-toggle {
           position: relative; width: 44px; height: 24px;
@@ -433,7 +428,7 @@ export default function KompassClient() {
 
         /* HAMBURGER + MOBILE-MENU */
         .hamburger {
-          display: none; flex-direction: column; gap: 5px;
+          display: flex; flex-direction: column; gap: 5px;
           background: none; border: none; cursor: pointer; padding: 6px;
         }
         .hamburger span {
@@ -471,8 +466,6 @@ export default function KompassClient() {
 
         @media (max-width: 768px) {
           /* NAV */
-          .hamburger { display: flex; }
-          .nav-center { display: none; }
           .kck-nav { padding: 0.9rem 1.2rem; }
           .nav-logo { font-size: 0.88rem; white-space: nowrap; }
 
