@@ -435,7 +435,8 @@ export default function WorkshopClient() {
         .mobile-menu a:last-child { border-bottom: none; }
         .mobile-menu a:hover { color: var(--gold); }
         @media (max-width: 600px) {
-          .mobile-menu { width: min(88vw, 300px); }
+          .nav-cta { display: none; }
+          .mobile-menu { left: auto; right: 0; width: min(88vw, 300px); }
         }
 
         /* ── RESPONSIVE ── */
