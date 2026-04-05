@@ -194,6 +194,8 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           mask-image: linear-gradient(to right, transparent 0%, black 30%);
           -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
         }
+        @media (max-width: 1300px) { .hero-portrait { width: 200px; } }
+        @media (max-width: 1050px) { .hero-portrait { width: 160px; } }
         @media (max-width: 900px) { .hero-portrait { display: none; } }
 
         .hero-orb {

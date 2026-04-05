@@ -184,6 +184,8 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           mask-image: linear-gradient(to right, transparent 0%, black 30%);
           -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
         }
+        @media (max-width: 1300px) { .hero-portrait { width: 200px; } }
+        @media (max-width: 1050px) { .hero-portrait { width: 160px; } }
         @media (max-width: 900px) { .hero-portrait { display: none; } }
 
         .br-hero-orb {
@@ -426,6 +428,7 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
             <Link href="/kompass" onClick={() => setMenuOpen(false)}>KI-Kompass</Link>
             <Link href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</Link>
           </div>
         </nav>
 
