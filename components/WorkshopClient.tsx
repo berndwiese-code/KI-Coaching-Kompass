@@ -417,8 +417,10 @@ export default function WorkshopClient() {
           transition: transform 0.25s, opacity 0.25s;
         }
         .mobile-menu {
-          display: none; position: absolute; top: 100%; left: 0; right: 0;
-          background: var(--surface); border-bottom: 1px solid var(--border);
+          display: none; position: absolute; top: 100%; left: auto; right: 0;
+          width: 240px;
+          background: var(--surface); border: 1px solid var(--border);
+          border-radius: 0 0 8px 8px;
           flex-direction: column; padding: 0.5rem 1.5rem 1rem;
           box-shadow: var(--shadow); z-index: 99;
           transition: background 0.35s;
@@ -432,6 +434,9 @@ export default function WorkshopClient() {
         }
         .mobile-menu a:last-child { border-bottom: none; }
         .mobile-menu a:hover { color: var(--gold); }
+        @media (max-width: 600px) {
+          .mobile-menu { left: 0; right: 0; width: auto; border-radius: 0; border-left: none; border-right: none; }
+        }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
