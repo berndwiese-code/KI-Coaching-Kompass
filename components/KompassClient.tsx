@@ -455,7 +455,7 @@ export default function KompassClient() {
         .mobile-menu a:last-child { border-bottom: none; }
         .mobile-menu a:hover { color: var(--gold); }
         @media (max-width: 600px) {
-          .mobile-menu { left: 0; right: 0; width: auto; border-radius: 0; border-left: none; border-right: none; }
+          .mobile-menu { width: min(88vw, 300px); }
         }
 
         /* MOBILE FILTER-TOGGLE */
