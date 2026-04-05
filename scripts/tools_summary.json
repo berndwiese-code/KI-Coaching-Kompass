@@ -1,0 +1,450 @@
+{
+  "gesamt_tools": 1677,
+  "kategorien": {
+    "Unbekannt": 1677
+  },
+  "themen_coaching_markt": {
+    "Preisgestaltung & Business": 1337,
+    "Ressourcen & Übungen": 1125,
+    "Video & Remote Coaching": 1019,
+    "Zertifizierung & Ausbildung": 869,
+    "KI-Gesprächsanalyse": 731,
+    "Fragebogen & Assessment": 641,
+    "Dokumentation & Berichte": 480,
+    "Transkription & Protokoll": 314,
+    "Terminplanung & Buchung": 248,
+    "Klienten-Management": 127
+  },
+  "top_tools_fuer_coaches": [
+    {
+      "name": "https://www.online-coaching-lernen.de/home/literatur/",
+      "kategorie": "",
+      "coach_relevanz": 663,
+      "preise": null,
+      "beschreibung": "Literatur zum Online-Coaching - 2023 Albrecht, Evelyn (Hrsg.) (2023). Die besten Online-Coaching-Methoden. Professionelle Coachs verraten ihre erfolgreichsten Coaching-Tools für Online-Business-Coaching. Bonn: ManagerSeminare Diller, Sandra & Passmore, Jonathan (2023). Defining digital coaching: a qualitative inductive approach. Front. Psychol., 05 October 2023, Sec. Organizational Psychology, Vol",
+      "url": "https://www.online-coaching-lernen.de/home/literatur/"
+    },
+    {
+      "name": "https://coachvox.ai/affiliates/",
+      "kategorie": "",
+      "coach_relevanz": 630,
+      "preise": [
+        "free",
+        "$100"
+      ],
+      "beschreibung": "Affiliate programme | Coachvox AI Turn your influence into income by promoting the AI tool top coaches can't stop talking about Turn your influence into income by promoting the AI tool top coaches can't stop talking about Earn 30% commission for 12 months on every coach you refer. Join hundreds of affiliates already earning with Coachvox. Trusted by top coaches, consultants and expert-led business",
+      "url": "https://coachvox.ai/affiliates/"
+    },
+    {
+      "name": "https://try.cai-world.com/",
+      "kategorie": "",
+      "coach_relevanz": 512,
+      "preise": [
+        "kostenlos"
+      ],
+      "beschreibung": "CAI® World - Teste unsere Coaching Tools für 10 Tage kostenfrei! Virtuell stark führen, coachen & entwickeln – mit CAI® World Ob 1:1-Coaching, Teamentwicklung oder digitale Führung – die einzigartige Kombination von Audio/Video und interaktiven Tools, die speziell für Coaching, Führung und Gesundheit digitalisiert wurden. 10 Tage kostenlos testen 10 Tage kostenlos testen 75 Tools Über 75 Methoden ",
+      "url": "https://try.cai-world.com/"
+    },
+    {
+      "name": "https://www.online-coaching-lernen.de/coach-pool/",
+      "kategorie": "",
+      "coach_relevanz": 425,
+      "preise": null,
+      "beschreibung": "zertifizierte Coaches - Home zertifizierte Coaches Blankenburg, Bettina B. OCL-Qualifikation: Practitioner-Zertifikat Schwerpunkte: Supply Chain Management, Konflikt-und Krisenmanagement, Projektmanagement, Persönlichkeitsentwicklung, berufliche Neuorientierung, Jugendliche und Studierende Beruf / Ausbildung: Dipl. Ing. Architektin Kontakt: bettinablankenburg@gmx.de | Mobil: +49-(0)174/3270327 Wei",
+      "url": "https://www.online-coaching-lernen.de/coach-pool/"
+    },
+    {
+      "name": "https://stackgroup.mywebsite.im/ai-coach-affiliate-program",
+      "kategorie": "",
+      "coach_relevanz": 389,
+      "preise": [
+        "$7,300"
+      ],
+      "beschreibung": "AI Coach Affiliate Program — The Stack Group Earn More, Work Less: Revolutionize Your Coaching Business with the AI Coaches Affiliate Program The AI Business Transformation Podcast.No subscribers Automate client acquisition, build thriving communities, and unlock new revenue streams with the most powerful AI-driven tools tailored for coaches and consultants. Transform your business AND earn by hel",
+      "url": "https://stackgroup.mywebsite.im/ai-coach-affiliate-program"
+    },
+    {
+      "name": "https://simply.coach/coaching-software-reviews/",
+      "kategorie": "",
+      "coach_relevanz": 346,
+      "preise": null,
+      "beschreibung": "Coaching Software Reviews for Simply.Coach Solutions Automate admin, deliver powerful client experiences, and grow your coaching practice — without the overwhelm. From team coordination to client delivery - streamline your multi-coach business with Simply.Coach. Enterprise-ready software to run talent development programs at scale with transparency, control, and ease. Run scalable coaching program",
+      "url": "https://simply.coach/coaching-software-reviews/"
+    },
+    {
+      "name": "https://www.educate-me.co/blog/lms-for-corporate-training",
+      "kategorie": "",
+      "coach_relevanz": 342,
+      "preise": [
+        "free"
+      ],
+      "beschreibung": "19 Best LMS for Corporate Training of 2026: Top Picks Reviewed hat pretty much sums up how corporate training often works – especially in companies with a “#Company Name_Academy” chat or a shared drive folder labeled “Knowledge Base.” Even if someone’s keeping it up to date, let’s be real – most of it just sits there collecting digital dust. To make sure helpful materials actually get used (not ig",
+      "url": "https://www.educate-me.co/blog/lms-for-corporate-training"
+    },
+    {
+      "name": "https://www.coachaccountable.com/APIDocs",
+      "kategorie": "",
+      "coach_relevanz": 342,
+      "preise": null,
+      "beschreibung": "CoachAccountable API Reference Loading... Welcome to the CoachAccountable API Talk to CoachAccountable programmatically using its API. With the right developer resources you'll be able to build custom workflows, post data to or import data from other applictions, and generate spiffy reports by pulling data in realtime to cook up whatever is useful. Getting Around The menu on the left will get you ",
+      "url": "https://www.coachaccountable.com/APIDocs"
+    },
+    {
+      "name": "https://inflection.ai/privacy-policy",
+      "kategorie": "",
+      "coach_relevanz": 334,
+      "preise": null,
+      "beschreibung": "Inflection AI Last updated: August 8, 2025 This Privacy Policy describes how Inflection AI, Inc. (“Inflection AI,” “we,” or “us”) collects, uses, discloses, and otherwise processes information about you. This Privacy Policy applies to information we collect when you access or use our websites, mobile app, and other online products and services that link to this Privacy Policy (collectively, our “S",
+      "url": "https://inflection.ai/privacy-policy"
+    },
+    {
+      "name": "https://www.virti.com/insights/news/7-best-ai-training-platform/",
+      "kategorie": "",
+      "coach_relevanz": 326,
+      "preise": null,
+      "beschreibung": "7 Best AI Training Platforms in 2026 In 2026, AI training platforms are drastically changing how organizations upskill their people. From realistic simulations to conversational AI agents, these solutions immerse learners in safe, hands-on practice environments that boost confidence and performance. Below, we compare the seven leading AI training platforms in 2026, their best features, pricing mod",
+      "url": "https://www.virti.com/insights/news/7-best-ai-training-platform/"
+    },
+    {
+      "name": "https://www.coachvox.ai/",
+      "kategorie": "",
+      "coach_relevanz": 309,
+      "preise": [
+        "$10"
+      ],
+      "beschreibung": "Create your AI version | Get leads. Save time. Scale Attract clients, grow your business, and deliver a world-class coaching experience with AI Attract clients, grow your business, and deliver a world-class coaching experience with AI Save time, drive more leads, and engage your audience 24/7, so you can focus on the work only you can do. The AI platform trusted by coaches, consultants, and expert",
+      "url": "https://www.coachvox.ai/"
+    },
+    {
+      "name": "https://coachclone.de/",
+      "kategorie": "",
+      "coach_relevanz": 294,
+      "preise": null,
+      "beschreibung": "Erstelle eine KI-Coach Version von dir selbst mit CoachClone KI-Coach Version von dir selbst Mehr Leads, bessere Kundenbetreuung, effiziente Team-Schulung und mehr Freiheit! Probier's aus! Chatte mit meiner KI-Version Probier's aus! Chatte mit meiner KI-Version Marius KI | CoachClone Fühlst du dich oft gestresst und wünschst dir mehr als 24 Stunden am Tag? Als Coach oder Berater jonglierst du viel",
+      "url": "https://coachclone.de/"
+    },
+    {
+      "name": "https://coachclone.de/mariuski",
+      "kategorie": "",
+      "coach_relevanz": 294,
+      "preise": null,
+      "beschreibung": "Erstelle eine KI-Coach Version von dir selbst mit CoachClone KI-Coach Version von dir selbst Mehr Leads, bessere Kundenbetreuung, effiziente Team-Schulung und mehr Freiheit! Probier's aus! Chatte mit meiner KI-Version Probier's aus! Chatte mit meiner KI-Version Marius KI | CoachClone Fühlst du dich oft gestresst und wünschst dir mehr als 24 Stunden am Tag? Als Coach oder Berater jonglierst du viel",
+      "url": "https://coachclone.de/mariuski"
+    },
+    {
+      "name": "https://www.retorio.com/product",
+      "kategorie": "",
+      "coach_relevanz": 291,
+      "preise": null,
+      "beschreibung": "AI Coaching Platform | Enhance Sales and Service Skills What is Retorio? Retorio is a cutting-edge AI Coaching Platform that takes learning to the next level. Retorio’s AI coach simulates typical challenges that your learners face in their career. It has assimilated knowledge from tens of thousands of professionals worldwide, enabling it to address sales, service, and leadership challenges adeptly",
+      "url": "https://www.retorio.com/product"
+    },
+    {
+      "name": "https://mindsetcoachacademy.com/icf-acc-live-training/",
+      "kategorie": "",
+      "coach_relevanz": 287,
+      "preise": null,
+      "beschreibung": "ICF ACC Live Training - The Mindset Coach Academy ICF ACC (Level 1) In Person February 2nd – 4th 2026 Central Coast NSW ICF ACC (Level 1) Training Live Transform your coaching skills in three power-packed days with our immersive ICF ACC certification program. Our in-person intensive delivers the complete coaching framework in a dynamic, hands-on environment where theory immediately transforms into",
+      "url": "https://mindsetcoachacademy.com/icf-acc-live-training/"
+    },
+    {
+      "name": "https://linc-coachingboard.de/",
+      "kategorie": "",
+      "coach_relevanz": 264,
+      "preise": null,
+      "beschreibung": "LINC COACHING BOARD HERZLICH WILLKOMMEN ZUM LINC COACHING BOARD Wir freuen uns, Ihnen auf dieser Seite die wichtigsten Informationen zum LINC COACHING BOARD zu präsentieren: Ihrer Plattform für digitale Coachings und persönlichkeitsbezogene Entwicklungsprozesse. Entdecken Sie das LINC COACHING BOARD und lassen Sie sich begeistern von den faszinierenden Möglichkeiten des digitalen Coachings. Was is",
+      "url": "https://linc-coachingboard.de/"
+    },
+    {
+      "name": "https://careertrainer.ai/",
+      "kategorie": "",
+      "coach_relevanz": 264,
+      "preise": null,
+      "beschreibung": "Schwierige Gespräche üben, bevor es ernst wird KI-Gesprächstraining für Führung & Vertrieb Übe das schwierige Gespräch, bevor es stattfindet. Realistische KI-Rollenspiele für alle, die Teams führen, Kunden überzeugen oder Konflikte lösen. Sofortiges Coaching-Feedback — kein Trainer, kein Termin. Genutzt von Teamleitern, Vertriebsprofis und Führungskräften in 8+ Unternehmen Wer Careertrainer.ai nut",
+      "url": "https://careertrainer.ai/"
+    },
+    {
+      "name": "https://character.ai/tos",
+      "kategorie": "",
+      "coach_relevanz": 262,
+      "preise": null,
+      "beschreibung": "AI Chat, Reimagined–Your Words. Your World. Character.AI Terms of Service Last Updated: August 27, 2025 Hello and welcome! These Terms of Service are an agreement formed between you and Character Technologies, Inc. They cover the website available at Character.AI (the “Website”), and the Character.AI mobile application (the “App”). In these Terms we’ll sometimes refer to Character Technologies, In",
+      "url": "https://character.ai/tos"
+    },
+    {
+      "name": "https://www.retorio.com/en/use-cases/ai-sales-training",
+      "kategorie": "",
+      "coach_relevanz": 255,
+      "preise": null,
+      "beschreibung": "AI Sales Coaching and Training What is Retorio? Retorio is a cutting-edge AI Coaching Platform that takes learning to the next level. Retorio’s AI coach simulates typical challenges that your learners face in their career. It has assimilated knowledge from tens of thousands of professionals worldwide, enabling it to address sales, service, and leadership challenges adeptly. Retorio’s AI coach prep",
+      "url": "https://www.retorio.com/en/use-cases/ai-sales-training"
+    },
+    {
+      "name": "https://www.retorio.com/use-cases/ai-onboarding-training",
+      "kategorie": "",
+      "coach_relevanz": 255,
+      "preise": null,
+      "beschreibung": "Level-Up Onboarding Training | AI Coaching for Onboarding What is Retorio? Retorio is a cutting-edge AI Coaching Platform that takes learning to the next level. Retorio’s AI coach simulates typical challenges that your learners face in their career. It has assimilated knowledge from tens of thousands of professionals worldwide, enabling it to address sales, service, and leadership challenges adept",
+      "url": "https://www.retorio.com/use-cases/ai-onboarding-training"
+    },
+    {
+      "name": "https://www.coachvantage.com/",
+      "kategorie": "",
+      "coach_relevanz": 254,
+      "preise": null,
+      "beschreibung": "CoachVantage | All-in-one Coaching Software Group Coaching with Community Interaction Streamlined Signups Community Interactions via Group Wall Coaching Resources Schedule Virtual Group Sessions Cohort Creation (Aha! Plan only) Build Communities We get it… you and your clients want the ability to interact with each other on a group wall. But you really don’t want to do it on that grand-daddy socia",
+      "url": "https://www.coachvantage.com/"
+    },
+    {
+      "name": "https://www.hellohms.com/privacy-policy",
+      "kategorie": "",
+      "coach_relevanz": 252,
+      "preise": null,
+      "beschreibung": "Privacy Policy | Explore Our Privacy Commitment — Executive Performance Coach HMS Privacy, Data & AI Use Policy Legal Notice Company Name: HMS High Performance Solutions Company Ltd Trading Name: HMS Coaching Representative: Hassan M. Al-Shohaty Address: Kyriakou Chatzioannou 5, IL PRIMO Block B, Office 301, Agios Athanasios, 4107, Limassol, Cyprus Registry Number: HE 449878 Contact: hassan@helloh",
+      "url": "https://www.hellohms.com/privacy-policy"
+    },
+    {
+      "name": "https://neurawork.ai/llms.txt",
+      "kategorie": "",
+      "coach_relevanz": 252,
+      "preise": null,
+      "beschreibung": "Version: 1.0.0 Datum: 2025-07-16 Autor: FullLLM.txt Creator Lizenz: CC-BY-4.0 Inhaltsverzeichnis Vollständige Dokumente Die folgenden Abschnitte enthalten den vollständigen Inhalt der Webseiten im Markdown-Format. Startseite - Neurawork oHG Neurawork oHG bietet innovative KI-Lösungen für Berater und Dienstleister im DACH-Raum, um sich im Zeitalter der digitalen Transformation erfolgreich zu positi",
+      "url": "https://neurawork.ai/llms.txt"
+    },
+    {
+      "name": "https://www.coachaccountable.com/",
+      "kategorie": "",
+      "coach_relevanz": 251,
+      "preise": [
+        "free",
+        "Free"
+      ],
+      "beschreibung": "Coaching Platform that makes your coaching better Deliver better programs. To more people. With less work. Try it Free for 30 Days No credit card needed. Cancel anytime. Why CoachAccountable? We built CoachAccountable to be a digital coaching platform that would help coaches be wildly efficient, close more business, and provide more value to their clients. Here are 3 reasons coaches choose us, in ",
+      "url": "https://www.coachaccountable.com/"
+    },
+    {
+      "name": "https://www.mindsera.com/reviews",
+      "kategorie": "",
+      "coach_relevanz": 249,
+      "preise": null,
+      "beschreibung": "Reviews & Success Stories — Mindsera I want to start by expressing my admiration for the incredible work you've accomplished with Mindsera. The platform is not only innovative but also has immense potential to make a positive impact on users, helping them grow and improve in meaningful ways. REVIEW ORIGIN This is a review from a user sent to our support. I want to start by expressing my admiration",
+      "url": "https://www.mindsera.com/reviews"
+    },
+    {
+      "name": "https://vivalacoaching.com/the-rebel-bundle/",
+      "kategorie": "",
+      "coach_relevanz": 248,
+      "preise": [
+        "Free"
+      ],
+      "beschreibung": "The Rebel Bundle – Viva la Coaching Academy Doors to the Rebel Course Close Soon 00 Days 00 Hours 00 Minutes 00 Seconds EXPIRED! Buy the Rebel Bundle before 9th October — next round won’t open until April 2026. “where future-ready coaches are born” AI Literacy Training Level 2: REBEL COURSE AI Literacy Training Level: Practitioner Take Your Coaching Practice to the Next Level with Advanced AI Skil",
+      "url": "https://vivalacoaching.com/the-rebel-bundle/"
+    },
+    {
+      "name": "https://www.coachrx.app/overview",
+      "kategorie": "",
+      "coach_relevanz": 247,
+      "preise": null,
+      "beschreibung": "CoachRx Platform for Success — CoachRx The Complete Platform for Individual Design Coaching CoachRx gives you everything you need to assess clients, consult meaningfully, design complete programs, and build a sustainable business, all in one intelligent system. Most coaching software is a collection of features. CoachRx is a complete coaching system built around how individual design coaches actua",
+      "url": "https://www.coachrx.app/overview"
+    },
+    {
+      "name": "https://www.bc4d.org/datenschutz",
+      "kategorie": "",
+      "coach_relevanz": 239,
+      "preise": null,
+      "beschreibung": "Datenschutzerklärung: bc4d.org Allgemeine Informationen über die Erhebung personenbezogener Daten Wir, die Gemeinnützige Hertie-Stiftung (nachfolgend „GHST“), Grüneburgweg 105, 60323 Frankfurt informieren Sie an dieser Stelle über die von uns durchgeführten Verarbeitungen personenbezogener Daten. Unseren Datenschutzbeauftragten erreichen Sie unter datenschutz@ghst.de oder postalisch an unsere Post",
+      "url": "https://www.bc4d.org/datenschutz"
+    },
+    {
+      "name": "https://coachbot.ai/legal/terms-of-service",
+      "kategorie": "",
+      "coach_relevanz": 237,
+      "preise": [
+        "free"
+      ],
+      "beschreibung": "Terms of Service | CoachBot General Terms of Use of CoachBot.ai Welcome to CoachBot.ai! These General Terms of Use (“Terms”) govern your access to and use of our CoachBot Platform, Website and artificial intelligence (“AI”) -powered coaching tools. By using CoachBot.ai, you agree to these Terms. If you do not agree, with all or parts of the Terms, please do not use our Website, Platform, or Servic",
+      "url": "https://coachbot.ai/legal/terms-of-service"
+    },
+    {
+      "name": "https://www.speexx.com/",
+      "kategorie": "",
+      "coach_relevanz": 236,
+      "preise": null,
+      "beschreibung": "Skip to content contact us - 00800-00773399|info@speexx.com Product Speexx Platform Language Training Speexx Talk™ Intercultural Training Business Coaching Intercultural Coaching AI Coaching Solutions Needs Assessment HR and L&D Tools Leadership & Transformation​ Mental Health & Well-Being​ Diversity & Inclusion Digital Transformation Integrations LMS adoption Budget Management Perfect Administrat",
+      "url": "https://www.speexx.com/"
+    },
+    {
+      "name": "https://mindsetcoachacademy.com/icf-acc-training/",
+      "kategorie": "",
+      "coach_relevanz": 233,
+      "preise": null,
+      "beschreibung": "ICF ACC Training - The Mindset Coach Academy Gain credibility with an internationally recognised coaching certification. ICF ACC (Level 1) Training Are you ready to elevate your coaching career, gain credibility, and make a greater impact with your clients? The Mindset Coach Academy offers a transformative ICF ACC Certification Program designed for aspiring and established coaches who are committe",
+      "url": "https://mindsetcoachacademy.com/icf-acc-training/"
+    },
+    {
+      "name": "https://cloverleaf.me/ai-coaching/roi/",
+      "kategorie": "",
+      "coach_relevanz": 229,
+      "preise": null,
+      "beschreibung": "AI Coaching ROI & Business Case: How HR and Finance Leaders Can Prove Measurable Value BROWSE TOPICS What does measurable ROI look like for AI coaching? Why is ROI a critical lens for evaluating AI coaching? What outcomes demonstrate measurable ROI? How should you build a business case for AI coaching? Common objections and how to address them Why AI Coaching Will Soon Be Financially Impossible to",
+      "url": "https://cloverleaf.me/ai-coaching/roi/"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/zoho",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant & Conversation Intelligence for Zoho CRM We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __tld__ Dur",
+      "url": "https://www.avoma.com/integrations/zoho"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/zendesk-sell",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant & Conversation Intelligence for Zendesk Sell We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __tld__",
+      "url": "https://www.avoma.com/integrations/zendesk-sell"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/salesforce",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant and Conversation Intelligence for Salesforce CRM We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __t",
+      "url": "https://www.avoma.com/integrations/salesforce"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/pipedrive",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant & Conversation Intelligence for Pipedrive We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __tld__ Du",
+      "url": "https://www.avoma.com/integrations/pipedrive"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/zoho",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant & Conversation Intelligence for Zoho CRM We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __tld__ Dur",
+      "url": "https://www.avoma.com/integrations/zoho"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/salesforce",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant and Conversation Intelligence for Salesforce CRM We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __t",
+      "url": "https://www.avoma.com/integrations/salesforce"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/zendesk-sell",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant & Conversation Intelligence for Zendesk Sell We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __tld__",
+      "url": "https://www.avoma.com/integrations/zendesk-sell"
+    },
+    {
+      "name": "https://www.avoma.com/integrations/pipedrive",
+      "kategorie": "",
+      "coach_relevanz": 228,
+      "preise": null,
+      "beschreibung": "AI Meeting Assistant & Conversation Intelligence for Pipedrive We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below. The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... Cookie __tld__ Du",
+      "url": "https://www.avoma.com/integrations/pipedrive"
+    },
+    {
+      "name": "https://www.aira.app/privacy-terms/general-terms-and-conditions",
+      "kategorie": "",
+      "coach_relevanz": 224,
+      "preise": null,
+      "beschreibung": "General Terms and Conditions | Aira AI Sales Assistant 1. General 1.1. These general terms and conditions (the “Terms”) set out the legal terms and conditions that apply to the Customer’s use of Upsales’ service Aira. 1.2. The Agreement consists of (i) the Order; (ii) these Terms; (iii) Data Processor Agreement (the “DPA”); and (iv) any appendices mentioned in (i)-(iii) (collectively referred to a",
+      "url": "https://www.aira.app/privacy-terms/general-terms-and-conditions"
+    },
+    {
+      "name": "https://www.thankscoach.io/",
+      "kategorie": "",
+      "coach_relevanz": 211,
+      "preise": null,
+      "beschreibung": "thankscoach - Führungskräfte Coaching für Unternehmen Digitale Coaching Plattform für skalierbares Leadership Development und moderne Personalentwicklung - wirksam, messbar und on demand. Mit über 500 zertifizierten Business Coaches und intelligentem Matching. Führungskräfteentwicklung neu gedacht: Digitales Leadership Coaching für Unternehmen Viele Unternehmen stehen vor der Herausforderung, ihre",
+      "url": "https://www.thankscoach.io/"
+    },
+    {
+      "name": "https://www.retorio.com/en/use-cases/ai-customer-service-training",
+      "kategorie": "",
+      "coach_relevanz": 210,
+      "preise": null,
+      "beschreibung": "Secure Customer Loyalty with AI-Powered Customer-Service Training What is Retorio? Retorio is a cutting-edge AI Coaching Platform that takes learning to the next level. Retorio’s AI coach simulates typical challenges that your learners face in their career. It has assimilated knowledge from tens of thousands of professionals worldwide, enabling it to address sales, service, and leadership challeng",
+      "url": "https://www.retorio.com/en/use-cases/ai-customer-service-training"
+    },
+    {
+      "name": "https://www.saner.ai/blogs/ai-for-content-creators",
+      "kategorie": "",
+      "coach_relevanz": 205,
+      "preise": null,
+      "beschreibung": "Best AI for Content Creators in 2026 (Tested and Ranked) General Blogs 28 March 2026 — 19 minutes Content creators, I see you struggling 😫 You've got 37 browser tabs open, random ideas scattered across 5 different note apps, and that one BRILLIANT content idea you had in the shower? Poof! Gone forever. And that's just one of many overwhelming problems that we - content creators face. 💡 52% of cont",
+      "url": "https://www.saner.ai/blogs/ai-for-content-creators"
+    },
+    {
+      "name": "https://www.isaacson.uk/about-us",
+      "kategorie": "",
+      "coach_relevanz": 205,
+      "preise": null,
+      "beschreibung": "About Us – Coachtech from Sam Isaacson Thank you for finding this overview about the work of Sam Isaacson. The purpose of this webpage is to provide you with a high-level of understanding, with the intention of facilitating a co-creative conversation. About A brief introduction Sam is known nowadays as a thought leader on the intersections of leadership, coaching and technology. He initiated Grant",
+      "url": "https://www.isaacson.uk/about-us"
+    },
+    {
+      "name": "https://isaacson.uk/about-us",
+      "kategorie": "",
+      "coach_relevanz": 205,
+      "preise": null,
+      "beschreibung": "About Us – Coachtech from Sam Isaacson Thank you for finding this overview about the work of Sam Isaacson. The purpose of this webpage is to provide you with a high-level of understanding, with the intention of facilitating a co-creative conversation. About A brief introduction Sam is known nowadays as a thought leader on the intersections of leadership, coaching and technology. He initiated Grant",
+      "url": "https://isaacson.uk/about-us"
+    },
+    {
+      "name": "https://www.contur-online.de/en/privacy-policy/",
+      "kategorie": "",
+      "coach_relevanz": 202,
+      "preise": null,
+      "beschreibung": "Privacy Policy - CONTUR Thank you for your interest in our website. The protection of your personal data during the collection, processing and use on the occasion of your visit to our website is an important concern for us. Your data will be protected within the framework of the statutory provisions. Please take a moment to read the information below. This will tell you how we handle your personal",
+      "url": "https://www.contur-online.de/en/privacy-policy/"
+    },
+    {
+      "name": "https://www.contur-online.de/en/privacy-policy/",
+      "kategorie": "",
+      "coach_relevanz": 202,
+      "preise": null,
+      "beschreibung": "Privacy Policy - CONTUR Thank you for your interest in our website. The protection of your personal data during the collection, processing and use on the occasion of your visit to our website is an important concern for us. Your data will be protected within the framework of the statutory provisions. Please take a moment to read the information below. This will tell you how we handle your personal",
+      "url": "https://www.contur-online.de/en/privacy-policy/"
+    },
+    {
+      "name": "https://www.retorio.com/industries/insurance",
+      "kategorie": "",
+      "coach_relevanz": 202,
+      "preise": null,
+      "beschreibung": "AI Coaching for Insurance | Transform Insurance Training What is Retorio? Retorio is a cutting-edge AI Coaching Platform that takes learning to the next level. Retorio’s AI coach simulates typical challenges that your learners face in their career. It has assimilated knowledge from tens of thousands of professionals worldwide, enabling it to address sales, service, and leadership challenges adeptl",
+      "url": "https://www.retorio.com/industries/insurance"
+    },
+    {
+      "name": "https://www.contur-online.de/en/privacy-policy/",
+      "kategorie": "",
+      "coach_relevanz": 202,
+      "preise": null,
+      "beschreibung": "Privacy Policy - CONTUR Thank you for your interest in our website. The protection of your personal data during the collection, processing and use on the occasion of your visit to our website is an important concern for us. Your data will be protected within the framework of the statutory provisions. Please take a moment to read the information below. This will tell you how we handle your personal",
+      "url": "https://www.contur-online.de/en/privacy-policy/"
+    }
+  ],
+  "kategorien_nach_coach_relevanz": {
+    "Sonstiges": [
+      "https://www.online-coaching-lernen.de/home/literatur/",
+      "https://coachvox.ai/affiliates/",
+      "https://try.cai-world.com/",
+      "https://www.online-coaching-lernen.de/coach-pool/",
+      "https://stackgroup.mywebsite.im/ai-coach-affiliate-program",
+      "https://simply.coach/coaching-software-reviews/",
+      "https://www.educate-me.co/blog/lms-for-corporate-training",
+      "https://www.coachaccountable.com/APIDocs"
+    ]
+  }
+}

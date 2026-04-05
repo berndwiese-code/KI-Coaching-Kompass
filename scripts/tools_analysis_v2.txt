@@ -1,0 +1,806 @@
+KI-COACHING-KOMPASS · TIEFENANALYSE DER TOOL-DATENBANK
+=================================================================
+Analysierte Seiten gesamt: 1677
+Nach Noise-Filter: 1369 relevante Seiten
+Eindeutige Tools: 249
+
+THEMATISCHE CLUSTER
+----------------------------------------
+
+  Sonstiges (87 Tools):
+    · linc-coachingboard.de
+    · coaching-4-all.org
+    · therapeak.com
+    · ovida.org
+    · symbolon-coaching.com
+    · symbolon-coaching.com
+    · skillsoft.com
+    · coachinginnovationlab.com
+    · virti.com
+    · becoach.app
+    · aimarketwave.com
+    · app.the-coi.com
+
+  ICF & Zertifizierung (40 Tools):
+    · evoach.me
+    · citiumsolutions.co.uk
+    · gerty.health
+    · mindsetcoachacademy.com
+    · mastercoachapp.com
+    · mento.co
+    · subversiveleader.com
+    · sorai.academy
+    · subversiveleader.com
+    · upcoach.com
+    · coachrx.app
+    · miraai.ai
+
+  Mental Health & Wellbeing (28 Tools):
+    · sherlocksupercoach.ai
+    · trytherabot.com
+    · coaching.com
+    · satoriapp.com
+    · reliefai.ca
+    · stella.coach
+    · naia.coach
+    · betterup.com
+    · moodmap.com
+    · youper.ai
+    · organizations.headspace.com
+    · sylodigital.com
+
+  Assessment & Diagnostik (23 Tools):
+    · hoolrcoaching.com
+    · vivalacoaching.com
+    · coachmetrix.com
+    · flowit.ai
+    · careertrainer.ai
+    · try.cai-world.com
+    · hedy.ai
+    · vivet.ai
+    · decisionmaker.k-i-e.com
+    · gethuckleberry.com
+    · dnanalytics.de
+    · flowit.ai
+
+  Corporate Learning & L&D (18 Tools):
+    · bunch.ai
+    · bunch.ai
+    · excelia.io
+    · optify.io
+    · speexx.com
+    · sharpist.com
+    · sharpist.com
+    · koviko.de
+    · honehq.com
+    · torch.io
+    · torch.io
+    · bettercoach.io
+
+  KI-Coaching-Plattformen (15 Tools):
+    · coach-ai.de
+    · retorio.com
+    · coachful.co
+    · soulcodeki-coaching-ausbildung.grweb.site
+    · aicoach.chat
+    · aicoach.chat
+    · aicoach.chat
+    · flowcoachai.com
+    · coachbot.ai
+    · sapericus.ai
+    · leadwise.app
+    · luminous.coach
+
+  Terminplanung & CRM (14 Tools):
+    · delenta.com
+    · avoma.com
+    · avoma.com
+    · coachnova.ai
+    · wejam.ai
+    · coachinglobby.com
+    · saner.ai
+    · pagebar.site
+    · systeme.io
+    · chatgpt.com
+    · levrhub.com
+    · practicebetter.io
+
+  Coaching-Software (Praxis-Management) (12 Tools):
+    · coach.me
+    · coachingcloud.com
+    · bestselfy.com
+    · simply.coach
+    · coachvantage.com
+    · coachhub.com
+    · clevermemo.com
+    · chronilogix.com
+    · coachinglobby.com
+    · paperbell.com
+    · helloezra.com
+    · coachaccountable.com
+
+  Transkription & Gesprächsanalyse (7 Tools):
+    · educate-me.co
+    · ki-coach.datawiltech.de
+    · fireflies.ai
+    · fathom.ai
+    · tethr.com
+    · zoominfo.com
+    · callminer.com
+
+  Video & Remote Coaching (3 Tools):
+    · coachingspace.net
+    · online-coaching-lernen.de
+    · online-coaching-lernen.de
+
+  KI-Avatar / KI-Version des Coaches (2 Tools):
+    · coachclone.de
+    · coachvox.ai
+
+
+TOP 60 TOOLS NACH COACHING-RELEVANZ (mit Beschreibung)
+=================================================================
+
+────────────────────────────────────────────────────────────
+1. coach-ai.de
+   URL:     https://www.coach-ai.de/
+   Cluster: KI-Coaching-Plattformen | Relevanz: 31 | Seiten: 2
+
+   My Website Coaching & AI will become an integrative part of all future personal growth and learning experiences Speaker on AI & Coaching & Learning I love to speak about the intersection of “AI & Human Potential” no matter if it is about coaching, training, personal development, corporate learning or education. AI Training for CoAching & Learning I create training programs and curricula aimed at enhancing your understanding of AI in learning & development, and coaching. I help you develop ideas and strategies on how to integrate AI into workflows & platforms also developing best prompting standards. Always focusing on what helps you to create the biggest impact for your clients or users. Off
+
+────────────────────────────────────────────────────────────
+2. retorio.com
+   URL:     https://www.retorio.com/product
+   Cluster: KI-Coaching-Plattformen | Relevanz: 28 | Seiten: 8
+
+   AI Coaching Platform | Enhance Sales and Service Skills What is Retorio? Retorio is a cutting-edge AI Coaching Platform that takes learning to the next level. Retorio’s AI coach simulates typical challenges that your learners face in their career. It has assimilated knowledge from tens of thousands of professionals worldwide, enabling it to address sales, service, and leadership challenges adeptly. Retorio’s AI coach prepares learners to navigate the most challenging situations in their careers. What use cases does Retorio cover? Retorio's flexible AI coaching platform adapts to your specific training needs across key business functions: AI Sales Coaching: Improve quota attainment, conversio
+
+────────────────────────────────────────────────────────────
+3. linc-coachingboard.de
+   URL:     https://linc-coachingboard.de/
+   Cluster: Sonstiges | Relevanz: 27 | Seiten: 1
+
+   LINC COACHING BOARD HERZLICH WILLKOMMEN ZUM LINC COACHING BOARD Wir freuen uns, Ihnen auf dieser Seite die wichtigsten Informationen zum LINC COACHING BOARD zu präsentieren: Ihrer Plattform für digitale Coachings und persönlichkeitsbezogene Entwicklungsprozesse. Entdecken Sie das LINC COACHING BOARD und lassen Sie sich begeistern von den faszinierenden Möglichkeiten des digitalen Coachings. Was ist das LINC COACHING BOARD? Video und Infobroschüre Das LINC COACHING BOARD stellt eine ganzheitliche Lösung für Online-Coachings dar. Es vereint alle Funktionen, die für erfolgreiche digitale Coachingprozesse benötigt werden: ein Whiteboard, Video-Konferenzen, digitale Coaching-Methoden und eine gro
+
+────────────────────────────────────────────────────────────
+4. hoolrcoaching.com
+   URL:     https://www.hoolrcoaching.com/product
+   Cluster: Assessment & Diagnostik | Relevanz: 24 | Seiten: 7
+
+   Hoolr Coaching | Product Strategic Insights for HR Leaders and People Management Professionals Strategic Insights for HR Leaders and People Management Professionals Use Hoolr to generate insights emerging from coaching. Hoolr will show you where your organisation sits compares to others using benchmarking and will illustrate the emerging themes from your coaching. Understand Your Coaching Data Strategic Insights for HR Leaders and People Management Professionals Strategic Insights for HR Leaders and People Management Professionals Use Hoolr to generate insights emerging from coaching. Hoolr will show you where your organisation sits compares to others using benchmarking and will illustrate t
+
+────────────────────────────────────────────────────────────
+5. educate-me.co
+   URL:     https://www.educate-me.co/pricing
+   Cluster: Transkription & Gesprächsanalyse | Relevanz: 23 | Seiten: 10
+
+   EducateMe: Pricing - Platform for building learning infrastructure. No hidden fees or charges with our pay-as-you-go model. How many users do you have? Basic integrations and API EducateMe AI 10 AI Roleplays sessions/mo Ask AI for learners AI Assistant Advanced integrations and API EducateMe AI 40 AI Roleplays sessions/mo Ask AI for learners AI transcriptions AI Assistant EducateMe AI 200 AI Roleplays sessions/mo Ask AI for learners AI transcriptions AI Assistant Custom pricing for enterprise Unlimited number of learners, custom-built features and priority support. Book a demo AI Roleplay Create realistic AI-powered practice scenarios that help learners build confidence, improve communicatio
+
+────────────────────────────────────────────────────────────
+6. sherlocksupercoach.ai
+   URL:     https://www.sherlocksupercoach.ai/solutions
+   Cluster: Mental Health & Wellbeing | Relevanz: 23 | Seiten: 5
+
+   Solutions – Sherlock Empower Employees Elevate Performance Unlock growth, resilience, and real-time guidance through AI powered coaching, enriched by human wisdom, to drive impactful talent development across your workforce. More Than Coaching—It’s Transformation at Scale with Measurable Results Sherlock AI combines AI precision with human wisdom to empower employees with real-time coaching and emotional support. See what our users have to say across top organizations Sherlock AI: The Trusted Ally for Talent Transformation At Scale Empower your workforce with the tools they need to thrive and achieve measurable business outcomes. Sherlock AI offers three unique AI-powered coaching tracks wit
+
+────────────────────────────────────────────────────────────
+7. bunch.ai
+   URL:     https://bunch.ai/pricing
+   Cluster: Corporate Learning & L&D | Relevanz: 22 | Seiten: 4
+
+   Pricing & Plans for Leadership Development Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live •
+
+────────────────────────────────────────────────────────────
+8. bunch.ai
+   URL:     https://bunch.ai/pricing
+   Cluster: Corporate Learning & L&D | Relevanz: 22 | Seiten: 4
+
+   Pricing & Plans for Leadership Development Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live • Bunch’s fundraising campaign is live •
+
+────────────────────────────────────────────────────────────
+9. coach.me
+   URL:     https://www.coach.me/
+   Cluster: Coaching-Software (Praxis-Management) | Relevanz: 20 | Seiten: 2
+
+   Coach.me – Coach.me mission is to harness the unique magic of habit coaching. Your Breakthrough Starts Here The Coaching Platform That Turns Goals Into Reality Whether you want to grow your business, improve your health, or master a new habit, Coach.me connects you with expert coaches and the proven tools to keep you consistent – so you can stop starting over and start achieving for good. 4,700+ reviews by people looking for coaching just like you Life-Changing, One Habit at a Time Our free Habit Tracker helps you stay consistent, motivated, and accountable — no matter your goal. Join thousands who are turning small daily actions into lasting results. From Personal Goals to Professional Succ
+
+────────────────────────────────────────────────────────────
+10. coaching-4-all.org
+   URL:     https://www.coaching-4-all.org/preise
+   Cluster: Sonstiges | Relevanz: 20 | Seiten: 7
+
+   Preise – coaching-4-all.org Unser Finanzierungsmodell Coaching darf kein Luxus sein – Qualität für alle. Bei Coaching für alle gilt: Niemand wird ausgeschlossen. Zugang für alle: Wer gerade nicht zahlen kann, erhält Coaching kostenlos – solidarisch getragen von anderen. Solidarisch beitragen: Wer die Möglichkeit hat, beteiligt sich nach seinen Möglichkeiten (z. B. 20 €, 60 € oder mehr pro Sitzung). So ermöglichen wir gemeinsam Qualität für alle. Gefördert: Zusätzlich arbeiten wir mit Förderern, Stiftungen und Unternehmen zusammen, die Coaching gesellschaftlich möglich machen. Beispielhafte Orientierung: Wenn’s gerade nicht geht 0 € Du erhältst ein professionelles Coaching Solidarisch getrage
+
+────────────────────────────────────────────────────────────
+11. vivalacoaching.com
+   URL:     https://www.vivalacoaching.com/
+   Cluster: Assessment & Diagnostik | Relevanz: 20 | Seiten: 7
+
+   Viva la Coaching Academy – Hands on AI Literacy Training for Coaches & Learning Professionals Expert Guidance Regular Open Hours with AI Coaching Innovators, where you can get your toughest questions answered and receive real-time feedback on how to integrate AI into your practice. Coaching Labs Dive into live, hands-on Coaching Labs where you can test AI tools, collaborate with peers, and sharpen your strategies. Exclusive Research Insights Stay ahead with cutting-edge research and insights on AI and coaching from leading experts. You’ll always know what’s coming next. Curated Learning Resources Get access to curated content including books, articles, podcasts, and documentaries, all select
+
+────────────────────────────────────────────────────────────
+12. coachingcloud.com
+   URL:     https://www.coachingcloud.com/
+   Cluster: Coaching-Software (Praxis-Management) | Relevanz: 20 | Seiten: 1
+
+   Trusted Coaching Platform for Coaches and Organizations Worldwide A new chapter is coming for CoachingCloud. For over 20 years, CoachingCloud has been trusted by professional coaches and organizations to manage and grow their coaching practice. Something new is taking shape CoachingCloud is evolving — a quiet intelligence built to support coaches, mentors, supervisors, and clients in new ways. Something that works alongside you. If you’re looking for a platform to manage your coaching practice today, visit Coaching Workspace. More soon.
+
+────────────────────────────────────────────────────────────
+13. bestselfy.com
+   URL:     https://www.bestselfy.com/
+   Cluster: Coaching-Software (Praxis-Management) | Relevanz: 20 | Seiten: 6
+
+   The Digital Coaching Toolbox | bestselfy Leading in today’s complex world doesn’t have to suck. Support your managers with a digital coaching platform to personally level up and fuel their team’s performance Grow & retain talent with app-based coaching. The #1 reason why employees leave their job is because they don’t feel valued by their manager. Most managers are unfamiliar with coaching, yet this is the most important leadership soft skill to help teams achieve success and happiness in the workplace. Through the bestselfy app platform, managers learn how to coach their team via key insights and engage via coaching nudges on a whole new level. Now every manager has a coaching toolbox at th
+
+────────────────────────────────────────────────────────────
+14. evoach.me
+   URL:     https://www.evoach.me/
+   Cluster: ICF & Zertifizierung | Relevanz: 19 | Seiten: 4
+
+   fully digital self coaching | evoach REFLECT. SOLVE. EVOLVE evoach is the next evolution in coaching offering an easy and user-friendly access to coaching for all employees and teams through an intelligent, web-based, selfcoaching chatbot application – without a real coach being involved. ​ Interested to learn more? Book a Demo Newsletter FOR EMPLOYEES With evoach your employees will have immediate access to professional coaching at their ﬁngertips in a revolutionary, completely scalable way. Guided self coaching helps them to reflect, solve and grow at their own pace. Available anytime, anywhere and affordable for everyone. FOR TEAMS With evoach for teams you can support your teams to grow 
+
+────────────────────────────────────────────────────────────
+15. excelia.io
+   URL:     https://www.excelia.io/
+   Cluster: Corporate Learning & L&D | Relevanz: 19 | Seiten: 2
+
+   Empower Leadership Excellence and Maximize ROI Scalable, AI-Powered Coaching That Delivers Real Business Results Excelia – where leadership excellence meets measurable results. Our AI-driven SaaS solution is designed to unlock the full potential of leadership development, providing participants with immediate growth and providing tangible financial impact for companies. Whether you're a dedicated coach, a training expert, or a corporate leader, our voice-enabled pocket coach will revolutionize your coaching, training, and leadership programs. As the coaching landscape becomes more competitive, and more scrutiny falls on leadership development programs to prove the ROI of coaching, the future
+
+────────────────────────────────────────────────────────────
+16. therapeak.com
+   URL:     https://www.therapeak.com/
+   Cluster: Sonstiges | Relevanz: 18 | Seiten: 8
+
+   AI Therapy with Your AI Therapist Help us create the best AI therapist for you. What is your gender? Many users report meaningful progress after their first session. Through targeted questions, we identify your needs and create your AI therapist. Start straight away, without the usual waiting times. " It's nice that I don't have to repeat myself every time. Therapeak remembers our conversations. " - One of our satisfied users How does it work? Step 1: We create your AI Therapist After you finish the questionnaire, we will create an AI therapist that suits your needs. You can also choose from the many AI therapists we already have available. Our AI therapists are designed to match your prefer
+
+────────────────────────────────────────────────────────────
+17. coachful.co
+   URL:     https://www.coachful.co/support
+   Cluster: KI-Coaching-Plattformen | Relevanz: 18 | Seiten: 5
+
+   Coachful - The All-in-One Coaching Platform 144 coaches viewed Coachful today One app. Your entire course business. Website, programs, scheduling, payments, chat, and an AI coach. All under your brand. One platform, not ten. Calendly + Zoom + Mailchimp + Kajabi + Skool + Typeform = $350+/mo → Coachful $49/mo 7-day free trial · Cancel anytime “I tried running my coaching business across five different apps. It was a complete waste of time and money. Then I found Coachful. It was everything I need in one platform. Jump in and try it, you won't regret it.” Christopher Duff Founder, Duff X Athletics 15 min From signup to live Why Coachful Your Coaching Business, All in One Place Everything you n
+
+────────────────────────────────────────────────────────────
+18. soulcodeki-coaching-ausbildung.grweb.site
+   URL:     https://soulcodeki-coaching-ausbildung.grweb.site/
+   Cluster: KI-Coaching-Plattformen | Relevanz: 18 | Seiten: 1
+
+   Home 🌟 SOULCODE™ KI-COACH AUSBILDUNG (BETA 2026) Förderfähig über das KOMPASS-Programm (bis zu 90 % Förderung). Tiefer coachen. Klarer führen. Mit KI menschlicher arbeiten. Im Februar 2026 eröffne ich eine Weiterbildung für Menschen, die Coaching neu denken und erfahren wollen: tiefer, klarer, präsenter. Eine Ausbildung, die verkörperte Präsenz, systemische Coachingpsychologie und moderne KI-Prozessführung verbindet – als bewusste Entwicklungsreise und professionelle Qualifizierung zugleich. 🌿 Worum es in dieser Ausbildung geht Diese Ausbildung ist kein reiner Technik oder Promptkurs. Sie ist ein Raum für Bewusstsein, Klarheit und professionelle Tiefe, unterstützt durch KI. Du lernst, KI als
+
+────────────────────────────────────────────────────────────
+19. citiumsolutions.co.uk
+   URL:     https://www.citiumsolutions.co.uk/
+   Cluster: ICF & Zertifizierung | Relevanz: 18 | Seiten: 5
+
+   About | Citium Solutions Panos Malakoudis is an executive coach and learning leader with two decades at Microsoft, where he designed and scaled global coaching programs that transformed careers and business outcomes. His work has been recognised internationally, earning a Guinness World Record for the largest business coaching program delivered in a single year, as well as multiple industry award shortlists including the ICF Coaching in Organisations Award and the Learning Awards in London. ​ Panos holds coaching credentials from the ICF, EMCC, MGSCC, ATD and the OKR Institute. In addition, he is certified in GLA360 and Hogan360 Leadership Assessments, and has advanced training in Coaching f
+
+────────────────────────────────────────────────────────────
+20. optify.io
+   URL:     https://optify.io/
+   Cluster: Corporate Learning & L&D | Relevanz: 18 | Seiten: 8
+
+   Personalized Leadership Development Growth I Optify FAQ Accordion Frequently Asked Questions What makes Optify different from other leadership development services? Optify combines personalized coaching, interactive workshops, AI coaching, powerful technology, and real-time data to create learning journeys that actually sticks. Unlike standalone training programs or disconnected coaching solutions, Optify offers a scalable, human-centered experience that’s fully customizable to your organization’s goals, culture, and growth stage. Does Optify offer coaching, or leadership development, or both? Both. We customize our solutions based on the needs of your leaders. We can provide 1:1 leadership 
+
+────────────────────────────────────────────────────────────
+21. gerty.health
+   URL:     https://www.gerty.health/
+   Cluster: ICF & Zertifizierung | Relevanz: 17 | Seiten: 4
+
+   gerty gerty macht sichtbar, was im Coachingprozess verborgen bleibt und gibt fachliches Feedback, das sich direkt auf Ihre Gesprächsführung bezieht. Weil gute Coaches nie aufhören, sich zu hinterfragen. Coaches und Coachees über gerty ICF-orientiertes Feedback mit Timestamp-Feedback Reflexion von Gesprächsführung, Interventionen und Prozessgestaltung Konkrete Hinweise zur Entwicklung ins nächste Kompetenzniveau gerty transkribiert Ihre Sessions – DSGVO-konform, diskret im Hintergrund und ohne den Gesprächsfluss zu stören. Strukturierte Zusammenfassungen für Coach und Klient Klare Übersicht über Ziele, Themen und zentrale Erkenntnisse Bündelt alle Sitzungen, Ziele und Enwicklungen an einem Or
+
+────────────────────────────────────────────────────────────
+22. ovida.org
+   URL:     https://www.ovida.org/
+   Cluster: Sonstiges | Relevanz: 17 | Seiten: 5
+
+   Augmenting Uniquely Human Skills with Artificial Intelligence As AI weaves itself into the fabric of business, Ovida transforms what’s uniquely human into the ultimate advantage. Record your meetings and get AI insights Review them with a customized AI or human expert Practice and refine your skills through guided AI role-play Address the challenges of scaling communication skills training Discover how Ovida can reinforce core Skills through guided discussions and role-plays with an AI agent built around your organization’s values. AI-driven platform scales personalized feedback, reducing human trainer workload Analyzes real communications, quantifying nuanced interactions for easier measure
+
+────────────────────────────────────────────────────────────
+23. aicoach.chat
+   URL:     https://www.aicoach.chat/
+   Cluster: KI-Coaching-Plattformen | Relevanz: 17 | Seiten: 7
+
+   AI-powered coaching.For everyone, at anytime. Discover how AIcoach.chat offers employees at every career stage a personalised, goal-oriented AI coach, uniquely designed to help them shape their individual growth by focusing on what matters most to them. With AIcoach.chat, your workforce gains access to personalised, expert coaching that provides the guidance and support needed to excel and reach their full potential, no matter the challenge. Discover insights, innovations, and trends in AI coaching.​ Find out how AIcoach.chat can support your business and help you improve productivity and growth.
+
+────────────────────────────────────────────────────────────
+24. symbolon-coaching.com
+   URL:     https://www.symbolon-coaching.com/
+   Cluster: Sonstiges | Relevanz: 17 | Seiten: 6
+
+   Symbolon Selbst-Coaching | Coaching mit Künstlicher Intelligenz (KI) Dein Coaching individuell effizient schnell In 2 Schritten zum Coaching 1 2 Symbolon Coaching entfaltet dein berufliches Potenzial Um in der dynamischen Geschäftswelt auf Kurs zu bleiben, bist du mit Leidenschaft bei der Sache. Was kannst du tun, wenn du kurzzeitig etwas vom Kurs abkommst, du die Lust verlierst oder einfach nicht weiterweißt? Ein Symbolon Coaching ist dein persönlicher Booster, um berufliche Herausforderungen noch besser zu meistern. Dieses Coaching entfaltet dein Potenzial, unterstützt dich deine Spielräume optimal zu nutzen. Für Personalentwickler:innen Euer Unternehmen soll sich durch einen lösungsorient
+
+────────────────────────────────────────────────────────────
+25. aicoach.chat
+   URL:     https://www.aicoach.chat/
+   Cluster: KI-Coaching-Plattformen | Relevanz: 17 | Seiten: 7
+
+   AI-powered coaching.For everyone, at anytime. Discover how AIcoach.chat offers employees at every career stage a personalised, goal-oriented AI coach, uniquely designed to help them shape their individual growth by focusing on what matters most to them. With AIcoach.chat, your workforce gains access to personalised, expert coaching that provides the guidance and support needed to excel and reach their full potential, no matter the challenge. Discover insights, innovations, and trends in AI coaching.​ Find out how AIcoach.chat can support your business and help you improve productivity and growth.
+
+────────────────────────────────────────────────────────────
+26. aicoach.chat
+   URL:     https://www.aicoach.chat/
+   Cluster: KI-Coaching-Plattformen | Relevanz: 17 | Seiten: 7
+
+   AI-powered coaching.For everyone, at anytime. Discover how AIcoach.chat offers employees at every career stage a personalised, goal-oriented AI coach, uniquely designed to help them shape their individual growth by focusing on what matters most to them. With AIcoach.chat, your workforce gains access to personalised, expert coaching that provides the guidance and support needed to excel and reach their full potential, no matter the challenge. Discover insights, innovations, and trends in AI coaching.​ Find out how AIcoach.chat can support your business and help you improve productivity and growth.
+
+────────────────────────────────────────────────────────────
+27. symbolon-coaching.com
+   URL:     https://www.symbolon-coaching.com/
+   Cluster: Sonstiges | Relevanz: 17 | Seiten: 6
+
+   Symbolon Selbst-Coaching | Coaching mit Künstlicher Intelligenz (KI) Dein Coaching individuell effizient schnell In 2 Schritten zum Coaching 1 2 Symbolon Coaching entfaltet dein berufliches Potenzial Um in der dynamischen Geschäftswelt auf Kurs zu bleiben, bist du mit Leidenschaft bei der Sache. Was kannst du tun, wenn du kurzzeitig etwas vom Kurs abkommst, du die Lust verlierst oder einfach nicht weiterweißt? Ein Symbolon Coaching ist dein persönlicher Booster, um berufliche Herausforderungen noch besser zu meistern. Dieses Coaching entfaltet dein Potenzial, unterstützt dich deine Spielräume optimal zu nutzen. Für Personalentwickler:innen Euer Unternehmen soll sich durch einen lösungsorient
+
+────────────────────────────────────────────────────────────
+28. mindsetcoachacademy.com
+   URL:     https://mindsetcoachacademy.com/
+   Cluster: ICF & Zertifizierung | Relevanz: 17 | Seiten: 8
+
+   Home - The Mindset Coach Academy Are you ready to change the world and become the coach you’ve always wanted to be? Education. Knowledge. Tools. Community. We educate and provide coaches with expert knowledge, global accreditation, powerful tools, unparalleled support and a community to thrive in. The Mindset Coach Academy elevates your performance throughout your entire career as a coach – from starting your coaching practice to scaling your profitable business. How does the Mindset Coach Academy work? Our mission is simple – build a global mindset coaching superpower that brings together the very best coaches in the world. Think of the Mindset Coaching Academy as your personal and professi
+
+────────────────────────────────────────────────────────────
+29. flowcoachai.com
+   URL:     https://flowcoachai.com/pricing
+   Cluster: KI-Coaching-Plattformen | Relevanz: 16 | Seiten: 2
+
+   Pricing - Plans & Subscriptions Available Plans Choose your billing frequency Have a Promo Code? Enter your promo code to redeem your exclusive offer Free Perfect for getting started with productivity tracking Up to 5 goals Unlimited tasks Mood tracking Basic analytics Light/Dark themes FlowCoach Pro Unlock AI insights and unlimited goals $9.99/month Billed monthly Unlimited goals Unlimited tasks Mood tracking AI-powered daily insights Advanced analytics Priority support FlowCoach Premium Maximum productivity with custom AI coaching $19.99/month Billed monthly Everything in FlowCoach Pro Custom AI coaching Personalized goal recommendations Advanced productivity reports Team collaboration Ded
+
+────────────────────────────────────────────────────────────
+30. skillsoft.com
+   URL:     https://www.skillsoft.com/
+   Cluster: Sonstiges | Relevanz: 16 | Seiten: 8
+
+   Skillsoft | AI-native Skills Management Platform Create custom content in minutes Leadership & Business Skills Technology Skills Compliance & Risk Skills Strengthen ethics, safety, and regulatory judgment so employees apply policy correctly and reduce risk. Practice Skills In Real Scenarios Practice practical scenarios with an AI simulator to build confidence, judgment, and job-ready capability. Create And Manage Content Faster Use AI-powered tools to create and update content in minutes. Turn Your Workforce Into A Skillforce™ AI is changing how work gets done. Execution, readiness, and growth now depend on skills, not static roles. A Skillforce™ is the future workforce built for this realit
+
+────────────────────────────────────────────────────────────
+31. coachmetrix.com
+   URL:     https://www.coachmetrix.com/
+   Cluster: Assessment & Diagnostik | Relevanz: 16 | Seiten: 8
+
+   Online Client Tracking Platform for Executive Coaches An Online Platform for Coaches to Measure and Track Coaching Engagements The Tools Leadership and Executive Coaches Need to Demonstrate Measurable Results to Clients and Grow Their Coaching Business. I use Coachmetrix to track progress of long-standing Coachees and to win new opportunities among prospects. The open-ended comments in the 360 survey provides some good ground to cover during coaching sessions. Cecond Opinion Coachmetrix is an important tool in our arsenal. It supports us in many of our client engagements by serving as a one-stop portal for setting expectations, defining actions, assigning tasks, monitoring progress, sharing 
+
+────────────────────────────────────────────────────────────
+32. simply.coach
+   URL:     https://www.simply.coach/
+   Cluster: Coaching-Software (Praxis-Management) | Relevanz: 16 | Seiten: 7
+
+   The #1 Digital Coaching Platform Solutions Automate admin, deliver powerful client experiences, and grow your coaching practice — without the overwhelm. From team coordination to client delivery - streamline your multi-coach business with Simply.Coach. Enterprise-ready software to run talent development programs at scale with transparency, control, and ease. Run scalable coaching programs for your educational institute with administrative oversight and student workspaces. Features Resources A destination for coaches to stay informed, update their knowledge and add greater depth to their coaching journeys Explore how service professionals like you have used Simply.Coach to run and grow their 
+
+────────────────────────────────────────────────────────────
+33. delenta.com
+   URL:     https://www.delenta.com/pricing
+   Cluster: Terminplanung & CRM | Relevanz: 16 | Seiten: 7
+
+   Multi Coach & Associate Coaching Management Software Find a plan that fits your business. 14 day free trial Simple & affordable pricing No credit card required Change plan without admin fee Starter For Solo Practioner ‍ Everything you need to get your business up and running ‍ Try for Free Lead ManagementProfile Landing Page Intake Lead Forms Booking Calendar & Scheduling (Outlook & Google synch) Limited Client Portals CRM - Client ManagementSession Tracker, Notes, Task & Goals 1GB file storage E- Sign Contracts Coaching Logs IntegrationsZoom, Google Meet, MS Teams, Paypal, Stripe, Outlook Calendar, Google Calendar, MailerLite, MailChimp, Zapier Pro For Individual Professionals ‍ Rich featur
+
+────────────────────────────────────────────────────────────
+34. coachingspace.net
+   URL:     https://www.coachingspace.net/
+   Cluster: Video & Remote Coaching | Relevanz: 15 | Seiten: 5
+
+   Bereit, Ihre Online-Beratung neu zu denken? Sichere Videokonferenz, digitaler Methodenkoffer und komfortable Klientenverwaltung in einer Lösung vereint. Das ist coachingspace. Für Beratungen, Coachings und Trainings Jetzt kostenlos registrieren Unverbindlich testen Überzeugen Sie sich selbst. Nach der Registrierung haben Sie 7 Tage lang Zugriff auf unser Premium-Paket mitsamt allen Methoden. Jetzt registrieren All-in-One-Paket Eine Lösung, viele Vorteile: Mit coachingspace übertragen wir etablierte Methoden und Tools in das digitale Zeitalter – komfortable Klientenverwaltung und DSGVO-konforme Videokonferenzen inklusive. Alle Tools anzeigen Sicher und datenschutzkonform coachingspace wird in
+
+────────────────────────────────────────────────────────────
+35. coachclone.de
+   URL:     https://coachclone.de/
+   Cluster: KI-Avatar / KI-Version des Coaches | Relevanz: 15 | Seiten: 8
+
+   Erstelle eine KI-Coach Version von dir selbst mit CoachClone KI-Coach Version von dir selbst Mehr Leads, bessere Kundenbetreuung, effiziente Team-Schulung und mehr Freiheit! Probier's aus! Chatte mit meiner KI-Version Probier's aus! Chatte mit meiner KI-Version Marius KI | CoachClone Fühlst du dich oft gestresst und wünschst dir mehr als 24 Stunden am Tag? Als Coach oder Berater jonglierst du viele Aufgaben und bist das Herzstück deines Business. Steckst du im Coaching-Business-Hamsterrad fest? ⚠️ Das Coaching-Business-Hamsterrad ⚠️ BRAND Du bist das Gesicht deines Business. Jeder Kontakt geht über dich. BRAIN Du steuerst alle Entscheidungen. Jeder Impuls geht von dir aus. BUTLER Du erledigs
+
+────────────────────────────────────────────────────────────
+36. coachinginnovationlab.com
+   URL:     https://www.coachinginnovationlab.com/speaking
+   Cluster: Sonstiges | Relevanz: 15 | Seiten: 4
+
+   Coaching Innovation Lab - AI Skills Training for Leaders and Teams Speaking Engagements Supercharge your communities through public speaking engagements curated to your audience's interests and experience with AI adoption Keynote Speaking Topics Tim delivers powerful, actionable presentations that inspire and equip audiences to embrace the future of coaching with AI. Why Tim? Speaker Resources Book Tim Today! Transform your next event with insights on AI-powered coaching and innovative leadership.
+
+────────────────────────────────────────────────────────────
+37. virti.com
+   URL:     https://www.virti.com/
+   Cluster: Sonstiges | Relevanz: 15 | Seiten: 7
+
+   The AI role-play and video training platform AI Role-Play and Video Training Platform Real practice Instant feedback Powered by AI. Drive real business outcomes faster with: The AI role-play and video training platform that does it all. Why AI roleplay and video training, and why now? The future of workplace learning: AI roleplay and video learning Transform education and training Immerse learners in virtual environments to provide unique experiential perspectives, prepare them for the future, and give them new tools to handle and lead real-world complex problems. Build real-life scenarios Recreate hard-to-replicate, real-life scenarios with AI characters and immersive environments to enhanc
+
+────────────────────────────────────────────────────────────
+38. flowit.ai
+   URL:     https://www.flowit.ai/pricing
+   Cluster: Assessment & Diagnostik | Relevanz: 15 | Seiten: 5
+
+   FLOWIT - Packages and Prices pricing overview Get an overview and learn more about the individual advantages and functions. BESTSELLER Engagement Chat-based Surveys, AI-Analyses & Recommendations (Pulse-) Surveys Validated Templates Onboarding Surveys AI-Sentiment Analysis External and Internal Benchmarks AI action plans Book a demo BESTSELLER Performance Lite Digitalized Reviews & AI Analysis AI-Assisted Creation of Individualized Guidelines (Probation, Development, Exit, etc.) AI Coaching Before Conversations Simple Digitization and Automation of Processes Multilingual Support and Removal of Language Barriers Book a demo Performance 360° Feedback & Agile Goals Make Competencies Accessible 
+
+────────────────────────────────────────────────────────────
+39. avoma.com
+   URL:     https://www.avoma.com/
+   Cluster: Terminplanung & CRM | Relevanz: 15 | Seiten: 7
+
+   Avoma — AI Platform for Note-taking, Scheduling & Coaching An all-in-won AI to automate note-taking, scheduling, coaching, forecasting, and more All-in-one doesn't mean you have to buy all at once. Start with what you need, and then scale with confidence. Save 4+ hrs/week by automating note-taking, follow-up emails, CRM updates, and more. Schedule 2x more qualified meetings with effortless scheduling and instant lead routing. Reduce ramp time and increase win rates by 40% with automated call scoring and personalized coaching. Increase quota attainment by 30% with AI-powered deal risk alerts, methodology tracking, and win-loss analysis. Trusted by 1000+ large and small next generation modern 
+
+────────────────────────────────────────────────────────────
+40. avoma.com
+   URL:     https://www.avoma.com/
+   Cluster: Terminplanung & CRM | Relevanz: 15 | Seiten: 7
+
+   Avoma — AI Platform for Note-taking, Scheduling & Coaching An all-in-won AI to automate note-taking, scheduling, coaching, forecasting, and more All-in-one doesn't mean you have to buy all at once. Start with what you need, and then scale with confidence. Save 4+ hrs/week by automating note-taking, follow-up emails, CRM updates, and more. Schedule 2x more qualified meetings with effortless scheduling and instant lead routing. Reduce ramp time and increase win rates by 40% with automated call scoring and personalized coaching. Increase quota attainment by 30% with AI-powered deal risk alerts, methodology tracking, and win-loss analysis. Trusted by 1000+ large and small next generation modern 
+
+────────────────────────────────────────────────────────────
+41. becoach.app
+   URL:     https://www.becoach.app/features
+   Cluster: Sonstiges | Relevanz: 15 | Seiten: 6
+
+   BeCoach – Die digitale Coaching App für deine Ziele Übersicht: Funktionen für Coaches Digitalisierungs-Tool für die Erstellung eigener Learning-Nuggets Mit Hilfe von BeCoach kannst du deinen eigenen Coaching-Materialien digitalisieren oder vom BeCoach Team erstellen lassen. Aus deinem Coaching Material werden ganz schnell interaktive Einheiten. Bedürfnisgerechte und automatisierte Interventionen als Lerneinheit, Reflexion oder Übung. Die Einheiten passen sich bei der Durchführung des Klienten der Situation des Kunden an, je nachdem was er im Verlauf der Intervention angibt. Digital und persönliche Betreuung auch zwischen den Terminen. Nugging System zur Erinnerung und als Impulse zur Steiger
+
+────────────────────────────────────────────────────────────
+42. mastercoachapp.com
+   URL:     https://www.mastercoachapp.com/
+   Cluster: ICF & Zertifizierung | Relevanz: 15 | Seiten: 4
+
+   The MasterCoach App | The Coaching App for Every Leader & Coach The App for Growing People & Performance Brilliant, convenient & portable! MasterCoach will benefit every leader & coach. Lyn Eichmann Professional Certified Coach (PCC) International Coaching Federation (ICF) MasterCoach offers simple action tools to empower performance in 3 steps: DISCOVER & Activate Strengths DEVELOP Insights-led Actions DEDICATE to Follow Through Coach Anytime & Anywhere The MasterCoach App syncs across phones, tablets and computers Compliant to OWASP's globally-recognised data security standards Supercharge Your Success With Workplace Coach CERTIFICATION + TECH MasterCoach has the chance to become a revolut
+
+────────────────────────────────────────────────────────────
+43. coachbot.ai
+   URL:     https://coachbot.ai/
+   Cluster: KI-Coaching-Plattformen | Relevanz: 15 | Seiten: 3
+
+   AI Coaching Platform for Scalable Personal Growth Simple by design. Powerful at scale. Bring AI into your coaching.Without risking client trust. CoachBot turns your methodology into scalable coaching experiences while preserving quality, ethics, and control. Trusted by 50+ leading coaching providers delivering transformation across global organisations The real problem Winning and expanding clients is getting harder Your business is built on transformation. But enterprise clients now expect scalable, tech-enabled programs. Platforms win because they deliver at scale, while your growth is still tied to your coach network. At the same time, proving real impact is becoming non-negotiable. What 
+
+────────────────────────────────────────────────────────────
+44. careertrainer.ai
+   URL:     https://careertrainer.ai/pricing
+   Cluster: Assessment & Diagnostik | Relevanz: 15 | Seiten: 8
+
+   Preise - Careertrainer.ai Führungs- & Vertriebstraining – jederzeit, ohne Terminabstimmung KI-Rollenspiele für echte Gesprächssituationen. Starte kostenlos und upgrade, wenn du mehr willst. Wähle deinen Plan Jeder Plan gibt dir Zugang zu Führungs- und Vertriebstraining – der Unterschied liegt im Volumen und Funktionsumfang. Free 3 Gespräche insgesamt Sofort starten – keine Kreditkarte. 3 echte Rollenspiele für Führung oder Vertrieb. 3 Trainings-Gespräche (kein Ablaufdatum) Führungs- & Vertriebsszenarien zum Testen Detailliertes KI-Feedback nach jedem Gespräch Kostenlos starten Basic 15 Gespräche pro Monat Für regelmäßiges Führungs- und Vertriebstraining – flexibel, ohne Terminabstimmung. 15 
+
+────────────────────────────────────────────────────────────
+45. aimarketwave.com
+   URL:     https://www.aimarketwave.com/
+   Cluster: Sonstiges | Relevanz: 15 | Seiten: 7
+
+   AIMarketWave — AI tools catalog: search, compare, and integrate Jasper is an AI writing assistant that helps users create high-quality content quickly and efficiently. Character.AI allows users to create and interact with AI characters that can engage in conversations, role-play, and more. MyImg AI is a powerful tool for generating unique images and artwork using artificial intelligence, allowing users to create stunning visuals effortlessly. An AI-powered tool for checking content for plagiarism and grammar issues. Image2Prompt - Free AI-powered tool for image analysis and AI image generation #Design & Art Image2Prompt is a comprehensive free AI platform that converts images into detailed p
+
+────────────────────────────────────────────────────────────
+46. sapericus.ai
+   URL:     https://sapericus.ai/
+   Cluster: KI-Coaching-Plattformen | Relevanz: 14 | Seiten: 6
+
+   KI Business Coaching für Unternehmen: Führung & Gesundheit Erleben Sie die Wirkung von individuell | wissenschaftlich fundiert | nachhaltig individuell | nachhaltig wissenschaftlich fundiert Unsere KI-Coaching-Lösung wird unter anderem verwendet von: 70% Kostenersparnis Sapericus bietet durchschnittlich einen 70% Kostenvorteil gegenüber 1:1 Coaching von qualifiziertem Fachpersonal 94% Zufriedenheit Unsere Nutzer:innen bewerten ihre Coaching-Sessions durchschnittlich mit 4,7 von 5 Sternen 72% Digitale Adoption 72% der HR-Führungskräfte nutzen mittlerweile digitale Plattformen für HR-Aktivitäten Die 5 größten Herausforderungen In einer komplexen, unsicheren und dynamischen Welt stehen Menschen
+
+────────────────────────────────────────────────────────────
+47. coachvantage.com
+   URL:     https://www.coachvantage.com/
+   Cluster: Coaching-Software (Praxis-Management) | Relevanz: 14 | Seiten: 7
+
+   CoachVantage | All-in-one Coaching Software Group Coaching with Community Interaction Streamlined Signups Community Interactions via Group Wall Coaching Resources Schedule Virtual Group Sessions Cohort Creation (Aha! Plan only) Build Communities We get it… you and your clients want the ability to interact with each other on a group wall. But you really don’t want to do it on that grand-daddy social media platform (yes, you know which one we’re talking about!) You and your clients can now interact with each other on a ‘group wall’ right within CoachVantage. Build Communities We get it… you and your clients want the ability to interact with each other on a group wall. But you really don’t want
+
+────────────────────────────────────────────────────────────
+48. ki-coach.datawiltech.de
+   URL:     https://ki-coach.datawiltech.de/
+   Cluster: Transkription & Gesprächsanalyse | Relevanz: 14 | Seiten: 1
+
+   KI-Coaching für Psycholog:innen & Psychotherapeut:innen KI im psychotherapeutischen Alltag Mit Digitalisierung und Künstlicher Intelligenz reduzieren Sie Ihren Dokumentationsaufwand um über 40 Stunden pro Monat – von Gutachten über Kassenanträge bis hin zu Sitzungsprotokollen und erzielen dadurch 2.000–3.000 € zusätzlichen Monatsumsatz, weil Sie mehr Zeit für Therapiesitzungen gewinnen. Im persönlichen 1:1-Coaching analysieren wir Ihre aktuellen Prozesse, optimieren Ihre Berichte mit präzisen KI-Prompts und Sie lernen, vollständig strukturierte Sitzungsprotokolle in nur 5 Minuten zu erstellen (siehe Beispiele unten). Zusätzlich stehen Ihnen individuelle KI-Agenten zur Verfügung, die automati
+
+────────────────────────────────────────────────────────────
+49. online-coaching-lernen.de
+   URL:     https://www.online-coaching-lernen.de/
+   Cluster: Video & Remote Coaching | Relevanz: 14 | Seiten: 10
+
+   Coaching Ausbildung Online | Online Coaching Ausbildung - Wenn man menschliche und künstliche Intelligenz im Coaching "intelligent" verbindet, wird es möglich, unglaublich schnell und hochwertig Einzelinformationen zu einem Gesamtbild zusammenzufügen, begründete Hypothesen zu generieren, objektiv Problemanalysen durchzuführen, maßgeschneiderte Lösungsstrategien zu entwickeln, kreativ praxisbewährte Lösungsaktivitäten vorzuschlagen und produktiv Konsequenzen aus Erfolgen und Misserfolgen abzuleiten. Siehe dazu auch die Testimonials von Robert Laude, Samira Brade und Gabi H. Einer der Schwerpunkte meiner Forschungs- und Entwicklungsarbeiten bezieht sich auf KI-Agenten, die doppelt genutzt werd
+
+────────────────────────────────────────────────────────────
+50. online-coaching-lernen.de
+   URL:     https://www.online-coaching-lernen.de/
+   Cluster: Video & Remote Coaching | Relevanz: 14 | Seiten: 8
+
+   Coaching Ausbildung Online | Online Coaching Ausbildung - Wenn man menschliche und künstliche Intelligenz im Coaching "intelligent" verbindet, wird es möglich, unglaublich schnell und hochwertig Einzelinformationen zu einem Gesamtbild zusammenzufügen, begründete Hypothesen zu generieren, objektiv Problemanalysen durchzuführen, maßgeschneiderte Lösungsstrategien zu entwickeln, kreativ praxisbewährte Lösungsaktivitäten vorzuschlagen und produktiv Konsequenzen aus Erfolgen und Misserfolgen abzuleiten. Siehe dazu auch die Testimonials von Robert Laude, Samira Brade und Gabi H. Einer der Schwerpunkte meiner Forschungs- und Entwicklungsarbeiten bezieht sich auf KI-Agenten, die doppelt genutzt werd
+
+────────────────────────────────────────────────────────────
+51. coachnova.ai
+   URL:     https://www.coachnova.ai/
+   Cluster: Terminplanung & CRM | Relevanz: 14 | Seiten: 6
+
+   CoachNova — AI Platform for Executive & Leadership Coaches For leadership and executive coaches Be there for every client. Without being on call. Extend your presence. Extend the relationship. Without extending your hours. Coach approves everything EU native, GDPR compliant 8 coaches onboarding today 6-10 sessions. Then they're gone. The relationship ends. The momentum stops. And they start asking ChatGPT. How it works From first call to recurring revenue 30 min Get started Book. Connect. Done. One call with Louise or Nick. Calendar syncs automatically. Repeat Every session Coach. Review. Send. Nova captures insights. You approve before anything sends. Clients stay engaged between sessions. 
+
+────────────────────────────────────────────────────────────
+52. mento.co
+   URL:     https://www.mento.co/
+   Cluster: ICF & Zertifizierung | Relevanz: 14 | Seiten: 5
+
+   Mento Results that show up in the business “We’ve invested in a lot of leadership development over the years. Mento is one that people actually prioritize and proactively ask to continue. Within a couple of sessions, they are all in. That kind of pull is rare, and it tells you something real is happening.” Karlee Pierce Learning Design & Innovation “It’s a no-brainer to invest in augmenting our team’s skills through Mento. Investing in coaching means we’re more likely to hit our business milestones and retain our highest performers. At the same time, the team loves working with their Mento coaches.” “Top talent at Brex goes on to lead departments and found companies, so we invest in their gr
+
+────────────────────────────────────────────────────────────
+53. speexx.com
+   URL:     https://www.speexx.com/pricing
+   Cluster: Corporate Learning & L&D | Relevanz: 13 | Seiten: 7
+
+   Skip to content contact us - 00800-00773399|info@speexx.com Product Speexx Platform Language Training Speexx Talk™ Intercultural Training Business Coaching Intercultural Coaching AI Coaching Solutions Needs Assessment HR and L&D Tools Leadership & Transformation​ Mental Health & Well-Being​ Diversity & Inclusion Digital Transformation Integrations LMS adoption Budget Management Perfect Administration Employer Branding Corporate Language Training Pricing Customers Resources Why Speexx Awards and Recognition Resources Whitepapers Ebooks Infographics Podcast Webinars Newsroom Product updates Blog Events Speexx Exchange 2026 Event Overview Contact Get Started Speexx Log In Speexx Support Get a Q
+
+────────────────────────────────────────────────────────────
+54. app.the-coi.com
+   URL:     https://app.the-coi.com/
+   Cluster: Sonstiges | Relevanz: 13 | Seiten: 1
+
+   THE COI Coaching App Dein Coach in der Hosentasche COI COACHING APP 30 Tage Challenge Bist du bereit für die nächste Stufe deiner persönlichen und beruflichen Entwicklung? Unsere App bietet dir in einer Gemeinschaft Gleichgesinnter genau die Unterstützung, die du brauchst, um deine Ziele zu erreichen. Entdecke, wie du durch innovative Features, individuelle Tipps renommierter Coaches und der Realtime KI-Integration bei höchster Datensicherheit nachhaltig wachsen kannst. Neue COI KI-Academy mit 7 KI-Experten Hi, wir sind Janina & Dirk Schön dass Du da bist! Wir sind die Gründer von COI. COI steht für Connect, Open & Inspire und verbindet Menschen und Organisationen, die Lust haben ihr volles 
+
+────────────────────────────────────────────────────────────
+55. try.cai-world.com
+   URL:     https://try.cai-world.com/
+   Cluster: Assessment & Diagnostik | Relevanz: 13 | Seiten: 1
+
+   CAI® World - Teste unsere Coaching Tools für 10 Tage kostenfrei! Virtuell stark führen, coachen & entwickeln – mit CAI® World Ob 1:1-Coaching, Teamentwicklung oder digitale Führung – die einzigartige Kombination von Audio/Video und interaktiven Tools, die speziell für Coaching, Führung und Gesundheit digitalisiert wurden. 10 Tage kostenlos testen 10 Tage kostenlos testen 75 Tools Über 75 Methoden und Instrumente für Coaching, Führung und Gesundheit. Integriert in Audio/Video-Sessions, direkt nutzbar, ohne Installation. 3D Systembrett Das 3D-Systembrett eröffnet neue Perspektiven. Visuell, interaktiv und sofort einsetzbar im virtuellen Raum. 100% DSGVO Hosting in Deutschland oder der Schweiz.
+
+────────────────────────────────────────────────────────────
+56. trytherabot.com
+   URL:     https://www.trytherabot.com/
+   Cluster: Mental Health & Wellbeing | Relevanz: 13 | Seiten: 1
+
+   TheraBot - #1 AI Mental Health Support Platform Trusted Partners & Sponsors Microsoft for Startups Program Nairobi AI Research Partner ElevenLabs Voice AI Technology Miro Collaboration Platform Llama Accelerator AI Innovation Program Our Solutions Comprehensive mental health tools for every need 44,865+ Users Supported 🌍 Worldwide 633,696+ Therapy Sessions 💬 Conversations 69 Countries Reached 🗺️ Global Impact 7 Tools, 1 Mission 🎯 Mental Wellness Download TheraBot Take Wellness Everywhere Get instant access to AI-powered therapy, mood tracking, and wellness resources right in your pocket. 24/7 AI Support Mood Tracking Offline Resources Privacy First Frequently Asked Questions Everything you n
+
+────────────────────────────────────────────────────────────
+57. coachpool.com
+   URL:     https://coachpool.com/pricing
+   Cluster: Sonstiges | Relevanz: 12 | Seiten: 7
+
+   Coach Pool Finde Deinen Coach Kostenlos Einfach Lebendig Du weißt nicht genau, wonach Du suchen sollst? Wir helfen Dir im Coach-Finder. Coachpool ist ein unabhängiges soziales Netzwerk für Coachees und Coaches. 🎤Stimmen aus der Community Na, wann bist du bereit? Ich freue mich wahnsinnig auf dich ✨ Komme in dein persönliches 1:1-Coaching. Zeit für dich und deine Themen. Online Termine buchen Jetzt direkt über die Homepage Termine buchen. Voller Überblick über freie Terminslots! Würdest du wollen, dass dein Kind später so eine Beziehung führt wie du? Du lebst deinen Kindern ihre zukünftige Beziehung vor. Nicht irgendwann. Nicht später. Sondern genau jetzt – in den kleinen Momenten, die nieman
+
+────────────────────────────────────────────────────────────
+58. wejam.ai
+   URL:     https://www.wejam.ai/
+   Cluster: Terminplanung & CRM | Relevanz: 12 | Seiten: 4
+
+   AI Agents for Sales Teams Meet Our Agents Your sales team should spend time with customers — not buried in CRMs, stuck in admin, or sitting through ineffective trainings. Our AI Agents work 24/7: handling the busywork and actively coaching your team, giving every seller superhuman power to close more deals, faster. Pam - Personal Assistant Sales teams lose up to 30% of their time on administrative tasks. Pam logs meetings, drafts follow-ups, and updates your CRM - so you can focus on building relationships and closing deals. Lisa - Sales Coach Generic sales trainings don’t work. Lisa runs hyper-realistic roleplays, teaches best practices grounded in your company’s playbook & customer insight
+
+────────────────────────────────────────────────────────────
+59. coachhub.com
+   URL:     https://www.coachhub.com/
+   Cluster: Coaching-Software (Praxis-Management) | Relevanz: 12 | Seiten: 5
+
+   CoachHub - The Digital Coaching Platform Transform people and organizations Empower all of your people with scalable, measurable digital coaching and drive real business outcomes. Get started Delivering global change for 1,000+ enterprise companies YOUR STRATEGIC PARTNER How we deliver your success Drive measurable business performance Engage and develop people at every level, unleashing talent potential that delivers real business results. Attract & grow top talent Strengthen employer brand and become a destination for top-tier talent. Power strategic change Ensure the success of transformation initiatives, turning strategic plans into lasting business advantage. Unlock transformation with 
+
+────────────────────────────────────────────────────────────
+60. coaching.com
+   URL:     https://www.coaching.com/
+   Cluster: Mental Health & Wellbeing | Relevanz: 12 | Seiten: 5
+
+   Coaching.com The World Is Changing - Coaching Must Too We’re navigating a time of extraordinary change. AI is transforming how work gets done, hybrid models are reshaping how we connect, generational shifts are rewriting workplace norms, and burnout is hitting record highs. Organizations are searching for solutions to build a productive, resilient workforce. In this environment, coaching isn’t a luxury - it’s a necessity. But not just any coaching. Great coaching by great coaches.
+
+
+WEITERE TOOLS (Rang 61–120, Kurzprofile)
+=================================================================
+
+61. lebensverbesserer-app.de [Sonstiges]
+   https://www.lebensverbesserer-app.de/
+   Self-Coaching with the Life-Improver App The Self-Coaching App for iOS The app is your digital coach on the way to a happier life. It serves personal development and self-improvement. Self-coaching assumes that every person knows their problems best 
+
+62. leadwise.app [KI-Coaching-Plattformen]
+   https://leadwise.app/
+   New Manager Training | Leadership Development App Leadership Development App for New Managers New Manager Training: Become the Leader Your Team Believes In 60% of new managers and first-time managers fail within their first two years — not from lack 
+
+63. hedy.ai [Assessment & Diagnostik]
+   https://www.hedy.ai/pricing
+   Real-Time Meeting and Class Coach We value your privacy We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Be the Brightest Person in the Room AI-powered conversati
+
+64. luminous.coach [KI-Coaching-Plattformen]
+   https://www.luminous.coach/
+   AI Coaching for B2B Sales Performance AI-COACHING FOR B2B COMMERCIAL PERFORMANCE Makeevery conversationcount Strengthen your prospect conversations and grow client value through our AI-powered coaching suite, enhanced by humans. Demistify the "Magic"
+
+65. clevermemo.com [Coaching-Software (Praxis-Management)]
+   https://clevermemo.com/
+   Coaching Software für Transfersicherung und Nachhaltigkeit Software für Coaching & Beratung in Ihrem Design Professionelle Umsetzungsbegleitung zwischen Sitzungen. Sichert Fokus, Orientierung & Dranbleiben. Alle Aufgaben, Erkenntnisse und Dokumentati
+
+66. subversiveleader.com [ICF & Zertifizierung]
+   https://subversiveleader.com/
+   Skip to main content Success shouldn't cost you who you are. Meet Zmara — a strategic thinking partner who remembers your leadership reality. Start a free conversation and see what shifts. Not a chatbot that forgets you. A colleague who knows your st
+
+67. sorai.academy [ICF & Zertifizierung]
+   https://sorai.academy/plans
+   Plans & Pricing | Sorai Academy Choose an individual course according to your skill level or get the All-Access membership for full Sorai experience. All-Access One Pass. Complete Mastery Unlock the full Sorai Academy experience. Get one year of unli
+
+68. vivet.ai [Assessment & Diagnostik]
+   https://www.vivet.ai/pricing
+   Vivet.ai — Empower Your Thinking. Elevate Your Impact. Vivet.ai flips the script: the AI prompts you. Using consulting methods, it draws out your insight, structures your thinking, and drafts outputs for your review. You remain the expert; the AI is 
+
+69. subversiveleader.com [ICF & Zertifizierung]
+   https://subversiveleader.com/preismodell
+   Skip to main content Success shouldn't cost you who you are. Meet Zmara — a strategic thinking partner who remembers your leadership reality. Start a free conversation and see what shifts. Not a chatbot that forgets you. A colleague who knows your st
+
+70. coach-bot.de [Sonstiges]
+   https://coach-bot.de/
+   Alexa Skills, Chatbots & Conversational AI for Learning & Development Experts for Interactive Learning Conversational interfaces lift E-Learning to the next level. Create better results through digital training partners that help: Unlike classical vi
+
+71. shanekinkennon.com [Sonstiges]
+   https://www.shanekinkennon.com/
+   Shane Kinkennon: Strategic Leadership Consulting AI Strategy and Implementation Planning I work with smaller enterprises to figure out AI, make plans, and implement in a people-focused way. Your business is under pressure to figure out AI You're unsu
+
+72. sharpist.com [Corporate Learning & L&D]
+   https://www.sharpist.com/
+   Coaching Platform for Leadership Development Leadership development that works Our digital coaching platform empowers your employees to unleash their full potential through 1:1, group, and peer coaching, driving measurable organizational growth. Lear
+
+73. sharpist.com [Corporate Learning & L&D]
+   https://www.sharpist.com/
+   Coaching Platform for Leadership Development Leadership development that works Our digital coaching platform empowers your employees to unleash their full potential through 1:1, group, and peer coaching, driving measurable organizational growth. Lear
+
+74. upcoach.com [ICF & Zertifizierung]
+   https://www.upcoach.com/
+   Build, Sell, and Run Programs — Program Platform Structured programs that get results. The program platform for training, coaching, and consulting companies — and L&D teams. Trusted by 500+ training, coaching, and consulting companies Finally. A plat
+
+75. koviko.de [Corporate Learning & L&D]
+   https://www.koviko.de/
+   koviko – Digitale Lern- und Wissenslösungen KI-Coaching und Wissenssicherung Unsere Produkte unterstützen euch dabei, Wissen strukturiert aufzubauen, langfristig zu sichern, gezielt zu vermitteln und über KI-gestützte Simulationen praktisch zu traini
+
+76. honehq.com [Corporate Learning & L&D]
+   https://www.honehq.com/
+   Employee Development Powered By Humans And AI Access a powerful combination of AI and expert-led development to drive skill building, reinforcement, and behavior change. of our employees say that their performance at work has increased. Kristen Switz
+
+77. chronilogix.com [Coaching-Software (Praxis-Management)]
+   https://chronilogix.com/
+   AI Chronic Care Coaching Platform Meet Chronilogix Cut chronic care coaching costs up to 50% with an Al coach that knows behavioral change. A breakthrough platform combining generative AI and human coaching to revolutionize chronic care—delivering be
+
+78. decisionmaker.k-i-e.com [Assessment & Diagnostik]
+   https://decisionmaker.k-i-e.com/
+   DecisionMaker Digitized Decision Making Management Now just simple for remote and presence collaboration With the KiE-DecisionMaker, people, teams or groups of any size can bring about simple, complicated and complex decisions. Get started I need a s
+
+79. coachrx.app [ICF & Zertifizierung]
+   https://www.coachrx.app/pricing
+   Pricing — CoachRx Pick the plan that fits your coaching business when you sign up for your free trial. We grow as you grow and you can upgrade anytime. Every account includes access to our complete set of premium features. Have more than 150 Clients?
+
+80. gong.io [Sonstiges]
+   https://www.gong.io/
+   Gong - Revenue AI OS Gong Revenue AI OS The #1 AI operating system for Revenue Teams Built to help your revenue team crush goals, close with confidence, and keep growing — ring the gong, deal after deal, quarter after quarter. Trusted by 5,000+ custo
+
+81. trumind.ai [KI-Coaching-Plattformen]
+   https://trumind.ai/pricing
+   Pricing Certified AI Coach $2,500 Key Features Live sessions with Dr. Matt Barney, Founder & CEO Flipped classroom: self paced, 3-5 minute videos Module 1: The Coaching Revolution: Hyperpersonalized AI Assessment Module 2: Leadership Science for the 
+
+82. seraia.ai [Sonstiges]
+   https://seraia.ai/
+   SERAIA® AI Das dialogische Betriebssystem für Organisationen Die erste KI, die Führung, Zusammenarbeit und Entwicklung in Echtzeit unterstützt. Für lebendige, lernfähige Organisationen. Vertrauen führender Organisationen Was SERAIA® einzigartig macht
+
+83. gethuckleberry.com [Assessment & Diagnostik]
+   https://www.gethuckleberry.com/about
+   About | Huckleberry We're your Huckleberry "The best way to improve performance is to get clear, direct feedback from the people you work with." – Andy Grove, former CEO of Intel Andy is onto something here. We all do better work with feedback. Simpl
+
+84. satoriapp.com [Mental Health & Wellbeing]
+   https://satoriapp.com/customer-stories
+   How Coaches are Growing Flourishing Businesses with Satori Platform Pricing Results Resources Login Helping coaches grow flourishing and fulfilling businesses 106K coaching clients served Satori customers share their stories… By trusting Satori to ta
+
+85. trumind.ai [KI-Coaching-Plattformen]
+   https://trumind.ai/pricing
+   Pricing Certified AI Coach $2,500 Key Features Live sessions with Dr. Matt Barney, Founder & CEO Flipped classroom: self paced, 3-5 minute videos Module 1: The Coaching Revolution: Hyperpersonalized AI Assessment Module 2: Leadership Science for the 
+
+86. mycoachz.com [Sonstiges]
+   https://mycoachz.com/
+   Home | myCoachz Available for you 24 hours a day, every day Choose the right coach, register, top up your credit, enjoy an introductory conversation right away, or book a meeting. myCoachz connects coaches and clients Whether you’re looking to improv
+
+87. torch.io [Corporate Learning & L&D]
+   https://www.torch.io/
+   Leadership Development & Coaching Solutions The coaching + AI system powering transformation When change moves faster than people can adapt, Torch uniquely connects leadership growth with business performance. We uncover what’s blocking change and de
+
+88. torch.io [Corporate Learning & L&D]
+   https://torch.io/
+   Leadership Development & Coaching Solutions The coaching + AI system powering transformation When change moves faster than people can adapt, Torch uniquely connects leadership growth with business performance. We uncover what’s blocking change and de
+
+89. dnanalytics.de [Assessment & Diagnostik]
+   https://www.dnanalytics.de/
+   DNAnalytics Gen-AI Services for the Consulting and Research Industries In 2022, OpenAI introduced generative AI and large language models (LLMs), ushering in a new era of computer-led creativity. This innovation has revolutionized culture, art, and b
+
+90. flowit.ai [Assessment & Diagnostik]
+   https://www.flowit.ai/
+   FLOWIT coach for employee retention and growth Your AI-powered coach for employee retention and growth Unleash potential, reach frontline employees, and reduce turnover by up to 30% using psychological approaches. WE COACH FRONTLINE & OFFICE EMPLOYEE
+
+91. miraai.ai [ICF & Zertifizierung]
+   https://miraai.ai/
+   Mira Ai LLC - Advanced AI Solutions What We Do Building AI That Enhances Human Potential At Mira AI, we develop cutting-edge artificial intelligence solutions that solve real-world problems while prioritizing human wellbeing, privacy, and ethical con
+
+92. character.ai [Sonstiges]
+   http://character.ai/about
+   About Character.AI Our Purpose Character.AI empowers people to connect, learn, and tell stories through interactive entertainment. Millions of people visit Character.AI every month, using our technology to supercharge their imaginations. Limitless En
+
+93. coachinglobby.com [Coaching-Software (Praxis-Management)]
+   https://www.coachinglobby.com/
+   Coaching Lobby - Coaching software that saves you time An online coaching platform where life and business coaches can organize their clients. We help you automate your business, so you can focus on the coaching.
+
+94. cloverleaf.me [Assessment & Diagnostik]
+   https://www.cloverleaf.me/
+   Team Development Software for High-Performing Orgs Reading Time: 6 minutes The AI Coach that fully understands your people and the context of the workday. Personalized coaching that knows each person, who they work with, and what’s happening in their
+
+95. coachvox.ai [KI-Avatar / KI-Version des Coaches]
+   https://www.coachvox.ai/gdpr
+   About GDPR | Coachvox AI How we handle your and your clients’ data We take GDPR seriously. As a platform that helps coaches run AI chats with their clients, we’re trusted with sensitive information. This page gives a clear, short overview of how we h
+
+96. jonschumacher.com [Sonstiges]
+   https://www.jonschumacher.com/
+   Webinar Coach, Webinar Consultant, Webinar Expert, Webinar Services Is Your Webinar Underperforming? Looking for a webinar consultant and coach to help? Let me optimize and rescript your webinar so you stop losing money and start making sales. I offe
+
+97. leapsome.com [Assessment & Diagnostik]
+   https://www.leapsome.com/
+   Leapsome | AI-powered HR software and people platform Build high-performing teams. Reduce HR complexity. Leapsome helps you automate admin, unlock performance, and develop your people — with one modular HR platform. Empowering teams at 2,000+ forward
+
+98. fireflies.ai [Transkription & Gesprächsanalyse]
+   https://www.fireflies.ai/pricing
+   Pricing & Plans | Fireflies.ai AI App for Smarter Meeting Notes Supercharge Your Meetings Flexible plans for teams of all sizes. Upgrade to get unlimited transcripts, summaries, and video recordings. Unlimited transcription* Limited AI summaries 800 
+
+99. paperbell.com [Coaching-Software (Praxis-Management)]
+   https://www.paperbell.com/pricing
+   How much is Paperbell coaching software? The Platform Successful Coaches Choose $57/ month Perfect for getting started or staying flexible. $684 $570 / year (2 Mo Free!) 🏆 Your coaching site handled for the next year! All Plans Include: ✅ Unlimited c
+
+100. aira.app [Sonstiges]
+   https://www.aira.app/about
+   About us | Aira AI Sales Agent A Letter from the Founder Twenty-two years of building Upsales taught us what works in sales software. It also taught us what's fundamentally broken—and why nobody's fixed it. The last twelve months, we've been obsessed
+
+101. infinity-box.ai [Sonstiges]
+   https://www.infinity-box.ai/
+   InfinityBox – KI-gestütztes Coaching für deine Mitarbeitenden Kundenbefragung nach 8 Wochen Nutzungszeit In den Episoden wird Wissen individuell, im Dialog mit dem KI-Coach vermittelt. In den Simulationen werden Gespräche aus dem Arbeitsalltag geführ
+
+102. fathom.ai [Transkription & Gesprächsanalyse]
+   https://www.fathom.ai/pricing
+   Pricing to supercharge every meeting Unlimited recordings + transcriptions Instant AI call summaries Clips, playlists, + search across calls per month, per user (2 user min) Everything from Individual Plans Global search across shared calls Playlists
+
+103. focustiger.io [ICF & Zertifizierung]
+   https://focustiger.io/
+   Skip to content Search Menu Distracted? You’re not alone. We fix your focus. Meet Focus Tiger, a science-based tool for better clarity and higher efficiency. Try the free demo OUR FOCUS TIGER CLIENTS THE AWARD-WINNING TOOL Brain-healthier habits. Sha
+
+104. valence.co [Sonstiges]
+   https://www.valence.co/about
+   Valence - About Us 00:00 How the Media Covers AI Parker Mitchell: I thought maybe we could kick it off actually with you, Gillian, and the conversation, the public narrative around AI. How is the media covering the idea of how AI is gonna impact work
+
+105. udemy.com [ICF & Zertifizierung]
+   https://www.udemy.com/pricing
+   Compare Udemy Plans and Pricing Choose a plan for success Starting at $14.00/month Billed monthly or annually. Cancel anytime. Start subscription Access to 28,000+ top courses Goal-focused recommendations AI-powered coding exercises $22.50 a month pe
+
+106. mursion.com [ICF & Zertifizierung]
+   https://www.mursion.com/
+   AI-powered Upskilling Platform | Mursion Upskill your workforce with deliberate, real-world practice Practice matters. That’s why Mursion simulations blend AI and human insight to help teams build leadership, empathy, and communication skills — backe
+
+107. reliefai.ca [Mental Health & Wellbeing]
+   https://reliefai.ca/
+   Home Existing solutions are often expensive, inefficient, and insufficient to meet demand – long waiting times and a shortage of qualified professionals make the problem even worse. Companies lose billions due to illness-related absences, athletes st
+
+108. udemy.com [ICF & Zertifizierung]
+   https://www.udemy.com/pricing
+   Compare Udemy Plans and Pricing Choose a plan for success Starting at $14.00/month Billed monthly or annually. Cancel anytime. Start subscription Access to 28,000+ top courses Goal-focused recommendations AI-powered coding exercises $22.50 a month pe
+
+109. intuitionlabs.ai [ICF & Zertifizierung]
+   https://www.intuitionlabs.ai/
+   AI Software for Life Science & Pharma Will you shape the future, or will the future shape you? Through our innovative AI solutions, we're helping pharmaceutical and life science organizations shape the future with confidence. Learn more Why AI Matter
+
+110. mindsera.com [ICF & Zertifizierung]
+   https://www.mindsera.com/
+   AI Journal for Mental Wellbeing — Mindsera Real people, real impact See what our 80,000 users say about Mindsera. Mindsera seems like a quintessential example of a skillful utilization of AI for the training of the human mind and enhancement of the h
+
+111. udemy.com [ICF & Zertifizierung]
+   https://www.udemy.com/pricing
+   Compare Udemy Plans and Pricing Choose a plan for success Starting at $14.00/month Billed monthly or annually. Cancel anytime. Start subscription Access to 28,000+ top courses Goal-focused recommendations AI-powered coding exercises $22.50 a month pe
+
+112. valence.co [Sonstiges]
+   https://www.valence.co/about
+   Valence - About Us 00:00 How the Media Covers AI Parker Mitchell: I thought maybe we could kick it off actually with you, Gillian, and the conversation, the public narrative around AI. How is the media covering the idea of how AI is gonna impact work
+
+113. udemy.com [ICF & Zertifizierung]
+   https://www.udemy.com/pricing
+   Compare Udemy Plans and Pricing Choose a plan for success Starting at $14.00/month Billed monthly or annually. Cancel anytime. Start subscription Access to 28,000+ top courses Goal-focused recommendations AI-powered coding exercises $22.50 a month pe
+
+114. thankscoach.io [Sonstiges]
+   https://www.thankscoach.io/insights
+   Insights zum digitalen Coaching — thankscoach Ein evidenzbasierter Blick auf Lernen und Veränderung in Organisationen. In einer zunehmend komplexen, unsicheren und dynamischen Umwelt sind Organisationen gefordert, Lernfähigkeit, Selbstführung und Ada
+
+115. coachinglobby.com [Terminplanung & CRM]
+   https://www.coachinglobby.com/pricing
+   Coaching Lobby - Pricing Each Coach gets their own schedule Clients can be assigned to specific coaches Each Coach gets their own Discovery area 1 Coach Unlimited Clients Private and Shared Notes Private and Shared Tasks Client Scheduling Client Agre
+
+116. dialogueswithhelena.app [ICF & Zertifizierung]
+   https://www.dialogueswithhelena.app/
+   Dialogues with Helena Women-Centered Coaching App Helena Demuynck is the founder of oxygen4leadership and a transformational coach for women leaders worldwide. For more than 20 years, she has guided executives and entrepreneurs to align ambition with
+
+117. helloezra.com [Coaching-Software (Praxis-Management)]
+   https://www.helloezra.com/
+   Digital Coaching Platform for Enterprise Teams Transform your business by coaching your people to greatness The most important thing for any business is their people. That’s why it’s vital to help them learn, develop, and grow. Get in touch to find o
+
+118. onesome.de [KI-Coaching-Plattformen]
+   https://www.onesome.de/
+   Zum Hauptinhalt springen Zum Footer springen Wie funktioniert's? Anwendung FrauenförderungKonfliktlösung im TeamRestrukturierungNachwuchsführungskräfteTeams im WandelGesundes Führen Führung Team Transformation RessourcenTeamUnsere Kunden LoginDemo an
+
+119. inflection.ai [Sonstiges]
+   https://inflection.ai/blog
+   Inflection AI | Blog Inflection Insights: a dialog with your data Mar 28, 2025 Porting Inflection AI’s Inference Stack to Intel Gaudi: Lessons Learned Mar 25, 2025 Little by Little, a Little Becomes a Lot Mar 6, 2025 Bringing Agentic Workflows into I
+
+120. bettercoach.io [Corporate Learning & L&D]
+   https://www.bettercoach.io/
+   Supporting people on their path to fulfillment at work The one-stop-shop for leadership development Elevate your leadership development strategy with us. Our satisfied clients You can rely on our We offer 1:1 coaching, team development and consulting
