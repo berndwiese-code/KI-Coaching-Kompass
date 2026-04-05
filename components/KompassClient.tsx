@@ -470,30 +470,70 @@ export default function KompassClient() {
         .filter-toggle-btn:hover { background: var(--bg3); }
 
         @media (max-width: 768px) {
+          /* NAV */
           .hamburger { display: flex; }
           .nav-center { display: none; }
           .kck-nav { padding: 0.9rem 1.2rem; }
           .nav-logo { font-size: 0.88rem; white-space: nowrap; }
-          .kompass-app { flex-direction: column; overflow: visible; }
+
+          /* APP LAYOUT */
+          .kompass-app { flex-direction: column; overflow: hidden; }
           .k-sidebar {
             width: 100%; border-right: none;
             border-bottom: 1px solid var(--border);
-            overflow: visible; flex-shrink: 0;
+            overflow: hidden; flex-shrink: 0;
           }
           .k-sidebar-body { display: none; }
           .k-sidebar-body.open { display: block; }
           .filter-toggle-btn { display: flex; align-items: center; justify-content: space-between; }
-          .k-main { overflow: visible; }
-          .kacheln-container { overflow: visible; padding: 12px 14px; }
-          .kacheln-grid { max-width: 100%; gap: 12px; }
-          /* Kacheln auf Mobile: vertikal statt nebeneinander */
-          .kachel { flex-direction: column; gap: 12px; padding: 14px; }
-          .kachel-actions { flex-direction: row; align-items: center; gap: 8px; justify-content: flex-start; }
-          .kachel-zusammenfassung { -webkit-line-clamp: 3; }
-          .detail-container { padding: 14px; }
+          .k-main { overflow: hidden; }
+
+          /* KACHELN CONTAINER */
+          .kacheln-container { overflow-y: auto; overflow-x: hidden; padding: 12px 14px; }
+          .kacheln-grid { max-width: 100%; gap: 14px; }
+
+          /* KACHEL: Option B — sauberes vertikales Layout */
+          .kachel { flex-direction: column; gap: 0; padding: 16px; overflow: hidden; }
+          .kachel-body { width: 100%; min-width: 0; }
+
+          /* Badge oben, URL darunter */
+          .kachel-header {
+            flex-direction: column-reverse; align-items: flex-start;
+            gap: 6px; margin-bottom: 10px;
+          }
+          .kachel-url {
+            white-space: normal; word-break: break-all;
+            font-size: 0.75rem;
+          }
+          .badge { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+
+          /* Beschreibung: 3 Zeilen */
+          .kachel-zusammenfassung {
+            -webkit-line-clamp: 3; margin-bottom: 12px;
+            word-break: break-word;
+          }
+
+          /* Meta: jede Info in eigener Zeile */
+          .kachel-meta { flex-direction: column; gap: 5px; margin-bottom: 14px; }
+          .meta-item { width: 100%; flex-wrap: nowrap; }
+          .meta-sep { display: none; }
+
+          /* Details-Button: volle Breite */
+          .kachel-actions { width: 100%; margin-top: 4px; }
+          .kachel-actions .btn {
+            width: 100%; text-align: center;
+            display: block; padding: 10px;
+          }
+
+          /* DETAIL */
+          .detail-container { padding: 14px; overflow-x: hidden; }
           .detail-card { padding: 18px; }
           .detail-grid { grid-template-columns: 1fr; }
+
+          /* LISTE */
           .listen-container { overflow-x: auto; }
+
+          /* SUB-TABS */
           .sub-tabs { padding: 0 14px; }
         }
 
