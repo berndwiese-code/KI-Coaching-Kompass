@@ -865,7 +865,7 @@ export default function KompassClient() {
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
             <a href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</a>
             <a href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</a>
-            <a href="https://isha.de" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Zuhören ↗</a>
+            <a href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</a>
             <a className="active" onClick={() => setMenuOpen(false)}>Kompass</a>
             <a href="#" onClick={() => setMenuOpen(false)}>Kontakt</a>
           </div>

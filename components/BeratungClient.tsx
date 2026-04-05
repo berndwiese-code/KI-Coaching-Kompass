@@ -168,6 +168,19 @@ export default function BeratungClient() {
           position: relative; overflow: hidden;
           background: var(--bg);
         }
+        .hero-portrait {
+          position: absolute; top: 0; right: 0; bottom: 0;
+          width: 300px; overflow: hidden; pointer-events: none;
+        }
+        .hero-portrait img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center top;
+          display: block;
+          mask-image: linear-gradient(to right, transparent 0%, black 30%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+        }
+        @media (max-width: 900px) { .hero-portrait { display: none; } }
+
         .br-hero-orb {
           position: absolute; top: 50%; left: 50%;
           transform: translate(-50%, -60%);
@@ -413,6 +426,9 @@ export default function BeratungClient() {
 
         {/* HERO */}
         <section className="br-hero">
+          <div className="hero-portrait">
+            <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+          </div>
           <div className="br-hero-orb" />
           <div className="eyebrow">Beratung</div>
           <h1 className="br-hero-title">

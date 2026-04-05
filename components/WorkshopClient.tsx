@@ -145,6 +145,19 @@ export default function WorkshopClient() {
           position: relative; overflow: hidden;
           transition: background 0.35s;
         }
+        .hero-portrait {
+          position: absolute; top: 0; right: 0; bottom: 0;
+          width: 300px; overflow: hidden; pointer-events: none;
+        }
+        .hero-portrait img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center top;
+          display: block;
+          mask-image: linear-gradient(to right, transparent 0%, black 30%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+        }
+        @media (max-width: 900px) { .hero-portrait { display: none; } }
+
         .ws-hero-orb {
           position: absolute; top: 50%; left: 50%;
           transform: translate(-50%, -60%);
@@ -482,7 +495,7 @@ export default function WorkshopClient() {
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
             <a href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</a>
             <a href="/workshop" className="active" onClick={() => setMenuOpen(false)}>Workshop</a>
-            <a href="https://isha.de" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Zuhören ↗</a>
+            <a href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</a>
             <a href="/kompass" onClick={() => setMenuOpen(false)}>Kompass</a>
             <a href="#" onClick={() => setMenuOpen(false)}>Kontakt</a>
           </div>
@@ -490,6 +503,9 @@ export default function WorkshopClient() {
 
         {/* HERO */}
         <section className="ws-hero">
+          <div className="hero-portrait">
+            <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+          </div>
           <div className="ws-hero-orb" />
           <div className="eyebrow">Zweitägiger Online-Workshop</div>
           <h1 className="ws-hero-title">

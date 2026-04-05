@@ -183,6 +183,19 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           overflow: hidden;
           transition: background 0.35s;
         }
+        .hero-portrait {
+          position: absolute; top: 0; right: 0; bottom: 0;
+          width: 300px; overflow: hidden; pointer-events: none;
+        }
+        .hero-portrait img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center top;
+          display: block;
+          mask-image: linear-gradient(to right, transparent 0%, black 30%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+        }
+        @media (max-width: 900px) { .hero-portrait { display: none; } }
+
         .hero-orb {
           position: absolute;
           top: 50%; left: 50%;
@@ -518,7 +531,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
             <Link href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</Link>
             <Link href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</Link>
-            <a href="https://isha.de" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Zuhören ↗</a>
+            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</Link>
             <Link href="/kompass" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <a href="#" onClick={() => setMenuOpen(false)}>Kontakt</a>
           </div>
@@ -526,6 +539,9 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
 
         {/* HERO */}
         <div className="hero">
+          <div className="hero-portrait">
+            <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+          </div>
           <div className="hero-orb" />
           <p className="hero-eyebrow">{startseite?.heroEyebrow ?? "KI-Coaching Orientierungsplattform"}</p>
           <h1 className="hero-title">
