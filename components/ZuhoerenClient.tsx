@@ -548,7 +548,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
             </p>
           </div>
           <div className="zh-standing">
-            {zuhoeren?.zitatKlarheit ?? "„Klarheit entsteht nicht, weil jemand sie dir gibt. Sondern weil sie in dir bereits da ist.""}
+            {zuhoeren?.zitatKlarheit ?? `\u201eKlarheit entsteht nicht, weil jemand sie dir gibt. Sondern weil sie in dir bereits da ist.\u201c`}
           </div>
           <div className="zh-prose">
             <p>
@@ -632,7 +632,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
             <p>Es gibt kein Ziel, das erreicht werden muss.</p>
           </div>
           <div className="zh-standing">
-            {zuhoeren?.zitatGespraech ?? "„Und genau deshalb entsteht oft das, was sonst schwer zugänglich ist: echte Klarheit.""}
+            {zuhoeren?.zitatGespraech ?? `\u201eUnd genau deshalb entsteht oft das, was sonst schwer zugänglich ist: echte Klarheit.\u201c`}
           </div>
         </section>
 
