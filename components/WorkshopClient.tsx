@@ -480,7 +480,7 @@ export default function WorkshopClient() {
             </button>
           </div>
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-            <a href="#" onClick={() => setMenuOpen(false)}>Beratung</a>
+            <a href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</a>
             <a href="/workshop" className="active" onClick={() => setMenuOpen(false)}>Workshop</a>
             <a href="https://isha.de" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Zuhören ↗</a>
             <a href="/kompass" onClick={() => setMenuOpen(false)}>Kompass</a>

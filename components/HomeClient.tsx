@@ -516,7 +516,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
             </button>
           </div>
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-            <a href="#" onClick={() => setMenuOpen(false)}>Beratung</a>
+            <Link href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</Link>
             <Link href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <a href="https://isha.de" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Zuhören ↗</a>
             <Link href="/kompass" onClick={() => setMenuOpen(false)}>Kompass</Link>
