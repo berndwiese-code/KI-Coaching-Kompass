@@ -2,10 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Workshop } from "@/sanity/lib/queries";
 
 type Theme = "light" | "dark";
 
-export default function WorkshopClient() {
+type WorkshopClientProps = {
+  workshop?: Workshop | null;
+};
+
+export default function WorkshopClient({ workshop }: WorkshopClientProps) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -507,20 +512,20 @@ export default function WorkshopClient() {
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
           </div>
           <div className="ws-hero-orb" />
-          <div className="eyebrow">Zweitägiger Online-Workshop</div>
+          <div className="eyebrow">{workshop?.heroEyebrow ?? "Zweitägiger Online-Workshop"}</div>
           <h1 className="ws-hero-title">
-            KI-Coaching im<br /><em>Unternehmen</em>
+            {workshop?.heroTitel ?? <>KI-Coaching im<br /><em>Unternehmen</em></>}
           </h1>
-          <p className="ws-hero-sub">verstehen &mdash; bewerten &mdash; einführen</p>
+          <p className="ws-hero-sub">{workshop?.heroUntertitel ?? "verstehen \u2014 bewerten \u2014 einführen"}</p>
           <div className="ws-hero-facts">
-            <span className="fact-pill">2 Nachmittage à 4 Stunden</span>
-            <span className="fact-pill">Online via Zoom</span>
-            <span className="fact-pill">Max. 12 Teilnehmer</span>
-            <span className="fact-pill highlight">399 EUR pro Person</span>
+            <span className="fact-pill">{workshop?.heroPill1 ?? "2 Nachmittage à 4 Stunden"}</span>
+            <span className="fact-pill">{workshop?.heroPill2 ?? "Online via Zoom"}</span>
+            <span className="fact-pill">{workshop?.heroPill3 ?? "Max. 12 Teilnehmer"}</span>
+            <span className="fact-pill highlight">{workshop?.heroPill4 ?? "399 EUR pro Person"}</span>
           </div>
           <div className="ws-hero-cta">
-            <a href="mailto:kontakt@ki-coaching-kompass.de" className="btn-primary">Jetzt anmelden</a>
-            <a href="#was-passiert" className="btn-outline">Mehr erfahren</a>
+            <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-primary">{workshop?.heroCtaPrimary ?? "Jetzt anmelden"}</a>
+            <a href="#was-passiert" className="btn-outline">{workshop?.heroCtaSecondary ?? "Mehr erfahren"}</a>
           </div>
         </section>
 
@@ -716,17 +721,16 @@ export default function WorkshopClient() {
         <section className="ws-cta">
           <div className="cta-inner">
             <p className="sec-eyebrow">Anmeldung</p>
-            <h2 className="sec-title">Nächster <em>Termin</em></h2>
+            <h2 className="sec-title">{workshop?.ctaTitel ?? <>Nächster <em>Termin</em></>}</h2>
             <div className="cta-preis">399 EUR</div>
             <p className="cta-preis-label">pro Person · inkl. aller Materialien und Gespräche</p>
             <div className="cta-termin">Nächster Termin: wird bekannt gegeben</div>
             <div className="cta-buttons">
-              <a href="mailto:kontakt@ki-coaching-kompass.de" className="btn-primary">Jetzt anmelden</a>
-              <a href="mailto:kontakt@ki-coaching-kompass.de" className="btn-outline">Fragen vorab schreiben</a>
+              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-primary">{workshop?.ctaButton ?? "Jetzt anmelden"}</a>
+              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-outline">Fragen vorab schreiben</a>
             </div>
             <p className="cta-note">
-              Mit Anmeldung erhalten Sie sofort Zugang zu Ihren Vorbereitungsmaterialien<br />
-              und einen Buchungslink für Ihr persönliches Vorgespräch.
+              {workshop?.ctaBody ?? "Mit Anmeldung erhalten Sie sofort Zugang zu Ihren Vorbereitungsmaterialien und einen Buchungslink für Ihr persönliches Vorgespräch."}
             </p>
           </div>
         </section>

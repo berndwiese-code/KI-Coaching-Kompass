@@ -3,10 +3,16 @@ import { startseite } from "./startseite";
 import { tools } from "./tools";
 import { artikel } from "./artikel";
 import { testimonials } from "./testimonials";
+import { workshop } from "./workshop";
+import { beratung } from "./beratung";
+import { zuhoeren } from "./zuhoeren";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   startseite,
   tools,
   artikel,
   testimonials,
+  workshop,
+  beratung,
+  zuhoeren,
 ];

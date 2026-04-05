@@ -2,11 +2,16 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Beratung } from "@/sanity/lib/queries";
 
 type Theme = "light" | "dark";
 type Tab = "unternehmen" | "coaches";
 
-export default function BeratungClient() {
+type BeratungClientProps = {
+  beratung?: Beratung | null;
+};
+
+export default function BeratungClient({ beratung }: BeratungClientProps) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -430,15 +435,12 @@ export default function BeratungClient() {
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
           </div>
           <div className="br-hero-orb" />
-          <div className="eyebrow">Beratung</div>
+          <div className="eyebrow">{beratung?.heroEyebrow ?? "Beratung"}</div>
           <h1 className="br-hero-title">
-            KI-Coaching-Software<br />
-            <em>gezielt einsetzen.</em>
+            {beratung?.heroTitel ?? <>KI-Coaching-Software<br /><em>gezielt einsetzen.</em></>}
           </h1>
           <p className="br-hero-lead">
-            Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen,
-            jede mit eigenen Stärken, Risiken und Anwendungsfällen.
-            Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen.
+            {beratung?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
           </p>
 
           {/* TABS */}
@@ -645,14 +647,13 @@ export default function BeratungClient() {
 
           <div className="br-cta-block">
             <h3 className="br-cta-title">
-              Bereit für den ersten Schritt<br /><em>in Ihrer Organisation?</em>
+              {beratung?.unternehmenCtaTitel ?? <>Bereit für den ersten Schritt<br /><em>in Ihrer Organisation?</em></>}
             </h3>
             <p className="br-cta-body">
-              Ein unverbindliches Erstgespräch klärt, ob und wie KI-Coaching zu Ihrem
-              Unternehmen passt. Ohne Tool-Bias, ohne Verkaufsdruck.
+              {beratung?.unternehmenCtaBody ?? "Ein unverbindliches Erstgespräch klärt, ob und wie KI-Coaching zu Ihrem Unternehmen passt. Ohne Tool-Bias, ohne Verkaufsdruck."}
             </p>
-            <a href="mailto:bernd.wiese@googlemail.com" className="br-cta-btn">
-              Erstgespräch anfragen
+            <a href={`mailto:${beratung?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="br-cta-btn">
+              {beratung?.unternehmenCtaButton ?? "Erstgespräch anfragen"}
             </a>
           </div>
         </div>
@@ -858,14 +859,13 @@ export default function BeratungClient() {
 
           <div className="br-cta-block">
             <h3 className="br-cta-title">
-              Starten Sie mit einem<br /><em>Orientierungsgespräch</em>
+              {beratung?.coachesCtaTitel ?? <>Starten Sie mit einem<br /><em>Orientierungsgespräch</em></>}
             </h3>
             <p className="br-cta-body">
-              60 Minuten, in denen wir Ihre aktuelle Praxis anschauen und klären,
-              welche KI-Tools für Sie wirklich sinnvoll sind — und welche nicht.
+              {beratung?.coachesCtaBody ?? "60 Minuten, in denen wir Ihre aktuelle Praxis anschauen und klären, welche KI-Tools für Sie wirklich sinnvoll sind — und welche nicht."}
             </p>
-            <a href="mailto:bernd.wiese@googlemail.com" className="br-cta-btn">
-              Orientierungsgespräch buchen
+            <a href={`mailto:${beratung?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="br-cta-btn">
+              {beratung?.coachesCtaButton ?? "Orientierungsgespräch buchen"}
             </a>
           </div>
         </div>

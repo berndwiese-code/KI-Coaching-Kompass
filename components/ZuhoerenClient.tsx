@@ -2,10 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Zuhoeren } from "@/sanity/lib/queries";
 
 type Theme = "light" | "dark";
 
-export default function ZuhoerenClient() {
+type ZuhoerenClientProps = {
+  zuhoeren?: Zuhoeren | null;
+};
+
+export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -503,18 +508,14 @@ export default function ZuhoerenClient() {
           <div className="zh-hero-orb" />
           <div className="zh-hero-text">
             <div className="eyebrow">Zuhören</div>
-            <h1 className="zh-hero-title">
-              Die meisten Menschen<br />
-              werden gehört.<br />
-              Aber nur selten<br />
-              <em>wirklich.</em>
+            <h1 className="zh-hero-title" style={{ whiteSpace: "pre-line" }}>
+              {zuhoeren?.heroTitel ?? <>Die meisten Menschen<br />werden gehört.<br />Aber nur selten<br /><em>wirklich.</em></>}
             </h1>
-            <p className="zh-hero-subtitle">
-              Hier geht es nicht um Antworten.<br />
-              Sondern darum, dass du dich selbst wieder hörst.
+            <p className="zh-hero-subtitle" style={{ whiteSpace: "pre-line" }}>
+              {zuhoeren?.heroSubtitel ?? "Hier geht es nicht um Antworten.\nSondern darum, dass du dich selbst wieder hörst."}
             </p>
-            <a href="mailto:bernd.wiese@googlemail.com" className="zh-hero-cta">
-              Gespräch anfragen
+            <a href={`mailto:${zuhoeren?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="zh-hero-cta">
+              {zuhoeren?.heroCta ?? "Gespräch anfragen"}
             </a>
           </div>
           <div className="zh-hero-image">
@@ -547,8 +548,7 @@ export default function ZuhoerenClient() {
             </p>
           </div>
           <div className="zh-standing">
-            „Klarheit entsteht nicht, weil jemand sie dir gibt.
-            Sondern weil sie in dir bereits da ist."
+            {zuhoeren?.zitatKlarheit ?? "„Klarheit entsteht nicht, weil jemand sie dir gibt. Sondern weil sie in dir bereits da ist.""}
           </div>
           <div className="zh-prose">
             <p>
@@ -632,7 +632,7 @@ export default function ZuhoerenClient() {
             <p>Es gibt kein Ziel, das erreicht werden muss.</p>
           </div>
           <div className="zh-standing">
-            „Und genau deshalb entsteht oft das, was sonst schwer zugänglich ist: echte Klarheit."
+            {zuhoeren?.zitatGespraech ?? "„Und genau deshalb entsteht oft das, was sonst schwer zugänglich ist: echte Klarheit.""}
           </div>
         </section>
 
@@ -730,20 +730,17 @@ export default function ZuhoerenClient() {
 
         {/* CTA */}
         <section className="zh-cta-section">
-          <span className="zh-cta-eyebrow">Einladung</span>
-          <h2 className="zh-cta-title">
-            Wenn du das Gefühl hast,<br />
-            dass es Zeit ist, einmal<br />
-            <em>wirklich gehört zu werden.</em>
+          <span className="zh-cta-eyebrow">{zuhoeren?.ctaEyebrow ?? "Einladung"}</span>
+          <h2 className="zh-cta-title" style={{ whiteSpace: "pre-line" }}>
+            {zuhoeren?.ctaTitel ?? <>Wenn du das Gefühl hast,<br />dass es Zeit ist, einmal<br /><em>wirklich gehört zu werden.</em></>}
           </h2>
-          <p className="zh-cta-body">
-            Du musst nichts vorbereiten.<br />
-            Du darfst genau so kommen, wie du gerade bist.
+          <p className="zh-cta-body" style={{ whiteSpace: "pre-line" }}>
+            {zuhoeren?.ctaBody ?? "Du musst nichts vorbereiten.\nDu darfst genau so kommen, wie du gerade bist."}
           </p>
-          <a href="mailto:bernd.wiese@googlemail.com" className="zh-cta-btn">
-            Gespräch anfragen
+          <a href={`mailto:${zuhoeren?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="zh-cta-btn">
+            {zuhoeren?.ctaButton ?? "Gespräch anfragen"}
           </a>
-          <p className="zh-cta-note">Ohne Verpflichtung. Einfach, um es einmal zu erleben.</p>
+          <p className="zh-cta-note">{zuhoeren?.ctaNote ?? "Ohne Verpflichtung. Einfach, um es einmal zu erleben."}</p>
         </section>
 
         {/* FOOTER */}

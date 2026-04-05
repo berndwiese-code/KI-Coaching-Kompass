@@ -95,3 +95,79 @@ export async function getArtikel(): Promise<Artikel[]> {
 export async function getTestimonials(): Promise<Testimonial[]> {
   return client.fetch(`*[_type == "testimonials"] | order(_createdAt asc){ _id, zitat, name, rolle }`)
 }
+
+// ── WORKSHOP ──────────────────────────────────────────────────────────────────
+
+export type Workshop = {
+  heroEyebrow?: string;
+  heroTitel?: string;
+  heroUntertitel?: string;
+  heroPill1?: string;
+  heroPill2?: string;
+  heroPill3?: string;
+  heroPill4?: string;
+  heroCtaPrimary?: string;
+  heroCtaSecondary?: string;
+  ctaTitel?: string;
+  ctaBody?: string;
+  ctaButton?: string;
+  ctaEmail?: string;
+};
+
+export async function getWorkshop(): Promise<Workshop | null> {
+  return client.fetch(`*[_type == "workshop"][0]{
+    heroEyebrow, heroTitel, heroUntertitel,
+    heroPill1, heroPill2, heroPill3, heroPill4,
+    heroCtaPrimary, heroCtaSecondary,
+    ctaTitel, ctaBody, ctaButton, ctaEmail
+  }`)
+}
+
+// ── BERATUNG ──────────────────────────────────────────────────────────────────
+
+export type Beratung = {
+  heroEyebrow?: string;
+  heroTitel?: string;
+  heroLead?: string;
+  unternehmenCtaTitel?: string;
+  unternehmenCtaBody?: string;
+  unternehmenCtaButton?: string;
+  coachesCtaTitel?: string;
+  coachesCtaBody?: string;
+  coachesCtaButton?: string;
+  kontaktEmail?: string;
+};
+
+export async function getBeratung(): Promise<Beratung | null> {
+  return client.fetch(`*[_type == "beratung"][0]{
+    heroEyebrow, heroTitel, heroLead,
+    unternehmenCtaTitel, unternehmenCtaBody, unternehmenCtaButton,
+    coachesCtaTitel, coachesCtaBody, coachesCtaButton,
+    kontaktEmail
+  }`)
+}
+
+// ── ZUHÖREN ───────────────────────────────────────────────────────────────────
+
+export type Zuhoeren = {
+  heroTitel?: string;
+  heroSubtitel?: string;
+  heroCta?: string;
+  zitatKlarheit?: string;
+  zitatGespraech?: string;
+  ctaEyebrow?: string;
+  ctaTitel?: string;
+  ctaBody?: string;
+  ctaButton?: string;
+  ctaNote?: string;
+  kontaktEmail?: string;
+};
+
+export async function getZuhoeren(): Promise<Zuhoeren | null> {
+  return client.fetch(`*[_type == "zuhoeren"][0]{
+    heroTitel, heroSubtitel, heroCta,
+    zitatKlarheit, zitatGespraech,
+    ctaEyebrow, ctaTitel, ctaBody, ctaButton, ctaNote,
+    kontaktEmail
+  }`)
+}
