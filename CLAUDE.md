@@ -3,7 +3,7 @@
 ## Stack
 - **Framework**: Next.js 15 (App Router), React 18
 - **Styling**: Inline `<style>` in JSX — kein Tailwind, kein CSS-Modul. CSS Custom Properties: `--gold`, `--gold2`, `--bg`, `--bg2`, `--surface`, `--text`, `--text2`, `--muted`, `--border`, `--border2`, `--shadow`
-- **CMS**: Sanity v5.14.1 + @sanity/cli v5.14.1 + @sanity/client v7 + next-sanity v9.8
+- **CMS**: Sanity v5.19 + @sanity/cli v6 + @sanity/client v7 + next-sanity v9.8
 - **Hosting**: Vercel (auto-deploy bei git push auf main)
 - **Repo lokal**: `C:\Users\bernd\Desktop\KI-Coaching-Kompass`
 - **Push-Befehl**: `cd "C:\Users\bernd\Desktop\KI-Coaching-Kompass"; git push`
@@ -25,6 +25,9 @@ Alle `app/*/page.tsx` sind async Server Components, die Sanity-Daten fetchen und
 - **Schemas**: `sanity/schemaTypes/` — startseite, tools, artikel, testimonials, workshop, beratung, zuhoeren
 - **Queries**: `sanity/lib/queries.ts` — je ein Type + getX() pro Seite
 - **Studio-Deploy**: `npx sanity deploy` direkt aus dem Repo-Root (`C:\Users\bernd\Desktop\KI-Coaching-Kompass`). `sanity.cli.ts` und `sanity.config.ts` liegen im Root — kein separates Studio-Verzeichnis nötig.
+- **Studio-URL**: https://ki-coaching-kompass.sanity.studio/ (appId: r3k22vpi0pzm0w5r8qngj3fw)
+- **Node.js**: v22.x LTS erforderlich. @sanity/cli v6 funktioniert nicht mit Node.js 20.x (zu alt) oder Node.js 24.x ohne jsdom-Override.
+- **jsdom-Override** in package.json nötig: `"overrides": { "@sanity/cli-core": { "jsdom": "24.1.3" } }` — verhindert ESM-Kompatibilitätsfehler mit @asamuzakjp/css-color.
 - Alle Seiten haben `??`-Fallbacks, sodass alles auch ohne Sanity-Inhalt funktioniert.
 
 ## Architektur-Regeln (nicht ändern ohne Absprache)
