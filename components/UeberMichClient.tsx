@@ -167,7 +167,7 @@ export default function UeberMichClient() {
           font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase;
           color: var(--gold); margin-bottom: 2rem;
         }
-        .um-eyebrow::before { content: '\2014'; color: var(--gold); }
+        .um-eyebrow::before { content: '—'; color: var(--gold); }
         .um-name {
           font-family: 'Cormorant Garamond', serif;
           font-size: clamp(2.8rem, 5vw, 4.2rem);
@@ -250,7 +250,7 @@ export default function UeberMichClient() {
         }
         .um-contact-item:hover { color: var(--gold); }
         .um-contact-item::before {
-          content: '\2014';
+          content: '—';
           color: var(--gold);
           font-size: 0.85rem;
           flex-shrink: 0;
