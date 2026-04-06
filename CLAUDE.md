@@ -3,7 +3,7 @@
 ## Stack
 - **Framework**: Next.js 15 (App Router), React 18
 - **Styling**: Inline `<style>` in JSX — kein Tailwind, kein CSS-Modul. CSS Custom Properties: `--gold`, `--gold2`, `--bg`, `--bg2`, `--surface`, `--text`, `--text2`, `--muted`, `--border`, `--border2`, `--shadow`
-- **CMS**: Sanity v5.17.1 + @sanity/client v7 + next-sanity v9.8
+- **CMS**: Sanity v5.14.1 + @sanity/cli v5.14.1 + @sanity/client v7 + next-sanity v9.8
 - **Hosting**: Vercel (auto-deploy bei git push auf main)
 - **Repo lokal**: `C:\Users\bernd\Desktop\KI-Coaching-Kompass`
 - **Push-Befehl**: `cd "C:\Users\bernd\Desktop\KI-Coaching-Kompass"; git push`
@@ -24,15 +24,8 @@ Alle `app/*/page.tsx` sind async Server Components, die Sanity-Daten fetchen und
 - **Project ID**: w8oq2446, Dataset: production
 - **Schemas**: `sanity/schemaTypes/` — startseite, tools, artikel, testimonials, workshop, beratung, zuhoeren
 - **Queries**: `sanity/lib/queries.ts` — je ein Type + getX() pro Seite
-- **Studio-Deploy KAPUTT**: `@sanity/cli` max v5.14.1 ist inkompatibel mit `sanity` v5.17.1. `npx sanity deploy` funktioniert nicht. Alle Seiten haben `??`-Fallbacks, sodass alles ohne Sanity-Inhalt funktioniert.
-
-## Offene strategische Entscheidung
-Bernd möchte Texte **ohne Code-Änderung, mit der Maus** editieren. Optionen:
-1. **Sanity v6 + React 19 Upgrade** — sofortige Live-Updates, einmalig 2-3h Aufwand, etwas Risiko
-2. **TinaCMS Migration** — Browser-UI, aber ~2 Min. bis live, 3-4h Aufwand
-3. **Status quo** — Text im Code ändern + git push, ~2 Min. bis live
-
-Entscheidung steht noch aus. Nicht anfangen ohne explizite Bestätigung von Bernd.
+- **Studio-Deploy**: `npx sanity deploy` direkt aus dem Repo-Root (`C:\Users\bernd\Desktop\KI-Coaching-Kompass`). `sanity.cli.ts` und `sanity.config.ts` liegen im Root — kein separates Studio-Verzeichnis nötig.
+- Alle Seiten haben `??`-Fallbacks, sodass alles auch ohne Sanity-Inhalt funktioniert.
 
 ## Architektur-Regeln (nicht ändern ohne Absprache)
 - Kein Tailwind einführen
