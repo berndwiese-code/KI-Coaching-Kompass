@@ -453,7 +453,12 @@ export default function KompassClient() {
           transition: color 0.2s;
         }
         .mobile-menu a:last-child { border-bottom: none; }
-        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-menu a:hover, .mobile-menu a.active { color: var(--gold); }
+        .mobile-menu a.sub-item {
+          padding-left: 2.5rem; font-size: 0.68rem;
+          color: var(--muted);
+        }
+        .mobile-menu a.sub-item::before { content: '→ '; color: var(--gold); }
         @media (max-width: 600px) {
           .nav-cta { display: none; }
           .mobile-menu { left: auto; right: 0; width: min(88vw, 300px); }
@@ -864,10 +869,11 @@ export default function KompassClient() {
           </div>
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
             <Link href="/" onClick={() => setMenuOpen(false)}>Coaching und KI</Link>
-            <Link href="/beratung" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/workshop" onClick={() => setMenuOpen(false)}>Einführung von KI-Coaching</Link>
+            <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
+            <Link href="/ki-coaching/beratung" className="sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Einführung von KI-Coaching</Link>
+            <Link href="/ki-coaching/kompass" className="active sub-item" onClick={() => setMenuOpen(false)}>KI-Tools entdecken</Link>
             <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Tiefes Zuhören (und KI)</Link>
-            <Link href="/kompass" className="active" onClick={() => setMenuOpen(false)}>KI-Tools entdecken</Link>
             <Link href="/ueber-mich" onClick={() => setMenuOpen(false)}>Über mich</Link>
           </div>
         </nav>
