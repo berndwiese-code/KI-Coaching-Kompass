@@ -6,8 +6,21 @@ import { VisualEditing } from "next-sanity";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "KI Coaching Kompass",
-  description: "Orientierung für Menschen, die KI zur persönlichen Reflexion nutzen.",
+  metadataBase: new URL("https://ki-coaching-kompass.vercel.app"),
+  title: {
+    default: "KI-Coaching Kompass · Bernd Wiese",
+    template: "%s | KI-Coaching Kompass",
+  },
+  description:
+    "Ich begleite Unternehmen, Coaches und Menschen beim bewussten Umgang mit KI — mit Methode, Präsenz und ohne Hype. Bernd Wiese, Staufen.",
+  openGraph: {
+    siteName: "KI-Coaching Kompass",
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default async function RootLayout({

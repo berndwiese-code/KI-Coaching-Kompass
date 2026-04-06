@@ -4,9 +4,15 @@ import { getWorkshop } from "@/sanity/lib/queries";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "KI-Coaching im Unternehmen – Workshop | KI-Coaching Kompass",
+  title: "KI-Coaching Workshop für Coaches",
   description:
-    "Zweitägiger Online-Workshop für HR, Führungskräfte und Betriebsräte: KI-Coaching verstehen, bewerten und einführen. Mit Bernd Wiese, ki-coaching-kompass.de.",
+    "KI im Coaching — nicht als Konkurrenz, sondern als Werkzeug. Workshop für Coaches, die KI bewusst und sinnvoll einsetzen wollen. Mit Bernd Wiese.",
+  openGraph: {
+    title: "KI-Coaching Workshop für Coaches · Bernd Wiese",
+    description:
+      "Spoiler: KI muss sein. Aber nicht so, wie du denkst. Workshop für Coaches — Zeit, Klarheit und neue Möglichkeiten.",
+    url: "https://ki-coaching-kompass.vercel.app/ki-coaching/workshop",
+  },
 };
 
 export default async function WorkshopPage() {

@@ -5,9 +5,15 @@ import { getBeratung } from "@/sanity/lib/queries";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Beratung · KI-Coaching-Kompass",
+  title: "KI-Coaching Beratung für Unternehmen",
   description:
-    "Beratung für Unternehmen bei der Einführung von KI-Coaching-Software und für Coaches bei der sinnvollen Nutzung von KI-Tools in der eigenen Praxis.",
+    "Ich begleite Unternehmen bei der Integration von KI im Coaching- und HR-Umfeld — nicht als Hype-Welle, sondern als fundierte Entscheidung. Bernd Wiese.",
+  openGraph: {
+    title: "KI-Coaching Beratung für Unternehmen · Bernd Wiese",
+    description:
+      "Was soll KI in eurem Coaching-Prozess können — und was soll sie lassen? Ich begleite Unternehmen dabei, das herauszufinden.",
+    url: "https://ki-coaching-kompass.vercel.app/ki-coaching/beratung",
+  },
 };
 
 export default async function BeratungPage() {
