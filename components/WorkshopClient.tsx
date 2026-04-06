@@ -153,7 +153,7 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         .hero-portrait {
           position: absolute; top: 50%; right: 0;
           transform: translateY(-50%);
-          width: 160px; overflow: hidden; pointer-events: none;
+          width: 190px; overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
           width: 100%; height: auto;
@@ -162,8 +162,8 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           mask-image: linear-gradient(to right, transparent 0%, black 30%);
           -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
         }
-        @media (max-width: 1300px) { .hero-portrait { width: 140px; } }
-        @media (max-width: 1050px) { .hero-portrait { width: 120px; } }
+        @media (max-width: 1300px) { .hero-portrait { width: 168px; } }
+        @media (max-width: 1050px) { .hero-portrait { width: 144px; } }
         @media (max-width: 900px) { .hero-portrait { display: none; } }
 
         .ws-hero-orb {
@@ -501,11 +501,12 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
             </button>
           </div>
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-            <a href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</a>
-            <a href="/workshop" className="active" onClick={() => setMenuOpen(false)}>Workshop</a>
-            <a href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</a>
-            <a href="/kompass" onClick={() => setMenuOpen(false)}>Kompass</a>
-            <a href="#" onClick={() => setMenuOpen(false)}>Kontakt</a>
+            <a href="/" onClick={() => setMenuOpen(false)}>Coaching und KI</a>
+            <a href="/beratung" onClick={() => setMenuOpen(false)}>KI-Coaching</a>
+            <a href="/workshop" className="active" onClick={() => setMenuOpen(false)}>Einführung von KI-Coaching</a>
+            <a href="/zuhoeren" onClick={() => setMenuOpen(false)}>Tiefes Zuhören (und KI)</a>
+            <a href="/kompass" onClick={() => setMenuOpen(false)}>KI-Tools entdecken</a>
+            <a href="/ueber-mich" onClick={() => setMenuOpen(false)}>Über mich</a>
           </div>
         </nav>
 

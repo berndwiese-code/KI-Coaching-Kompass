@@ -312,11 +312,12 @@ export default function UeberMichClient() {
             </button>
           </div>
           <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-            <Link href="/" onClick={() => setMenuOpen(false)}>Startseite</Link>
-            <Link href="/kompass" onClick={() => setMenuOpen(false)}>KI-Kompass</Link>
-            <Link href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</Link>
-            <Link href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</Link>
-            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</Link>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Coaching und KI</Link>
+            <Link href="/beratung" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
+            <Link href="/workshop" onClick={() => setMenuOpen(false)}>Einführung von KI-Coaching</Link>
+            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Tiefes Zuhören (und KI)</Link>
+            <Link href="/kompass" onClick={() => setMenuOpen(false)}>KI-Tools entdecken</Link>
+            <Link href="/ueber-mich" className="active" onClick={() => setMenuOpen(false)}>Über mich</Link>
           </div>
         </nav>
 

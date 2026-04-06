@@ -863,11 +863,12 @@ export default function KompassClient() {
             </button>
           </div>
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-            <a href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</a>
-            <a href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</a>
-            <a href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</a>
-            <a className="active" onClick={() => setMenuOpen(false)}>Kompass</a>
-            <a href="#" onClick={() => setMenuOpen(false)}>Kontakt</a>
+            <a href="/" onClick={() => setMenuOpen(false)}>Coaching und KI</a>
+            <a href="/beratung" onClick={() => setMenuOpen(false)}>KI-Coaching</a>
+            <a href="/workshop" onClick={() => setMenuOpen(false)}>Einführung von KI-Coaching</a>
+            <a href="/zuhoeren" onClick={() => setMenuOpen(false)}>Tiefes Zuhören (und KI)</a>
+            <a href="/kompass" className="active" onClick={() => setMenuOpen(false)}>KI-Tools entdecken</a>
+            <a href="/ueber-mich" onClick={() => setMenuOpen(false)}>Über mich</a>
           </div>
         </nav>
 

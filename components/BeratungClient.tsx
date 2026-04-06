@@ -176,7 +176,7 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
         .hero-portrait {
           position: absolute; top: 50%; right: 0;
           transform: translateY(-50%);
-          width: 160px; overflow: hidden; pointer-events: none;
+          width: 190px; overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
           width: 100%; height: auto;
@@ -185,8 +185,8 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           mask-image: linear-gradient(to right, transparent 0%, black 30%);
           -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
         }
-        @media (max-width: 1300px) { .hero-portrait { width: 140px; } }
-        @media (max-width: 1050px) { .hero-portrait { width: 120px; } }
+        @media (max-width: 1300px) { .hero-portrait { width: 168px; } }
+        @media (max-width: 1050px) { .hero-portrait { width: 144px; } }
         @media (max-width: 900px) { .hero-portrait { display: none; } }
 
         .br-hero-orb {
@@ -425,11 +425,12 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
             </button>
           </div>
           <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-            <Link href="/" onClick={() => setMenuOpen(false)}>Startseite</Link>
-            <Link href="/kompass" onClick={() => setMenuOpen(false)}>KI-Kompass</Link>
-            <Link href="/workshop" onClick={() => setMenuOpen(false)}>Workshop</Link>
-            <Link href="/beratung" onClick={() => setMenuOpen(false)}>Beratung</Link>
-            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Zuhören</Link>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Coaching und KI</Link>
+            <Link href="/beratung" className="active" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
+            <Link href="/workshop" onClick={() => setMenuOpen(false)}>Einführung von KI-Coaching</Link>
+            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Tiefes Zuhören (und KI)</Link>
+            <Link href="/kompass" onClick={() => setMenuOpen(false)}>KI-Tools entdecken</Link>
+            <Link href="/ueber-mich" onClick={() => setMenuOpen(false)}>Über mich</Link>
           </div>
         </nav>
 
