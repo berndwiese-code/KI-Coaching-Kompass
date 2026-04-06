@@ -430,12 +430,12 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
             </button>
           </div>
           <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-            <Link href="/" onClick={() => setMenuOpen(false)}>Coaching und KI</Link>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
             <Link href="/ki-coaching/beratung" className="active sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
-            <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Einführung von KI-Coaching</Link>
-            <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>KI-Tools entdecken</Link>
-            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Tiefes Zuhören (und KI)</Link>
+            <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
+            <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
+            <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
             <Link href="/ueber-mich" onClick={() => setMenuOpen(false)}>Über mich</Link>
           </div>
         </nav>
