@@ -185,7 +185,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
         }
         .hero-portrait {
           position: absolute; top: 0; right: 0; bottom: 0;
-          width: 300px; overflow: hidden; pointer-events: none;
+          width: 220px; overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
           width: 100%; height: 100%;
@@ -541,8 +541,25 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
 
         {/* HERO */}
         <div className="hero">
-          <div className="hero-portrait">
+          <div className="hero-portrait" style={{ pointerEvents: "auto" }}>
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+            <a href="/ueber-mich" style={{
+              position: "absolute",
+              bottom: "1.5rem",
+              right: "1rem",
+              fontSize: "0.68rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase" as const,
+              color: "rgba(255,255,255,0.85)",
+              background: "rgba(0,0,0,0.35)",
+              backdropFilter: "blur(6px)",
+              padding: "0.4rem 1rem",
+              borderRadius: "20px",
+              textDecoration: "none",
+              whiteSpace: "nowrap" as const,
+            }}>
+              Über mich →
+            </a>
           </div>
           <div className="hero-orb" />
           <p className="hero-eyebrow">{startseite?.heroEyebrow ?? "KI-Coaching Orientierungsplattform"}</p>
@@ -748,13 +765,18 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           transition: "background 0.35s",
         }}>
           <span style={{fontSize: "0.7rem", color: "var(--muted)", letterSpacing: "0.04em"}}>
-            {startseite?.footerCopyright ?? "© 2025 KI-Coaching Kompass · Bernd Schmid · Freiburg"}
+            {startseite?.footerCopyright ?? "© 2025 KI-Coaching Kompass · Bernd Wiese · Freiburg"}
           </span>
-          <ul style={{display: "flex", gap: "2rem", listStyle: "none"}}>
-            {["Impressum", "Datenschutz", "Kontakt"].map(l => (
-              <li key={l}>
-                <a href={`/${l.toLowerCase()}`} style={{fontSize: "0.7rem", color: "var(--muted)", textDecoration: "none", letterSpacing: "0.04em"}}>
-                  {l}
+          <ul style={{display: "flex", gap: "2rem", listStyle: "none", flexWrap: "wrap" as const}}>
+            {[
+              { label: "Workshop", href: "/workshop" },
+              { label: "Beratung", href: "/beratung" },
+              { label: "Zuhören", href: "/zuhoeren" },
+              { label: "Über mich", href: "/ueber-mich" },
+            ].map(l => (
+              <li key={l.label}>
+                <a href={l.href} style={{fontSize: "0.7rem", color: "var(--gold)", textDecoration: "none", letterSpacing: "0.04em"}}>
+                  {l.label}
                 </a>
               </li>
             ))}

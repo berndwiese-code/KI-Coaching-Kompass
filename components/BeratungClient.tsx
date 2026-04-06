@@ -175,7 +175,7 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
         }
         .hero-portrait {
           position: absolute; top: 0; right: 0; bottom: 0;
-          width: 300px; overflow: hidden; pointer-events: none;
+          width: 220px; overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
           width: 100%; height: 100%;
@@ -434,8 +434,25 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
 
         {/* HERO */}
         <section className="br-hero">
-          <div className="hero-portrait">
+          <div className="hero-portrait" style={{ pointerEvents: "auto" }}>
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+            <Link href="/ueber-mich" style={{
+              position: "absolute",
+              bottom: "1.5rem",
+              right: "1rem",
+              fontSize: "0.68rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase" as const,
+              color: "rgba(255,255,255,0.85)",
+              background: "rgba(0,0,0,0.35)",
+              backdropFilter: "blur(6px)",
+              padding: "0.4rem 1rem",
+              borderRadius: "20px",
+              textDecoration: "none",
+              whiteSpace: "nowrap" as const,
+            }}>
+              Über mich →
+            </Link>
           </div>
           <div className="br-hero-orb" />
           <div className="eyebrow">{beratung?.heroEyebrow ?? "Beratung"}</div>
@@ -880,12 +897,20 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           textAlign: "center",
           color: "var(--muted)",
           fontSize: "0.78rem",
-          letterSpacing: "0.06em"
+          letterSpacing: "0.06em",
+          display: "flex",
+          flexDirection: "column" as const,
+          alignItems: "center",
+          gap: "0.75rem"
         }}>
-          © 2025 KI·Coaching·Kompass · Bernd Wiese ·{" "}
-          <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>
-            Startseite
-          </Link>
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" as const, justifyContent: "center" }}>
+            <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>Startseite</Link>
+            <Link href="/workshop" style={{ color: "var(--gold)", textDecoration: "none" }}>Workshop</Link>
+            <Link href="/zuhoeren" style={{ color: "var(--gold)", textDecoration: "none" }}>Zuhören</Link>
+            <Link href="/kompass" style={{ color: "var(--gold)", textDecoration: "none" }}>KI-Kompass</Link>
+            <Link href="/ueber-mich" style={{ color: "var(--gold)", textDecoration: "none" }}>Über mich</Link>
+          </div>
+          <span>© 2025 KI·Coaching·Kompass · Bernd Wiese · Freiburg</span>
         </footer>
       </div>
     </>

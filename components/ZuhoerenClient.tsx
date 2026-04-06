@@ -166,7 +166,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         .zh-hero {
           min-height: 100vh;
           display: grid;
-          grid-template-columns: 1fr 420px;
+          grid-template-columns: 1fr 340px;
           gap: 0;
           align-items: center;
           padding: 0;
@@ -518,12 +518,31 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
               {zuhoeren?.heroCta ?? "Gespräch anfragen"}
             </a>
           </div>
-          <div className="zh-hero-image">
+          <div className="zh-hero-image" style={{ position: "relative" }}>
             <img
               src="/bernd-wiese.jpg"
               alt="Bernd Wiese – im Gespräch"
               loading="eager"
             />
+            <Link href="/ueber-mich" style={{
+              position: "absolute",
+              bottom: "1.5rem",
+              left: "50%",
+              transform: "translateX(-50%)",
+              fontSize: "0.7rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.85)",
+              background: "rgba(0,0,0,0.35)",
+              backdropFilter: "blur(6px)",
+              padding: "0.4rem 1rem",
+              borderRadius: "20px",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              transition: "background 0.2s",
+            }}>
+              Über mich →
+            </Link>
           </div>
         </section>
 
@@ -750,12 +769,20 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           textAlign: "center",
           color: "var(--muted)",
           fontSize: "0.78rem",
-          letterSpacing: "0.06em"
+          letterSpacing: "0.06em",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "0.75rem"
         }}>
-          © 2025 KI·Coaching·Kompass · Bernd Wiese ·{" "}
-          <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>
-            Startseite
-          </Link>
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+            <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>Startseite</Link>
+            <Link href="/workshop" style={{ color: "var(--gold)", textDecoration: "none" }}>Workshop</Link>
+            <Link href="/beratung" style={{ color: "var(--gold)", textDecoration: "none" }}>Beratung</Link>
+            <Link href="/kompass" style={{ color: "var(--gold)", textDecoration: "none" }}>KI-Kompass</Link>
+            <Link href="/ueber-mich" style={{ color: "var(--gold)", textDecoration: "none" }}>Über mich</Link>
+          </div>
+          <span>© 2025 KI·Coaching·Kompass · Bernd Wiese · Freiburg</span>
         </footer>
       </div>
     </>

@@ -152,7 +152,7 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         }
         .hero-portrait {
           position: absolute; top: 0; right: 0; bottom: 0;
-          width: 300px; overflow: hidden; pointer-events: none;
+          width: 220px; overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
           width: 100%; height: 100%;
@@ -510,8 +510,26 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
 
         {/* HERO */}
         <section className="ws-hero">
-          <div className="hero-portrait">
+          <div className="hero-portrait" style={{ pointerEvents: "auto" }}>
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+            <Link href="/ueber-mich" style={{
+              position: "absolute",
+              bottom: "1.5rem",
+              right: "1rem",
+              fontSize: "0.68rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.85)",
+              background: "rgba(0,0,0,0.35)",
+              backdropFilter: "blur(6px)",
+              padding: "0.4rem 1rem",
+              borderRadius: "20px",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              transition: "background 0.2s",
+            }}>
+              Über mich →
+            </Link>
           </div>
           <div className="ws-hero-orb" />
           <div className="eyebrow">{workshop?.heroEyebrow ?? "Zweitägiger Online-Workshop"}</div>
@@ -741,9 +759,11 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         <footer className="ws-footer">
           <p className="footer-copy">&copy; 2025 KI-Coaching Kompass &middot; Bernd Wiese &middot; Freiburg</p>
           <div className="footer-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">Kontakt</a>
+            <Link href="/">Startseite</Link>
+            <Link href="/beratung">Beratung</Link>
+            <Link href="/zuhoeren">Zuhören</Link>
+            <Link href="/kompass">KI-Kompass</Link>
+            <Link href="/ueber-mich">Über mich</Link>
           </div>
         </footer>
 
