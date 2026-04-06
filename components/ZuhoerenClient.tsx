@@ -785,13 +785,15 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           gap: "0.75rem"
         }}>
           <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
-            <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>Startseite</Link>
-            <Link href="/workshop" style={{ color: "var(--gold)", textDecoration: "none" }}>Workshop</Link>
-            <Link href="/beratung" style={{ color: "var(--gold)", textDecoration: "none" }}>Beratung</Link>
-            <Link href="/kompass" style={{ color: "var(--gold)", textDecoration: "none" }}>KI-Kompass</Link>
+            <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>Start</Link>
+            <Link href="/ki-coaching/beratung" style={{ color: "var(--gold)", textDecoration: "none" }}>Beratung</Link>
+            <Link href="/ki-coaching/workshop" style={{ color: "var(--gold)", textDecoration: "none" }}>Workshop</Link>
+            <Link href="/ki-coaching/kompass" style={{ color: "var(--gold)", textDecoration: "none" }}>Kompass</Link>
             <Link href="/ueber-mich" style={{ color: "var(--gold)", textDecoration: "none" }}>Über mich</Link>
+            <Link href="/impressum" style={{ color: "var(--gold)", textDecoration: "none" }}>Impressum</Link>
+            <Link href="/datenschutz" style={{ color: "var(--gold)", textDecoration: "none" }}>Datenschutz</Link>
           </div>
-          <span>© 2025 KI·Coaching·Kompass · Bernd Wiese · Freiburg</span>
+          <span>© 2025 KI-Coaching Kompass · Bernd Wiese · Staufen</span>
         </footer>
       </div>
     </>

@@ -403,13 +403,15 @@ export default function UeberMichClient() {
         {/* FOOTER */}
         <footer className="um-footer">
           <div className="um-footer-links">
-            <Link href="/">Startseite</Link>
-            <Link href="/workshop">Workshop</Link>
-            <Link href="/beratung">Beratung</Link>
-            <Link href="/zuhoeren">Zuhören</Link>
-            <Link href="/kompass">KI-Kompass</Link>
+            <Link href="/">Start</Link>
+            <Link href="/ki-coaching/beratung">Beratung</Link>
+            <Link href="/ki-coaching/workshop">Workshop</Link>
+            <Link href="/ki-coaching/kompass">Kompass</Link>
+            <Link href="/zuhoeren">Gehört werden</Link>
+            <Link href="/impressum">Impressum</Link>
+            <Link href="/datenschutz">Datenschutz</Link>
           </div>
-          <span>© 2025 KI·Coaching·Kompass · Bernd Wiese · Freiburg</span>
+          <span>© 2025 KI-Coaching Kompass · Bernd Wiese · Staufen</span>
         </footer>
       </div>
     </>

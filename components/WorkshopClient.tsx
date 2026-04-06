@@ -765,13 +765,15 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
 
         {/* FOOTER */}
         <footer className="ws-footer">
-          <p className="footer-copy">&copy; 2025 KI-Coaching Kompass &middot; Bernd Wiese &middot; Freiburg</p>
+          <p className="footer-copy">&copy; 2025 KI-Coaching Kompass &middot; Bernd Wiese &middot; Staufen</p>
           <div className="footer-links">
-            <Link href="/">Startseite</Link>
-            <Link href="/beratung">Beratung</Link>
-            <Link href="/zuhoeren">Zuhören</Link>
-            <Link href="/kompass">KI-Kompass</Link>
+            <Link href="/">Start</Link>
+            <Link href="/ki-coaching/beratung">Beratung</Link>
+            <Link href="/ki-coaching/kompass">Kompass</Link>
+            <Link href="/zuhoeren">Gehört werden</Link>
             <Link href="/ueber-mich">Über mich</Link>
+            <Link href="/impressum">Impressum</Link>
+            <Link href="/datenschutz">Datenschutz</Link>
           </div>
         </footer>
 

@@ -687,6 +687,8 @@ export default function HomeClient({ startseite, testimonials }: Props) {
               { label: "Kompass", href: "/ki-coaching/kompass" },
               { label: "Gehört werden", href: "/zuhoeren" },
               { label: "Über mich", href: "/ueber-mich" },
+              { label: "Impressum", href: "/impressum" },
+              { label: "Datenschutz", href: "/datenschutz" },
             ].map(l => (
               <li key={l.label}>
                 <Link href={l.href} style={{fontSize: "0.7rem", color: "var(--gold)", textDecoration: "none", letterSpacing: "0.04em"}}>

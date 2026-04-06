@@ -1313,6 +1313,33 @@ export default function KompassClient() {
           </div>
         )}
 
+        {/* FOOTER */}
+        <footer style={{
+          background: "var(--bg2)", borderTop: "1px solid var(--border)",
+          padding: "1.75rem 2.5rem", display: "flex", alignItems: "center",
+          justifyContent: "space-between", flexWrap: "wrap" as const, gap: "1rem",
+          transition: "background 0.35s",
+        }}>
+          <span style={{ fontSize: "0.7rem", color: "var(--muted)", letterSpacing: "0.04em" }}>
+            © 2025 KI-Coaching Kompass · Bernd Wiese · Staufen
+          </span>
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" as const }}>
+            {[
+              { label: "Start", href: "/" },
+              { label: "Beratung", href: "/ki-coaching/beratung" },
+              { label: "Workshop", href: "/ki-coaching/workshop" },
+              { label: "Gehört werden", href: "/zuhoeren" },
+              { label: "Über mich", href: "/ueber-mich" },
+              { label: "Impressum", href: "/impressum" },
+              { label: "Datenschutz", href: "/datenschutz" },
+            ].map(l => (
+              <Link key={l.label} href={l.href} style={{ fontSize: "0.7rem", color: "var(--gold)", textDecoration: "none", letterSpacing: "0.04em" }}>
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </footer>
+
       </div>
     </>
   );
