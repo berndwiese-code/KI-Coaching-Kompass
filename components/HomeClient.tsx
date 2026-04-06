@@ -184,18 +184,19 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
           transition: background 0.35s;
         }
         .hero-portrait {
-          position: absolute; top: 0; right: 0; bottom: 0;
-          width: 220px; overflow: hidden; pointer-events: none;
+          position: absolute; top: 50%; right: 0;
+          transform: translateY(-50%);
+          width: 160px; overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
-          width: 100%; height: 100%;
-          object-fit: cover; object-position: center top;
+          width: 100%; height: auto;
+          object-position: center top;
           display: block;
           mask-image: linear-gradient(to right, transparent 0%, black 30%);
           -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
         }
-        @media (max-width: 1300px) { .hero-portrait { width: 200px; } }
-        @media (max-width: 1050px) { .hero-portrait { width: 160px; } }
+        @media (max-width: 1300px) { .hero-portrait { width: 140px; } }
+        @media (max-width: 1050px) { .hero-portrait { width: 120px; } }
         @media (max-width: 900px) { .hero-portrait { display: none; } }
 
         .hero-orb {
@@ -772,6 +773,7 @@ export default function HomeClient({ startseite, tools, artikel, testimonials }:
               { label: "Workshop", href: "/workshop" },
               { label: "Beratung", href: "/beratung" },
               { label: "Zuhören", href: "/zuhoeren" },
+              { label: "KI-Kompass", href: "/kompass" },
               { label: "Über mich", href: "/ueber-mich" },
             ].map(l => (
               <li key={l.label}>

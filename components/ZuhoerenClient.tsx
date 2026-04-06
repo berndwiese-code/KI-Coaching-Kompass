@@ -166,7 +166,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         .zh-hero {
           min-height: 100vh;
           display: grid;
-          grid-template-columns: 1fr 340px;
+          grid-template-columns: 1fr 260px;
           gap: 0;
           align-items: center;
           padding: 0;
@@ -215,8 +215,10 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         .zh-hero-cta:hover { background: var(--gold2); }
         .zh-hero-image {
           position: relative; z-index: 2;
-          height: 100vh;
+          height: min(70vh, 480px);
+          align-self: center;
           overflow: hidden;
+          border-radius: 0 0 0 8px;
         }
         .zh-hero-image img {
           width: 100%;
