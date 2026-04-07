@@ -266,16 +266,46 @@ export type Zuhoeren = {
   heroTitel?: string;
   heroSubtitel?: string;
   heroCta?: string;
+
+  // Anders
+  andersLabel?: string;
+  andersProse1?: string;
   zitatKlarheit?: string;
+  andersProse2?: string;
+
+  // Warum
+  warumLabel?: string;
+  warumProse?: string;
+
+  // Für Wen
+  fuerWenLabel?: string;
+  fuerWenIntro?: string;
+  fuerWenListe?: string[];
+  fuerWenOutro?: string;
+
+  // Gespräch
+  gespraechLabel?: string;
+  gespraechProse?: string;
   zitatGespraech?: string;
-  // Staffelstab
-  staffelEyebrow?: string;
-  staffelTitel?: string;
-  staffelLead?: string;
-  staffelSchritte?: StaffelSchritt[];
-  staffelPreis?: string;
-  staffelPreisLabel?: string;
-  staffelCtaText?: string;
+
+  // Abgrenzung
+  abgrenzungTitel?: string;
+  abgrenzungProse?: string;
+
+  // Wirkung
+  wirkungLabel?: string;
+  wirkungIntro?: string;
+  wirkungListe?: string[];
+  wirkungOutro?: string;
+
+  // KI
+  kiLabel?: string;
+  kiTitel?: string;
+  kiProse1?: string;
+  kiProse2?: string;
+  kiListe?: string[];
+  kiNote?: string;
+
   // CTA
   ctaEyebrow?: string;
   ctaTitel?: string;
@@ -288,10 +318,13 @@ export type Zuhoeren = {
 export async function getZuhoeren(): Promise<Zuhoeren | null> {
   return client.fetch(`*[_type == "zuhoeren"][0]{
     heroTitel, heroSubtitel, heroCta,
-    zitatKlarheit, zitatGespraech,
-    staffelEyebrow, staffelTitel, staffelLead,
-    staffelSchritte[]{ nummer, icon, titel, beschreibung },
-    staffelPreis, staffelPreisLabel, staffelCtaText,
+    andersLabel, andersProse1, zitatKlarheit, andersProse2,
+    warumLabel, warumProse,
+    fuerWenLabel, fuerWenIntro, fuerWenListe, fuerWenOutro,
+    gespraechLabel, gespraechProse, zitatGespraech,
+    abgrenzungTitel, abgrenzungProse,
+    wirkungLabel, wirkungIntro, wirkungListe, wirkungOutro,
+    kiLabel, kiTitel, kiProse1, kiProse2, kiListe, kiNote,
     ctaEyebrow, ctaTitel, ctaBody, ctaButton, ctaNote,
     kontaktEmail
   }`)

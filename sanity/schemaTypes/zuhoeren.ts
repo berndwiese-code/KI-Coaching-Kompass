@@ -6,19 +6,19 @@ export const zuhoeren = defineType({
   type: "document",
   groups: [
     { name: "hero", title: "Hero" },
-    { name: "zitate", title: "Stehende Zitate" },
-    { name: "staffel", title: "Staffelstab-Modell" },
+    { name: "content", title: "Seiten-Inhalte" },
+    { name: "ki", title: "Zuhören + KI" },
     { name: "cta", title: "Einladung / CTA" },
   ],
   fields: [
     // ── HERO ──────────────────────────────────────────────────────────────
     defineField({
       name: "heroTitel",
-      title: "Hero-Titel (Zeile 1–3)",
+      title: "Hero-Titel",
       type: "text",
       rows: 4,
       group: "hero",
-      description: 'Mehrzeiliger Titel. Zeilenumbrüche werden übernommen. z.B. "Die meisten Menschen\nwerden gehört.\nAber nur selten\nwirklich."',
+      description: 'z.B. "Die meisten Menschen<br />werden gehört.<br />Aber nur selten<br /><em>wirklich.</em>" (HTML erlaubt)',
     }),
     defineField({
       name: "heroSubtitel",
@@ -26,93 +26,193 @@ export const zuhoeren = defineType({
       type: "text",
       rows: 2,
       group: "hero",
-      description: 'z.B. "Hier geht es nicht um Antworten.\nSondern darum, dass du dich selbst wieder hörst."',
     }),
     defineField({
       name: "heroCta",
       title: "Hero CTA-Button",
       type: "string",
       group: "hero",
-      description: 'z.B. "Gespräch anfragen"',
     }),
 
-    // ── STEHENDE ZITATE ───────────────────────────────────────────────────
+    // ── ANDERS ─────────────────────────────────────────────────────────
+    defineField({
+      name: "andersLabel",
+      title: "Anders Label",
+      type: "string",
+      group: "content",
+    }),
+    defineField({
+      name: "andersProse1",
+      title: "Anders Textblock 1",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt (z.B. <p>...</p><p><em>...</em></p>)",
+    }),
     defineField({
       name: "zitatKlarheit",
       title: "Stehendes Zitat (Klarheit)",
       type: "text",
       rows: 2,
-      group: "zitate",
-      description: 'Erscheint als großes Blockzitat. z.B. "Klarheit entsteht nicht, weil jemand sie dir gibt. Sondern weil sie in dir bereits da ist."',
+      group: "content",
+    }),
+    defineField({
+      name: "andersProse2",
+      title: "Anders Textblock 2",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt",
+    }),
+
+    // ── WARUM ──────────────────────────────────────────────────────────
+    defineField({
+      name: "warumLabel",
+      title: "Warum Label",
+      type: "string",
+      group: "content",
+    }),
+    defineField({
+      name: "warumProse",
+      title: "Warum Text",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt",
+    }),
+
+    // ── FÜR WEN ────────────────────────────────────────────────────────
+    defineField({
+      name: "fuerWenLabel",
+      title: "Für Wen Label",
+      type: "string",
+      group: "content",
+    }),
+    defineField({
+      name: "fuerWenIntro",
+      title: "Für Wen Intro",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt",
+    }),
+    defineField({
+      name: "fuerWenListe",
+      title: "Für Wen Aufzählungen",
+      type: "array",
+      group: "content",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "fuerWenOutro",
+      title: "Für Wen Outro",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt",
+    }),
+
+    // ── GESPRÄCH ───────────────────────────────────────────────────────
+    defineField({
+      name: "gespraechLabel",
+      title: "Gespräch Label",
+      type: "string",
+      group: "content",
+    }),
+    defineField({
+      name: "gespraechProse",
+      title: "Gespräch Text",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt",
     }),
     defineField({
       name: "zitatGespraech",
       title: "Stehendes Zitat (Gespräch)",
       type: "text",
       rows: 2,
-      group: "zitate",
-      description: 'z.B. "Und genau deshalb entsteht oft das, was sonst schwer zugänglich ist: echte Klarheit."',
+      group: "content",
     }),
 
-    // ── STAFFELSTAB ───────────────────────────────────────────────────────
+    // ── ABGRENZUNG ─────────────────────────────────────────────────────
     defineField({
-      name: "staffelEyebrow",
-      title: "Staffel Eyebrow",
+      name: "abgrenzungTitel",
+      title: "Abgrenzung Titel",
       type: "string",
-      group: "staffel",
+      group: "content",
     }),
     defineField({
-      name: "staffelTitel",
-      title: "Staffel Titel",
-      type: "string",
-      group: "staffel",
-    }),
-    defineField({
-      name: "staffelLead",
-      title: "Staffel Einleitungstext",
+      name: "abgrenzungProse",
+      title: "Abgrenzung Text",
       type: "text",
-      rows: 3,
-      group: "staffel",
+      group: "content",
+      description: "HTML erlaubt",
+    }),
+
+    // ── WIRKUNG ────────────────────────────────────────────────────────
+    defineField({
+      name: "wirkungLabel",
+      title: "Wirkung Label",
+      type: "string",
+      group: "content",
     }),
     defineField({
-      name: "staffelSchritte",
-      title: "Schritte (4 Phasen)",
+      name: "wirkungIntro",
+      title: "Wirkung Intro",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt",
+    }),
+    defineField({
+      name: "wirkungListe",
+      title: "Wirkung Kacheln",
       type: "array",
-      group: "staffel",
-      of: [
-        {
-          type: "object",
-          fields: [
-            defineField({ name: "nummer", title: "Nummer", type: "string", description: 'z.B. "01"' }),
-            defineField({ name: "icon", title: "Icon", type: "string", description: 'z.B. "◎"' }),
-            defineField({ name: "titel", title: "Titel", type: "string" }),
-            defineField({ name: "beschreibung", title: "Beschreibung", type: "text", rows: 3 }),
-          ],
-          preview: {
-            select: { title: "nummer", subtitle: "titel" },
-          },
-        },
-      ],
+      group: "content",
+      of: [{ type: "string" }],
     }),
     defineField({
-      name: "staffelPreis",
-      title: "Preis",
+      name: "wirkungOutro",
+      title: "Wirkung Outro",
+      type: "text",
+      group: "content",
+      description: "HTML erlaubt",
+    }),
+
+    // ── KI SECTION ─────────────────────────────────────────────────────
+    defineField({
+      name: "kiLabel",
+      title: "KI Label",
       type: "string",
-      group: "staffel",
-      description: 'z.B. "490 €"',
+      group: "ki",
     }),
     defineField({
-      name: "staffelPreisLabel",
-      title: "Preis-Label",
+      name: "kiTitel",
+      title: "KI Titel",
       type: "string",
-      group: "staffel",
-      description: 'z.B. "Einstiegsangebot · inkl. MwSt."',
+      group: "ki",
+      description: "HTML erlaubt",
     }),
     defineField({
-      name: "staffelCtaText",
-      title: "Staffel CTA-Text",
-      type: "string",
-      group: "staffel",
+      name: "kiProse1",
+      title: "KI Text 1",
+      type: "text",
+      group: "ki",
+      description: "HTML erlaubt",
+    }),
+    defineField({
+      name: "kiProse2",
+      title: "KI Text 2",
+      type: "text",
+      group: "ki",
+      description: "HTML erlaubt",
+    }),
+    defineField({
+      name: "kiListe",
+      title: "KI Vorteile",
+      type: "array",
+      group: "ki",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "kiNote",
+      title: "KI Hinweistext",
+      type: "text",
+      group: "ki",
     }),
 
     // ── CTA ───────────────────────────────────────────────────────────────
@@ -121,7 +221,6 @@ export const zuhoeren = defineType({
       title: "CTA Eyebrow",
       type: "string",
       group: "cta",
-      description: 'z.B. "Einladung"',
     }),
     defineField({
       name: "ctaTitel",
@@ -129,7 +228,7 @@ export const zuhoeren = defineType({
       type: "text",
       rows: 3,
       group: "cta",
-      description: 'z.B. "Wenn du das Gefühl hast, dass es Zeit ist, einmal wirklich gehört zu werden."',
+      description: "HTML erlaubt",
     }),
     defineField({
       name: "ctaBody",
@@ -149,7 +248,6 @@ export const zuhoeren = defineType({
       title: "CTA Hinweistext",
       type: "string",
       group: "cta",
-      description: 'z.B. "Ohne Verpflichtung. Einfach, um es einmal zu erleben."',
     }),
     defineField({
       name: "kontaktEmail",

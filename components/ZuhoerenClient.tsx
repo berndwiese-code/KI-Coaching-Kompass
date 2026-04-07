@@ -517,9 +517,11 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           <div className="zh-hero-orb" />
           <div className="zh-hero-text">
             <div className="eyebrow">Zuhören</div>
-            <h1 className="zh-hero-title" style={{ whiteSpace: "pre-line" }}>
-              {zuhoeren?.heroTitel ?? <>Die meisten Menschen<br />werden gehört.<br />Aber nur selten<br /><em>wirklich.</em></>}
-            </h1>
+            <h1 
+              className="zh-hero-title" 
+              style={{ whiteSpace: "pre-line" }}
+              dangerouslySetInnerHTML={{ __html: zuhoeren?.heroTitel ?? "Die meisten Menschen<br />werden gehört.<br />Aber nur selten<br /><em>wirklich.</em>" }}
+            />
             <p className="zh-hero-subtitle" style={{ whiteSpace: "pre-line" }}>
               {zuhoeren?.heroSubtitel ?? "Hier geht es nicht um Antworten.\nSondern darum, dass du dich selbst wieder hörst."}
             </p>
@@ -557,108 +559,52 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
 
         {/* WAS ZUHÖREN BEDEUTET */}
         <section className="zh-section">
-          <div className="zh-section-label">Was hier anders ist</div>
-          <div className="zh-prose">
-            <p>
-              Zuhören, wie ich es verstehe, ist kein Technik-Tool.<br />
-              Kein Coaching-Format.
-            </p>
-            <p>
-              Es ist ein <em>Raum.</em>
-            </p>
-            <p>
-              Ein Raum, in dem nichts bewertet wird.<br />
-              Nichts optimiert werden muss.
-            </p>
-            <p>
-              In dem du sagen kannst, was da ist —<br />
-              auch das, was noch unfertig ist.
-            </p>
-          </div>
+          <div className="zh-section-label">{zuhoeren?.andersLabel ?? "Was hier anders ist"}</div>
+          <div className="zh-prose" dangerouslySetInnerHTML={{ __html: zuhoeren?.andersProse1 ?? "<p>Zuhören, wie ich es verstehe, ist kein Technik-Tool.<br />Kein Coaching-Format.</p><p>Es ist ein <em>Raum.</em></p><p>Ein Raum, in dem nichts bewertet wird.<br />Nichts optimiert werden muss.</p><p>In dem du sagen kannst, was da ist —<br />auch das, was noch unfertig ist.</p>" }} />
           <div className="zh-standing">
             {zuhoeren?.zitatKlarheit ?? `\u201eKlarheit entsteht nicht, weil jemand sie dir gibt. Sondern weil sie in dir bereits da ist.\u201c`}
           </div>
-          <div className="zh-prose">
-            <p>
-              Und oft passiert genau dort etwas Entscheidendes:<br />
-              Dinge ordnen sich.<br />
-              Innere Spannungen lösen sich.
-            </p>
-            <p>
-              Nicht, weil ich etwas <em>mache</em>.<br />
-              Sondern weil Zuhören wirkt.
-            </p>
-          </div>
+          <div className="zh-prose" dangerouslySetInnerHTML={{ __html: zuhoeren?.andersProse2 ?? "<p>Und oft passiert genau dort etwas Entscheidendes:<br />Dinge ordnen sich.<br />Innere Spannungen lösen sich.</p><p>Nicht, weil ich etwas <em>mache</em>.<br />Sondern weil Zuhören wirkt.</p>" }} />
         </section>
 
         <hr className="zh-divider" />
 
         {/* WARUM ZUHÖREN WIRKT */}
         <section className="zh-section">
-          <div className="zh-section-label">Warum Zuhören wirkt</div>
-          <div className="zh-prose">
-            <p>
-              Viele versuchen, ihre Gedanken mit ihrem Kopf zu ordnen.<br />
-              Das ist oft, als würde man versuchen, sich selbst aus dem Sumpf zu ziehen.
-            </p>
-            <p>
-              Wenn du jedoch wirklich gehört wirst, passiert etwas anderes:
-            </p>
-            <p>
-              Dein System beginnt, sich selbst zu regulieren.<br />
-              Deine Wahrnehmung wird feiner.<br />
-              Du kommst näher an das, was für dich wirklich stimmt.
-            </p>
-            <p>
-              Zuhören ist kein passiver Prozess.<br />
-              Es ist ein aktiver Raum, in dem <em>Bewusstsein entsteht.</em>
-            </p>
-          </div>
+          <div className="zh-section-label">{zuhoeren?.warumLabel ?? "Warum Zuhören wirkt"}</div>
+          <div className="zh-prose" dangerouslySetInnerHTML={{ __html: zuhoeren?.warumProse ?? "<p>Viele versuchen, ihre Gedanken mit ihrem Kopf zu ordnen.<br />Das ist oft, als würde man versuchen, sich selbst aus dem Sumpf zu ziehen.</p><p>Wenn du jedoch wirklich gehört wirst, passiert etwas anderes:</p><p>Dein System beginnt, sich selbst zu regulieren.<br />Deine Wahrnehmung wird feiner.<br />Du kommst näher an das, was für dich wirklich stimmt.</p><p>Zuhören ist kein passiver Prozess.<br />Es ist ein aktiver Raum, in dem <em>Bewusstsein entsteht.</em></p>" }} />
         </section>
 
         <hr className="zh-divider" />
 
         {/* FÜR WEN */}
         <section className="zh-section">
-          <div className="zh-section-label">Für wen diese Sitzungen sind</div>
-          <div className="zh-prose" style={{ marginBottom: "2rem" }}>
-            <p>Menschen kommen zu mir, wenn sie…</p>
-          </div>
+          <div className="zh-section-label">{zuhoeren?.fuerWenLabel ?? "Für wen diese Sitzungen sind"}</div>
+          <div className="zh-prose" style={{ marginBottom: "2rem" }} dangerouslySetInnerHTML={{ __html: zuhoeren?.fuerWenIntro ?? "<p>Menschen kommen zu mir, wenn sie…</p>" }} />
           <ul className="zh-list">
-            <li>viel im Kopf sind und nicht mehr klar sehen</li>
-            <li>vor einer Entscheidung stehen und keine Ratschläge, sondern Klarheit brauchen</li>
-            <li>sich im Kreis drehen und merken: Es wäre gut, das einmal auszusprechen</li>
-            <li>etwas sagen wollen, ohne bewertet zu werden</li>
-            <li>beruflich viel Verantwortung tragen und selten wirklich gehört werden</li>
-            <li>spüren, dass „irgendetwas nicht stimmt", es aber nicht greifen können</li>
-            <li>einfach einmal vollständig gehört werden wollen — ohne Rolle, ohne Funktion</li>
+            {zuhoeren?.fuerWenListe?.map((item, i) => (
+              <li key={i}>{item}</li>
+            )) ?? (
+              <>
+                <li>viel im Kopf sind und nicht mehr klar sehen</li>
+                <li>vor einer Entscheidung stehen und keine Ratschläge, sondern Klarheit brauchen</li>
+                <li>sich im Kreis drehen und merken: Es wäre gut, das einmal auszusprechen</li>
+                <li>etwas sagen wollen, ohne bewertet zu werden</li>
+                <li>beruflich viel Verantwortung tragen und selten wirklich gehört werden</li>
+                <li>spüren, dass „irgendetwas nicht stimmt", es aber nicht greifen können</li>
+                <li>einfach einmal vollständig gehört werden wollen — ohne Rolle, ohne Funktion</li>
+              </>
+            )}
           </ul>
-          <div className="zh-prose">
-            <p>
-              Du musst nicht wissen, worum es genau geht.<br />
-              Es reicht, dass du merkst: Es wäre gut, das einmal auszusprechen.
-            </p>
-          </div>
+          <div className="zh-prose" dangerouslySetInnerHTML={{ __html: zuhoeren?.fuerWenOutro ?? "<p>Du musst nicht wissen, worum es genau geht.<br />Es reicht, dass du merkst: Es wäre gut, das einmal auszusprechen.</p>" }} />
         </section>
 
         <hr className="zh-divider" />
 
         {/* WAS IM GESPRÄCH PASSIERT */}
         <section className="zh-section">
-          <div className="zh-section-label">Was im Gespräch passiert</div>
-          <div className="zh-prose">
-            <p>Wir sprechen.</p>
-            <p>Und ich höre zu.<br /><em>Wirklich.</em></p>
-            <p>
-              Ohne zu unterbrechen.<br />
-              Ohne dich in eine Richtung zu lenken.
-            </p>
-            <p>
-              Ich stelle Fragen — nicht, um dich zu steuern,<br />
-              sondern um dich tiefer zu dir selbst zu bringen.
-            </p>
-            <p>Es gibt kein Ziel, das erreicht werden muss.</p>
-          </div>
+          <div className="zh-section-label">{zuhoeren?.gespraechLabel ?? "Was im Gespräch passiert"}</div>
+          <div className="zh-prose" dangerouslySetInnerHTML={{ __html: zuhoeren?.gespraechProse ?? "<p>Wir sprechen.</p><p>Und ich höre zu.<br /><em>Wirklich.</em></p><p>Ohne zu unterbrechen.<br />Ohne dich in eine Richtung zu lenken.</p><p>Ich stelle Fragen — nicht, um dich zu steuern,<br />sondern um dich tiefer zu dir selbst zu bringen.</p><p>Es gibt kein Ziel, das erreicht werden muss.</p>" }} />
           <div className="zh-standing">
             {zuhoeren?.zitatGespraech ?? `\u201eUnd genau deshalb entsteht oft das, was sonst schwer zugänglich ist: echte Klarheit.\u201c`}
           </div>
@@ -667,47 +613,38 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         {/* ABGRENZUNG */}
         <section className="zh-section">
           <div className="zh-distinction">
-            <div className="zh-distinction-title">Das ist kein klassisches Coaching.</div>
-            <p>Ich gebe dir keine Strategien vor.</p>
-            <p>Ich analysiere dich nicht.</p>
-            <p>Und ich versuche nicht, dich zu „verbessern".</p>
-            <p>
-              Stattdessen entsteht ein Raum,<br />
-              in dem du dich selbst wieder besser wahrnehmen kannst.
-            </p>
-            <p>
-              Und das ist oft nachhaltiger<br />
-              als jede gut gemeinte Lösung von außen.
-            </p>
+            <div className="zh-distinction-title">{zuhoeren?.abgrenzungTitel ?? "Das ist kein klassisches Coaching."}</div>
+            <div dangerouslySetInnerHTML={{ __html: zuhoeren?.abgrenzungProse ?? "<p>Ich gebe dir keine Strategien vor.</p><p>Ich analysiere dich nicht.</p><p>Und ich versuche nicht, dich zu „verbessern\".</p><p>Stattdessen entsteht ein Raum,<br />in dem du dich selbst wieder besser wahrnehmen kannst.</p><p>Und das ist oft nachhaltiger<br />als jede gut gemeinte Lösung von außen.</p>" }} />
           </div>
         </section>
 
         {/* WIRKUNG */}
         <section className="zh-section">
-          <div className="zh-section-label">Was du mitnehmen kannst</div>
-          <div className="zh-prose" style={{ marginBottom: "2rem" }}>
-            <p>Viele gehen aus einem Gespräch mit…</p>
-          </div>
+          <div className="zh-section-label">{zuhoeren?.wirkungLabel ?? "Was du mitnehmen kannst"}</div>
+          <div className="zh-prose" style={{ marginBottom: "2rem" }} dangerouslySetInnerHTML={{ __html: zuhoeren?.wirkungIntro ?? "<p>Viele gehen aus einem Gespräch mit…</p>" }} />
           <div className="zh-wirkung-grid">
-            <div className="zh-wirkung-item">
-              <p>mehr innerer Ruhe und einem Gefühl von Ordnung</p>
-            </div>
-            <div className="zh-wirkung-item">
-              <p>klareren Gedanken, die sich von selbst geordnet haben</p>
-            </div>
-            <div className="zh-wirkung-item">
-              <p>einer spürbaren Entlastung, die länger anhält</p>
-            </div>
-            <div className="zh-wirkung-item">
-              <p>oder einer Entscheidung, die sich plötzlich stimmig anfühlt</p>
-            </div>
+            {zuhoeren?.wirkungListe?.map((item, i) => (
+              <div className="zh-wirkung-item" key={i}>
+                <p>{item}</p>
+              </div>
+            )) ?? (
+              <>
+                <div className="zh-wirkung-item">
+                  <p>mehr innerer Ruhe und einem Gefühl von Ordnung</p>
+                </div>
+                <div className="zh-wirkung-item">
+                  <p>klareren Gedanken, die sich von selbst geordnet haben</p>
+                </div>
+                <div className="zh-wirkung-item">
+                  <p>einer spürbaren Entlastung, die länger anhält</p>
+                </div>
+                <div className="zh-wirkung-item">
+                  <p>oder einer Entscheidung, die sich plötzlich stimmig anfühlt</p>
+                </div>
+              </>
+            )}
           </div>
-          <div className="zh-prose">
-            <p>
-              Nicht, weil etwas „gemacht" wurde.<br />
-              Sondern weil Raum da war.
-            </p>
-          </div>
+          <div className="zh-prose" dangerouslySetInnerHTML={{ __html: zuhoeren?.wirkungOutro ?? "<p>Nicht, weil etwas „gemacht\" wurde.<br />Sondern weil Raum da war.</p>" }} />
         </section>
 
         {/* BANNER IMAGE */}
@@ -726,31 +663,26 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         <section className="zh-ki-section">
           <div className="zh-ki-inner">
             <div>
-              <div className="zh-section-label">Eine neue Dimension</div>
-              <h2 className="zh-ki-title">
-                Zuhören<br />
-                <em>+ KI</em>
-              </h2>
-              <p className="zh-ki-body">
-                Neben den klassischen Zuhör-Sitzungen biete ich auch eine erweiterte
-                Form an: Zuhören in Kombination mit KI-gestützter Reflexion.
-              </p>
-              <p className="zh-ki-body">
-                Hier wird das Gespräch — wenn du möchtest — zusätzlich durch eine
-                KI gespiegelt. Nicht als Ersatz, sondern als Erweiterung.
-              </p>
+              <div className="zh-section-label">{zuhoeren?.kiLabel ?? "Eine neue Dimension"}</div>
+              <h2 className="zh-ki-title" dangerouslySetInnerHTML={{ __html: zuhoeren?.kiTitel ?? "Zuhören<br /><em>+ KI</em>" }} />
+              <div className="zh-ki-body" dangerouslySetInnerHTML={{ __html: zuhoeren?.kiProse1 ?? "<p>Neben den klassischen Zuhör-Sitzungen biete ich auch eine erweiterte Form an: Zuhören in Kombination mit KI-gestützter Reflexion.</p>" }} />
+              <div className="zh-ki-body" dangerouslySetInnerHTML={{ __html: zuhoeren?.kiProse2 ?? "<p>Hier wird das Gespräch — wenn du möchtest — zusätzlich durch eine KI gespiegelt. Nicht als Ersatz, sondern als Erweiterung.</p>" }} />
             </div>
             <div>
               <ul className="zh-ki-list">
-                <li>Muster in deinen Worten sichtbar machen</li>
-                <li>Gedanken strukturieren und sortieren</li>
-                <li>neue Perspektiven anbieten, die du noch nicht bedacht hast</li>
-                <li>das, was zwischen den Zeilen liegt, in Sprache bringen</li>
+                {zuhoeren?.kiListe?.map((item, i) => (
+                  <li key={i}>{item}</li>
+                )) ?? (
+                  <>
+                    <li>Muster in deinen Worten sichtbar machen</li>
+                    <li>Gedanken strukturieren und sortieren</li>
+                    <li>neue Perspektiven anbieten, die du noch nicht bedacht hast</li>
+                    <li>das, was zwischen den Zeilen liegt, in Sprache bringen</li>
+                  </>
+                )}
               </ul>
               <p className="zh-ki-note">
-                Du bleibst dabei immer im Zentrum. Die KI ist kein „Coach",
-                sondern ein Werkzeug für zusätzliche Klarheit — menschliches
-                Zuhören und kollektive Intelligenz, die zusammenwirken.
+                {zuhoeren?.kiNote ?? "Du bleibst dabei immer im Zentrum. Die KI ist kein „Coach\", sondern ein Werkzeug für zusätzliche Klarheit — menschliches Zuhören und kollektive Intelligenz, die zusammenwirken."}
               </p>
             </div>
           </div>
@@ -759,12 +691,8 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         {/* CTA */}
         <section className="zh-cta-section">
           <span className="zh-cta-eyebrow">{zuhoeren?.ctaEyebrow ?? "Einladung"}</span>
-          <h2 className="zh-cta-title" style={{ whiteSpace: "pre-line" }}>
-            {zuhoeren?.ctaTitel ?? <>Wenn du das Gefühl hast,<br />dass es Zeit ist, einmal<br /><em>wirklich gehört zu werden.</em></>}
-          </h2>
-          <p className="zh-cta-body" style={{ whiteSpace: "pre-line" }}>
-            {zuhoeren?.ctaBody ?? "Du musst nichts vorbereiten.\nDu darfst genau so kommen, wie du gerade bist."}
-          </p>
+          <h2 className="zh-cta-title" style={{ whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: zuhoeren?.ctaTitel ?? "Wenn du das Gefühl hast,<br />dass es Zeit ist, einmal<br /><em>wirklich gehört zu werden.</em>" }} />
+          <p className="zh-cta-body" style={{ whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: zuhoeren?.ctaBody ?? "Du musst nichts vorbereiten.\nDu darfst genau so kommen, wie du gerade bist." }} />
           <a href={`mailto:${zuhoeren?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="zh-cta-btn">
             {zuhoeren?.ctaButton ?? "Gespräch anfragen"}
           </a>
