@@ -1,4 +1,7 @@
 import UeberMichClient from "@/components/UeberMichClient";
+import { getUeberMich } from "@/sanity/lib/queries";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Über Bernd Wiese — Zuhörcoach & KI-Berater",
@@ -12,6 +15,7 @@ export const metadata = {
   },
 };
 
-export default function UeberMichPage() {
-  return <UeberMichClient />;
+export default async function UeberMichPage() {
+  const content = await getUeberMich();
+  return <UeberMichClient data={content} />;
 }

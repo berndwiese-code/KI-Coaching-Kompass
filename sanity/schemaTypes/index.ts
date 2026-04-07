@@ -6,6 +6,7 @@ import { testimonials } from "./testimonials";
 import { workshop } from "./workshop";
 import { beratung } from "./beratung";
 import { zuhoeren } from "./zuhoeren";
+import { ueberMich } from "./ueberMich";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   startseite,
@@ -15,4 +16,5 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   workshop,
   beratung,
   zuhoeren,
+  ueberMich,
 ];

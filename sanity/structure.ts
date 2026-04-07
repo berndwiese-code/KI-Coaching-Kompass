@@ -33,11 +33,18 @@ export const structure: StructureResolver = (S) =>
             .schemaType('zuhoeren')
             .documentId('zuhoeren')
         ),
+      S.listItem()
+        .title('Über mich')
+        .child(
+          S.document()
+            .schemaType('ueberMich')
+            .documentId('ueberMich')
+        ),
       
       S.divider(),
       
       // LISTEN (Multi-Documents)
       ...S.documentTypeListItems().filter(listItem => 
-        !['startseite', 'workshop', 'beratung', 'zuhoeren'].includes(listItem.getId() as string)
+        !['startseite', 'workshop', 'beratung', 'zuhoeren', 'ueberMich'].includes(listItem.getId() as string)
       )
     ])

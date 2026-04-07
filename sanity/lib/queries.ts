@@ -329,3 +329,28 @@ export async function getZuhoeren(): Promise<Zuhoeren | null> {
     kontaktEmail
   }`)
 }
+
+// ── ÜBER MICH ─────────────────────────────────────────────────────────────────
+
+export type UeberMich = {
+  eyebrow?: string;
+  name?: string;
+  subname?: string;
+  portraitLinkText?: string;
+  portraitLinkUrl?: string;
+  prose?: string;
+  contactLabel?: string;
+  emailText?: string;
+  emailUrl?: string;
+  linkedInText?: string;
+  linkedInUrl?: string;
+  phoneText?: string;
+  phoneUrl?: string;
+};
+
+export async function getUeberMich(): Promise<UeberMich | null> {
+  return client.fetch(`*[_type == "ueberMich" && _id == "ueberMich"][0]{
+    eyebrow, name, subname, portraitLinkText, portraitLinkUrl,
+    prose, contactLabel, emailText, emailUrl, linkedInText, linkedInUrl, phoneText, phoneUrl
+  }`)
+}

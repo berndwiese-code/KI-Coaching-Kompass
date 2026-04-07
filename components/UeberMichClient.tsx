@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+import { UeberMich } from "@/sanity/lib/queries";
+
 type Theme = "light" | "dark";
 
-export default function UeberMichClient() {
+export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -329,73 +331,44 @@ export default function UeberMichClient() {
 
         {/* CONTENT */}
         <main className="um-hero">
-          <div className="um-eyebrow">Über mich</div>
-          <h1 className="um-name">Bernd Wiese</h1>
-          <p className="um-subname">Zuhörcoach · KI-Berater · Freiburg</p>
+          <div className="um-eyebrow">{data?.eyebrow ?? "Über mich"}</div>
+          <h1 className="um-name" dangerouslySetInnerHTML={{ __html: data?.name ?? "Bernd Wiese" }} />
+          <p className="um-subname" dangerouslySetInnerHTML={{ __html: data?.subname ?? "Zuhörcoach · KI-Berater · Freiburg" }} />
 
           <div className="um-portrait-wrap">
-            <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+            <img src="/bernd-wiese.jpg" alt={data?.name ?? "Bernd Wiese"} />
             <a
-              href="https://www.linkedin.com/in/bernd-wiese-9303341/"
+              href={data?.portraitLinkUrl ?? "https://www.linkedin.com/in/bernd-wiese-9303341/"}
               target="_blank"
               rel="noopener noreferrer"
               className="um-portrait-link"
             >
-              LinkedIn ↗
+              {data?.portraitLinkText ?? "LinkedIn ↗"}
             </a>
           </div>
 
-          <div className="um-prose">
-            <p>Ich liebe echte Präsenz.<br />
-            Momente, in denen nichts optimiert werden muss.<br />
-            In denen jemand einfach da sein darf — und gehört wird.</p>
-
-            <p>Und gleichzeitig fasziniert mich, was gerade mit KI entsteht.</p>
-
-            <p>Nicht nur technologisch.<br />
-            Sondern in dem, was es über uns sichtbar macht.</p>
-
-            <p>Denn KI kann viel.<br />
-            Sie analysiert, strukturiert, spiegelt.<br />
-            Manchmal überraschend klar.</p>
-
-            <p>Aber genau darin liegt für mich die eigentliche Frage:<br />
-            Was passiert, wenn etwas uns <em>perfekt antwortet</em> —<br />
-            ohne uns wirklich zu begegnen?</p>
-
-            <p>Ich arbeite genau in dieser Spannung.</p>
-
-            <p>Zwischen einem Zuhören, das nichts will,<br />
-            und einer Technologie, die unglaublich viel kann —<br />
-            aber nichts fühlt.</p>
-
-            <p>Für mich ist KI kein Ersatz für menschliche Tiefe.<br />
-            Aber sie ist ein Werkzeug, das uns herausfordert:<br />
-            ehrlicher zu werden, klarer zu sehen, bewusster zu sprechen.</p>
-
-            <p>Und manchmal sogar: <em>uns selbst besser zu hören.</em></p>
-
-            <p>Ich verbinde beides —<br />
-            menschliche Präsenz und KI-gestützte Reflexion.</p>
-
-            <p>Nicht, um Prozesse zu beschleunigen.<br />
-            Sondern um Räume zu öffnen,<br />
-            in denen echte Erkenntnis entstehen kann.</p>
-          </div>
+          <div 
+            className="um-prose" 
+            dangerouslySetInnerHTML={{ __html: data?.prose ?? "<p>Ich liebe echte Präsenz.<br />Momente, in denen nichts optimiert werden muss.<br />In denen jemand einfach da sein darf — und gehört wird.</p><p>Und gleichzeitig fasziniert mich, was gerade mit KI entsteht.</p><p>Nicht nur technologisch.<br />Sondern in dem, was es über uns sichtbar macht.</p><p>Denn KI kann viel.<br />Sie analysiert, strukturiert, spiegelt.<br />Manchmal überraschend klar.</p><p>Aber genau darin liegt für mich die eigentliche Frage:<br />Was passiert, wenn etwas uns <em>perfekt antwortet</em> —<br />ohne uns wirklich zu begegnen?</p><p>Ich arbeite genau in dieser Spannung.</p><p>Zwischen einem Zuhören, das nichts will,<br />und einer Technologie, die unglaublich viel kann —<br />aber nichts fühlt.</p><p>Für mich ist KI kein Ersatz für menschliche Tiefe.<br />Aber sie ist ein Werkzeug, das uns herausfordert:<br />ehrlicher zu werden, klarer zu sehen, bewusster zu sprechen.</p><p>Und manchmal sogar: <em>uns selbst besser zu hören.</em></p><p>Ich verbinde beides —<br />menschliche Präsenz und KI-gestützte Reflexion.</p><p>Nicht, um Prozesse zu beschleunigen.<br />Sondern um Räume zu öffnen,<br />in denen echte Erkenntnis entstehen kann.</p>" }}
+          />
 
           <div className="um-contact">
-            <div className="um-contact-label">Kontakt</div>
+            <div className="um-contact-label">{data?.contactLabel ?? "Kontakt"}</div>
             <div className="um-contact-links">
-              <a href="mailto:Wiese@ISHA.de" className="um-contact-item">Wiese@ISHA.de</a>
+              <a href={data?.emailUrl ?? "mailto:Wiese@ISHA.de"} className="um-contact-item">
+                {data?.emailText ?? "Wiese@ISHA.de"}
+              </a>
               <a
-                href="https://www.linkedin.com/in/bernd-wiese-9303341/"
+                href={data?.linkedInUrl ?? "https://www.linkedin.com/in/bernd-wiese-9303341/"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="um-contact-item"
               >
-                LinkedIn
+                {data?.linkedInText ?? "LinkedIn"}
               </a>
-              <a href="tel:+4917614061816" className="um-contact-item">+49 176 1406 18 16</a>
+              <a href={data?.phoneUrl ?? "tel:+4917614061816"} className="um-contact-item">
+                {data?.phoneText ?? "+49 176 1406 18 16"}
+              </a>
             </div>
           </div>
         </main>
