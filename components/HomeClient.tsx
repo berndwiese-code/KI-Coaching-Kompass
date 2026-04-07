@@ -504,14 +504,17 @@ export default function HomeClient({ startseite, testimonials }: Props) {
             </a>
           </div>
           <div className="hero-orb" />
-          <p className="hero-eyebrow">KI-Coaching Kompass</p>
+          <p className="hero-eyebrow">{startseite?.heroEyebrow ?? "KI-Coaching Kompass"}</p>
           <h1 className="hero-title">
-            KI verändert, wie wir uns begegnen.<br />
-            Die Frage ist nur: <em>wie?</em>
+            {startseite?.heroTitel ?? <>KI verändert, wie wir uns begegnen.<br />Die Frage ist nur: <em>wie?</em></>}
           </h1>
           <p className="hero-sub">
-            Ich begleite Unternehmen, Coaches und Menschen, die das herausfinden wollen —
-            mit Methode, Präsenz und ohne Hype.
+            {startseite?.heroUntertitel ?? (
+              <>
+                Ich begleite Unternehmen, Coaches und Menschen, die das herausfinden wollen —
+                mit Methode, Präsenz und ohne Hype.
+              </>
+            )}
           </p>
           <div className="hero-pills">
             <Link href="/ki-coaching/beratung" className="hero-pill primary">Für Unternehmen</Link>
@@ -586,12 +589,12 @@ export default function HomeClient({ startseite, testimonials }: Props) {
         <section className="sec alt kompass-band">
           <div className="sec-in">
             <div className="kompass-text">
-              <p className="eyebrow">Der Kompass</p>
-              <h2 className="sec-title">Tools, Studien, Meinungen —<br /><em>ohne Affiliate-Brille.</em></h2>
+              <p className="eyebrow">{startseite?.toolsEyebrow ?? "Der Kompass"}</p>
+              <h2 className="sec-title">
+                {startseite?.toolsTitel ?? <>Tools, Studien, Meinungen —<br /><em>ohne Affiliate-Brille.</em></>}
+              </h2>
               <p className="sec-lead">
-                Ich habe aufgehört zu zählen, wie viele KI-Tools sich als
-                Coaching-Revolution vermarkten. Deshalb habe ich angefangen zu sortieren.
-                Der Kompass ist kein Versprechen — er ist das, was ich selbst gebraucht hätte.
+                {startseite?.toolsFooterText ?? "Ich habe aufgehört zu zählen, wie viele KI-Tools sich als Coaching-Revolution vermarkten. Deshalb habe ich angefangen zu sortieren. Der Kompass ist kein Versprechen — er ist das, was ich selbst gebraucht hätte."}
               </p>
               <div className="kompass-stat-row">
                 <div className="kompass-stat">
@@ -608,7 +611,7 @@ export default function HomeClient({ startseite, testimonials }: Props) {
                 </div>
               </div>
               <Link href="/ki-coaching/kompass" className="btn-primary" style={{marginTop: "2rem", display: "inline-block"}}>
-                Zum Kompass
+                {startseite?.toolsFooterCta ?? "Zum Kompass"}
               </Link>
             </div>
             <blockquote className="kompass-pull">
@@ -627,8 +630,10 @@ export default function HomeClient({ startseite, testimonials }: Props) {
           <>
             <section className="sec">
               <div className="sec-in">
-                <p className="eyebrow">Stimmen</p>
-                <h2 className="sec-title">Was Menschen sagen,<br /><em>die dabei waren.</em></h2>
+                <p className="eyebrow">{startseite?.testimonialsEyebrow ?? "Stimmen"}</p>
+                <h2 className="sec-title">
+                  {startseite?.testimonialsTitel ?? <>Was Menschen sagen,<br /><em>die dabei waren.</em></>}
+                </h2>
                 <div className="stimmen-grid">
                   {testimonials.map(t => (
                     <div key={t._id} className="stimme-card">
