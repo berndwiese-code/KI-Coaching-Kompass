@@ -15,7 +15,9 @@ const kiCoachingDoc = {
   navCta: "Kontakt",
   navCtaUrl: "mailto:bernd.wiese@googlemail.com",
   heroEyebrow: "KI-Coaching",
-  heroTitle: "KI-Coaching:<br /><em>Was es ist. Was es kann.</em><br />Und was nicht.",
+  heroTitlePart1: "KI-Coaching:",
+  heroTitleHighlight: "Was es ist. Was es kann.",
+  heroTitlePart2: "Und was nicht.",
   heroLead: "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen.",
   
   cards: [

@@ -361,7 +361,9 @@ export type KICoaching = {
   navCta?: string;
   navCtaUrl?: string;
   heroEyebrow?: string;
-  heroTitle?: string;
+  heroTitlePart1?: string;
+  heroTitleHighlight?: string;
+  heroTitlePart2?: string;
   heroLead?: string;
   cards?: {
     icon?: string;
@@ -379,7 +381,7 @@ export type KICoaching = {
 
 export async function getKICoaching(): Promise<KICoaching | null> {
   return client.fetch(`*[_type == "kiCoaching"][0]{
-    navCta, navCtaUrl, heroEyebrow, heroTitle, heroLead,
+    navCta, navCtaUrl, heroEyebrow, heroTitlePart1, heroTitleHighlight, heroTitlePart2, heroLead,
     cards[]{ icon, label, title, body, arrowText, url },
     links[]{ label, url }
   }`)

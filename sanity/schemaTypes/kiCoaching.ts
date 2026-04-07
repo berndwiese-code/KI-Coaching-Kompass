@@ -9,10 +9,19 @@ export const kiCoaching = defineType({
     defineField({ name: "navCtaUrl", type: "string", title: "Nav Button Link" }),
     defineField({ name: "heroEyebrow", type: "string", title: "Hero Eyebrow" }),
     defineField({ 
-      name: "heroTitle", 
+      name: "heroTitlePart1", 
       type: "string", 
-      title: "Hero Titel (HTML erlaubt)",
-      description: "Erlaubt <br/> und <em>...</em>"
+      title: "Hero Titel - Teil 1 (vor dem Kursiven)" 
+    }),
+    defineField({ 
+      name: "heroTitleHighlight", 
+      type: "string", 
+      title: "Hero Titel - Kursiver Mittelteil" 
+    }),
+    defineField({ 
+      name: "heroTitlePart2", 
+      type: "string", 
+      title: "Hero Titel - Teil 3 (nach dem Kursiven)" 
     }),
     defineField({ name: "heroLead", type: "text", title: "Hero Lead" }),
     defineField({

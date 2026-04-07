@@ -280,10 +280,13 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
         {/* HERO */}
         <div className="kc-hero">
           <div className="kc-eyebrow">{data?.heroEyebrow ?? "KI-Coaching"}</div>
-          <h1 
-            className="kc-title" 
-            dangerouslySetInnerHTML={{ __html: data?.heroTitle ?? "KI-Coaching:<br /><em>Was es ist. Was es kann.</em><br />Und was nicht." }} 
-          />
+          <h1 className="kc-title">
+            {data?.heroTitlePart1 ?? "KI-Coaching:"}
+            <br />
+            <em>{data?.heroTitleHighlight ?? "Was es ist. Was es kann."}</em>
+            <br />
+            {data?.heroTitlePart2 ?? "Und was nicht."}
+          </h1>
           <p className="kc-lead">
             {data?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
           </p>
