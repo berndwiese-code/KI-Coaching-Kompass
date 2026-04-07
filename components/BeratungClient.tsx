@@ -464,9 +464,10 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           </div>
           <div className="br-hero-orb" />
           <div className="eyebrow">{beratung?.heroEyebrow ?? "Beratung"}</div>
-          <h1 className="br-hero-title">
-            {beratung?.heroTitel ?? <>KI-Coaching-Software<br /><em>gezielt einsetzen.</em></>}
-          </h1>
+          <h1 
+            className="br-hero-title"
+            dangerouslySetInnerHTML={{ __html: beratung?.heroTitel ?? "KI-Coaching-Software<br /><em>gezielt einsetzen.</em>" }}
+          />
           <p className="br-hero-lead">
             {beratung?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
           </p>
@@ -493,184 +494,158 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
 
           {/* Challenge */}
           <div className="challenge-box">
-            <p>
-              <strong>Die Ausgangssituation:</strong> Unternehmen erkennen, dass Coaching ein
-              strategisches Werkzeug für Führungskräfteentwicklung, Mitarbeiterbindung und
-              kulturellen Wandel ist. Doch der Markt ist unübersichtlich: Soll es eine
-              All-in-One-Plattform sein, oder spezialisierte Tools? Wie lässt sich Qualität
-              messen? Was kostet wirklich was — und was rechnet sich? Und wie stellt man
-              DSGVO-Konformität sicher, wenn KI-Systeme sensible Gesprächsdaten verarbeiten?
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: beratung?.unternehmenChallenge ?? "<strong>Die Ausgangssituation:</strong> Unternehmen erkennen, dass Coaching ein strategisches Werkzeug für Führungskräfteentwicklung, Mitarbeiterbindung und kulturellen Wandel ist. Doch der Markt ist unübersichtlich: Soll es eine All-in-One-Plattform sein, oder spezialisierte Tools? Wie lässt sich Qualität messen? Was kostet wirklich was — und was rechnet sich? Und wie stellt man DSGVO-Konformität sicher, wenn KI-Systeme sensible Gesprächsdaten verarbeiten?" }} />
           </div>
 
           {/* Facts */}
           <div className="facts-row">
-            <div className="fact-item">
-              <div className="fact-num">249+</div>
-              <div className="fact-label">KI-Coaching-Tools<br />im Markt</div>
-            </div>
-            <div className="fact-item">
-              <div className="fact-num">9</div>
-              <div className="fact-label">Funktionale<br />Kategorien</div>
-            </div>
-            <div className="fact-item">
-              <div className="fact-num">∅ 3×</div>
-              <div className="fact-label">Mehr Engagement<br />mit KI-Unterstützung</div>
-            </div>
-            <div className="fact-item">
-              <div className="fact-num">ROI</div>
-              <div className="fact-label">Messbar &<br />nachweisbar</div>
-            </div>
+            {beratung?.unternehmenFacts?.map((fact, i) => (
+              <div className="fact-item" key={i}>
+                <div className="fact-num">{fact.num}</div>
+                <div className="fact-label" dangerouslySetInnerHTML={{ __html: fact.label }} />
+              </div>
+            )) ?? (
+              <>
+                <div className="fact-item">
+                  <div className="fact-num">249+</div>
+                  <div className="fact-label">KI-Coaching-Tools<br />im Markt</div>
+                </div>
+                <div className="fact-item">
+                  <div className="fact-num">9</div>
+                  <div className="fact-label">Funktionale<br />Kategorien</div>
+                </div>
+                <div className="fact-item">
+                  <div className="fact-num">∅ 3×</div>
+                  <div className="fact-label">Mehr Engagement<br />mit KI-Unterstützung</div>
+                </div>
+                <div className="fact-item">
+                  <div className="fact-num">ROI</div>
+                  <div className="fact-label">Messbar &<br />nachweisbar</div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Leistungen */}
-          <div className="br-section-label">Was ich biete</div>
-          <h2 className="br-section-title">
-            Von der Analyse bis<br /><em>zum laufenden Betrieb</em>
-          </h2>
+          <div className="br-section-label">{beratung?.unternehmenLeistungenLabel ?? "Was ich biete"}</div>
+          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.unternehmenLeistungenTitel ?? "Von der Analyse bis<br /><em>zum laufenden Betrieb</em>" }} />
           <p className="br-section-body">
-            Ich begleite Sie durch den gesamten Prozess der Einführung von KI-Coaching —
-            von der ersten Bedarfsklärung bis zur nachhaltigen Verankerung in Ihrer Organisation.
+            {beratung?.unternehmenLeistungenBody ?? "Ich begleite Sie durch den gesamten Prozess der Einführung von KI-Coaching — von der ersten Bedarfsklärung bis zur nachhaltigen Verankerung in Ihrer Organisation."}
           </p>
 
           <div className="leistung-grid">
-            <div className="leistung-card">
-              <span className="leistung-icon">🔍</span>
-              <div className="leistung-title">Bedarfsanalyse</div>
-              <div className="leistung-body">
-                Was wollen Sie mit Coaching wirklich erreichen? Wir klären Zielgruppen,
-                Anwendungsfälle, Skalierungserwartungen und kulturelle Voraussetzungen —
-                bevor wir auch nur ein Tool in Betracht ziehen.
+            {beratung?.unternehmenLeistungenListe?.map((l, i) => (
+              <div className="leistung-card" key={i}>
+                <span className="leistung-icon">{l.icon}</span>
+                <div className="leistung-title">{l.title}</div>
+                <div className="leistung-body">{l.body}</div>
               </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🧭</span>
-              <div className="leistung-title">Tool-Auswahl & Bewertung</div>
-              <div className="leistung-body">
-                Auf Basis Ihres Bedarfs erstelle ich eine strukturierte Shortlist aus dem
-                Markt: von Praxis-Management-Software über KI-Coaching-Plattformen bis hin
-                zu spezialisierten Assessment- und Analytics-Tools.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🛡</span>
-              <div className="leistung-title">DSGVO & Compliance</div>
-              <div className="leistung-body">
-                Sensible Coaching-Gespräche dürfen nicht in unsichere Systeme fließen.
-                Ich prüfe Datenverarbeitung, Serverstandorte, Verschlüsselung und
-                Auftragsverarbeitungsverträge — bevor der Vertrag unterschrieben wird.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🚀</span>
-              <div className="leistung-title">Pilotierung & Rollout</div>
-              <div className="leistung-body">
-                Kleine Piloten mit echten Nutzern — bevor das Budget freigegeben wird.
-                Ich begleite Pilot-Setup, Evaluierung und die strukturierte Ausweitung
-                auf die gesamte Organisation.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">📊</span>
-              <div className="leistung-title">ROI-Messung</div>
-              <div className="leistung-body">
-                Coaching-Investitionen müssen sich rechtfertigen lassen. Ich helfe Ihnen,
-                aussagekräftige KPIs zu definieren, Coaching-Daten auszuwerten und den
-                Mehrwert intern sichtbar zu machen.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🤝</span>
-              <div className="leistung-title">Coach-Pool & Qualität</div>
-              <div className="leistung-body">
-                Welche Coaches passen zu welchen Tools und Zielgruppen? Ich unterstütze
-                beim Aufbau oder der Qualifizierung interner und externer Coach-Pools —
-                einschließlich KI-Kompetenz als Kriterium.
-              </div>
-            </div>
+            )) ?? (
+              <>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🔍</span>
+                  <div className="leistung-title">Bedarfsanalyse</div>
+                  <div className="leistung-body">Was wollen Sie mit Coaching wirklich erreichen? Wir klären Zielgruppen, Anwendungsfälle, Skalierungserwartungen und kulturelle Voraussetzungen — bevor wir auch nur ein Tool in Betracht ziehen.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🧭</span>
+                  <div className="leistung-title">Tool-Auswahl & Bewertung</div>
+                  <div className="leistung-body">Auf Basis Ihres Bedarfs erstelle ich eine strukturierte Shortlist aus dem Markt: von Praxis-Management-Software über KI-Coaching-Plattformen bis hin zu spezialisierten Assessment- und Analytics-Tools.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🛡</span>
+                  <div className="leistung-title">DSGVO & Compliance</div>
+                  <div className="leistung-body">Sensible Coaching-Gespräche dürfen nicht in unsichere Systeme fließen. Ich prüfe Datenverarbeitung, Serverstandorte, Verschlüsselung und Auftragsverarbeitungsverträge — bevor der Vertrag unterschrieben wird.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🚀</span>
+                  <div className="leistung-title">Pilotierung & Rollout</div>
+                  <div className="leistung-body">Kleine Piloten mit echten Nutzern — bevor das Budget freigegeben wird. Ich begleite Pilot-Setup, Evaluierung und die strukturierte Ausweitung auf die gesamte Organisation.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">📊</span>
+                  <div className="leistung-title">ROI-Messung</div>
+                  <div className="leistung-body">Coaching-Investitionen müssen sich rechtfertigen lassen. Ich helfe Ihnen, aussagekräftige KPIs zu definieren, Coaching-Daten auszuwerten und den Mehrwert intern sichtbar zu machen.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🤝</span>
+                  <div className="leistung-title">Coach-Pool & Qualität</div>
+                  <div className="leistung-body">Welche Coaches passen zu welchen Tools und Zielgruppen? Ich unterstütze beim Aufbau oder der Qualifizierung interner und externer Coach-Pools — einschließlich KI-Kompetenz als Kriterium.</div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Prozess */}
-          <div className="br-section-label">Vorgehen</div>
-          <h2 className="br-section-title">Vier Phasen zum<br /><em>laufenden System</em></h2>
+          <div className="br-section-label">{beratung?.unternehmenProzessLabel ?? "Vorgehen"}</div>
+          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.unternehmenProzessTitel ?? "Vier Phasen zum<br /><em>laufenden System</em>" }} />
 
           <div className="process-grid">
-            <div className="process-step">
-              <div className="step-number">01</div>
-              <div className="step-title">Analyse</div>
-              <div className="step-body">
-                Ziele, Zielgruppen, Volumina, bestehende HR-Systeme und kulturelle
-                Rahmenbedingungen werden erfasst. Ergebnis: ein klares Anforderungsprofil.
+            {beratung?.unternehmenProzessListe?.map((step, i) => (
+              <div className="process-step" key={i}>
+                <div className="step-number">{step.number}</div>
+                <div className="step-title">{step.title}</div>
+                <div className="step-body">{step.body}</div>
               </div>
-            </div>
-            <div className="process-step">
-              <div className="step-number">02</div>
-              <div className="step-title">Marktcheck</div>
-              <div className="step-body">
-                Systematische Bewertung relevanter Tools aus einer Datenbank von
-                249+ Lösungen — nach Funktion, Skalierbarkeit, Preis und DSGVO-Status.
-              </div>
-            </div>
-            <div className="process-step">
-              <div className="step-number">03</div>
-              <div className="step-title">Pilot</div>
-              <div className="step-body">
-                3–6 Wochen Praxistest mit ausgewählter Gruppe. Messung, Feedback,
-                Optimierung. Erst dann folgt die Entscheidung über den Rollout.
-              </div>
-            </div>
-            <div className="process-step">
-              <div className="step-number">04</div>
-              <div className="step-title">Rollout</div>
-              <div className="step-body">
-                Skalierte Einführung mit begleitenden Trainings, Change-Kommunikation
-                und definierten Erfolgskennzahlen für die Dauerbeobachtung.
-              </div>
-            </div>
+            )) ?? (
+              <>
+                <div className="process-step">
+                  <div className="step-number">01</div>
+                  <div className="step-title">Analyse</div>
+                  <div className="step-body">Ziele, Zielgruppen, Volumina, bestehende HR-Systeme und kulturelle Rahmenbedingungen werden erfasst. Ergebnis: ein klares Anforderungsprofil.</div>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">02</div>
+                  <div className="step-title">Marktcheck</div>
+                  <div className="step-body">Systematische Bewertung relevanter Tools aus einer Datenbank von 249+ Lösungen — nach Funktion, Skalierbarkeit, Preis und DSGVO-Status.</div>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">03</div>
+                  <div className="step-title">Pilot</div>
+                  <div className="step-body">3–6 Wochen Praxistest mit ausgewählter Gruppe. Messung, Feedback, Optimierung. Erst dann folgt die Entscheidung über den Rollout.</div>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">04</div>
+                  <div className="step-title">Rollout</div>
+                  <div className="step-body">Skalierte Einführung mit begleitenden Trainings, Change-Kommunikation und definierten Erfolgskennzahlen für die Dauerbeobachtung.</div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Relevante Plattformen */}
-          <div className="br-section-label">Tool-Landschaft</div>
-          <h2 className="br-section-title">Relevante Plattformen<br /><em>für Unternehmen</em></h2>
+          <div className="br-section-label">{beratung?.unternehmenToolsLabel ?? "Tool-Landschaft"}</div>
+          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.unternehmenToolsTitel ?? "Relevante Plattformen<br /><em>für Unternehmen</em>" }} />
           <p className="br-section-body">
-            Je nach Anforderung kommen grundlegend verschiedene Tool-Kategorien infrage.
-            Hier ein Überblick über die relevantesten Lösungsfelder aus der analysierten
-            Marktdatenbank:
+            {beratung?.unternehmenToolsBody ?? "Je nach Anforderung kommen grundlegend verschiedene Tool-Kategorien infrage. Hier ein Überblick über die relevantesten Lösungsfelder aus der analysierten Marktdatenbank:"}
           </p>
 
           <div className="cluster-grid">
-            <div className="cluster-card">
-              <div className="cluster-title">Skalierbare KI-Coaching-Plattformen</div>
-              <div className="cluster-tools">
-                <strong>Retorio, AIcoach.chat, Sherlock AI, BetterUp</strong> —
-                KI-gestützte Coaching-Erfahrungen für große Mitarbeitergruppen,
-                oft mit Rollenspiel-Simulationen und automatisiertem Feedback.
+            {beratung?.unternehmenToolsListe?.map((cluster, i) => (
+              <div className="cluster-card" key={i}>
+                <div className="cluster-title">{cluster.title}</div>
+                <div className="cluster-tools" dangerouslySetInnerHTML={{ __html: cluster.tools }} />
               </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">Corporate Learning & L&D</div>
-              <div className="cluster-tools">
-                <strong>Sharpist, Optify, Torch, CoachHub, Excelia</strong> —
-                Plattformen für strukturierte Führungskräfteentwicklung mit
-                kombinierten Human-Coach- und KI-Angeboten.
-              </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">Analytics & ROI-Messung</div>
-              <div className="cluster-tools">
-                <strong>Hoolr, Cloverleaf, Flowit</strong> —
-                Tools zur Auswertung von Coaching-Daten, Benchmarking und
-                Nachweis messbarer Wirksamkeit gegenüber dem Management.
-              </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">Self-Coaching für alle Mitarbeiter</div>
-              <div className="cluster-tools">
-                <strong>Evoach, Bestselfy, Symbolon, Mindsera</strong> —
-                Skalierbare Selbstcoaching-Angebote, die Coaching ohne
-                menschlichen Coach zugänglich machen.
-              </div>
-            </div>
+            )) ?? (
+              <>
+                <div className="cluster-card">
+                  <div className="cluster-title">Skalierbare KI-Coaching-Plattformen</div>
+                  <div className="cluster-tools"><strong>Retorio, AIcoach.chat, Sherlock AI, BetterUp</strong> — KI-gestützte Coaching-Erfahrungen für große Mitarbeitergruppen, oft mit Rollenspiel-Simulationen und automatisiertem Feedback.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">Corporate Learning & L&D</div>
+                  <div className="cluster-tools"><strong>Sharpist, Optify, Torch, CoachHub, Excelia</strong> — Plattformen für strukturierte Führungskräfteentwicklung mit kombinierten Human-Coach- und KI-Angeboten.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">Analytics & ROI-Messung</div>
+                  <div className="cluster-tools"><strong>Hoolr, Cloverleaf, Flowit</strong> — Tools zur Auswertung von Coaching-Daten, Benchmarking und Nachweis messbarer Wirksamkeit gegenüber dem Management.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">Self-Coaching für alle Mitarbeiter</div>
+                  <div className="cluster-tools"><strong>Evoach, Bestselfy, Symbolon, Mindsera</strong> — Skalierbare Selbstcoaching-Angebote, die Coaching ohne menschlichen Coach zugänglich machen.</div>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="br-cta-block">
@@ -691,198 +666,166 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
 
           {/* Challenge */}
           <div className="challenge-box">
-            <p>
-              <strong>Die Ausgangssituation:</strong> KI verändert die Coaching-Praxis
-              grundlegend — schneller als die meisten Coaches verarbeiten können. Welches
-              Tool übernimmt administrative Aufgaben, welches unterstützt im Prozess,
-              welches dokumentiert DSGVO-konform? Und wie bleibe ich als Coach authentisch,
-              wenn KI zunehmend Aufgaben übernimmt, die bisher meine Stärke waren?
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: beratung?.coachesChallenge ?? "<strong>Die Ausgangssituation:</strong> KI verändert die Coaching-Praxis grundlegend — schneller als die meisten Coaches verarbeiten können. Welches Tool übernimmt administrative Aufgaben, welches unterstützt im Prozess, welches dokumentiert DSGVO-konform? Und wie bleibe ich als Coach authentisch, wenn KI zunehmend Aufgaben übernimmt, die bisher meine Stärke waren?" }} />
           </div>
 
           {/* Facts */}
           <div className="facts-row">
-            <div className="fact-item">
-              <div className="fact-num">249+</div>
-              <div className="fact-label">Tools im Markt —<br />analysiert</div>
-            </div>
-            <div className="fact-item">
-              <div className="fact-num">7</div>
-              <div className="fact-label">Funktionale<br />Tool-Kategorien</div>
-            </div>
-            <div className="fact-item">
-              <div className="fact-num">ICF</div>
-              <div className="fact-label">Kompatibel &<br />geprüft</div>
-            </div>
-            <div className="fact-item">
-              <div className="fact-num">DSGVO</div>
-              <div className="fact-label">Immer ein<br />Kriterium</div>
-            </div>
+            {beratung?.coachesFacts?.map((fact, i) => (
+              <div className="fact-item" key={i}>
+                <div className="fact-num">{fact.num}</div>
+                <div className="fact-label" dangerouslySetInnerHTML={{ __html: fact.label }} />
+              </div>
+            )) ?? (
+              <>
+                <div className="fact-item">
+                  <div className="fact-num">249+</div>
+                  <div className="fact-label">Tools im Markt —<br />analysiert</div>
+                </div>
+                <div className="fact-item">
+                  <div className="fact-num">7</div>
+                  <div className="fact-label">Funktionale<br />Tool-Kategorien</div>
+                </div>
+                <div className="fact-item">
+                  <div className="fact-num">ICF</div>
+                  <div className="fact-label">Kompatibel &<br />geprüft</div>
+                </div>
+                <div className="fact-item">
+                  <div className="fact-num">DSGVO</div>
+                  <div className="fact-label">Immer ein<br />Kriterium</div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Leistungen */}
-          <div className="br-section-label">Was ich biete</div>
-          <h2 className="br-section-title">
-            Orientierung im<br /><em>KI-Tool-Dschungel</em>
-          </h2>
+          <div className="br-section-label">{beratung?.coachesLeistungenLabel ?? "Was ich biete"}</div>
+          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.coachesLeistungenTitel ?? "Orientierung im<br /><em>KI-Tool-Dschungel</em>" }} />
           <p className="br-section-body">
-            Ich begleite Coaches dabei, KI-Tools sinnvoll, sicher und qualitätsbewusst
-            in ihre Praxis zu integrieren — von der ersten Orientierung bis zur
-            vollständigen Einbindung in den eigenen Prozess.
+            {beratung?.coachesLeistungenBody ?? "Ich begleite Coaches dabei, KI-Tools sinnvoll, sicher und qualitätsbewusst in ihre Praxis zu integrieren — von der ersten Orientierung bis zur vollständigen Einbindung in den eigenen Prozess."}
           </p>
 
           <div className="leistung-grid">
-            <div className="leistung-card">
-              <span className="leistung-icon">🗺</span>
-              <div className="leistung-title">Tool-Orientierung</div>
-              <div className="leistung-body">
-                Welche Tools gibt es, und welche passen zu meiner Praxis? Ich liefere
-                einen strukturierten Überblick nach Anwendungsfall — ohne Werbung,
-                ohne Affiliate-Interessen.
+            {beratung?.coachesLeistungenListe?.map((l, i) => (
+              <div className="leistung-card" key={i}>
+                <span className="leistung-icon">{l.icon}</span>
+                <div className="leistung-title">{l.title}</div>
+                <div className="leistung-body">{l.body}</div>
               </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🎯</span>
-              <div className="leistung-title">Bedarfsklärung</div>
-              <div className="leistung-body">
-                Wo verlieren Sie heute Zeit? Wo würden Sie sich Unterstützung wünschen?
-                Auf Basis Ihrer konkreten Situation erstelle ich eine personalisierte
-                Tool-Shortlist.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🔬</span>
-              <div className="leistung-title">Hands-on Testing</div>
-              <div className="leistung-body">
-                Ich teste Tools mit Ihnen gemeinsam — live, an realen Anwendungsfällen.
-                Kein Lesen von Testberichten, sondern direktes Ausprobieren in
-                der eigenen Praxissituation.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">⚖️</span>
-              <div className="leistung-title">DSGVO & ICF-Check</div>
-              <div className="leistung-body">
-                KI-Transkription, Cloud-Speicherung, KI-Analyse von Sitzungsinhalten —
-                ich prüfe, was ethisch und rechtlich vertretbar ist, und was
-                Ihre Zertifizierung gefährden könnte.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🔧</span>
-              <div className="leistung-title">Implementierung</div>
-              <div className="leistung-body">
-                Einrichtung, Konfiguration, Workflows — ich begleite die technische
-                Integration in Ihre bestehende Praxis, bis alles reibungslos läuft.
-              </div>
-            </div>
-            <div className="leistung-card">
-              <span className="leistung-icon">🌱</span>
-              <div className="leistung-title">Kontinuierliche Begleitung</div>
-              <div className="leistung-body">
-                Der Markt entwickelt sich schnell. Auf Wunsch bleibe ich als
-                laufender Sparringspartner, der neue Tools beobachtet und bewertet,
-                bevor Sie Zeit damit verlieren.
-              </div>
-            </div>
+            )) ?? (
+              <>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🗺</span>
+                  <div className="leistung-title">Tool-Orientierung</div>
+                  <div className="leistung-body">Welche Tools gibt es, und welche passen zu meiner Praxis? Ich liefere einen strukturierten Überblick nach Anwendungsfall — ohne Werbung, ohne Affiliate-Interessen.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🎯</span>
+                  <div className="leistung-title">Bedarfsklärung</div>
+                  <div className="leistung-body">Wo verlieren Sie heute Zeit? Wo würden Sie sich Unterstützung wünschen? Auf Basis Ihrer konkreten Situation erstelle ich eine personalisierte Tool-Shortlist.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🔬</span>
+                  <div className="leistung-title">Hands-on Testing</div>
+                  <div className="leistung-body">Ich teste Tools mit Ihnen gemeinsam — live, an realen Anwendungsfällen. Kein Lesen von Testberichten, sondern direktes Ausprobieren in der eigenen Praxissituation.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">⚖️</span>
+                  <div className="leistung-title">DSGVO & ICF-Check</div>
+                  <div className="leistung-body">KI-Transkription, Cloud-Speicherung, KI-Analyse von Sitzungsinhalten — ich prüfe, was ethisch und rechtlich vertretbar ist, und was Ihre Zertifizierung gefährden könnte.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🔧</span>
+                  <div className="leistung-title">Implementierung</div>
+                  <div className="leistung-body">Einrichtung, Konfiguration, Workflows — ich begleite die technische Integration in Ihre bestehende Praxis, bis alles reibungslos läuft.</div>
+                </div>
+                <div className="leistung-card">
+                  <span className="leistung-icon">🌱</span>
+                  <div className="leistung-title">Kontinuierliche Begleitung</div>
+                  <div className="leistung-body">Der Markt entwickelt sich schnell. Auf Wunsch bleibe ich als laufender Sparringspartner, der neue Tools beobachtet und bewertet, bevor Sie Zeit damit verlieren.</div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Tool-Kategorien */}
-          <div className="br-section-label">Die Tool-Landschaft für Coaches</div>
-          <h2 className="br-section-title">Was es gibt —<br /><em>und wofür es taugt</em></h2>
+          <div className="br-section-label">{beratung?.coachesToolsLabel ?? "Die Tool-Landschaft für Coaches"}</div>
+          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.coachesToolsTitel ?? "Was es gibt —<br /><em>und wofür es taugt</em>" }} />
           <p className="br-section-body">
-            Der Markt lässt sich in sieben funktionale Kategorien einteilen.
-            Jede hat unterschiedliche Reifegrade, Preismodelle und ethische Implikationen:
+            {beratung?.coachesToolsBody ?? "Der Markt lässt sich in sieben funktionale Kategorien einteilen. Jede hat unterschiedliche Reifegrade, Preismodelle und ethische Implikationen:"}
           </p>
 
           <div className="cluster-grid">
-            <div className="cluster-card">
-              <div className="cluster-title">Praxis-Management</div>
-              <div className="cluster-tools">
-                <strong>CoachAccountable, Simply.Coach, CoachVantage, Delenta, Paperbell</strong> —
-                Terminplanung, Klientenmanagement, Aufgaben und Abrechnungen in einem System.
-                Die Basis für eine effiziente Praxis.
+            {beratung?.coachesToolsListe?.map((cluster, i) => (
+              <div className="cluster-card" key={i}>
+                <div className="cluster-title">{cluster.title}</div>
+                <div className="cluster-tools" dangerouslySetInnerHTML={{ __html: cluster.tools }} />
               </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">Gesprächsanalyse & Transkription</div>
-              <div className="cluster-tools">
-                <strong>Gerty.health, Fireflies.ai, Fathom</strong> —
-                Automatische Mitschriften, ICF-orientiertes Feedback auf Ihre
-                Gesprächsführung, strukturierte Sitzungszusammenfassungen.
-              </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">Online-Coaching-Umgebung</div>
-              <div className="cluster-tools">
-                <strong>CoachingSpace, LINC Coaching Board, CAI World</strong> —
-                Digitale Whiteboards, DSGVO-konforme Videokonferenz und interaktive
-                Methoden für Online-Sitzungen in einer Umgebung.
-              </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">KI als Co-Coach</div>
-              <div className="cluster-tools">
-                <strong>Evoach, CoachBot, BeCoach</strong> —
-                KI übernimmt strukturierte Coaching-Sequenzen zwischen den Sitzungen.
-                Klienten reflektieren eigenständig, Sie sehen die Ergebnisse.
-              </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">KI-Avatar des Coaches</div>
-              <div className="cluster-tools">
-                <strong>CoachVox, CoachClone</strong> —
-                Eine KI-Version von Ihnen selbst, trainiert auf Ihre Methode und Sprache.
-                Für Lead-Generierung, Community und skalierbare Erstbegleitung.
-              </div>
-            </div>
-            <div className="cluster-card">
-              <div className="cluster-title">Assessment & Diagnostik</div>
-              <div className="cluster-tools">
-                <strong>Coachmetrix, Flowit, Hedy AI</strong> —
-                360°-Feedback, Zielmessung und Fortschrittstracking für
-                strukturierte Coaching-Prozesse mit nachweisbarer Wirksamkeit.
-              </div>
-            </div>
+            )) ?? (
+              <>
+                <div className="cluster-card">
+                  <div className="cluster-title">Praxis-Management</div>
+                  <div className="cluster-tools"><strong>CoachAccountable, Simply.Coach, CoachVantage, Delenta, Paperbell</strong> — Terminplanung, Klientenmanagement, Aufgaben und Abrechnungen in einem System. Die Basis für eine effiziente Praxis.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">Gesprächsanalyse & Transkription</div>
+                  <div className="cluster-tools"><strong>Gerty.health, Fireflies.ai, Fathom</strong> — Automatische Mitschriften, ICF-orientiertes Feedback auf Ihre Gesprächsführung, strukturierte Sitzungszusammenfassungen.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">Online-Coaching-Umgebung</div>
+                  <div className="cluster-tools"><strong>CoachingSpace, LINC Coaching Board, CAI World</strong> — Digitale Whiteboards, DSGVO-konforme Videokonferenz und interaktive Methoden für Online-Sitzungen in einer Umgebung.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">KI als Co-Coach</div>
+                  <div className="cluster-tools"><strong>Evoach, CoachBot, BeCoach</strong> — KI übernimmt strukturierte Coaching-Sequenzen zwischen den Sitzungen. Klienten reflektieren eigenständig, Sie sehen die Ergebnisse.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">KI-Avatar des Coaches</div>
+                  <div className="cluster-tools"><strong>CoachVox, CoachClone</strong> — Eine KI-Version von Ihnen selbst, trainiert auf Ihre Methode und Sprache. Für Lead-Generierung, Community und skalierbare Erstbegleitung.</div>
+                </div>
+                <div className="cluster-card">
+                  <div className="cluster-title">Assessment & Diagnostik</div>
+                  <div className="cluster-tools"><strong>Coachmetrix, Flowit, Hedy AI</strong> — 360°-Feedback, Zielmessung und Fortschrittstracking für strukturierte Coaching-Prozesse mit nachweisbarer Wirksamkeit.</div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Prozess */}
-          <div className="br-section-label">Vorgehen</div>
-          <h2 className="br-section-title">Von der Verwirrung zur<br /><em>klaren Entscheidung</em></h2>
+          <div className="br-section-label">{beratung?.coachesProzessLabel ?? "Vorgehen"}</div>
+          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.coachesProzessTitel ?? "Von der Verwirrung zur<br /><em>klaren Entscheidung</em>" }} />
 
           <div className="process-grid">
-            <div className="process-step">
-              <div className="step-number">01</div>
-              <div className="step-title">Situationscheck</div>
-              <div className="step-body">
-                Wo stehen Sie heute? Was kostet Ihnen aktuell die meiste Zeit?
-                Wo wünschen Sie sich Entlastung oder Qualitätsgewinn?
+            {beratung?.coachesProzessListe?.map((step, i) => (
+              <div className="process-step" key={i}>
+                <div className="step-number">{step.number}</div>
+                <div className="step-title">{step.title}</div>
+                <div className="step-body">{step.body}</div>
               </div>
-            </div>
-            <div className="process-step">
-              <div className="step-number">02</div>
-              <div className="step-title">Tool-Shortlist</div>
-              <div className="step-body">
-                Auf Basis Ihrer Situation wähle ich 3–5 konkrete Tools aus,
-                die für Ihren Anwendungsfall wirklich relevant sind.
-              </div>
-            </div>
-            <div className="process-step">
-              <div className="step-number">03</div>
-              <div className="step-title">Live-Test</div>
-              <div className="step-body">
-                Gemeinsames Ausprobieren, Bewertung nach Praxis-tauglichkeit,
-                Datenschutz, Kosten und Einlernaufwand.
-              </div>
-            </div>
-            <div className="process-step">
-              <div className="step-number">04</div>
-              <div className="step-title">Integration</div>
-              <div className="step-body">
-                Das ausgewählte Tool wird vollständig in Ihren Praxis-Workflow
-                eingebettet — mit klaren Prozessen und Grenzen für die KI-Nutzung.
-              </div>
-            </div>
+            )) ?? (
+              <>
+                <div className="process-step">
+                  <div className="step-number">01</div>
+                  <div className="step-title">Situationscheck</div>
+                  <div className="step-body">Wo stehen Sie heute? Was kostet Ihnen aktuell die meiste Zeit? Wo wünschen Sie sich Entlastung oder Qualitätsgewinn?</div>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">02</div>
+                  <div className="step-title">Tool-Shortlist</div>
+                  <div className="step-body">Auf Basis Ihrer Situation wähle ich 3–5 konkrete Tools aus, die für Ihren Anwendungsfall wirklich relevant sind.</div>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">03</div>
+                  <div className="step-title">Live-Test</div>
+                  <div className="step-body">Gemeinsames Ausprobieren, Bewertung nach Praxis-tauglichkeit, Datenschutz, Kosten und Einlernaufwand.</div>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">04</div>
+                  <div className="step-title">Integration</div>
+                  <div className="step-body">Das ausgewählte Tool wird vollständig in Ihren Praxis-Workflow eingebettet — mit klaren Prozessen und Grenzen für die KI-Nutzung.</div>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="br-cta-block">

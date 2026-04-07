@@ -202,20 +202,60 @@ export type Beratung = {
   heroEyebrow?: string;
   heroTitel?: string;
   heroLead?: string;
+
+  unternehmenChallenge?: string;
+  unternehmenFacts?: { num: string; label: string }[];
+  unternehmenLeistungenLabel?: string;
+  unternehmenLeistungenTitel?: string;
+  unternehmenLeistungenBody?: string;
+  unternehmenLeistungenListe?: { icon: string; title: string; body: string }[];
+  unternehmenProzessLabel?: string;
+  unternehmenProzessTitel?: string;
+  unternehmenProzessListe?: { number: string; title: string; body: string }[];
+  unternehmenToolsLabel?: string;
+  unternehmenToolsTitel?: string;
+  unternehmenToolsBody?: string;
+  unternehmenToolsListe?: { title: string; tools: string }[];
   unternehmenCtaTitel?: string;
   unternehmenCtaBody?: string;
   unternehmenCtaButton?: string;
+
+  coachesChallenge?: string;
+  coachesFacts?: { num: string; label: string }[];
+  coachesLeistungenLabel?: string;
+  coachesLeistungenTitel?: string;
+  coachesLeistungenBody?: string;
+  coachesLeistungenListe?: { icon: string; title: string; body: string }[];
+  coachesProzessLabel?: string;
+  coachesProzessTitel?: string;
+  coachesProzessListe?: { number: string; title: string; body: string }[];
+  coachesToolsLabel?: string;
+  coachesToolsTitel?: string;
+  coachesToolsBody?: string;
+  coachesToolsListe?: { title: string; tools: string }[];
   coachesCtaTitel?: string;
   coachesCtaBody?: string;
   coachesCtaButton?: string;
+
   kontaktEmail?: string;
 };
 
 export async function getBeratung(): Promise<Beratung | null> {
   return client.fetch(`*[_type == "beratung"][0]{
     heroEyebrow, heroTitel, heroLead,
+    
+    unternehmenChallenge, unternehmenFacts[]{ num, label },
+    unternehmenLeistungenLabel, unternehmenLeistungenTitel, unternehmenLeistungenBody, unternehmenLeistungenListe[]{ icon, title, body },
+    unternehmenProzessLabel, unternehmenProzessTitel, unternehmenProzessListe[]{ number, title, body },
+    unternehmenToolsLabel, unternehmenToolsTitel, unternehmenToolsBody, unternehmenToolsListe[]{ title, tools },
     unternehmenCtaTitel, unternehmenCtaBody, unternehmenCtaButton,
+
+    coachesChallenge, coachesFacts[]{ num, label },
+    coachesLeistungenLabel, coachesLeistungenTitel, coachesLeistungenBody, coachesLeistungenListe[]{ icon, title, body },
+    coachesProzessLabel, coachesProzessTitel, coachesProzessListe[]{ number, title, body },
+    coachesToolsLabel, coachesToolsTitel, coachesToolsBody, coachesToolsListe[]{ title, tools },
     coachesCtaTitel, coachesCtaBody, coachesCtaButton,
+
     kontaktEmail
   }`)
 }
