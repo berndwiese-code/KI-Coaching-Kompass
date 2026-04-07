@@ -1,0 +1,102 @@
+Thema: Umbau Startseite 
+
+Das Problem= 
+
+Die Startseite war erstmal mit der Idee erstellt worden, dass dort versehentlich reingekommene User landen, die dann weitergeleitet werden auf die entsprechenden Module, denn entweder sind sie interessiert am Zuhören. Oder sie sind interessiert an KI-Coaching.
+
+Wenn sie an KI-Coaching interessiert sind, dann sind sie entweder eine Firma, was sie hoffentlich sind, oder sie sind ein Coach. Das möchte ich auf jeden Fall noch mehr in Richtung Conversion treiben und weniger in "guckt wir mal was ich alles habe hier". Das ist mir zu unübersichtlich. Was sind deine Gedanken dazu? 
+
+
+Zur Lösung habe ich mit Gemini gesprochen und das ist, was er geantwortet hat =
+
+
+Das Kernproblem deiner aktuellen Seite ist dann: Sie ist als Kompass (das Verzeichnis) positioniert, aber du willst Dienstleistungen verkaufen. Ein Verzeichnis ist eine Ressource, kein Verkaufsraum.
+
+Wenn du die Conversion steigern willst, muss die Startseite das Portfolio deiner Angebote präsentieren und den "Kompass" als Beweis deiner Expertise nutzen, nicht als Hauptattraktion.
+
+Hier sind meine überarbeiteten Gedanken, Design- und Textvorschläge für diese neue Klarheit.
+
+Strategische Neuausrichtung: Die Startseite als "Drehkreuz"
+Die Startseite darf nicht mehr erklären, was der KI-Coaching-Kompass ist, sondern sie muss fragen: "Was können wir für Sie tun?"
+
+Das "große Verzeichnis" (der Kompass) ist jetzt dein "Reason to Believe": Ein Beweis, dass du der Experte bist, der den Markt kennt und die Tools kuratiert, die du in deinen Sitzungen einsetzt.
+
+1. Die neue Struktur (Vorschlag)
+Hero-Section: Sofortige Positionierung und Segmentierung.
+
+Leistungsspektrum (Die drei Säulen): Kurzvorstellung der drei Angebote.
+
+Der "Kompass" als Kompetenz-Beweis: Ein Verweis auf das Verzeichnis.
+
+Über dich/Vertrauen: Warum du?
+
+Footer: Impressum, Kontakt.
+
+2. Design- & Textvorschläge für die Sektionen
+Hero-Section (Sofort sichtbar)
+Design: Ein klares, professionelles Layout. Oben die Navigation, darunter eine starke Headline und eine kurze Einleitung.
+
+Headline: "KI-Coaching & Begleitung: Professionell. Empathisch. Zukunftsgerichtet."
+
+Subline: "Ich verbinde menschliche Expertise mit modernster KI, um Potenziale zu entfalten – für Unternehmen, für Coaches und für Sie persönlich."
+
+Die drei Säulen (Der Kern deiner Conversion)
+Design: Drei gleich große, optisch ansprechende Boxen (Cards) nebeneinander. Jede Box hat ein Icon, eine Headline, 2-3 Bulletpoints und einen CTA-Button.
+
+Säule 1: Für Unternehmen (Firmen)
+
+Icon: Ein Gebäude oder eine Gruppe von Menschen.
+
+Headline: "Zukunftsfähigkeit & Effizienz für Ihr Team"
+
+Text: "Ich begleite Organisationen bei der Integration von KI im Coaching- und HR-Umfeld. Das steigert die Wirksamkeit Ihrer Führungskräfte."
+
+Button: [Lösungen für Unternehmen]
+
+Säule 2: Für Coaches
+
+Icon: Ein Zahnrad mit einem Coach-Symbol.
+
+Headline: "Dein Business mit KI skalieren"
+
+Text: "Lerne, wie du KI als Werkzeug für bessere Klienten-Ergebnisse, weniger Administration und neue Angebote nutzt."
+
+Button: [Coaching-Tools entdecken]
+
+Säule 3: Für Coachees (Einzelpersonen/Zuhören)
+
+Icon: Ein Kopf mit einer Sprechblase oder ein Ohr.
+
+Headline: "Reflexion & Wachstum: Deine KI-gestützten Zuhörsitzungen"
+
+Text: "Ich biete dir einen geschützten Raum für Klärung und Entwicklung. Wir nutzen KI als Sparringspartner für deine Themen."
+
+Button: [Deine Sitzung buchen]
+
+Der "Kompass" (Kompetenz-Beweis / Verzeichnis)
+Design: Eine eigene Sektion weiter unten, vielleicht mit einem dunkleren Hintergrund, um sie abzuheben. Sie zeigt, dass deine Angebote auf Fundament gebaut sind.
+
+Headline: "Der Kompass: Dein Fundament im KI-Dschungel."
+
+Text: "Keine leeren Versprechen, sondern kuratiertes Wissen. Entdecke mein großes Verzeichnis von KI-Tools, wissenschaftlichen Studien und Praxis-Artikeln."
+
+Button: [Zum KI-Coaching-Kompass] (führt zu deinem bestehenden Verzeichnis)
+
+3. Was du am Design ändern solltest, um Übersichtlichkeit zu schaffen
+Hör auf zu erklären, fang an zu segmentieren: Der aktuelle Text (siehe deine erste Analyse) erklärt viel. Ersetze die Erklärungen durch die drei klaren Zielgruppen-Boxen.
+
+Weniger ist mehr: Die Startseite sollte nur die "Visitenkarte" sein. Die Details (welche Module, welche Tools) gehören auf die Unterseiten der drei Säulen.
+
+Visuelle Hierarchie: Deine drei Dienstleistungen sind Prio 1. Der Kompass (Verzeichnis) ist Prio 2. Die visuelle Größe und Platzierung müssen das widerspiegeln.
+
+Icons: Nutze Icons, um die drei Zielgruppen sofort unterscheidbar zu machen.
+
+Zusammenfassung des Ansatzes
+Die Startseite wird zu einem Navigations-Hub. Ein Besucher landet dort und weiß nach einer Sekunde: "Ah, hier gibt es KI-Coaching für Firmen, für mich als Coach und für mich als Privatperson." Und er weiß: "Der Typ kennt sich aus, der hat ein ganzes Verzeichnis gebaut." Das ist Vertrauensbildung und Conversion-Treiber in einem.
+
+
+Meine Meinung zu Gemini's Lösungsvorschlag= 
+
+Er erfasst das Thema schon recht gut, aber mir fehlt meine Tonalität, wie ich spreche. Es ist mir ein bisschen zu nüchtern geraten.
+
+In der Über mich Seite findest du ja meinen Ton wieder. Bitte mach mir einen Vorschlag, wie die Seite gestaltet werden könnte, auch mit weiteren eigenen Ideen, und beziehe die Vorschläge von Gemini ein, die von der Struktur her richtig sind, aber die mir von den Texten her noch nicht 100 % gefallen. Die Sprache auf der gesamten Website ist grundsätzlich mit "du" statt mit "Sie" zu formulieren. 

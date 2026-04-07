@@ -572,7 +572,7 @@ export default function HomeClient({ startseite, testimonials }: Props) {
                   linkUrl: "/zuhoeren",
                   linkText: "Gehört werden →"
                 }
-              ]).map((weg: any, i: number) => (
+              ]).map((weg: { _key?: string; nummer: string; eyebrow: string; titel: string; text: string; linkUrl: string; linkText: string }, i: number) => (
                 <div className="weg-card" key={weg._key || i}>
                   <div className="weg-number">{weg.nummer}</div>
                   <p className="weg-eyebrow">{weg.eyebrow}</p>

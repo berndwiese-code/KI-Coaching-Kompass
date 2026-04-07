@@ -1,0 +1,3 @@
+Kannst du diese Seite lesen? Ich habe im Moment eine Seite mit zwei Tabulatoren für Firmen und für Coaches gemacht. Dann ist mir aber eingefallen, dass es ja unterschiedliche Zielgruppen für die Werbung sind. Wenn ich also Links in den Posts mache, welchen Link stelle ich da rein? Auf der anderen Seite ist es gut, wenn Coaches sehen, dass ich auch für meine Haupts Zielgruppe, die Firmen, entsprechend berate und bewerbe, weil Coaches ja wiederum in Firmen unterwegs sind.
+
+Was ist deine Empfehlung langfristig für das Marketing: zwei einzelne Seiten bauen oder die Lösung mit dem Tabulator lassen?  https://ki-coaching-kompass.vercel.app/ki-coaching/beratung

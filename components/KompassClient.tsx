@@ -338,7 +338,6 @@ export default function KompassClient() {
   if (!mounted) return null;
 
   const gesamtDaten = cacheRef.current[aktEntitaet] || [];
-  const gesamtAnzahl = gesamtDaten.length;
   const gefiltertAnzahl = gefiltert.length;
 
   return (

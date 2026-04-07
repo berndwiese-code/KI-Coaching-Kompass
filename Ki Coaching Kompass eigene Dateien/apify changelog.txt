@@ -1,0 +1,212 @@
+Changelog
+What's new at Apify?
+
+Apr 2, 2026
+
+Edit Actor build tags in Apify Console
+New
+
+Actor
+
+Console
+
+You can now add and remove build tags for your Actors directly in Apify Console. On any completed build's detail page, click the tag icon next to the build number to open the tag editor.
+
+From the modal you can:
+
+Add a tag - enter a tag name (e.g. latest, beta, stable) and assign it to the build. If the tag already exists on a different build, it will be moved to this one.
+Remove a tag - delete any existing tag from the build.
+This makes it easy to reassign tags like latest to a previous build for quick rollbacks without needing to rebuild. Build tags can also be managed programmatically via the API .
+
+You can learn more about how builds and tags work in the docs .
+
+
+Roman Roštár
+
+Product Manager
+
+Feb 24, 2026
+
+MCP & AI Improvements
+New
+
+mcpc - A universal CLI client for MCP
+mcpc is a new open-source CLI client for the MCP. It gives AI agents and developers a single, production-grade tool to authenticate, call tools, read resources, and manage sessions across any MCP server, all from the command line.
+
+Instead of integrating MCP directly into your agent code, mcpc generates commands that your agent executes. This keeps tool execution sandboxed, reduces token overhead when working with many tools, and improves performance.
+
+Key features
+OAuth 2.1 + PKCE authentication out of the box, no custom auth code needed
+Persistent sessions that survive between runs, so you don't re-authenticate every time
+--json output mode for easy integration into scripts and automation pipelines
+MCP proxy mode that exposes any stdio-based MCP server over HTTP
+Full MCP support for all primitives: tools, resources, prompts, and sampling
+Both transports supported: stdio and streamable HTTP
+How it works
+Connect to any MCP server using stdio or streamable HTTP transport
+Authenticate automatically via OAuth 2.1 + PKCE when the server requires it
+Discover available tools, resources, and prompts on the server
+Execute commands and pipe results into your agent or CI/CD pipeline using --json
+As an example, you can list all available tools on the Apify MCP server and call one in two commands:
+
+For more information, see the mcpc repository on GitHub .
+
+Apify Agent Skills
+Apify Agent Skills are reusable instruction sets that teach AI coding assistants like Claude Code and Cursor how to work with the Apify platform. Think of them as expert knowledge packaged for your AI pair programmer: instead of explaining Apify concepts from scratch every time, you install a skill and your assistant knows how to build Actors, pick the right scraping tool, and follow best practices.
+
+Skills are published in the agent-skills repository  and listed on the skills.sh  marketplace.
+
+Available skills
+apify-actor-development - Teaches your AI assistant how to build, debug, and deploy Apify Actors following best practices, including project structure, error handling, and platform conventions
+apify-ultimate-scraper - Teaches your AI agent how to scrape any website at scale by selecting the right Actor for the job, configuring inputs, and handling common scraping challenges
+Installation
+Run a single command to add Apify skills to your project:
+
+npx skills add apify/agent-skills
+
+Once installed, your AI assistant automatically picks up the skill instructions and applies them when relevant. No additional configuration is needed.
+
+For more information, see the agent-skills repository .
+
+SSE Transport Deprecation
+On April 1st, we are deprecating the legacy Server-Sent Events (SSE) transport for the Apify MCP server in favor of Streamable HTTP, the standard transport defined in the MCP specification .
+
+Streamable HTTP is simpler, more reliable, and supported by all major MCP clients. The legacy SSE endpoint will stop working after the deprecation date.
+
+What you need to do
+Update your MCP client configuration to replace the old SSE endpoint with the new base URL:
+
+Before: mcp.apify.com/sse
+After: mcp.apify.com
+No other changes are needed. All tools, resources, and authentication work the same way on the new endpoint.
+
+
+Dusan Vystrcil
+
+Product Manager
+
+Feb 3, 2026
+
+Dynamic Actor memory
+New
+
+Actor
+
+Dynamic Actor memory is a new feature that lets Actor developers define an expression that automatically adjusts the memory allocation for a run based on its input and run options.
+
+Instead of using a fixed memory value or requiring users to tune memory manually, this expression is evaluated for every run. This improves performance for large inputs, reduces costs for small ones, and requires less manual configuration from users.
+
+How it works
+Before a run is started, its memory is determined in this order
+
+Run level override: If the user provides explicit memory when starting a run (via UI or API), it always takes precedence
+Dynamic memory expression: If no run-level override is provided, the platform evaluates the dynamic memory expression defined in actor.json. The expression can use values from the input and run options to calculate memory.
+Actor default memory: Used when no valid expression is defined or when its evaluation fails
+Platform and user limits: The result is rounded to the nearest power of two and set to respect the minimum and maximum allowed memory set by the Actor developer, as well as platform  and user limits
+Expressions support arithmetic operations, math functions, conditionals (based on MathJS ), and safe property access with get().
+
+As an example, let’s say an Actor accepts a list of URLs to scrape, and the developer would want to allocate 64 MB of memory for each URL, but never more than 4 GB. The expression could look like this:
+
+min(get(input, 'startUrls.length', 1) * 64, 4096)
+
+For more information on how to configure expressions for your Actors and how dynamic memory works, see the docs .
+
+
+Filip Cicvarek
+
+Product Manager
+
+Jan 14, 2026
+
+Actor schemas updates
+New
+
+Actor
+
+Actor schemas
+
+Actor schemas: Apify is introducing Actor schema support for across your entire data pipeline. Actor creators can now define and enforce schemas for Actor outputs, datasets, web server responses, and key-value stores.
+
+The actor schemas will improve the validation of data structures, enabling the construction of more reliable workflows as well as ensuring quality results from each Actor.
+
+Learn more in our article detailing each schema and its use case .
+
+Dataset schema: The dataset schema defines the structure and representation of the data produced by an Actor, both in the API and Apify Console.
+
+Key-value store schema: The key‑value store schema organizes keys into logical groups called collections, which can be used to filter and categorize data both in the API and Apify Console. In addition, we have been iterating on our key-value store UI to achieve parity with our API. Integrators now have the ability to bulk-upload files, drag and drop, and key-value store collections to better organize the data that you export.
+
+Output schema: The Actor output schema builds upon the schemas for the dataset  and key-value store . It specifies where an Actor stores its output and defines templates for accessing that output.
+
+Web server schema: The web server schema ensures that data returned by your Actor’s web server is formatted correctly, so integrations and apps that consume it work reliably.
+
+Input sub-schemas let you break down and refine Actor inputs at a more granular level, so you can filter, exclude, or customize what data the Actor processes. This should make for better results with fewer runs.
+
+
+Filip Cicvarek
+
+Product Manager
+
+Jan 8, 2026
+
+New Features for AI-Powered Development
+New
+
+Docs
+
+API
+
+Making it easier than ever to integrate Apify with your AI coding assistants and agents
+
+1. MCP Documentation Tools, No Authentication Required
+Give your AI agents direct access to Apify's technical documentation without the hassle of API keys. We've released MCP documentation tools that allow AI agents to read and reference official Apify documentation instantly, with zero configuration overhead.
+
+Why this matters:
+
+Zero-friction setup: No API keys, tokens, or complex authentication flows. Install and start using immediately.
+Reduced hallucinationsYour AI agent pulls from the actual documentation source, ensuring accurate and up-to-date responses.Read-only & secure
+Pure information retrieval with no write access, no security risks to your account or infrastructure.
+2. One-Click Cursor & VS Code Integration
+Connect your favorite AI-powered IDE to Apify's MCP server in seconds. We've added native integration options directly to our documentation's LLM dropdown, allowing you to configure Apify's MCP server in Cursor or VS Code with a single click.
+
+What's new:
+
+Copy MCP Config — Instantly copy the pre-configured MCP server JSON to your clipboard
+Connect to Cursor — Opens Cursor directly with the Apify MCP configuration via cursor:// deeplink
+Connect to VS Code — Opens VS Code with the configuration via vscode: deeplink BoldWeb configurator fallback — If deeplinks aren't available, you're redirected to our web-based MCP configurator
+Where to find it: Look for the LLM dropdown menu on any of our main documentation pages. Select your preferred IDE, and you're connected. No manual JSON editing required.
+
+Why this matters:
+
+Ask your AI coding assistant questions while it references actual Apify documentation
+Get accurate code examples without switching context between your IDE and browser
+Debug issues with your agent having full access to relevant guides
+3. Full Documentation Available as LLM-Ready Markdown
+Index our entire documentation directly in your coding environment for maximum AI context. Our complete documentation is now available in LLM-optimized formats, designed specifically for AI coding assistants and RAG pipelines:
+
+llms.txt: https://docs.apify.com/llms.txt  - Quick context, smaller context windows
+llms-full.txt: https://docs.apify.com/llms-full.txt  - Full indexing, comprehensive RAG systems
+Why developers love this:
+
+Local indexing in Cursor/VS Code — Add these URLs to your IDE's documentation index. Your AI assistant will have persistent access to Apify's documentation without making external calls during conversations.
+Faster responses — Pre-indexed documentation means no latency from real-time lookups. Your agent responds instantly with accurate Apify knowledge.
+Offline-capable — Download llms-full.txt once and your AI assistant works with full Apify context even without internet access.
+RAG pipeline ready — These files are structured specifically for chunking and embedding in vector databases.
+Quick setup for Cursor:
+
+Open Cursor Settings
+Navigate to Indexing and Docs
+Click Add Docs
+Add: https://docs.apify.com/llms-full.txt 
+Your Cursor AI will now reference Apify documentation when answering questions about the platform.
+
+Getting Started
+All three features work together to create a seamless AI-assisted development experience:
+
+Quick questions? → Use the MCP documentation tools (no auth required)
+IDE integration? → Click "Connect to Cursor" or "Connect to VS Code" in our docs
+Deep indexing? → Add llms-full.txt to your project for persistent context
+
+Mathieux Barlow-Ladias
+
+Product Manager
+
