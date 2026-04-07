@@ -85,7 +85,7 @@ export type Testimonial = {
 };
 
 export async function getStartseite(): Promise<Startseite | null> {
-  return client.fetch(`*[_type == "startseite" && _id == "startseite"][0]{
+  return client.fetch(`*[_type == "startseite"][0]{
     heroEyebrow, heroTitel, heroUntertitel, ctaText, heroNote, heroSuccessMsg,
     wegeEyebrow, wegeTitel, wegeLead,
     wegeListe[]{ nummer, eyebrow, titel, text, linkText, linkUrl },
@@ -180,7 +180,7 @@ export type Workshop = {
 };
 
 export async function getWorkshop(): Promise<Workshop | null> {
-  return client.fetch(`*[_type == "workshop" && _id == "workshop"][0]{
+  return client.fetch(`*[_type == "workshop"][0]{
     navLinks[]{ label, url, isExternal }, navCta,
     heroEyebrow, heroTitel, heroUntertitel, heroPill1, heroPill2, heroPill3, heroPill4, heroCtaPrimary, heroCtaSecondary,
     zielgruppeEyebrow, zielgruppeTitel, zielgruppeLead, zielgruppeKarten[]{ icon, text },
@@ -241,7 +241,7 @@ export type Beratung = {
 };
 
 export async function getBeratung(): Promise<Beratung | null> {
-  return client.fetch(`*[_type == "beratung" && _id == "beratung"][0]{
+  return client.fetch(`*[_type == "beratung"][0]{
     heroEyebrow, heroTitel, heroLead,
     
     unternehmenChallenge, unternehmenFacts[]{ num, label },
@@ -316,7 +316,7 @@ export type Zuhoeren = {
 };
 
 export async function getZuhoeren(): Promise<Zuhoeren | null> {
-  return client.fetch(`*[_type == "zuhoeren" && _id == "zuhoeren"][0]{
+  return client.fetch(`*[_type == "zuhoeren"][0]{
     heroTitel, heroSubtitel, heroCta,
     andersLabel, andersProse1, zitatKlarheit, andersProse2,
     warumLabel, warumProse,
@@ -349,7 +349,7 @@ export type UeberMich = {
 };
 
 export async function getUeberMich(): Promise<UeberMich | null> {
-  return client.fetch(`*[_type == "ueberMich" && _id == "ueberMich"][0]{
+  return client.fetch(`*[_type == "ueberMich"][0]{
     eyebrow, name, subname, portraitLinkText, portraitLinkUrl,
     prose, contactLabel, emailText, emailUrl, linkedInText, linkedInUrl, phoneText, phoneUrl
   }`)
