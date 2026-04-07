@@ -7,6 +7,7 @@ export const zuhoeren = defineType({
   groups: [
     { name: "hero", title: "Hero" },
     { name: "zitate", title: "Stehende Zitate" },
+    { name: "staffel", title: "Staffelstab-Modell" },
     { name: "cta", title: "Einladung / CTA" },
   ],
   fields: [
@@ -51,6 +52,67 @@ export const zuhoeren = defineType({
       rows: 2,
       group: "zitate",
       description: 'z.B. "Und genau deshalb entsteht oft das, was sonst schwer zugänglich ist: echte Klarheit."',
+    }),
+
+    // ── STAFFELSTAB ───────────────────────────────────────────────────────
+    defineField({
+      name: "staffelEyebrow",
+      title: "Staffel Eyebrow",
+      type: "string",
+      group: "staffel",
+    }),
+    defineField({
+      name: "staffelTitel",
+      title: "Staffel Titel",
+      type: "string",
+      group: "staffel",
+    }),
+    defineField({
+      name: "staffelLead",
+      title: "Staffel Einleitungstext",
+      type: "text",
+      rows: 3,
+      group: "staffel",
+    }),
+    defineField({
+      name: "staffelSchritte",
+      title: "Schritte (4 Phasen)",
+      type: "array",
+      group: "staffel",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "nummer", title: "Nummer", type: "string", description: 'z.B. "01"' }),
+            defineField({ name: "icon", title: "Icon", type: "string", description: 'z.B. "◎"' }),
+            defineField({ name: "titel", title: "Titel", type: "string" }),
+            defineField({ name: "beschreibung", title: "Beschreibung", type: "text", rows: 3 }),
+          ],
+          preview: {
+            select: { title: "nummer", subtitle: "titel" },
+          },
+        },
+      ],
+    }),
+    defineField({
+      name: "staffelPreis",
+      title: "Preis",
+      type: "string",
+      group: "staffel",
+      description: 'z.B. "490 €"',
+    }),
+    defineField({
+      name: "staffelPreisLabel",
+      title: "Preis-Label",
+      type: "string",
+      group: "staffel",
+      description: 'z.B. "Einstiegsangebot · inkl. MwSt."',
+    }),
+    defineField({
+      name: "staffelCtaText",
+      title: "Staffel CTA-Text",
+      type: "string",
+      group: "staffel",
     }),
 
     // ── CTA ───────────────────────────────────────────────────────────────

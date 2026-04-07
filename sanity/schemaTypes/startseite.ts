@@ -6,7 +6,7 @@ export const startseite = defineType({
   type: "document",
   groups: [
     { name: "hero", title: "Hero" },
-    { name: "staffel", title: "Staffelstab-Modell" },
+    { name: "wege", title: "Die drei Wege" },
     { name: "tools", title: "Tools" },
     { name: "artikel", title: "Artikel" },
     { name: "testimonials", title: "Testimonials" },
@@ -56,65 +56,47 @@ export const startseite = defineType({
       group: "hero",
     }),
 
-    // ── STAFFELSTAB ───────────────────────────────────────────────────────
+    // ── DIE DREI WEGE ─────────────────────────────────────────────────────
     defineField({
-      name: "staffelEyebrow",
-      title: "Staffel Eyebrow",
+      name: "wegeEyebrow",
+      title: "Wege Eyebrow",
       type: "string",
-      group: "staffel",
+      group: "wege",
     }),
     defineField({
-      name: "staffelTitel",
-      title: "Staffel Titel",
+      name: "wegeTitel",
+      title: "Wege Titel",
       type: "string",
-      group: "staffel",
+      group: "wege",
     }),
     defineField({
-      name: "staffelLead",
-      title: "Staffel Einleitungstext",
+      name: "wegeLead",
+      title: "Wege Einleitungstext",
       type: "text",
       rows: 3,
-      group: "staffel",
+      group: "wege",
     }),
     defineField({
-      name: "staffelSchritte",
-      title: "Schritte (4 Phasen)",
+      name: "wegeListe",
+      title: "Die 3 Wege (Karten)",
       type: "array",
-      group: "staffel",
+      group: "wege",
       of: [
         {
           type: "object",
           fields: [
             defineField({ name: "nummer", title: "Nummer", type: "string", description: 'z.B. "01"' }),
-            defineField({ name: "icon", title: "Icon", type: "string", description: 'z.B. "◎"' }),
-            defineField({ name: "titel", title: "Titel", type: "string" }),
-            defineField({ name: "beschreibung", title: "Beschreibung", type: "text", rows: 3 }),
+            defineField({ name: "eyebrow", title: "Eyebrow", type: "string", description: 'z.B. "Für Unternehmen"' }),
+            defineField({ name: "titel", title: "Titel", type: "text", rows: 2 }),
+            defineField({ name: "text", title: "Text", type: "text", rows: 4 }),
+            defineField({ name: "linkText", title: "Link-Text", type: "string", description: 'z.B. "Beratung entdecken →"' }),
+            defineField({ name: "linkUrl", title: "Link-URL", type: "string", description: 'z.B. "/ki-coaching/beratung"' }),
           ],
           preview: {
-            select: { title: "nummer", subtitle: "titel" },
+            select: { title: "eyebrow", subtitle: "titel" },
           },
         },
       ],
-    }),
-    defineField({
-      name: "staffelPreis",
-      title: "Preis",
-      type: "string",
-      group: "staffel",
-      description: 'z.B. "490 €"',
-    }),
-    defineField({
-      name: "staffelPreisLabel",
-      title: "Preis-Label",
-      type: "string",
-      group: "staffel",
-      description: 'z.B. "Einstiegsangebot · inkl. MwSt."',
-    }),
-    defineField({
-      name: "staffelCtaText",
-      title: "Staffel CTA-Text",
-      type: "string",
-      group: "staffel",
     }),
 
     // ── TOOLS ─────────────────────────────────────────────────────────────

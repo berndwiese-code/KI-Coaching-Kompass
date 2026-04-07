@@ -7,6 +7,15 @@ export type StaffelSchritt = {
   beschreibung: string;
 };
 
+export type Weg = {
+  nummer: string;
+  eyebrow: string;
+  titel: string;
+  text: string;
+  linkText: string;
+  linkUrl: string;
+};
+
 export type Startseite = {
   // Hero
   heroEyebrow?: string;
@@ -15,14 +24,11 @@ export type Startseite = {
   ctaText?: string;
   heroNote?: string;
   heroSuccessMsg?: string;
-  // Staffelstab
-  staffelEyebrow?: string;
-  staffelTitel?: string;
-  staffelLead?: string;
-  staffelSchritte?: StaffelSchritt[];
-  staffelPreis?: string;
-  staffelPreisLabel?: string;
-  staffelCtaText?: string;
+  // Die drei Wege
+  wegeEyebrow?: string;
+  wegeTitel?: string;
+  wegeLead?: string;
+  wegeListe?: Weg[];
   // Tools
   toolsEyebrow?: string;
   toolsTitel?: string;
@@ -73,9 +79,8 @@ export type Testimonial = {
 export async function getStartseite(): Promise<Startseite | null> {
   return client.fetch(`*[_type == "startseite"][0]{
     heroEyebrow, heroTitel, heroUntertitel, ctaText, heroNote, heroSuccessMsg,
-    staffelEyebrow, staffelTitel, staffelLead,
-    staffelSchritte[]{ nummer, icon, titel, beschreibung },
-    staffelPreis, staffelPreisLabel, staffelCtaText,
+    wegeEyebrow, wegeTitel, wegeLead,
+    wegeListe[]{ nummer, eyebrow, titel, text, linkText, linkUrl },
     toolsEyebrow, toolsTitel, toolsFooterText, toolsFooterCta,
     artikelEyebrow, artikelTitel,
     testimonialsEyebrow, testimonialsTitel, trustLogos,
@@ -155,6 +160,15 @@ export type Zuhoeren = {
   heroCta?: string;
   zitatKlarheit?: string;
   zitatGespraech?: string;
+  // Staffelstab
+  staffelEyebrow?: string;
+  staffelTitel?: string;
+  staffelLead?: string;
+  staffelSchritte?: StaffelSchritt[];
+  staffelPreis?: string;
+  staffelPreisLabel?: string;
+  staffelCtaText?: string;
+  // CTA
   ctaEyebrow?: string;
   ctaTitel?: string;
   ctaBody?: string;
@@ -167,6 +181,9 @@ export async function getZuhoeren(): Promise<Zuhoeren | null> {
   return client.fetch(`*[_type == "zuhoeren"][0]{
     heroTitel, heroSubtitel, heroCta,
     zitatKlarheit, zitatGespraech,
+    staffelEyebrow, staffelTitel, staffelLead,
+    staffelSchritte[]{ nummer, icon, titel, beschreibung },
+    staffelPreis, staffelPreisLabel, staffelCtaText,
     ctaEyebrow, ctaTitel, ctaBody, ctaButton, ctaNote,
     kontaktEmail
   }`)

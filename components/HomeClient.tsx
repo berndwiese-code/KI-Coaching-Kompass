@@ -532,52 +532,57 @@ export default function HomeClient({ startseite, testimonials }: Props) {
         {/* DREI WEGE */}
         <section className="sec" id="angebote">
           <div className="sec-in">
-            <p className="eyebrow">Die drei Wege</p>
-            <h2 className="sec-title">Was kann ich für dich tun?</h2>
+            <p className="eyebrow">{startseite?.wegeEyebrow ?? "Die drei Wege"}</p>
+            <h2 className="sec-title">{startseite?.wegeTitel ?? "Was kann ich für dich tun?"}</h2>
             <p className="sec-lead">
-              Drei Zielgruppen. Drei Formate. Ein gemeinsamer Ausgangspunkt:
-              KI ist kein Selbstzweck — sie ist ein Spiegel.
+              {startseite?.wegeLead ?? (
+                <>
+                  Drei Zielgruppen. Drei Formate. Ein gemeinsamer Ausgangspunkt:
+                  KI ist kein Selbstzweck — sie ist ein Spiegel.
+                </>
+              )}
             </p>
             <div className="drei-wege-grid">
 
-              {/* Card 1: Unternehmen */}
-              <div className="weg-card">
-                <div className="weg-number">01</div>
-                <p className="weg-eyebrow">Für Unternehmen</p>
-                <h3 className="weg-title">KI-Coaching kommt.<br /><em>Seid ihr bereit dafür?</em></h3>
-                <p className="weg-text">
-                  Nicht als Hype-Welle, die man einfach surft. Sondern als echte Entscheidung:
-                  Was soll KI in eurem Coaching-Prozess können — und was soll sie lassen?
-                  Ich begleite euch dabei, das herauszufinden.
-                </p>
-                <Link href="/ki-coaching/beratung" className="weg-link">Beratung entdecken →</Link>
-              </div>
-
-              {/* Card 2: Coaches */}
-              <div className="weg-card">
-                <div className="weg-number">02</div>
-                <p className="weg-eyebrow">Für Coaches</p>
-                <h3 className="weg-title">KI im Coaching —<br /><em>muss das sein?</em></h3>
-                <p className="weg-text">
-                  Spoiler: Ja. Aber nicht so, wie du vielleicht denkst.
-                  Nicht als Konkurrenz zu deiner Arbeit — als Werkzeug, das dir Zeit,
-                  Klarheit und neue Möglichkeiten zurückgibt.
-                </p>
-                <Link href="/ki-coaching/workshop" className="weg-link">Workshop entdecken →</Link>
-              </div>
-
-              {/* Card 3: Für dich */}
-              <div className="weg-card">
-                <div className="weg-number">03</div>
-                <p className="weg-eyebrow">Für dich</p>
-                <h3 className="weg-title">Manchmal braucht es jemanden,<br /><em>der einfach zuhört.</em></h3>
-                <p className="weg-text">
-                  Kein Programm. Kein Tool. Nur ein Gespräch —
-                  in dem du dich selbst hören kannst.
-                  Mit mir, in echter Präsenz.
-                </p>
-                <Link href="/zuhoeren" className="weg-link">Gehört werden →</Link>
-              </div>
+              {(startseite?.wegeListe?.length ? startseite.wegeListe : [
+                {
+                  _key: "fallback-unternehmen",
+                  nummer: "01",
+                  eyebrow: "Für Unternehmen",
+                  titel: "KI-Coaching kommt.<br /><em>Seid ihr bereit dafür?</em>",
+                  text: "Nicht als Hype-Welle, die man einfach surft. Sondern als echte Entscheidung: Was soll KI in eurem Coaching-Prozess können — und was soll sie lassen? Ich begleite euch dabei, das herauszufinden.",
+                  linkUrl: "/ki-coaching/beratung",
+                  linkText: "Beratung entdecken →"
+                },
+                {
+                  _key: "fallback-coaches",
+                  nummer: "02",
+                  eyebrow: "Für Coaches",
+                  titel: "KI im Coaching —<br /><em>muss das sein?</em>",
+                  text: "Spoiler: Ja. Aber nicht so, wie du vielleicht denkst. Nicht als Konkurrenz zu deiner Arbeit — als Werkzeug, das dir Zeit, Klarheit und neue Möglichkeiten zurückgibt.",
+                  linkUrl: "/ki-coaching/workshop",
+                  linkText: "Workshop entdecken →"
+                },
+                {
+                  _key: "fallback-zuhören",
+                  nummer: "03",
+                  eyebrow: "Für dich",
+                  titel: "Manchmal braucht es jemanden,<br /><em>der einfach zuhört.</em>",
+                  text: "Kein Programm. Kein Tool. Nur ein Gespräch — in dem du dich selbst hören kannst. Mit mir, in echter Präsenz.",
+                  linkUrl: "/zuhoeren",
+                  linkText: "Gehört werden →"
+                }
+              ]).map((weg: any, i: number) => (
+                <div className="weg-card" key={weg._key || i}>
+                  <div className="weg-number">{weg.nummer}</div>
+                  <p className="weg-eyebrow">{weg.eyebrow}</p>
+                  <h3 className="weg-title" dangerouslySetInnerHTML={{ __html: weg.titel.replace(/\n/g, '<br />') }} />
+                  <p className="weg-text">
+                    {weg.text}
+                  </p>
+                  <Link href={weg.linkUrl || "#"} className="weg-link">{weg.linkText}</Link>
+                </div>
+              ))}
 
             </div>
           </div>
