@@ -354,3 +354,33 @@ export async function getUeberMich(): Promise<UeberMich | null> {
     prose, contactLabel, emailText, emailUrl, linkedInText, linkedInUrl, phoneText, phoneUrl
   }`)
 }
+
+// ── KI-COACHING (HUB) ────────────────────────────────────────────────────────────
+
+export type KICoaching = {
+  navCta?: string;
+  navCtaUrl?: string;
+  heroEyebrow?: string;
+  heroTitle?: string;
+  heroLead?: string;
+  cards?: {
+    icon?: string;
+    label?: string;
+    title?: string;
+    body?: string;
+    arrowText?: string;
+    url?: string;
+  }[];
+  links?: {
+    label?: string;
+    url?: string;
+  }[];
+};
+
+export async function getKICoaching(): Promise<KICoaching | null> {
+  return client.fetch(`*[_type == "kiCoaching"][0]{
+    navCta, navCtaUrl, heroEyebrow, heroTitle, heroLead,
+    cards[]{ icon, label, title, body, arrowText, url },
+    links[]{ label, url }
+  }`)
+}

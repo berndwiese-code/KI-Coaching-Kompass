@@ -1,4 +1,7 @@
 import KICoachingClient from "@/components/KICoachingClient";
+import { getKICoaching } from "@/sanity/lib/queries";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "KI-Coaching: Was es ist, was es kann",
@@ -12,6 +15,7 @@ export const metadata = {
   },
 };
 
-export default function KICoachingPage() {
-  return <KICoachingClient />;
+export default async function KICoachingPage() {
+  const content = await getKICoaching();
+  return <KICoachingClient data={content} />;
 }

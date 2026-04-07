@@ -40,11 +40,18 @@ export const structure: StructureResolver = (S) =>
             .schemaType('ueberMich')
             .documentId('ueberMich')
         ),
+      S.listItem()
+        .title('KI-Coaching (Hub)')
+        .child(
+          S.document()
+            .schemaType('kiCoaching')
+            .documentId('kiCoaching')
+        ),
       
       S.divider(),
       
       // LISTEN (Multi-Documents)
       ...S.documentTypeListItems().filter(listItem => 
-        !['startseite', 'workshop', 'beratung', 'zuhoeren', 'ueberMich'].includes(listItem.getId() as string)
+        !['startseite', 'workshop', 'beratung', 'zuhoeren', 'ueberMich', 'kiCoaching'].includes(listItem.getId() as string)
       )
     ])

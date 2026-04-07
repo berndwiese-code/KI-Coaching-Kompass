@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+import { KICoaching } from "@/sanity/lib/queries";
+
 type Theme = "light" | "dark";
 
-export default function KICoachingClient() {
+export default function KICoachingClient({ data }: { data?: KICoaching | null }) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -255,7 +257,7 @@ export default function KICoachingClient() {
           </Link>
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
-            <a href="mailto:bernd.wiese@googlemail.com" className="nav-cta">Kontakt</a>
+            <a href={data?.navCtaUrl ?? "mailto:bernd.wiese@googlemail.com"} className="nav-cta">{data?.navCta ?? "Kontakt"}</a>
             <button
               className={`hamburger ${menuOpen ? "open" : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -277,45 +279,54 @@ export default function KICoachingClient() {
 
         {/* HERO */}
         <div className="kc-hero">
-          <div className="kc-eyebrow">KI-Coaching</div>
-          <h1 className="kc-title">
-            KI-Coaching:<br /><em>Was es ist. Was es kann.</em><br />Und was nicht.
-          </h1>
+          <div className="kc-eyebrow">{data?.heroEyebrow ?? "KI-Coaching"}</div>
+          <h1 
+            className="kc-title" 
+            dangerouslySetInnerHTML={{ __html: data?.heroTitle ?? "KI-Coaching:<br /><em>Was es ist. Was es kann.</em><br />Und was nicht." }} 
+          />
           <p className="kc-lead">
-            Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen
-            Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches,
-            in diesem Markt die richtige Wahl zu treffen.
+            {data?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
           </p>
         </div>
 
         {/* CARDS */}
         <div className="kc-cards">
-          <Link href="/ki-coaching/beratung" className="kc-card">
-            <span className="kc-card-icon">🏢</span>
-            <span className="kc-card-label">Für Unternehmen</span>
-            <div className="kc-card-title">KI-Coaching einführen — strukturiert und sicher</div>
-            <p className="kc-card-body">
-              Von der Bedarfsanalyse über die Toolauswahl bis zum Rollout:
-              ich begleite Organisationen durch den gesamten Prozess.
-            </p>
-            <span className="kc-card-arrow">Zur Beratung →</span>
-          </Link>
-          <Link href="/ki-coaching/beratung" className="kc-card">
-            <span className="kc-card-icon">🎯</span>
-            <span className="kc-card-label">Für Coaches</span>
-            <div className="kc-card-title">KI-Tools sinnvoll in die eigene Praxis integrieren</div>
-            <p className="kc-card-body">
-              Orientierung im Tool-Dschungel, DSGVO-Check, Hands-on Testing —
-              für Coaches, die KI nutzen wollen, ohne ihre Qualität zu kompromittieren.
-            </p>
-            <span className="kc-card-arrow">Zur Beratung →</span>
-          </Link>
+          {(data?.cards?.length ? data.cards : [
+            {
+              icon: "🏢",
+              label: "Für Unternehmen",
+              title: "KI-Coaching einführen — strukturiert und sicher",
+              body: "Von der Bedarfsanalyse über die Toolauswahl bis zum Rollout: ich begleite Organisationen durch den gesamten Prozess.",
+              arrowText: "Zur Beratung →",
+              url: "/ki-coaching/beratung"
+            },
+            {
+              icon: "🎯",
+              label: "Für Coaches",
+              title: "KI-Tools sinnvoll in die eigene Praxis integrieren",
+              body: "Orientierung im Tool-Dschungel, DSGVO-Check, Hands-on Testing — für Coaches, die KI nutzen wollen, ohne ihre Qualität zu kompromittieren.",
+              arrowText: "Zur Beratung →",
+              url: "/ki-coaching/beratung"
+            }
+          ]).map((card, i) => (
+            <Link key={i} href={card.url ?? "#"} className="kc-card">
+              <span className="kc-card-icon">{card.icon}</span>
+              <span className="kc-card-label">{card.label}</span>
+              <div className="kc-card-title">{card.title}</div>
+              <p className="kc-card-body">{card.body}</p>
+              <span className="kc-card-arrow">{card.arrowText}</span>
+            </Link>
+          ))}
         </div>
 
         {/* FURTHER LINKS */}
         <div className="kc-links">
-          <Link href="/ki-coaching/workshop" className="kc-link">Workshop: KI-Coaching einführen</Link>
-          <Link href="/ki-coaching/kompass" className="kc-link">KI-Tools entdecken</Link>
+          {(data?.links?.length ? data.links : [
+            { label: "Workshop: KI-Coaching einführen", url: "/ki-coaching/workshop" },
+            { label: "KI-Tools entdecken", url: "/ki-coaching/kompass" }
+          ]).map((link, i) => (
+            <Link key={i} href={link.url ?? "#"} className="kc-link">{link.label}</Link>
+          ))}
         </div>
 
         {/* FOOTER */}
