@@ -249,7 +249,7 @@ export default function KICoachingClient() {
 
       <div className={`kc-root ${theme}`}>
         {/* NAV */}
-        <nav className="kc-nav" style={{ position: "relative" }}>
+        <nav className="kc-nav">
           <Link href="/" className="nav-logo">
             KI<span>·</span>Coaching<span>·</span>Kompass
           </Link>

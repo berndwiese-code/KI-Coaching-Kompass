@@ -303,7 +303,7 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
 
       <div className={`um-root ${theme}`}>
         {/* NAV */}
-        <nav className="um-nav" style={{ position: "relative" }}>
+        <nav className="um-nav">
           <Link href="/" className="nav-logo">
             KI<span>·</span>Coaching<span>·</span>Kompass
           </Link>

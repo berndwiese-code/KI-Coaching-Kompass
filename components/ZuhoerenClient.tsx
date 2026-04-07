@@ -485,7 +485,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
 
       <div className={`zh-root ${theme}`}>
         {/* NAV */}
-        <nav className="zh-nav" style={{ position: "relative" }}>
+        <nav className="zh-nav">
           <Link href="/" className="nav-logo">
             KI<span>·</span>Coaching<span>·</span>Kompass
           </Link>

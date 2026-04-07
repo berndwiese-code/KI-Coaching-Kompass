@@ -413,7 +413,7 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
 
       <div className={`br-root ${theme}`}>
         {/* NAV */}
-        <nav className="br-nav" style={{ position: "relative" }}>
+        <nav className="br-nav">
           <Link href="/" className="nav-logo">
             KI<span>·</span>Coaching<span>·</span>Kompass
           </Link>
