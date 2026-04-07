@@ -602,29 +602,28 @@ export default function HomeClient({ startseite, testimonials }: Props) {
                 {startseite?.toolsFooterText ?? "Ich habe aufgehört zu zählen, wie viele KI-Tools sich als Coaching-Revolution vermarkten. Deshalb habe ich angefangen zu sortieren. Der Kompass ist kein Versprechen — er ist das, was ich selbst gebraucht hätte."}
               </p>
               <div className="kompass-stat-row">
-                <div className="kompass-stat">
-                  <span className="stat-num">40+</span>
-                  <span className="stat-lbl">Tools bewertet</span>
-                </div>
-                <div className="kompass-stat">
-                  <span className="stat-num">3</span>
-                  <span className="stat-lbl">Perspektiven</span>
-                </div>
-                <div className="kompass-stat">
-                  <span className="stat-num">0</span>
-                  <span className="stat-lbl">Affiliate-Links</span>
-                </div>
+                {(startseite?.kompassStats?.length ? startseite.kompassStats : [
+                  { nummer: "40+", label: "Tools bewertet" },
+                  { nummer: "3", label: "Perspektiven" },
+                  { nummer: "0", label: "Affiliate-Links" }
+                ]).map((stat, i) => (
+                  <div className="kompass-stat" key={i}>
+                    <span className="stat-num">{stat.nummer}</span>
+                    <span className="stat-lbl">{stat.label}</span>
+                  </div>
+                ))}
               </div>
               <Link href="/ki-coaching/kompass" className="btn-primary" style={{marginTop: "2rem", display: "inline-block"}}>
                 {startseite?.toolsFooterCta ?? "Zum Kompass"}
               </Link>
             </div>
-            <blockquote className="kompass-pull">
-              Keine leeren Versprechen,<br />
+            <blockquote className="kompass-pull" dangerouslySetInnerHTML={{
+              __html: startseite?.kompassZitat?.replace(/\n/g, '<br />') ?? 
+              `Keine leeren Versprechen,<br />
               sondern kuratiertes Wissen.<br />
               Für alle, die den Unterschied<br />
-              erkennen wollen.
-            </blockquote>
+              erkennen wollen.`
+            }} />
           </div>
         </section>
 
@@ -660,21 +659,18 @@ export default function HomeClient({ startseite, testimonials }: Props) {
               <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
             </div>
             <div className="ueber-mini-text">
-              <p className="eyebrow">Über mich</p>
+              <p className="eyebrow">{startseite?.ueberEyebrow ?? "Über mich"}</p>
               <h2 className="sec-title" style={{marginBottom: "1rem"}}>
-                Bernd Wiese
+                {startseite?.ueberTitel ?? "Bernd Wiese"}
               </h2>
               <p>
-                Ich liebe echte Präsenz — und ich finde es faszinierend, was gerade mit KI entsteht.
-                Nicht nur technologisch. Sondern in dem, was es über uns sichtbar macht.
+                {startseite?.ueberText1 ?? "Ich liebe echte Präsenz — und ich finde es faszinierend, was gerade mit KI entsteht. Nicht nur technologisch. Sondern in dem, was es über uns sichtbar macht."}
               </p>
               <p style={{marginTop: "0.75rem"}}>
-                Ich arbeite in der Spannung zwischen einem Zuhören, das nichts will,
-                und einer Technologie, die unglaublich viel kann. Als Zuhörcoach und KI-Berater
-                aus Freiburg.
+                {startseite?.ueberText2 ?? "Ich arbeite in der Spannung zwischen einem Zuhören, das nichts will, und einer Technologie, die unglaublich viel kann. Als Zuhörcoach und KI-Berater aus Freiburg."}
               </p>
               <Link href="/ueber-mich" className="btn-outline" style={{marginTop: "1.75rem", display: "inline-block"}}>
-                Mehr über mich
+                {startseite?.ueberCtaText ?? "Mehr über mich"}
               </Link>
             </div>
           </div>

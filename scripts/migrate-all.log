@@ -1,0 +1,37 @@
+Fetching startseite document...
+Patche Sanity Felder mit:
+{
+  "wegeEyebrow": "Die drei Wege",
+  "wegeTitel": "Was kann ich für dich tun?",
+  "wegeLead": "Drei Zielgruppen. Drei Formate. Ein gemeinsamer Ausgangspunkt: KI ist kein Selbstzweck — sie ist ein Spiegel.",
+  "wegeListe": [
+    {
+      "_key": "weg_1",
+      "nummer": "01",
+      "eyebrow": "Für Unternehmen",
+      "titel": "KI-Coaching kommt.\n<em>Seid ihr bereit dafür?</em>",
+      "text": "Nicht als Hype-Welle, die man einfach surft. Sondern als echte Entscheidung: Was soll KI in eurem Coaching-Prozess können — und was soll sie lassen? Ich begleite euch dabei, das herauszufinden.",
+      "linkUrl": "/ki-coaching/beratung",
+      "linkText": "Beratung entdecken →"
+    },
+    {
+      "_key": "weg_2",
+      "nummer": "02",
+      "eyebrow": "Für Coaches",
+      "titel": "KI im Coaching —\n<em>muss das sein?</em>",
+      "text": "Spoiler: Ja. Aber nicht so, wie du vielleicht denkst. Nicht als Konkurrenz zu deiner Arbeit — als Werkzeug, das dir Zeit, Klarheit und neue Möglichkeiten zurückgibt.",
+      "linkUrl": "/ki-coaching/workshop",
+      "linkText": "Workshop entdecken →"
+    },
+    {
+      "_key": "weg_3",
+      "nummer": "03",
+      "eyebrow": "Für dich",
+      "titel": "Manchmal braucht es jemanden,\n<em>der einfach zuhört.</em>",
+      "text": "Kein Programm. Kein Tool. Nur ein Gespräch — in dem du dich selbst hören kannst. Mit mir, in echter Präsenz.",
+      "linkUrl": "/zuhoeren",
+      "linkText": "Gehört werden →"
+    }
+  ]
+}
+Sanity Dokument erfolgreich um alle Texte migriert!

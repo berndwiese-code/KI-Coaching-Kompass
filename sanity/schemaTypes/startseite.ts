@@ -10,6 +10,7 @@ export const startseite = defineType({
     { name: "tools", title: "Tools" },
     { name: "artikel", title: "Artikel" },
     { name: "testimonials", title: "Testimonials" },
+    { name: "ueber", title: "Über Mini" },
     { name: "newsletter", title: "Newsletter / Footer CTA" },
     { name: "footer", title: "Footer" },
   ],
@@ -125,6 +126,29 @@ export const startseite = defineType({
       type: "string",
       group: "tools",
     }),
+    defineField({
+      name: "kompassZitat",
+      title: "Kompass Zitat",
+      type: "text",
+      rows: 4,
+      group: "tools",
+      description: 'Blockquote-Text rechts neben den Kompass-Detail-Sektion.',
+    }),
+    defineField({
+      name: "kompassStats",
+      title: "Kompass Statistiken",
+      type: "array",
+      group: "tools",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "nummer", title: "Zahl/Wert", type: "string", description: 'z.B. "40+"' }),
+            defineField({ name: "label", title: "Label", type: "string", description: 'z.B. "Tools bewertet"' }),
+          ],
+        },
+      ],
+    }),
 
     // ── ARTIKEL ───────────────────────────────────────────────────────────
     defineField({
@@ -159,6 +183,40 @@ export const startseite = defineType({
       type: "array",
       group: "testimonials",
       of: [{ type: "string" }],
+    }),
+
+    // ── ÜBER MINI ─────────────────────────────────────────────────────────
+    defineField({
+      name: "ueberEyebrow",
+      title: "Über Mini Eyebrow",
+      type: "string",
+      group: "ueber",
+    }),
+    defineField({
+      name: "ueberTitel",
+      title: "Über Mini Titel",
+      type: "string",
+      group: "ueber",
+    }),
+    defineField({
+      name: "ueberText1",
+      title: "Über Mini Text (Absatz 1)",
+      type: "text",
+      rows: 3,
+      group: "ueber",
+    }),
+    defineField({
+      name: "ueberText2",
+      title: "Über Mini Text (Absatz 2)",
+      type: "text",
+      rows: 3,
+      group: "ueber",
+    }),
+    defineField({
+      name: "ueberCtaText",
+      title: "Über Mini CTA Text",
+      type: "string",
+      group: "ueber",
     }),
 
     // ── NEWSLETTER / FOOTER CTA ───────────────────────────────────────────

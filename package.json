@@ -33,6 +33,8 @@
     "typescript": "^5"
   },
   "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom",
     "@sanity/cli-core": {
       "jsdom": "24.1.3"
     }

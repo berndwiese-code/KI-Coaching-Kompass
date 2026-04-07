@@ -34,6 +34,8 @@ export type Startseite = {
   toolsTitel?: string;
   toolsFooterText?: string;
   toolsFooterCta?: string;
+  kompassZitat?: string;
+  kompassStats?: { nummer: string; label: string }[];
   // Artikel
   artikelEyebrow?: string;
   artikelTitel?: string;
@@ -41,6 +43,12 @@ export type Startseite = {
   testimonialsEyebrow?: string;
   testimonialsTitel?: string;
   trustLogos?: string[];
+  // Über Mini
+  ueberEyebrow?: string;
+  ueberTitel?: string;
+  ueberText1?: string;
+  ueberText2?: string;
+  ueberCtaText?: string;
   // Newsletter
   newsletterEyebrow?: string;
   newsletterTitel?: string;
@@ -81,9 +89,10 @@ export async function getStartseite(): Promise<Startseite | null> {
     heroEyebrow, heroTitel, heroUntertitel, ctaText, heroNote, heroSuccessMsg,
     wegeEyebrow, wegeTitel, wegeLead,
     wegeListe[]{ nummer, eyebrow, titel, text, linkText, linkUrl },
-    toolsEyebrow, toolsTitel, toolsFooterText, toolsFooterCta,
+    toolsEyebrow, toolsTitel, toolsFooterText, toolsFooterCta, kompassZitat, kompassStats[]{nummer, label},
     artikelEyebrow, artikelTitel,
     testimonialsEyebrow, testimonialsTitel, trustLogos,
+    ueberEyebrow, ueberTitel, ueberText1, ueberText2, ueberCtaText,
     newsletterEyebrow, newsletterTitel, newsletterLead, newsletterCtaText, newsletterSuccessMsg,
     footerCopyright
   }`)
@@ -104,6 +113,9 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 // ── WORKSHOP ──────────────────────────────────────────────────────────────────
 
 export type Workshop = {
+  navLinks?: { label: string; url: string; isExternal?: boolean }[];
+  navCta?: string;
+
   heroEyebrow?: string;
   heroTitel?: string;
   heroUntertitel?: string;
@@ -113,18 +125,74 @@ export type Workshop = {
   heroPill4?: string;
   heroCtaPrimary?: string;
   heroCtaSecondary?: string;
+  
+  zielgruppeEyebrow?: string;
+  zielgruppeTitel?: string;
+  zielgruppeLead?: string;
+  zielgruppeKarten?: { icon: string; text: string }[];
+
+  mitnahmenEyebrow?: string;
+  mitnahmenTitel?: string;
+  mitnahmenLead?: string;
+  mitnahmenKarten?: { nummer: string; text: string }[];
+
+  didaktikEyebrow?: string;
+  didaktikTitel?: string;
+  didaktikText1?: string;
+  didaktikText2?: string;
+  agendaTag1Titel?: string;
+  agendaTag1?: { zeit: string; thema: string; format: string }[];
+  agendaTag2Titel?: string;
+  agendaTag2?: { zeit: string; thema: string; format: string }[];
+
+  enthaltenEyebrow?: string;
+  enthaltenTitel?: string;
+  enthaltenListe?: { titel: string; text: string }[];
+
+  forschungEyebrow?: string;
+  forschungTitel?: string;
+  forschungStats?: { nummer: string; label: string }[];
+  forschungText1?: string;
+  forschungText2?: string;
+  forschungText3?: string;
+  forschungQuelle?: string;
+
+  ueberEyebrow?: string;
+  ueberName?: string;
+  ueberRole?: string;
+  ueberText1?: string;
+  ueberText2?: string;
+  ueberHinweisTitel?: string;
+  ueberHinweisText?: string;
+
+  ctaEyebrow?: string;
   ctaTitel?: string;
-  ctaBody?: string;
+  ctaPreis?: string;
+  ctaPreisLabel?: string;
+  ctaTermin?: string;
   ctaButton?: string;
+  ctaButtonSecondary?: string;
   ctaEmail?: string;
+  ctaBody?: string;
+
+  footerCopyright?: string;
+  footerLinks?: { label: string; url: string }[];
 };
 
 export async function getWorkshop(): Promise<Workshop | null> {
   return client.fetch(`*[_type == "workshop"][0]{
-    heroEyebrow, heroTitel, heroUntertitel,
-    heroPill1, heroPill2, heroPill3, heroPill4,
-    heroCtaPrimary, heroCtaSecondary,
-    ctaTitel, ctaBody, ctaButton, ctaEmail
+    navLinks[]{ label, url, isExternal }, navCta,
+    heroEyebrow, heroTitel, heroUntertitel, heroPill1, heroPill2, heroPill3, heroPill4, heroCtaPrimary, heroCtaSecondary,
+    zielgruppeEyebrow, zielgruppeTitel, zielgruppeLead, zielgruppeKarten[]{ icon, text },
+    mitnahmenEyebrow, mitnahmenTitel, mitnahmenLead, mitnahmenKarten[]{ nummer, text },
+    didaktikEyebrow, didaktikTitel, didaktikText1, didaktikText2, 
+    agendaTag1Titel, agendaTag1[]{ zeit, thema, format },
+    agendaTag2Titel, agendaTag2[]{ zeit, thema, format },
+    enthaltenEyebrow, enthaltenTitel, enthaltenListe[]{ titel, text },
+    forschungEyebrow, forschungTitel, forschungStats[]{ nummer, label }, forschungText1, forschungText2, forschungText3, forschungQuelle,
+    ueberEyebrow, ueberName, ueberRole, ueberText1, ueberText2, ueberHinweisTitel, ueberHinweisText,
+    ctaEyebrow, ctaTitel, ctaPreis, ctaPreisLabel, ctaTermin, ctaButton, ctaButtonSecondary, ctaEmail, ctaBody,
+    footerCopyright, footerLinks[]{ label, url }
   }`)
 }
 

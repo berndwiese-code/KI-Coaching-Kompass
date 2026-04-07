@@ -34,6 +34,60 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
 
   if (!mounted) return null;
 
+  const fallbackNav = [
+    { label: "Beratung", url: "/ki-coaching/beratung" },
+    { label: "Workshop", url: "/ki-coaching/workshop" },
+    { label: "Zuhören ↗", url: "https://isha.de", isExternal: true },
+    { label: "Kompass", url: "/ki-coaching/kompass" },
+    { label: "Kontakt", url: "#" }
+  ];
+
+  const currentNav = workshop?.navLinks?.length ? workshop.navLinks : fallbackNav;
+
+  const fallbackFragen = [
+    { icon: "🧭", text: "Sollen wir KI-Coaching in unserem Unternehmen einführen &mdash; <strong>und wenn ja, wie?</strong>" },
+    { icon: "🔍", text: "Was unterscheidet einen <strong>seriösen KI-Coaching-Anbieter</strong> von einem schlechten?" },
+    { icon: "🤝", text: "Wie überzeugen wir den Betriebsrat &mdash; und <strong>was muss rechtlich geregelt sein?</strong>" },
+    { icon: "🤖", text: "Was kann KI wirklich leisten &mdash; und <strong>was bleibt dem menschlichen Coach vorbehalten?</strong>" },
+    { icon: "🚀", text: "Wie starte ich mit einem Pilot, <strong>ohne große Risiken einzugehen?</strong>" },
+  ];
+
+  const fallbackMitnahmen = [
+    { nummer: "01", text: "<strong>Eine klare Entscheidungsgrundlage</strong> &mdash; ob und wie KI-Coaching zu Ihrem Unternehmen passt" },
+    { nummer: "02", text: "<strong>Einen ersten konkreten Pilotplan</strong> &mdash; mit Ziel, Zielgruppe, Tool und Messung" },
+    { nummer: "03", text: "<strong>Orientierung im Tool-Markt</strong> &mdash; welche Kriterien wirklich zählen" },
+    { nummer: "04", text: "<strong>Antworten auf die Datenschutz- und Betriebsratsfragen</strong>" },
+    { nummer: "05", text: "<strong>Ein Netzwerk</strong> &mdash; Menschen aus anderen Unternehmen, die vor denselben Fragen stehen" },
+  ];
+
+  const fallbackAgenda1 = [
+    { zeit: "13:00", thema: "Ankommen &mdash; wer ist im Raum, was bringen wir mit?", format: "Gesprächsrunde" },
+    { zeit: "13:45", thema: "Was ist Coaching wirklich? &mdash; und warum erreicht es so wenige", format: "Impuls + Übung" },
+    { zeit: "14:45", thema: "Pause", format: "15 Min." },
+    { zeit: "15:00", thema: "Was kann KI &mdash; was kann sie nicht? Forschung und Realität", format: "Impuls + Demo" },
+    { zeit: "16:00", thema: "Das Staffelstab-Modell &mdash; Mensch und KI als Team", format: "Gruppenarbeit" },
+    { zeit: "16:45", thema: "Reflexion &mdash; was nehme ich mit in die Nacht?", format: "Stille Runde" },
+  ];
+
+  const fallbackAgenda2 = [
+    { zeit: "13:00", thema: "Rückblick &mdash; was ist über Nacht aufgetaucht?", format: "Kurzrunde" },
+    { zeit: "13:15", thema: "Einführung planen &mdash; Ziel, Zielgruppe, erster Schritt", format: "Canvas-Arbeit" },
+    { zeit: "14:15", thema: "Toolauswahl &mdash; welche Kriterien zählen wirklich?", format: "Marktüberblick" },
+    { zeit: "15:00", thema: "Pause", format: "15 Min." },
+    { zeit: "15:15", thema: "Datenschutz, Vertrauen, Unternehmenskultur", format: "Diskussion" },
+    { zeit: "16:00", thema: "Was kann ich messen &mdash; und was nicht?", format: "Impuls" },
+    { zeit: "16:30", thema: "Nächste Schritte &mdash; was tue ich in zwei Wochen?", format: "Abschlussrunde" },
+  ];
+
+  const fallbackEnthalten = [
+    { titel: "Persönliches Vorgespräch (15 Min. via Zoom)", text: "Vor dem Workshop &mdash; Ihre Fragen, Ihre Situation" },
+    { titel: "Vorbereitungsmaterialien", text: "Sofort nach Anmeldung: Entscheidungs-Leitfaden, Vergleichsdokument Mensch vs. KI" },
+    { titel: "Nachmittag 1 &mdash; Verstehen", text: "4 Stunden: Was ist Coaching? Was kann KI? Das Staffelstab-Modell" },
+    { titel: "Nachmittag 2 &mdash; Gestalten", text: "4 Stunden: Pilotplanung, Toolauswahl, Datenschutz, Messung" },
+    { titel: "Alle Arbeitsmaterialien (5 Dokumente)", text: "Pilot-Canvas, Toolbewertungs-Checkliste, Toolübersicht u.a." },
+    { titel: "Persönliches Nachgespräch (15 Min. via Zoom)", text: "Nach dem Workshop &mdash; nächste Schritte, offene Fragen, Einstieg in Zusammenarbeit" },
+  ];
+
   return (
     <>
       <style>{`
@@ -103,7 +157,12 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           color: var(--gold2); text-decoration: none;
         }
         .nav-logo span { color: var(--text2); font-weight: 300; }
-        .nav-center { display: none; }
+        .nav-center { display: flex; gap: 2rem; list-style: none; }
+        .nav-center a {
+          font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+          color: var(--text2); text-decoration: none; transition: color 0.2s;
+        }
+        .nav-center a.active, .nav-center a:hover { color: var(--gold); }
         .nav-right { display: flex; align-items: center; gap: 1rem; }
         .theme-toggle {
           position: relative; width: 44px; height: 24px; border-radius: 12px;
@@ -117,10 +176,6 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         }
         .ws-root.light .theme-toggle::after { left: 3px; }
         .ws-root.dark  .theme-toggle::after { left: 23px; }
-        .theme-label {
-          font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-          color: var(--muted); user-select: none;
-        }
         .nav-cta {
           font-size: 0.73rem; letter-spacing: 0.1em; text-transform: uppercase;
           color: var(--bg); background: var(--gold); padding: 0.5rem 1.2rem;
@@ -217,7 +272,7 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           display: inline-block; border: 1px solid var(--border); color: var(--gold);
           padding: 0.75rem 2rem; font-size: 0.78rem; letter-spacing: 0.1em;
           text-transform: uppercase; text-decoration: none;
-          transition: border-color 0.2s, color 0.2s; border-radius: 6px;
+          transition: border-color 0.2s, color: var(--gold2); border-radius: 6px;
         }
         .btn-outline:hover { border-color: var(--gold2); color: var(--gold2); }
 
@@ -287,11 +342,6 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         .approach-inner {
           max-width: 1100px; margin: 0 auto;
           display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
-        }
-        .approach-quote {
-          font-family: 'Cormorant Garamond', serif;
-          font-size: 1.6rem; font-weight: 300; font-style: italic;
-          color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;
         }
         .approach-body { font-size: 0.97rem; color: var(--text2); line-height: 1.85; }
         .approach-body p + p { margin-top: 1rem; }
@@ -420,7 +470,7 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           flex-wrap: wrap; gap: 1rem;
         }
         .footer-copy { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; }
-        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
         .footer-links a {
           font-size: 0.72rem; color: var(--muted); text-decoration: none;
           letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s;
@@ -460,6 +510,9 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           color: var(--muted);
         }
         .mobile-menu a.sub-item::before { content: '→ '; color: var(--gold); }
+        @media (max-width: 900px) {
+           .nav-center { display: none; }
+        }
         @media (max-width: 600px) {
           .nav-cta { display: none; }
           .mobile-menu { left: auto; right: 0; width: min(88vw, 300px); }
@@ -492,15 +545,21 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         <nav className="ws-nav">
           <Link href="/" className="nav-logo">KI-Coaching<span> Kompass</span></Link>
           <ul className="nav-center">
-            <li><a href="#">Beratung</a></li>
-            <li><a href="/workshop" className="active">Workshop</a></li>
-            <li><a href="https://isha.de" target="_blank" rel="noopener noreferrer">Zuhören ↗</a></li>
-            <li><Link href="/kompass">Kompass</Link></li>
-            <li><a href="#">Kontakt</a></li>
+            {currentNav.map((link, i) => (
+              <li key={i}>
+                {link.isExternal ? (
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                ) : (
+                  <Link href={link.url} className={link.url === "/workshop" ? "active" : ""}>{link.label}</Link>
+                )}
+              </li>
+            ))}
           </ul>
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
-            <a href="mailto:kontakt@ki-coaching-kompass.de" className="nav-cta">Anmelden</a>
+            <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="nav-cta">
+              {workshop?.navCta ?? "Anmelden"}
+            </a>
             <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">
               <span /><span /><span />
             </button>
@@ -541,9 +600,7 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           </div>
           <div className="ws-hero-orb" />
           <div className="eyebrow">{workshop?.heroEyebrow ?? "Zweitägiger Online-Workshop"}</div>
-          <h1 className="ws-hero-title">
-            {workshop?.heroTitel ?? <>KI-Coaching im<br /><em>Unternehmen</em></>}
-          </h1>
+          <h1 className="ws-hero-title" dangerouslySetInnerHTML={{ __html: workshop?.heroTitel ?? "KI-Coaching im<br /><em>Unternehmen</em>" }} />
           <p className="ws-hero-sub">{workshop?.heroUntertitel ?? "verstehen \u2014 bewerten \u2014 einführen"}</p>
           <div className="ws-hero-facts">
             <span className="fact-pill">{workshop?.heroPill1 ?? "2 Nachmittage à 4 Stunden"}</span>
@@ -560,30 +617,16 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         {/* FÜR WEN? */}
         <section style={{ padding: "6rem 2rem", background: "var(--bg)", transition: "background 0.35s" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-            <p className="sec-eyebrow">Zielgruppe</p>
-            <h2 className="sec-title">Ist dieser Workshop <em>für Sie?</em></h2>
-            <p className="sec-lead">Dieser Workshop ist für Sie, wenn Sie sich fragen:</p>
+            <p className="sec-eyebrow">{workshop?.zielgruppeEyebrow ?? "Zielgruppe"}</p>
+            <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: workshop?.zielgruppeTitel ?? "Ist dieser Workshop <em>für Sie?</em>" }} />
+            <p className="sec-lead">{workshop?.zielgruppeLead ?? "Dieser Workshop ist für Sie, wenn Sie sich fragen:"}</p>
             <div className="fragen-grid">
-              <div className="frage-card">
-                <span className="frage-icon">🧭</span>
-                <p className="frage-text">Sollen wir KI-Coaching in unserem Unternehmen einführen &mdash; <strong>und wenn ja, wie?</strong></p>
-              </div>
-              <div className="frage-card">
-                <span className="frage-icon">🔍</span>
-                <p className="frage-text">Was unterscheidet einen <strong>seriösen KI-Coaching-Anbieter</strong> von einem schlechten?</p>
-              </div>
-              <div className="frage-card">
-                <span className="frage-icon">🤝</span>
-                <p className="frage-text">Wie überzeugen wir den Betriebsrat &mdash; und <strong>was muss rechtlich geregelt sein?</strong></p>
-              </div>
-              <div className="frage-card">
-                <span className="frage-icon">🤖</span>
-                <p className="frage-text">Was kann KI wirklich leisten &mdash; und <strong>was bleibt dem menschlichen Coach vorbehalten?</strong></p>
-              </div>
-              <div className="frage-card">
-                <span className="frage-icon">🚀</span>
-                <p className="frage-text">Wie starte ich mit einem Pilot, <strong>ohne große Risiken einzugehen?</strong></p>
-              </div>
+              {(workshop?.zielgruppeKarten?.length ? workshop.zielgruppeKarten : fallbackFragen).map((frage, i) => (
+                <div className="frage-card" key={i}>
+                  <span className="frage-icon">{frage.icon}</span>
+                  <p className="frage-text" dangerouslySetInnerHTML={{ __html: frage.text }} />
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -591,30 +634,16 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         {/* WAS SIE MITNEHMEN */}
         <section className="ws-mitnahmen">
           <div className="mitnahmen-inner">
-            <p className="sec-eyebrow">Ihr Ergebnis</p>
-            <h2 className="sec-title">Was Sie <em>mitnehmen</em></h2>
-            <p className="sec-lead">Nach zwei Nachmittagen haben Sie:</p>
+            <p className="sec-eyebrow">{workshop?.mitnahmenEyebrow ?? "Ihr Ergebnis"}</p>
+            <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: workshop?.mitnahmenTitel ?? "Was Sie <em>mitnehmen</em>" }} />
+            <p className="sec-lead">{workshop?.mitnahmenLead ?? "Nach zwei Nachmittagen haben Sie:"}</p>
             <div className="mitnahmen-grid">
-              <div className="mitnahme-card">
-                <div className="mitnahme-num">01</div>
-                <p className="mitnahme-text"><strong>Eine klare Entscheidungsgrundlage</strong> &mdash; ob und wie KI-Coaching zu Ihrem Unternehmen passt</p>
-              </div>
-              <div className="mitnahme-card">
-                <div className="mitnahme-num">02</div>
-                <p className="mitnahme-text"><strong>Einen ersten konkreten Pilotplan</strong> &mdash; mit Ziel, Zielgruppe, Tool und Messung</p>
-              </div>
-              <div className="mitnahme-card">
-                <div className="mitnahme-num">03</div>
-                <p className="mitnahme-text"><strong>Orientierung im Tool-Markt</strong> &mdash; welche Kriterien wirklich zählen</p>
-              </div>
-              <div className="mitnahme-card">
-                <div className="mitnahme-num">04</div>
-                <p className="mitnahme-text"><strong>Antworten auf die Datenschutz- und Betriebsratsfragen</strong></p>
-              </div>
-              <div className="mitnahme-card">
-                <div className="mitnahme-num">05</div>
-                <p className="mitnahme-text"><strong>Ein Netzwerk</strong> &mdash; Menschen aus anderen Unternehmen, die vor denselben Fragen stehen</p>
-              </div>
+              {(workshop?.mitnahmenKarten?.length ? workshop.mitnahmenKarten : fallbackMitnahmen).map((mitnahme, i) => (
+                <div className="mitnahme-card" key={i}>
+                  <div className="mitnahme-num">{mitnahme.nummer}</div>
+                  <p className="mitnahme-text" dangerouslySetInnerHTML={{ __html: mitnahme.text }} />
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -623,38 +652,39 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         <section id="was-passiert" className="ws-approach">
           <div className="approach-inner">
             <div>
-              <p className="sec-eyebrow">Didaktik</p>
-              <h2 className="sec-title">Kein Folienvortrag.<br />Kein Hype.<br /><em>Kein Verkaufsgespräch.</em></h2>
-              <p className="approach-body">
-                <p>Dieser Workshop pendelt bewusst zwischen tiefen Fragen &mdash; <em>Was ist Coaching wirklich? Was kann KI, was kann sie nicht?</em> &mdash; und konkreter Praxis: Wie plane ich eine Einführung? Wie wähle ich das richtige Tool?</p>
-                <p>Sie arbeiten mit echten Werkzeugen: einer Pilot-Canvas, einer Toolbewertungs-Checkliste, einem Entscheidungsleitfaden. Und Sie diskutieren mit anderen, die vor denselben Fragen stehen.</p>
-              </p>
+              <p className="sec-eyebrow">{workshop?.didaktikEyebrow ?? "Didaktik"}</p>
+              <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: workshop?.didaktikTitel ?? "Kein Folienvortrag.<br />Kein Hype.<br /><em>Kein Verkaufsgespräch.</em>" }} />
+              <div className="approach-body">
+                <p dangerouslySetInnerHTML={{ __html: workshop?.didaktikText1 ?? "Dieser Workshop pendelt bewusst zwischen tiefen Fragen &mdash; <em>Was ist Coaching wirklich? Was kann KI, was kann sie nicht?</em> &mdash; und konkreter Praxis: Wie plane ich eine Einführung? Wie wähle ich das richtige Tool?" }} />
+                <p dangerouslySetInnerHTML={{ __html: workshop?.didaktikText2 ?? "Sie arbeiten mit echten Werkzeugen: einer Pilot-Canvas, einer Toolbewertungs-Checkliste, einem Entscheidungsleitfaden. Und Sie diskutieren mit anderen, die vor denselben Fragen stehen." }} />
+              </div>
             </div>
             <div>
               <div className="agenda-block">
-                <p className="agenda-day">Nachmittag 1 &mdash; Verstehen</p>
+                <p className="agenda-day">{workshop?.agendaTag1Titel ?? "Nachmittag 1 &mdash; Verstehen"}</p>
                 <table className="agenda-table">
                   <tbody>
-                    <tr><td>13:00</td><td>Ankommen &mdash; wer ist im Raum, was bringen wir mit?</td><td>Gesprächsrunde</td></tr>
-                    <tr><td>13:45</td><td>Was ist Coaching wirklich? &mdash; und warum erreicht es so wenige</td><td>Impuls + Übung</td></tr>
-                    <tr><td>14:45</td><td>Pause</td><td>15 Min.</td></tr>
-                    <tr><td>15:00</td><td>Was kann KI &mdash; was kann sie nicht? Forschung und Realität</td><td>Impuls + Demo</td></tr>
-                    <tr><td>16:00</td><td>Das Staffelstab-Modell &mdash; Mensch und KI als Team</td><td>Gruppenarbeit</td></tr>
-                    <tr><td>16:45</td><td>Reflexion &mdash; was nehme ich mit in die Nacht?</td><td>Stille Runde</td></tr>
+                    {(workshop?.agendaTag1?.length ? workshop.agendaTag1 : fallbackAgenda1).map((item, i) => (
+                      <tr key={i}>
+                        <td>{item.zeit}</td>
+                        <td dangerouslySetInnerHTML={{ __html: item.thema }} />
+                        <td>{item.format}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
               <div className="agenda-block" style={{ marginTop: "2rem" }}>
-                <p className="agenda-day">Nachmittag 2 &mdash; Gestalten</p>
+                <p className="agenda-day">{workshop?.agendaTag2Titel ?? "Nachmittag 2 &mdash; Gestalten"}</p>
                 <table className="agenda-table">
                   <tbody>
-                    <tr><td>13:00</td><td>Rückblick &mdash; was ist über Nacht aufgetaucht?</td><td>Kurzrunde</td></tr>
-                    <tr><td>13:15</td><td>Einführung planen &mdash; Ziel, Zielgruppe, erster Schritt</td><td>Canvas-Arbeit</td></tr>
-                    <tr><td>14:15</td><td>Toolauswahl &mdash; welche Kriterien zählen wirklich?</td><td>Marktüberblick</td></tr>
-                    <tr><td>15:00</td><td>Pause</td><td>15 Min.</td></tr>
-                    <tr><td>15:15</td><td>Datenschutz, Vertrauen, Unternehmenskultur</td><td>Diskussion</td></tr>
-                    <tr><td>16:00</td><td>Was kann ich messen &mdash; und was nicht?</td><td>Impuls</td></tr>
-                    <tr><td>16:30</td><td>Nächste Schritte &mdash; was tue ich in zwei Wochen?</td><td>Abschlussrunde</td></tr>
+                    {(workshop?.agendaTag2?.length ? workshop.agendaTag2 : fallbackAgenda2).map((item, i) => (
+                      <tr key={i}>
+                        <td>{item.zeit}</td>
+                        <td dangerouslySetInnerHTML={{ __html: item.thema }} />
+                        <td>{item.format}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -665,33 +695,18 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         {/* WAS ENTHALTEN */}
         <section className="ws-enthalten">
           <div className="enthalten-inner">
-            <p className="sec-eyebrow">Leistungsumfang</p>
-            <h2 className="sec-title">Was im Preis <em>enthalten ist</em></h2>
+            <p className="sec-eyebrow">{workshop?.enthaltenEyebrow ?? "Leistungsumfang"}</p>
+            <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: workshop?.enthaltenTitel ?? "Was im Preis <em>enthalten ist</em>" }} />
             <div className="enthalten-grid">
-              <div className="enthalten-item">
-                <div className="enthalten-check">✓</div>
-                <p className="enthalten-text"><strong>Persönliches Vorgespräch (15 Min. via Zoom)</strong>Vor dem Workshop &mdash; Ihre Fragen, Ihre Situation</p>
-              </div>
-              <div className="enthalten-item">
-                <div className="enthalten-check">✓</div>
-                <p className="enthalten-text"><strong>Vorbereitungsmaterialien</strong>Sofort nach Anmeldung: Entscheidungs-Leitfaden, Vergleichsdokument Mensch vs. KI</p>
-              </div>
-              <div className="enthalten-item">
-                <div className="enthalten-check">✓</div>
-                <p className="enthalten-text"><strong>Nachmittag 1 &mdash; Verstehen</strong>4 Stunden: Was ist Coaching? Was kann KI? Das Staffelstab-Modell</p>
-              </div>
-              <div className="enthalten-item">
-                <div className="enthalten-check">✓</div>
-                <p className="enthalten-text"><strong>Nachmittag 2 &mdash; Gestalten</strong>4 Stunden: Pilotplanung, Toolauswahl, Datenschutz, Messung</p>
-              </div>
-              <div className="enthalten-item">
-                <div className="enthalten-check">✓</div>
-                <p className="enthalten-text"><strong>Alle Arbeitsmaterialien (5 Dokumente)</strong>Pilot-Canvas, Toolbewertungs-Checkliste, Toolübersicht u.a.</p>
-              </div>
-              <div className="enthalten-item">
-                <div className="enthalten-check">✓</div>
-                <p className="enthalten-text"><strong>Persönliches Nachgespräch (15 Min. via Zoom)</strong>Nach dem Workshop &mdash; nächste Schritte, offene Fragen, Einstieg in Zusammenarbeit</p>
-              </div>
+              {(workshop?.enthaltenListe?.length ? workshop.enthaltenListe : fallbackEnthalten).map((item, i) => (
+                <div className="enthalten-item" key={i}>
+                  <div className="enthalten-check">✓</div>
+                  <p className="enthalten-text">
+                    <strong dangerouslySetInnerHTML={{ __html: item.titel }} />
+                    <span dangerouslySetInnerHTML={{ __html: item.text }} />
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -699,24 +714,30 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         {/* FORSCHUNG */}
         <section className="ws-forschung">
           <div className="forschung-inner">
-            <p className="sec-eyebrow">Wissenschaftlicher Hintergrund</p>
-            <h2 className="sec-title">Was die <em>Forschung sagt</em></h2>
+            <p className="sec-eyebrow">{workshop?.forschungEyebrow ?? "Wissenschaftlicher Hintergrund"}</p>
+            <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: workshop?.forschungTitel ?? "Was die <em>Forschung sagt</em>" }} />
             <div className="forschung-stat">
-              <div className="stat-block">
-                <div className="stat-num">&gt;80%</div>
-                <p className="stat-label">Abbruchrate bei KI-Coaching ohne menschliche Begleitung</p>
-              </div>
-              <div className="stat-block">
-                <div className="stat-num">5–15%</div>
-                <p className="stat-label">der Belegschaft erreicht klassisches Coaching im Schnitt</p>
-              </div>
+              {(workshop?.forschungStats?.length ? workshop.forschungStats : [
+                { nummer: "&gt;80%", label: "Abbruchrate bei KI-Coaching ohne menschliche Begleitung" },
+                { nummer: "5–15%", label: "der Belegschaft erreicht klassisches Coaching im Schnitt" }
+              ]).map((stat, i) => (
+                <div className="stat-block" key={i}>
+                  <div className="stat-num" dangerouslySetInnerHTML={{ __html: stat.nummer }} />
+                  <p className="stat-label">{stat.label}</p>
+                </div>
+              ))}
             </div>
             <div className="forschung-body">
-              <p>Die Studienlage zu KI-Coaching ist klar: KI allein &mdash; ohne menschliche Begleitung &mdash; erzeugt in kontrollierten Studien keine messbaren Entwicklungseffekte.</p>
-              <p>Gleichzeitig hat KI echte Stärken: Verfügbarkeit rund um die Uhr, Skalierung auf die gesamte Belegschaft, niedrige Hemmschwelle. Richtig eingesetzt kann sie Coaching für deutlich mehr Mitarbeitende zugänglich machen &mdash; ohne die Qualität menschlicher Begleitung zu opfern.</p>
-              <p>Der Schlüssel liegt nicht in der Entscheidung für oder gegen KI &mdash; sondern in der klugen Verbindung beider. Genau das ist das Thema dieses Workshops.</p>
+              {workshop?.forschungText1 && <p dangerouslySetInnerHTML={{ __html: workshop.forschungText1 }} />}
+              {!workshop?.forschungText1 && <p>Die Studienlage zu KI-Coaching ist klar: KI allein &mdash; ohne menschliche Begleitung &mdash; erzeugt in kontrollierten Studien keine messbaren Entwicklungseffekte.</p>}
+              
+              {workshop?.forschungText2 && <p dangerouslySetInnerHTML={{ __html: workshop.forschungText2 }} />}
+              {!workshop?.forschungText2 && <p>Gleichzeitig hat KI echte Stärken: Verfügbarkeit rund um die Uhr, Skalierung auf die gesamte Belegschaft, niedrige Hemmschwelle. Richtig eingesetzt kann sie Coaching für deutlich mehr Mitarbeitende zugänglich machen &mdash; ohne die Qualität menschlicher Begleitung zu opfern.</p>}
+              
+              {workshop?.forschungText3 && <p dangerouslySetInnerHTML={{ __html: workshop.forschungText3 }} />}
+              {!workshop?.forschungText3 && <p>Der Schlüssel liegt nicht in der Entscheidung für oder gegen KI &mdash; sondern in der klugen Verbindung beider. Genau das ist das Thema dieses Workshops.</p>}
             </div>
-            <p className="forschung-quelle">Quelle: De Haan, Terblanche &amp; Nowack (2026), RCT mit 114 Führungskräften</p>
+            <p className="forschung-quelle">{workshop?.forschungQuelle ?? "Quelle: De Haan, Terblanche & Nowack (2026), RCT mit 114 Führungskräften"}</p>
           </div>
         </section>
 
@@ -724,22 +745,23 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         <section className="ws-ueber">
           <div className="ueber-inner">
             <div>
-              <p className="ueber-label">Workshopleitung</p>
-              <h2 className="ueber-name">Bernd Wiese</h2>
-              <p className="ueber-role">
-                Zuhörcoach nach Nancy Kline<br />
-                Betreiber ki-coaching-kompass.de<br />
-                Freiburg
-              </p>
+              <p className="ueber-label">{workshop?.ueberEyebrow ?? "Workshopleitung"}</p>
+              <h2 className="ueber-name">{workshop?.ueberName ?? "Bernd Wiese"}</h2>
+              <p className="ueber-role" dangerouslySetInnerHTML={{ __html: workshop?.ueberRole ?? "Zuhörcoach nach Nancy Kline<br />Betreiber ki-coaching-kompass.de<br />Freiburg" }} />
             </div>
             <div>
               <div className="ueber-body">
-                <p>Bernd Wiese betreibt ki-coaching-kompass.de &mdash; eine unabhängige deutschsprachige Plattform, die KI-Coaching-Tools, Studien und Artikel für den deutschsprachigen Raum kuratiert.</p>
-                <p>Als Zuhörcoach nach Nancy Kline und ehemaliger CRM-Vertriebsberater bringt er zwei Perspektiven zusammen: tiefes Verständnis von Coaching und 30 Jahre Erfahrung darin, wie Unternehmen Technologie wirklich einführen &mdash; und was dabei scheitert.</p>
+                {workshop?.ueberText1 && <p dangerouslySetInnerHTML={{ __html: workshop.ueberText1 }} />}
+                {!workshop?.ueberText1 && <p>Bernd Wiese betreibt ki-coaching-kompass.de &mdash; eine unabhängige deutschsprachige Plattform, die KI-Coaching-Tools, Studien und Artikel für den deutschsprachigen Raum kuratiert.</p>}
+                
+                {workshop?.ueberText2 && <p dangerouslySetInnerHTML={{ __html: workshop.ueberText2 }} />}
+                {!workshop?.ueberText2 && <p>Als Zuhörcoach nach Nancy Kline und ehemaliger CRM-Vertriebsberater bringt er zwei Perspektiven zusammen: tiefes Verständnis von Coaching und 30 Jahre Erfahrung darin, wie Unternehmen Technologie wirklich einführen &mdash; und was dabei scheitert.</p>}
               </div>
               <div className="ueber-hinweis">
-                <strong style={{ display: "block", marginBottom: "0.3rem", color: "var(--text2)" }}>Transparenzhinweis</strong>
-                Bernd Wiese ist Partneranbieter ausgewählter KI-Coaching-Tools und erhält bei Einführungen eine Provision vom Anbieter. Dies wird offen kommuniziert &mdash; und bedeutet: Empfohlen werden nur Tools, die persönlich geprüft und eingesetzt wurden.
+                <strong style={{ display: "block", marginBottom: "0.3rem", color: "var(--text2)" }}>
+                  {workshop?.ueberHinweisTitel ?? "Transparenzhinweis"}
+                </strong>
+                <span dangerouslySetInnerHTML={{ __html: workshop?.ueberHinweisText ?? "Bernd Wiese ist Partneranbieter ausgewählter KI-Coaching-Tools und erhält bei Einführungen eine Provision vom Anbieter. Dies wird offen kommuniziert &mdash; und bedeutet: Empfohlen werden nur Tools, die persönlich geprüft und eingesetzt wurden." }} />
               </div>
             </div>
           </div>
@@ -748,14 +770,14 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
         {/* CTA */}
         <section className="ws-cta">
           <div className="cta-inner">
-            <p className="sec-eyebrow">Anmeldung</p>
-            <h2 className="sec-title">{workshop?.ctaTitel ?? <>Nächster <em>Termin</em></>}</h2>
-            <div className="cta-preis">399 EUR</div>
-            <p className="cta-preis-label">pro Person · inkl. aller Materialien und Gespräche</p>
-            <div className="cta-termin">Nächster Termin: wird bekannt gegeben</div>
+            <p className="sec-eyebrow">{workshop?.ctaEyebrow ?? "Anmeldung"}</p>
+            <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: workshop?.ctaTitel ?? "Nächster <em>Termin</em>" }} />
+            <div className="cta-preis">{workshop?.ctaPreis ?? "399 EUR"}</div>
+            <p className="cta-preis-label">{workshop?.ctaPreisLabel ?? "pro Person · inkl. aller Materialien und Gespräche"}</p>
+            <div className="cta-termin">{workshop?.ctaTermin ?? "Nächster Termin: wird bekannt gegeben"}</div>
             <div className="cta-buttons">
               <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-primary">{workshop?.ctaButton ?? "Jetzt anmelden"}</a>
-              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-outline">Fragen vorab schreiben</a>
+              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-outline">{workshop?.ctaButtonSecondary ?? "Fragen vorab schreiben"}</a>
             </div>
             <p className="cta-note">
               {workshop?.ctaBody ?? "Mit Anmeldung erhalten Sie sofort Zugang zu Ihren Vorbereitungsmaterialien und einen Buchungslink für Ihr persönliches Vorgespräch."}
@@ -765,15 +787,19 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
 
         {/* FOOTER */}
         <footer className="ws-footer">
-          <p className="footer-copy">&copy; 2025 KI-Coaching Kompass &middot; Bernd Wiese &middot; Staufen</p>
+          <p className="footer-copy">{workshop?.footerCopyright ?? "© 2025 KI-Coaching Kompass · Bernd Wiese · Staufen"}</p>
           <div className="footer-links">
-            <Link href="/">Start</Link>
-            <Link href="/ki-coaching/beratung">Beratung</Link>
-            <Link href="/ki-coaching/kompass">Kompass</Link>
-            <Link href="/zuhoeren">Gehört werden</Link>
-            <Link href="/ueber-mich">Über mich</Link>
-            <Link href="/impressum">Impressum</Link>
-            <Link href="/datenschutz">Datenschutz</Link>
+            {(workshop?.footerLinks?.length ? workshop.footerLinks : [
+              { label: "Start", url: "/" },
+              { label: "Beratung", url: "/ki-coaching/beratung" },
+              { label: "Kompass", url: "/ki-coaching/kompass" },
+              { label: "Gehört werden", url: "/zuhoeren" },
+              { label: "Über mich", url: "/ueber-mich" },
+              { label: "Impressum", url: "/impressum" },
+              { label: "Datenschutz", url: "/datenschutz" },
+            ]).map((link, i) => (
+              <Link key={i} href={link.url}>{link.label}</Link>
+            ))}
           </div>
         </footer>
 
