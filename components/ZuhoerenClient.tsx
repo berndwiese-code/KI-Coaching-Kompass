@@ -169,12 +169,11 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
 
         /* ── HERO ── */
         .zh-hero {
-          min-height: max(75vh, 600px);
           display: grid;
           grid-template-columns: 1fr 260px;
           gap: 0;
-          align-items: stretch;
-          padding: 0;
+          align-items: flex-start;
+          padding: 7rem 0 3rem 0;
           position: relative;
           overflow: hidden;
         }
@@ -187,7 +186,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           transition: background 0.35s;
         }
         .zh-hero-text {
-          padding: 7rem 3rem 5rem 10vw;
+          padding: 0 3rem 0 10vw;
           position: relative; z-index: 2;
         }
         .eyebrow {
@@ -219,17 +218,14 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         .zh-hero-cta:hover { background: var(--gold2); }
         .zh-hero-image {
           position: relative; z-index: 2;
-          height: min(65vh, 520px);
-          align-self: flex-start;
-          margin-top: 6.5rem;
+          width: 100%; height: auto;
+          display: block;
           overflow: hidden;
           border-radius: 8px 0 0 8px;
         }
         .zh-hero-image img {
-          width: 100%;
-          height: 100%;
+          width: 100%; height: auto;
           object-fit: cover;
-          object-position: center top;
           display: block;
         }
 

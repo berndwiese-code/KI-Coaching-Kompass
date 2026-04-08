@@ -194,11 +194,10 @@ export default function HomeClient({ startseite, testimonials }: Props) {
         /* ── HERO ── */
         .hero {
           background: var(--bg);
-          min-height: max(75vh, 600px);
+          padding: 7rem 2rem 3rem;
           display: grid;
           grid-template-columns: 1fr 260px;
-          align-items: stretch;
-          padding: 0;
+          align-items: flex-start;
           text-align: center;
           position: relative;
           overflow: hidden;
@@ -208,9 +207,8 @@ export default function HomeClient({ startseite, testimonials }: Props) {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
-          padding: 7rem 2rem 5rem;
-          text-align: center;
+          justify-content: flex-start;
+          padding: 0;
           position: relative;
           z-index: 2;
         }
@@ -218,19 +216,13 @@ export default function HomeClient({ startseite, testimonials }: Props) {
           position: relative;
           width: 100%;
           height: auto;
-          min-height: 60vh;
-          max-height: 80vh;
-          display: flex;
-          align-items: center;
-          align-self: flex-start;
-          margin-top: 6rem;
+          display: block;
           overflow: hidden;
           pointer-events: none;
         }
         .hero-portrait img {
-          width: 100%; height: 100%;
+          width: 100%; height: auto;
           object-fit: cover;
-          object-position: center top;
           display: block;
           mask-image: linear-gradient(to right, transparent 0%, black 20%);
           -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);

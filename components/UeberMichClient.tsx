@@ -165,7 +165,7 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
 
         /* ── HERO ── */
         .um-hero {
-          padding: 11rem 2rem 5rem;
+          padding: 7rem 2rem 3rem;
           max-width: 760px;
           margin: 0 auto;
         }

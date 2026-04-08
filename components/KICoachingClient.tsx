@@ -140,10 +140,32 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
 
         /* HERO */
         .kc-hero {
-          min-height: 60vh;
-          display: flex; flex-direction: column; justify-content: center;
-          padding: 11rem 2rem 6rem;
-          max-width: 820px; margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 260px;
+          align-items: flex-start;
+          padding: 7rem 2rem 3rem;
+          max-width: 1000px; margin: 0 auto;
+        }
+        .hero-content {
+          display: flex; flex-direction: column;
+          align-items: flex-start;
+        }
+        .hero-portrait {
+          position: relative;
+          width: 100%; height: auto;
+          display: block;
+          overflow: hidden; pointer-events: none;
+        }
+        .hero-portrait img {
+          width: 100%; height: auto;
+          object-fit: cover;
+          display: block;
+          mask-image: linear-gradient(to right, transparent 0%, black 20%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+        }
+        @media (max-width: 900px) {
+          .kc-hero { grid-template-columns: 1fr; }
+          .hero-portrait { display: none; }
         }
         .kc-eyebrow {
           display: inline-flex; align-items: center; gap: 0.6rem;
@@ -279,17 +301,40 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
 
         {/* HERO */}
         <div className="kc-hero">
-          <div className="kc-eyebrow">{data?.heroEyebrow ?? "KI-Coaching"}</div>
-          <h1 className="kc-title">
-            {data?.heroTitlePart1 ?? "KI-Coaching:"}
-            <br />
-            <em>{data?.heroTitleHighlight ?? "Was es ist. Was es kann."}</em>
-            <br />
-            {data?.heroTitlePart2 ?? "Und was nicht."}
-          </h1>
-          <p className="kc-lead">
-            {data?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
-          </p>
+          <div className="hero-content">
+            <div className="kc-eyebrow">{data?.heroEyebrow ?? "KI-Coaching"}</div>
+            <h1 className="kc-title">
+              {data?.heroTitlePart1 ?? "KI-Coaching:"}
+              <br />
+              <em>{data?.heroTitleHighlight ?? "Was es ist. Was es kann."}</em>
+              <br />
+              {data?.heroTitlePart2 ?? "Und was nicht."}
+            </h1>
+            <p className="kc-lead">
+              {data?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
+            </p>
+          </div>
+          <div className="hero-portrait" style={{ pointerEvents: "auto" }}>
+            <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
+            <Link href="/ueber-mich" style={{
+              position: "absolute",
+              bottom: "1.5rem",
+              right: "1rem",
+              fontSize: "0.68rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.85)",
+              background: "rgba(0,0,0,0.35)",
+              backdropFilter: "blur(6px)",
+              padding: "0.4rem 1rem",
+              borderRadius: "20px",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              transition: "background 0.2s",
+            }}>
+              Über mich →
+            </Link>
+          </div>
         </div>
 
         {/* CARDS */}
