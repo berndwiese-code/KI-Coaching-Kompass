@@ -88,8 +88,8 @@ export async function getStartseite(): Promise<Startseite | null> {
   return client.fetch(`*[_type == "startseite"][0]{
     heroEyebrow, heroTitel, heroUntertitel, ctaText, heroNote, heroSuccessMsg,
     wegeEyebrow, wegeTitel, wegeLead,
-    wegeListe[]{ _key, nummer, eyebrow, titel, text, linkText, linkUrl },
-    toolsEyebrow, toolsTitel, toolsFooterText, toolsFooterCta, kompassZitat, kompassStats[]{_key, nummer, label},
+    wegeListe[]{ nummer, eyebrow, titel, text, linkText, linkUrl },
+    toolsEyebrow, toolsTitel, toolsFooterText, toolsFooterCta, kompassZitat, kompassStats[]{nummer, label},
     artikelEyebrow, artikelTitel,
     testimonialsEyebrow, testimonialsTitel, trustLogos,
     ueberEyebrow, ueberTitel, ueberText1, ueberText2, ueberCtaText,
@@ -181,18 +181,18 @@ export type Workshop = {
 
 export async function getWorkshop(): Promise<Workshop | null> {
   return client.fetch(`*[_type == "workshop"][0]{
-    navLinks[]{ _key, label, url, isExternal }, navCta,
+    navLinks[]{ label, url, isExternal }, navCta,
     heroEyebrow, heroTitel, heroUntertitel, heroPill1, heroPill2, heroPill3, heroPill4, heroCtaPrimary, heroCtaSecondary,
-    zielgruppeEyebrow, zielgruppeTitel, zielgruppeLead, zielgruppeKarten[]{ _key, icon, text },
-    mitnahmenEyebrow, mitnahmenTitel, mitnahmenLead, mitnahmenKarten[]{ _key, nummer, text },
+    zielgruppeEyebrow, zielgruppeTitel, zielgruppeLead, zielgruppeKarten[]{ icon, text },
+    mitnahmenEyebrow, mitnahmenTitel, mitnahmenLead, mitnahmenKarten[]{ nummer, text },
     didaktikEyebrow, didaktikTitel, didaktikText1, didaktikText2, 
-    agendaTag1Titel, agendaTag1[]{ _key, zeit, thema, format },
-    agendaTag2Titel, agendaTag2[]{ _key, zeit, thema, format },
-    enthaltenEyebrow, enthaltenTitel, enthaltenListe[]{ _key, titel, text },
-    forschungEyebrow, forschungTitel, forschungStats[]{ _key, nummer, label }, forschungText1, forschungText2, forschungText3, forschungQuelle,
+    agendaTag1Titel, agendaTag1[]{ zeit, thema, format },
+    agendaTag2Titel, agendaTag2[]{ zeit, thema, format },
+    enthaltenEyebrow, enthaltenTitel, enthaltenListe[]{ titel, text },
+    forschungEyebrow, forschungTitel, forschungStats[]{ nummer, label }, forschungText1, forschungText2, forschungText3, forschungQuelle,
     ueberEyebrow, ueberName, ueberRole, ueberText1, ueberText2, ueberHinweisTitel, ueberHinweisText,
     ctaEyebrow, ctaTitel, ctaPreis, ctaPreisLabel, ctaTermin, ctaButton, ctaButtonSecondary, ctaEmail, ctaBody,
-    footerCopyright, footerLinks[]{ _key, label, url }
+    footerCopyright, footerLinks[]{ label, url }
   }`)
 }
 
@@ -244,16 +244,16 @@ export async function getBeratung(): Promise<Beratung | null> {
   return client.fetch(`*[_type == "beratung"][0]{
     heroEyebrow, heroTitel, heroLead,
     
-    unternehmenChallenge, unternehmenFacts[]{ _key, num, label },
-    unternehmenLeistungenLabel, unternehmenLeistungenTitel, unternehmenLeistungenBody, unternehmenLeistungenListe[]{ _key, icon, title, body },
-    unternehmenProzessLabel, unternehmenProzessTitel, unternehmenProzessListe[]{ _key, number, title, body },
-    unternehmenToolsLabel, unternehmenToolsTitel, unternehmenToolsBody, unternehmenToolsListe[]{ _key, title, tools },
+    unternehmenChallenge, unternehmenFacts[]{ num, label },
+    unternehmenLeistungenLabel, unternehmenLeistungenTitel, unternehmenLeistungenBody, unternehmenLeistungenListe[]{ icon, title, body },
+    unternehmenProzessLabel, unternehmenProzessTitel, unternehmenProzessListe[]{ number, title, body },
+    unternehmenToolsLabel, unternehmenToolsTitel, unternehmenToolsBody, unternehmenToolsListe[]{ title, tools },
     unternehmenCtaTitel, unternehmenCtaBody, unternehmenCtaButton,
 
-    coachesChallenge, coachesFacts[]{ _key, num, label },
-    coachesLeistungenLabel, coachesLeistungenTitel, coachesLeistungenBody, coachesLeistungenListe[]{ _key, icon, title, body },
-    coachesProzessLabel, coachesProzessTitel, coachesProzessListe[]{ _key, number, title, body },
-    coachesToolsLabel, coachesToolsTitel, coachesToolsBody, coachesToolsListe[]{ _key, title, tools },
+    coachesChallenge, coachesFacts[]{ num, label },
+    coachesLeistungenLabel, coachesLeistungenTitel, coachesLeistungenBody, coachesLeistungenListe[]{ icon, title, body },
+    coachesProzessLabel, coachesProzessTitel, coachesProzessListe[]{ number, title, body },
+    coachesToolsLabel, coachesToolsTitel, coachesToolsBody, coachesToolsListe[]{ title, tools },
     coachesCtaTitel, coachesCtaBody, coachesCtaButton,
 
     kontaktEmail
@@ -382,7 +382,7 @@ export type KICoaching = {
 export async function getKICoaching(): Promise<KICoaching | null> {
   return client.fetch(`*[_type == "kiCoaching"][0]{
     navCta, navCtaUrl, heroEyebrow, heroTitlePart1, heroTitleHighlight, heroTitlePart2, heroLead,
-    cards[]{ _key, icon, label, title, body, arrowText, url },
-    links[]{ _key, label, url }
+    cards[]{ icon, label, title, body, arrowText, url },
+    links[]{ label, url }
   }`)
 }
