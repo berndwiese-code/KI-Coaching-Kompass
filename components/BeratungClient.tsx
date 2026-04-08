@@ -171,28 +171,38 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
 
         /* ── HERO ── */
         .br-hero {
-          min-height: 72vh;
-          display: flex; flex-direction: column;
-          align-items: center; justify-content: center;
-          padding: 10rem 2rem 5rem; text-align: center;
+          min-height: max(75vh, 600px);
+          display: grid;
+          grid-template-columns: 1fr 260px;
+          align-items: stretch;
+          padding: 0; text-align: center;
           position: relative; overflow: hidden;
           background: var(--bg);
         }
+        .hero-content {
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          padding: 7rem 2rem 5rem;
+          position: relative; z-index: 2;
+        }
         .hero-portrait {
-          position: absolute; top: 50%; right: 0;
-          transform: translateY(-50%);
-          width: 190px; overflow: hidden; pointer-events: none;
+          position: relative;
+          width: 100%; height: auto;
+          min-height: 60vh; max-height: 80vh;
+          display: flex; align-items: center; align-self: flex-start;
+          margin-top: 6rem;
+          overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
-          width: 100%; height: auto;
+          width: 100%; height: 100%;
+          object-fit: cover;
           object-position: center top;
           display: block;
-          mask-image: linear-gradient(to right, transparent 0%, black 30%);
-          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+          mask-image: linear-gradient(to right, transparent 0%, black 20%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
         }
-        @media (max-width: 1300px) { .hero-portrait { width: 168px; } }
-        @media (max-width: 1050px) { .hero-portrait { width: 144px; } }
-        @media (max-width: 900px) { .hero-portrait { display: none; } }
+        @media (max-width: 1050px) { .br-hero { grid-template-columns: 1fr 200px; } }
+        @media (max-width: 900px) { .br-hero { grid-template-columns: 1fr; } .hero-portrait { display: none; } }
 
         .br-hero-orb {
           position: absolute; top: 50%; left: 50%;
@@ -442,6 +452,33 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
 
         {/* HERO */}
         <section className="br-hero">
+          <div className="hero-content">
+            <div className="br-hero-orb" />
+            <div className="eyebrow">{beratung?.heroEyebrow ?? "Beratung"}</div>
+            <h1 
+              className="br-hero-title"
+              dangerouslySetInnerHTML={{ __html: beratung?.heroTitel ?? "KI-Coaching-Software<br /><em>gezielt einsetzen.</em>" }}
+            />
+            <p className="br-hero-lead">
+              {beratung?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
+            </p>
+
+            {/* TABS */}
+            <div className="tab-bar">
+              <button
+                className={`tab-btn ${activeTab === "unternehmen" ? "active" : ""}`}
+                onClick={() => setActiveTab("unternehmen")}
+              >
+                Für Unternehmen
+              </button>
+              <button
+                className={`tab-btn ${activeTab === "coaches" ? "active" : ""}`}
+                onClick={() => setActiveTab("coaches")}
+              >
+                Für Coaches
+              </button>
+            </div>
+          </div>
           <div className="hero-portrait" style={{ pointerEvents: "auto" }}>
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
             <Link href="/ueber-mich" style={{
@@ -461,31 +498,6 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
             }}>
               Über mich →
             </Link>
-          </div>
-          <div className="br-hero-orb" />
-          <div className="eyebrow">{beratung?.heroEyebrow ?? "Beratung"}</div>
-          <h1 
-            className="br-hero-title"
-            dangerouslySetInnerHTML={{ __html: beratung?.heroTitel ?? "KI-Coaching-Software<br /><em>gezielt einsetzen.</em>" }}
-          />
-          <p className="br-hero-lead">
-            {beratung?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
-          </p>
-
-          {/* TABS */}
-          <div className="tab-bar">
-            <button
-              className={`tab-btn ${activeTab === "unternehmen" ? "active" : ""}`}
-              onClick={() => setActiveTab("unternehmen")}
-            >
-              Für Unternehmen
-            </button>
-            <button
-              className={`tab-btn ${activeTab === "coaches" ? "active" : ""}`}
-              onClick={() => setActiveTab("coaches")}
-            >
-              Für Coaches
-            </button>
           </div>
         </section>
 

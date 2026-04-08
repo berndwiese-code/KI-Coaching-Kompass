@@ -169,13 +169,12 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
 
         /* ── HERO ── */
         .zh-hero {
-          min-height: 100vh;
+          min-height: max(75vh, 600px);
           display: grid;
-          grid-template-columns: 1fr 312px;
+          grid-template-columns: 1fr 260px;
           gap: 0;
-          align-items: center;
+          align-items: stretch;
           padding: 0;
-          background: var(--bg);
           position: relative;
           overflow: hidden;
         }
@@ -188,7 +187,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           transition: background 0.35s;
         }
         .zh-hero-text {
-          padding: 10rem 3rem 6rem 10vw;
+          padding: 7rem 3rem 5rem 10vw;
           position: relative; z-index: 2;
         }
         .eyebrow {
@@ -220,10 +219,11 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         .zh-hero-cta:hover { background: var(--gold2); }
         .zh-hero-image {
           position: relative; z-index: 2;
-          height: min(70vh, 576px);
-          align-self: center;
+          height: min(65vh, 520px);
+          align-self: flex-start;
+          margin-top: 6.5rem;
           overflow: hidden;
-          border-radius: 0 0 0 8px;
+          border-radius: 8px 0 0 8px;
         }
         .zh-hero-image img {
           width: 100%;
@@ -474,7 +474,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         @media (max-width: 600px) {
           .nav-cta { display: none; }
           .mobile-menu { left: auto; right: 0; width: min(88vw, 300px); }
-          .zh-hero-text { padding: 8rem 1.5rem 3rem; }
+          .zh-hero-text { padding: 6rem 1.5rem 3rem; }
           .zh-section { padding: 4rem 1.5rem; }
           .zh-standing { padding-left: 1.25rem; margin: 3rem 0; }
           .zh-distinction { padding: 2rem 1.5rem; }

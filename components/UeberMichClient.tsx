@@ -193,7 +193,7 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
         .um-portrait-wrap {
           float: right;
           margin: 0 0 2.5rem 3rem;
-          width: clamp(160px, 22vw, 260px);
+          width: 260px;
           shape-outside: inset(0 round 12px);
         }
         .um-portrait-wrap img {
@@ -331,10 +331,6 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
 
         {/* CONTENT */}
         <main className="um-hero">
-          <div className="um-eyebrow">{data?.eyebrow ?? "Über mich"}</div>
-          <h1 className="um-name" dangerouslySetInnerHTML={{ __html: data?.name ?? "Bernd Wiese" }} />
-          <p className="um-subname" dangerouslySetInnerHTML={{ __html: data?.subname ?? "Zuhörcoach · KI-Berater · Freiburg" }} />
-
           <div className="um-portrait-wrap">
             <img src="/bernd-wiese.jpg" alt={data?.name ?? "Bernd Wiese"} />
             <a
@@ -346,6 +342,10 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
               {data?.portraitLinkText ?? "LinkedIn ↗"}
             </a>
           </div>
+
+          <div className="um-eyebrow">{data?.eyebrow ?? "Über mich"}</div>
+          <h1 className="um-name" dangerouslySetInnerHTML={{ __html: data?.name ?? "Bernd Wiese" }} />
+          <p className="um-subname" dangerouslySetInnerHTML={{ __html: data?.subname ?? "Zuhörcoach · KI-Berater · Freiburg" }} />
 
           <div 
             className="um-prose" 

@@ -198,28 +198,39 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
 
         /* ── HERO ── */
         .ws-hero {
-          background: var(--bg); min-height: 100vh;
-          display: flex; flex-direction: column;
-          align-items: center; justify-content: center;
-          padding: 9rem 2rem 6rem; text-align: center;
+          background: var(--bg);
+          min-height: max(75vh, 600px);
+          display: grid;
+          grid-template-columns: 1fr 260px;
+          align-items: stretch;
+          padding: 0; text-align: center;
           position: relative; overflow: hidden;
           transition: background 0.35s;
         }
+        .hero-content {
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          padding: 7rem 2rem 5rem;
+          position: relative; z-index: 2;
+        }
         .hero-portrait {
-          position: absolute; top: 50%; right: 0;
-          transform: translateY(-50%);
-          width: 190px; overflow: hidden; pointer-events: none;
+          position: relative;
+          width: 100%; height: auto;
+          min-height: 60vh; max-height: 80vh;
+          display: flex; align-items: center; align-self: flex-start;
+          margin-top: 6rem;
+          overflow: hidden; pointer-events: none;
         }
         .hero-portrait img {
-          width: 100%; height: auto;
+          width: 100%; height: 100%;
+          object-fit: cover;
           object-position: center top;
           display: block;
-          mask-image: linear-gradient(to right, transparent 0%, black 30%);
-          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+          mask-image: linear-gradient(to right, transparent 0%, black 20%);
+          -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
         }
-        @media (max-width: 1300px) { .hero-portrait { width: 168px; } }
-        @media (max-width: 1050px) { .hero-portrait { width: 144px; } }
-        @media (max-width: 900px) { .hero-portrait { display: none; } }
+        @media (max-width: 1050px) { .ws-hero { grid-template-columns: 1fr 200px; } }
+        @media (max-width: 900px) { .ws-hero { grid-template-columns: 1fr; } .hero-portrait { display: none; } }
 
         .ws-hero-orb {
           position: absolute; top: 50%; left: 50%;
@@ -577,6 +588,22 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
 
         {/* HERO */}
         <section className="ws-hero">
+          <div className="hero-content">
+            <div className="ws-hero-orb" />
+            <div className="eyebrow">{workshop?.heroEyebrow ?? "Zweitägiger Online-Workshop"}</div>
+            <h1 className="ws-hero-title" dangerouslySetInnerHTML={{ __html: workshop?.heroTitel ?? "KI-Coaching im<br /><em>Unternehmen</em>" }} />
+            <p className="ws-hero-sub">{workshop?.heroUntertitel ?? "verstehen \u2014 bewerten \u2014 einführen"}</p>
+            <div className="ws-hero-facts">
+              <span className="fact-pill">{workshop?.heroPill1 ?? "2 Nachmittage à 4 Stunden"}</span>
+              <span className="fact-pill">{workshop?.heroPill2 ?? "Online via Zoom"}</span>
+              <span className="fact-pill">{workshop?.heroPill3 ?? "Max. 12 Teilnehmer"}</span>
+              <span className="fact-pill highlight">{workshop?.heroPill4 ?? "399 EUR pro Person"}</span>
+            </div>
+            <div className="ws-hero-cta">
+              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-primary">{workshop?.heroCtaPrimary ?? "Jetzt anmelden"}</a>
+              <a href="#was-passiert" className="btn-outline">{workshop?.heroCtaSecondary ?? "Mehr erfahren"}</a>
+            </div>
+          </div>
           <div className="hero-portrait" style={{ pointerEvents: "auto" }}>
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
             <Link href="/ueber-mich" style={{
@@ -597,20 +624,6 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
             }}>
               Über mich →
             </Link>
-          </div>
-          <div className="ws-hero-orb" />
-          <div className="eyebrow">{workshop?.heroEyebrow ?? "Zweitägiger Online-Workshop"}</div>
-          <h1 className="ws-hero-title" dangerouslySetInnerHTML={{ __html: workshop?.heroTitel ?? "KI-Coaching im<br /><em>Unternehmen</em>" }} />
-          <p className="ws-hero-sub">{workshop?.heroUntertitel ?? "verstehen \u2014 bewerten \u2014 einführen"}</p>
-          <div className="ws-hero-facts">
-            <span className="fact-pill">{workshop?.heroPill1 ?? "2 Nachmittage à 4 Stunden"}</span>
-            <span className="fact-pill">{workshop?.heroPill2 ?? "Online via Zoom"}</span>
-            <span className="fact-pill">{workshop?.heroPill3 ?? "Max. 12 Teilnehmer"}</span>
-            <span className="fact-pill highlight">{workshop?.heroPill4 ?? "399 EUR pro Person"}</span>
-          </div>
-          <div className="ws-hero-cta">
-            <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-primary">{workshop?.heroCtaPrimary ?? "Jetzt anmelden"}</a>
-            <a href="#was-passiert" className="btn-outline">{workshop?.heroCtaSecondary ?? "Mehr erfahren"}</a>
           </div>
         </section>
 
