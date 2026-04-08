@@ -221,12 +221,12 @@ export default function KontaktClient() {
         }
         .hero-title em { font-style: italic; color: var(--gold2); }
 
-        /* ── TWO COLUMNS ── */
+        /* ── STACKED LAYOUT ── */
         .kontakt-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 3rem;
-          max-width: 1100px;
+          display: flex;
+          flex-direction: column;
+          gap: 4rem;
+          max-width: 800px;
           margin: 4rem auto 8rem;
           padding: 0 2rem;
           position: relative;
@@ -248,58 +248,63 @@ export default function KontaktClient() {
           color: var(--text);
           margin-bottom: 2rem;
           line-height: 1.2;
+          text-align: center;
         }
 
-        /* Spalte 1: Kalender */
+        /* 1: Kalender */
         .calendar-wrapper {
           width: 100%;
-          min-height: 480px;
-          background: var(--surface);
-          border: 1px solid var(--border);
+          height: 600px;
+          border: 1px solid #e0e0e0;
           border-radius: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--muted);
-          font-size: 0.9rem;
-          text-align: center;
-          padding: 2rem;
+          overflow: hidden;
+          background: var(--surface);
+          box-shadow: var(--shadow);
+        }
+        
+        .calendar-iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
         }
 
-        /* Spalte 2: Direkter Kontakt */
+        /* 2: Direkter Kontakt */
         .rueckruf-form {
           display: flex; flex-direction: column; gap: 1rem;
           background: var(--surface); border: 1px solid var(--border);
-          border-radius: 8px; padding: 1.5rem; margin-bottom: 1.2rem;
+          border-radius: 8px; padding: 2rem; margin-bottom: 2.5rem;
         }
         .rueckruf-form-title {
-          font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+          font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase;
           color: var(--gold); margin-bottom: 0.5rem; font-weight: 500;
+          display: flex; align-items: center; gap: 0.75rem;
         }
         .rueckruf-input {
-          width: 100%; padding: 10px 12px; background: var(--bg2);
+          width: 100%; padding: 12px 14px; background: var(--bg2);
           border: 1px solid var(--border); border-radius: 6px;
-          font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+          font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
           color: var(--text); outline: none; transition: border-color 0.2s;
         }
         .rueckruf-input:focus { border-color: var(--gold); }
         .rueckruf-btn {
           background: var(--gold); color: var(--bg); border: none;
-          border-radius: 6px; padding: 10px 16px; font-family: 'DM Sans', sans-serif;
-          font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+          border-radius: 6px; padding: 12px 16px; font-family: 'DM Sans', sans-serif;
+          font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase;
           font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.2s;
+          margin-top: 0.5rem;
         }
         .rueckruf-btn:hover { background: var(--gold2); transform: translateY(-1px); }
 
         .contact-list {
           display: flex;
           flex-direction: column;
-          gap: 1.2rem;
+          gap: 1.5rem;
         }
         
         .contact-card {
           display: flex;
-          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
           background: var(--surface);
           border: 1px solid var(--border);
           border-radius: 8px;
@@ -312,19 +317,37 @@ export default function KontaktClient() {
           transform: translateY(-2px);
         }
         
+        .contact-icon {
+          color: var(--gold);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 54px;
+          height: 54px;
+          border-radius: 50%;
+          background: var(--bg2);
+          flex-shrink: 0;
+        }
+
+        .contact-content {
+          display: flex;
+          flex-direction: column;
+        }
+
         .contact-card-title {
-          font-size: 0.7rem;
+          font-size: 0.75rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
           color: var(--gold);
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.3rem;
           font-weight: 500;
         }
 
         .contact-card-value {
-          font-size: 1.2rem;
+          font-size: 1.25rem;
           color: var(--text);
           font-weight: 400;
+          word-break: break-word;
         }
 
         /* ── ANIMATIONS ── */
@@ -337,10 +360,11 @@ export default function KontaktClient() {
         @media (max-width: 900px) {
           .kck-nav { padding: 1rem 1.5rem; }
           .nav-logo { font-size: 0.88rem; white-space: nowrap; }
-          .kontakt-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
           .kontakt-col { padding: 2rem 1.5rem; }
+          .contact-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+          .rueckruf-form { padding: 1.5rem; }
         }
       `}</style>
 
@@ -377,26 +401,26 @@ export default function KontaktClient() {
           </h1>
         </div>
 
-        {/* GRID */}
+        {/* LAYOUT */}
         <div className="kontakt-grid">
-          {/* Spalte 1: Kalender */}
-          <div className="kontakt-col">
-            <h2 className="kontakt-col-title">Gespräch buchen</h2>
-            <div className="calendar-wrapper" id="google-calendar-embed">
-              {/* Google Calendar Embed Platzhalter */}
-              <p>
-                [ Platzhalter für Google Kalender Widget ]<br /><br />
-                Hier kann später das Skript oder iframe für den Google Kalender eingebunden werden.
-              </p>
-            </div>
+          {/* 1. Kalender Integration */}
+          <div className="calendar-wrapper" id="google-calendar-embed">
+            <iframe 
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssM2lZisK3D_kM5p3-W86uR3A8D-2vV9v_S_5k-Y1?gv=true"
+              className="calendar-iframe"
+              title="Gespräch buchen mit Bernd Wiese"
+            />
           </div>
 
-          {/* Spalte 2: Direktkontakt */}
+          {/* 2. Alternative Kontaktwege */}
           <div className="kontakt-col">
-            <h2 className="kontakt-col-title">Alternative Kontaktwege</h2>
+            <h2 className="kontakt-col-title">Weitere Kontaktwege</h2>
 
             <form action="mailto:Wiese@ISHA.de?subject=Rückruf%20anfordern" method="post" encType="text/plain" className="rueckruf-form">
-              <span className="rueckruf-form-title">Rückruf anfordern</span>
+              <span className="rueckruf-form-title">
+                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
+                Rückruf anfordern
+              </span>
               <input type="text" name="Name" placeholder="Ihr Name" className="rueckruf-input" required />
               <input type="tel" name="Telefon" placeholder="Ihre Nummer" className="rueckruf-input" required />
               <input type="text" name="Wunschzeit" placeholder="Beste Zeit (z.B. Dienstag 14 Uhr)" className="rueckruf-input" />
@@ -405,18 +429,33 @@ export default function KontaktClient() {
 
             <div className="contact-list">
               <a href="mailto:bernd.wiese@googlemail.com" className="contact-card">
-                <span className="contact-card-title">Per E-Mail schreiben</span>
-                <span className="contact-card-value">bernd.wiese@googlemail.com</span>
+                <div className="contact-icon">
+                  <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" /><rect x="3" y="5" width="18" height="14" rx="2" /></svg>
+                </div>
+                <div className="contact-content">
+                  <span className="contact-card-title">Per E-Mail schreiben</span>
+                  <span className="contact-card-value">bernd.wiese@googlemail.com</span>
+                </div>
               </a>
 
               <a href="tel:+491701234567" className="contact-card">
-                <span className="contact-card-title">Anrufen / Rückruf</span>
-                <span className="contact-card-value">+49 (0) 170 123 4567</span>
+                <div className="contact-icon">
+                  <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" /></svg>
+                </div>
+                <div className="contact-content">
+                  <span className="contact-card-title">Anrufen / Rückruf</span>
+                  <span className="contact-card-value">+49 (0) 170 123 4567</span>
+                </div>
               </a>
 
               <a href="https://www.linkedin.com/in/bernd-wiese" target="_blank" rel="noopener noreferrer" className="contact-card">
-                <span className="contact-card-title">Vernetzen</span>
-                <span className="contact-card-value">LinkedIn Profil</span>
+                <div className="contact-icon">
+                  <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div className="contact-content">
+                  <span className="contact-card-title">Vernetzen</span>
+                  <span className="contact-card-value">LinkedIn Profil</span>
+                </div>
               </a>
             </div>
           </div>
