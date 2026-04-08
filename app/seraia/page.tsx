@@ -1,4 +1,4 @@
-import ToolDetailClient from "@/components/ToolDetailClient";
+import ToolDetailClient, { ToolDetailProps } from "@/components/ToolDetailClient";
 import { getSeraia } from "@/sanity/lib/queries";
 
 export const dynamic = "force-dynamic";
@@ -8,7 +8,7 @@ export const metadata = {
   description: "Erfahren Sie mehr über Seraia.ai – Das dialogische Betriebssystem für lebendige Organisationen.",
 };
 
-const fallback: any = {
+const fallback: ToolDetailProps = {
   toolName: "Seraia",
   heroHeadline: "Seraia.ai – Das dialogische Betriebssystem für lebendige Organisationen",
   heroEinleitung: "Seraia.ai ist keine bloße App, sondern eine Infrastruktur für das kollektive Denken und Handeln in Teams. Es verbindet sich mit den Nervenbahnen des Unternehmens, um Beziehungsthemen auf Basis des Living Organization Modells zu klären, ohne die Privatsphäre des Einzelnen zu opfern.",

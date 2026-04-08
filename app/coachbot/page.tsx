@@ -1,4 +1,4 @@
-import ToolDetailClient from "@/components/ToolDetailClient";
+import ToolDetailClient, { ToolDetailProps } from "@/components/ToolDetailClient";
 import { getCoachbot } from "@/sanity/lib/queries";
 
 export const dynamic = "force-dynamic";
@@ -8,7 +8,7 @@ export const metadata = {
   description: "Erfahren Sie mehr über CoachBot.ai – Deine Methodik als skalierbarer KI-Agent.",
 };
 
-const fallback: any = {
+const fallback: ToolDetailProps = {
   toolName: "CoachBot",
   heroHeadline: "CoachBot.ai – Deine Methodik als skalierbarer KI-Agent",
   heroEinleitung: "CoachBot.ai ist die Infrastruktur, mit der du dein geistiges Eigentum in verantwortungsvolle KI-Agenten verwandelst. Erstelle White-Label-Bots, die genau wie deine Methodik denken und sprechen, um Coaching auf jeder Ebene der Organisation zugänglich zu machen.",

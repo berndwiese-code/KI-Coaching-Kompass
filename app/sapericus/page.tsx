@@ -1,4 +1,4 @@
-import ToolDetailClient from "@/components/ToolDetailClient";
+import ToolDetailClient, { ToolDetailProps } from "@/components/ToolDetailClient";
 import { getSapericus } from "@/sanity/lib/queries";
 
 export const dynamic = "force-dynamic";
@@ -8,7 +8,7 @@ export const metadata = {
   description: "Erfahren Sie mehr über Sapericus – Tiefgang und psychologische Reife durch KI-Begleitung.",
 };
 
-const fallback: any = {
+const fallback: ToolDetailProps = {
   toolName: "Sapericus",
   heroHeadline: "Sapericus – Tiefgang und psychologische Reife durch KI-Begleitung",
   heroEinleitung: "Sapericus ist eine wissenschaftlich fundierte KI-Coaching-Lösung, die an den tieferliegenden Mustern unseres Handelns ansetzt. Sie basiert auf Modellen der Stufenentwicklung, um unbewusste Loyalitäten zu transformieren und wertebasiertes, souveränes Handeln zu ermöglichen.",
