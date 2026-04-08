@@ -202,7 +202,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           font-family: 'Cormorant Garamond', serif;
           font-size: clamp(2.4rem, 4.5vw, 4rem);
           font-weight: 300; line-height: 1.15; color: var(--text);
-          margin-bottom: 2rem;
+          max-width: 780px; margin-bottom: 2rem;
         }
         .zh-hero-title em { font-style: italic; color: var(--gold2); }
         .zh-hero-subtitle {
