@@ -186,7 +186,10 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           transition: background 0.35s;
         }
         .zh-hero-text {
-          padding: 0 3rem 0 10vw;
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: flex-start;
+          text-align: center;
+          padding: 0;
           position: relative; z-index: 2;
         }
         .eyebrow {
@@ -205,7 +208,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         .zh-hero-subtitle {
           font-size: 1.05rem; color: var(--muted);
           line-height: 1.8; max-width: 440px;
-          margin-bottom: 3rem;
+          margin: 0 auto 3rem;
         }
         .zh-hero-cta {
           display: inline-block;
