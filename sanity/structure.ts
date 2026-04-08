@@ -23,11 +23,20 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title('KI-Coaching (Hub)')
         .child(S.documentTypeList('kiCoaching').title('KI-Coaching (Hub) (Klicken)')),
+      S.listItem()
+        .title('Seraia')
+        .child(S.documentTypeList('seraia').title('Seraia (Klicken zum Bearbeiten)')),
+      S.listItem()
+        .title('Sapericus')
+        .child(S.documentTypeList('sapericus').title('Sapericus (Klicken zum Bearbeiten)')),
+      S.listItem()
+        .title('Coachbot')
+        .child(S.documentTypeList('coachbot').title('Coachbot (Klicken zum Bearbeiten)')),
       
       S.divider(),
       
       // LISTEN (Multi-Documents)
       ...S.documentTypeListItems().filter(listItem => 
-        !['startseite', 'workshop', 'beratung', 'zuhoeren', 'ueberMich', 'kiCoaching'].includes(listItem.getId() as string)
+        !['startseite', 'workshop', 'beratung', 'zuhoeren', 'ueberMich', 'kiCoaching', 'seraia', 'sapericus', 'coachbot'].includes(listItem.getId() as string)
       )
     ])

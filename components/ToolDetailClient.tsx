@@ -9,6 +9,7 @@ export type ToolHighlight = {
   nummer?: string;
   titel: string;
   text: string;
+  popupText?: string;
 };
 
 export type ToolCheck = {
@@ -42,6 +43,7 @@ export default function ToolDetailClient({
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activePopup, setActivePopup] = useState<{titel: string, text: string} | null>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem("kck-theme") as Theme | null;
@@ -329,6 +331,39 @@ export default function ToolDetailClient({
         .cta-inner { max-width: 700px; margin: 0 auto; }
         .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem;}
 
+        /* ── MODAL ── */
+        .ws-modal-overlay {
+          position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(20,18,16,0.6); backdrop-filter: blur(6px);
+          display: flex; align-items: center; justify-content: center;
+          z-index: 1000; padding: 1.5rem;
+          opacity: 0; pointer-events: none; transition: opacity 0.25s ease-out;
+        }
+        .ws-modal-overlay.open {
+          opacity: 1; pointer-events: auto;
+        }
+        .ws-modal {
+          background: var(--surface); padding: 3rem 2.5rem;
+          border-radius: 12px; border: 1px solid var(--border);
+          box-shadow: 0 10px 40px rgba(0,0,0,0.2); max-width: 500px; width: 100%;
+          position: relative;
+          transform: translateY(20px) scale(0.95); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .ws-modal-overlay.open .ws-modal { transform: translateY(0) scale(1); }
+        .ws-modal-close {
+          position: absolute; top: 1.2rem; right: 1.5rem;
+          background: none; border: none; font-size: 2rem; line-height: 1;
+          color: var(--muted); cursor: pointer; transition: color 0.2s;
+        }
+        .ws-modal-close:hover { color: var(--gold); }
+        .ws-modal-title {
+          font-family: 'Cormorant Garamond', serif; font-size: 2.2rem;
+          color: var(--text); margin-bottom: 1.2rem; font-weight: 300; line-height: 1.1;
+        }
+        .ws-modal-text {
+          font-size: 1rem; color: var(--text2); line-height: 1.75;
+        }
+
         /* ── HAMBURGER + MOBILE-MENU ── */
         .hamburger {
           display: flex; flex-direction: column; gap: 5px;
@@ -438,7 +473,12 @@ export default function ToolDetailClient({
             <h2 className="sec-title">Key-<em>Highlights</em></h2>
             <div className="mitnahmen-grid">
               {highlights.map((mitnahme, i) => (
-                <div className="mitnahme-card" key={i}>
+                <div 
+                  className="mitnahme-card" 
+                  key={i}
+                  style={mitnahme.popupText ? {cursor: "pointer"} : {}}
+                  onClick={() => mitnahme.popupText ? setActivePopup({titel: mitnahme.titel, text: mitnahme.popupText}) : undefined}
+                >
                   <div className="mitnahme-num">{mitnahme.nummer || `0${i + 1}`}</div>
                   <p className="mitnahme-text">
                     <strong>{mitnahme.titel}</strong>
@@ -494,6 +534,15 @@ export default function ToolDetailClient({
             © 2026 KI-Coaching Kompass · Bernd Wiese · Staufen
           </div>
         </footer>
+
+        {/* POPUP MODAL */}
+        <div className={`ws-modal-overlay ${activePopup ? "open" : ""}`} onClick={() => setActivePopup(null)}>
+          <div className="ws-modal" onClick={e => e.stopPropagation()}>
+            <button className="ws-modal-close" onClick={() => setActivePopup(null)} aria-label="Schließen">×</button>
+            <h3 className="ws-modal-title">{activePopup?.titel}</h3>
+            <p className="ws-modal-text" dangerouslySetInnerHTML={{ __html: activePopup?.text || "" }} />
+          </div>
+        </div>
 
       </div>
     </>

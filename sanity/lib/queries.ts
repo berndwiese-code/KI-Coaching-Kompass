@@ -386,3 +386,29 @@ export async function getKICoaching(): Promise<KICoaching | null> {
     links[]{ label, url }
   }`)
 }
+
+// ── TOOLS LANDINGPAGES ───────────────────────────────────────────────────────
+
+export async function getSeraia(): Promise<any | null> {
+  return client.fetch(`*[_type == "seraia"][0]{
+    toolName, heroHeadline, heroEinleitung,
+    highlights[]{ titel, text, popupText },
+    checkTitel, checkTextLead, ctaButtonText
+  }`)
+}
+
+export async function getSapericus(): Promise<any | null> {
+  return client.fetch(`*[_type == "sapericus"][0]{
+    toolName, heroHeadline, heroEinleitung,
+    highlights[]{ titel, text, popupText },
+    checkTitel, checkTextLead, ctaButtonText
+  }`)
+}
+
+export async function getCoachbot(): Promise<any | null> {
+  return client.fetch(`*[_type == "coachbot"][0]{
+    toolName, heroHeadline, heroEinleitung,
+    highlights[]{ titel, text, popupText },
+    checkTitel, checkTextLead, ctaButtonText
+  }`)
+}

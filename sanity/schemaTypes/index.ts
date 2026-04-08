@@ -8,6 +8,9 @@ import { beratung } from "./beratung";
 import { zuhoeren } from "./zuhoeren";
 import { ueberMich } from "./ueberMich";
 import { kiCoaching } from "./kiCoaching";
+import { seraia } from "./seraia";
+import { sapericus } from "./sapericus";
+import { coachbot } from "./coachbot";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   startseite,
@@ -19,4 +22,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   zuhoeren,
   ueberMich,
   kiCoaching,
+  seraia,
+  sapericus,
+  coachbot,
 ];
