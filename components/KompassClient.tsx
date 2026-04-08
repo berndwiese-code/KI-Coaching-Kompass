@@ -854,11 +854,12 @@ export default function KompassClient() {
         <nav className="kck-nav">
           <Link href="/" className="nav-logo">KI-Coaching<span> Kompass</span></Link>
           <ul className="nav-center">
-            <li><a href="#">Beratung</a></li>
-            <li><a href="#">Workshop</a></li>
+            <li><Link href="/ki-coaching/beratung-unternehmen">Unternehmen</Link></li>
+            <li><Link href="/ki-coaching/beratung-coaches">Coaches</Link></li>
+            <li><Link href="/ki-coaching/workshop">Workshop</Link></li>
             <li><a href="https://isha.de" target="_blank" rel="noopener noreferrer">Zuhören</a></li>
             <li><a className="active">Kompass</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><Link href="/kontakt">Kontakt</Link></li>
           </ul>
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Farbschema wechseln" />
@@ -869,7 +870,8 @@ export default function KompassClient() {
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
             <Link href="/" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/ki-coaching/beratung" className="sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" className="sub-item" onClick={() => setMenuOpen(false)}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" className="sub-item" onClick={() => setMenuOpen(false)}>Coaches</Link>
             <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/ki-coaching/kompass" className="active sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
@@ -1325,7 +1327,8 @@ export default function KompassClient() {
           <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" as const }}>
             {[
               { label: "Start", href: "/" },
-              { label: "Beratung", href: "/ki-coaching/beratung" },
+              { label: "Unternehmen", href: "/ki-coaching/beratung-unternehmen" },
+              { label: "Coaches", href: "/ki-coaching/beratung-coaches" },
               { label: "Workshop", href: "/ki-coaching/workshop" },
               { label: "Gehört werden", href: "/zuhoeren" },
               { label: "Über mich", href: "/ueber-mich" },

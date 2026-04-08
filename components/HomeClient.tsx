@@ -474,7 +474,7 @@ export default function HomeClient({ startseite, testimonials }: Props) {
           <Link href="/" className="nav-logo">KI-Coaching<span> Kompass</span></Link>
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Farbschema wechseln" />
-            <Link href="/ki-coaching/beratung" className="nav-cta">Beratung</Link>
+            <Link href="/kontakt" className="nav-cta">Kontakt</Link>
             <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">
               <span /><span /><span />
             </button>
@@ -482,7 +482,8 @@ export default function HomeClient({ startseite, testimonials }: Props) {
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
             <Link href="/" className="active" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/ki-coaching/beratung" className="sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" className="sub-item" onClick={() => setMenuOpen(false)}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" className="sub-item" onClick={() => setMenuOpen(false)}>Coaches</Link>
             <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
@@ -507,8 +508,8 @@ export default function HomeClient({ startseite, testimonials }: Props) {
               )}
             </p>
             <div className="hero-pills">
-              <Link href="/ki-coaching/beratung" className="hero-pill primary">Für Unternehmen</Link>
-              <Link href="/ki-coaching/workshop" className="hero-pill">Für Coaches</Link>
+              <Link href="/ki-coaching/beratung-unternehmen" className="hero-pill primary">Für Unternehmen</Link>
+              <Link href="/ki-coaching/beratung-coaches" className="hero-pill">Für Coaches</Link>
               <Link href="/zuhoeren" className="hero-pill">Für mich</Link>
             </div>
           </div>
@@ -562,7 +563,7 @@ export default function HomeClient({ startseite, testimonials }: Props) {
                   eyebrow: "Für Unternehmen",
                   titel: "KI-Coaching kommt.<br /><em>Seid ihr bereit dafür?</em>",
                   text: "Nicht als Hype-Welle, die man einfach surft. Sondern als echte Entscheidung: Was soll KI in eurem Coaching-Prozess können — und was soll sie lassen? Ich begleite euch dabei, das herauszufinden.",
-                  linkUrl: "/ki-coaching/beratung",
+                  linkUrl: "/ki-coaching/beratung-unternehmen",
                   linkText: "Beratung entdecken →"
                 },
                 {
@@ -571,8 +572,8 @@ export default function HomeClient({ startseite, testimonials }: Props) {
                   eyebrow: "Für Coaches",
                   titel: "KI im Coaching —<br /><em>muss das sein?</em>",
                   text: "Spoiler: Ja. Aber nicht so, wie du vielleicht denkst. Nicht als Konkurrenz zu deiner Arbeit — als Werkzeug, das dir Zeit, Klarheit und neue Möglichkeiten zurückgibt.",
-                  linkUrl: "/ki-coaching/workshop",
-                  linkText: "Workshop entdecken →"
+                  linkUrl: "/ki-coaching/beratung-coaches",
+                  linkText: "Coaches entdecken →"
                 },
                 {
                   _key: "fallback-zuhören",
@@ -699,7 +700,8 @@ export default function HomeClient({ startseite, testimonials }: Props) {
           </span>
           <ul style={{display: "flex", gap: "2rem", listStyle: "none", flexWrap: "wrap" as const}}>
             {[
-              { label: "Beratung", href: "/ki-coaching/beratung" },
+              { label: "Unternehmen", href: "/ki-coaching/beratung-unternehmen" },
+              { label: "Coaches", href: "/ki-coaching/beratung-coaches" },
               { label: "Workshop", href: "/ki-coaching/workshop" },
               { label: "Kompass", href: "/ki-coaching/kompass" },
               { label: "Gehört werden", href: "/zuhoeren" },

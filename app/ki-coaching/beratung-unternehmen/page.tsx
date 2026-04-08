@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import BeratungClient from "@/components/BeratungClient";
+import BeratungUnternehmenClient from "@/components/BeratungUnternehmenClient";
 import { getBeratung } from "@/sanity/lib/queries";
 
 export const dynamic = "force-dynamic";
@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     title: "KI-Coaching Beratung für Unternehmen · Bernd Wiese",
     description:
       "Was soll KI in eurem Coaching-Prozess können — und was soll sie lassen? Ich begleite Unternehmen dabei, das herauszufinden.",
-    url: "https://ki-coaching-kompass.vercel.app/ki-coaching/beratung",
+    url: "https://ki-coaching-kompass.vercel.app/ki-coaching/beratung-unternehmen",
   },
 };
 
-export default async function BeratungPage() {
+export default async function BeratungUnternehmenPage() {
   const beratung = await getBeratung();
-  return <BeratungClient beratung={beratung} />;
+  return <BeratungUnternehmenClient beratung={beratung} />;
 }
