@@ -406,7 +406,7 @@ export default function KontaktClient() {
           {/* 1. Kalender Integration */}
           <div className="calendar-wrapper" id="google-calendar-embed">
             <iframe 
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssM2lZisK3D_kM5p3-W86uR3A8D-2vV9v_S_5k-Y1?gv=true"
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1GPtC9siS6BGbvYEOYi_lSMHc-nh9jPnTbR2biyg4SaOXy0piYT3NeX5H9GZdpMdRKyWeVmeKf?gv=true"
               className="calendar-iframe"
               title="Gespräch buchen mit Bernd Wiese"
             />
