@@ -166,7 +166,7 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
         /* ── HERO ── */
         .um-hero {
           padding: 7rem 2rem 3rem;
-          max-width: 760px;
+          max-width: 1100px;
           margin: 0 auto;
         }
         .um-eyebrow {
@@ -225,6 +225,7 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
           font-weight: 300; line-height: 1.75;
           color: var(--text2);
           clear: none;
+          max-width: 680px;
         }
         .um-prose p { margin-bottom: 1.5em; }
         .um-prose p:last-child { margin-bottom: 0; }
