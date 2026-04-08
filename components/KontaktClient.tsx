@@ -9,6 +9,7 @@ export default function KontaktClient() {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   useEffect(() => {
     const stored = localStorage.getItem("kck-theme") as Theme | null;
@@ -25,6 +26,29 @@ export default function KontaktClient() {
     const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
     localStorage.setItem("kck-theme", next);
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus("submitting");
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "f2271aed-9d4c-45f2-a779-96e8ee685e8d");
+    formData.append("subject", "Neue Rückruf-Anfrage über Webseite");
+    formData.append("from_name", "KI-Coaching Kompass");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      if (res.ok) {
+        setFormStatus("success");
+      } else {
+        setFormStatus("error");
+      }
+    } catch (error) {
+      setFormStatus("error");
+    }
   };
 
   if (!mounted) return null;
@@ -416,15 +440,33 @@ export default function KontaktClient() {
           <div className="kontakt-col">
             <h2 className="kontakt-col-title">Weitere Kontaktwege</h2>
 
-            <form action="mailto:Wiese@ISHA.de?subject=Rückruf%20anfordern" method="post" encType="text/plain" className="rueckruf-form">
+            <form onSubmit={handleFormSubmit} className="rueckruf-form">
               <span className="rueckruf-form-title">
                 <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
                 Rückruf anfordern
               </span>
-              <input type="text" name="Name" placeholder="Ihr Name" className="rueckruf-input" required />
-              <input type="tel" name="Telefon" placeholder="Ihre Nummer" className="rueckruf-input" required />
-              <input type="text" name="Wunschzeit" placeholder="Beste Zeit (z.B. Dienstag 14 Uhr)" className="rueckruf-input" />
-              <button type="submit" className="rueckruf-btn">Absenden (Mail öffnen)</button>
+              
+              {formStatus === "success" ? (
+                <div style={{ padding: "1.5rem 1rem", background: "var(--bg3)", borderRadius: "6px", color: "var(--text)", textAlign: "center", fontSize: "0.95rem" }}>
+                  <strong>Vielen Dank!</strong><br />Deine Anfrage wurde erfolgreich gesendet. Ich melde mich in Kürze bei dir.
+                </div>
+              ) : (
+                <>
+                  <input type="text" name="Name" placeholder="Ihr Name" className="rueckruf-input" required disabled={formStatus === "submitting"} />
+                  <input type="tel" name="Telefon" placeholder="Ihre Nummer" className="rueckruf-input" required disabled={formStatus === "submitting"} />
+                  <input type="text" name="Wunschzeit" placeholder="Beste Zeit (z.B. Dienstag 14 Uhr)" className="rueckruf-input" disabled={formStatus === "submitting"} />
+                  
+                  {formStatus === "error" && (
+                    <div style={{ color: "#d32f2f", fontSize: "0.85rem", marginTop: "0.5rem" }}>
+                      Ein Fehler ist aufgetreten. Bitte versuche es später nochmal oder rufe an.
+                    </div>
+                  )}
+
+                  <button type="submit" disabled={formStatus === "submitting"} className="rueckruf-btn" style={{ opacity: formStatus === "submitting" ? 0.7 : 1 }}>
+                    {formStatus === "submitting" ? "Wird gesendet..." : "Rückruf anfordern"}
+                  </button>
+                </>
+              )}
             </form>
 
             <div className="contact-list">
