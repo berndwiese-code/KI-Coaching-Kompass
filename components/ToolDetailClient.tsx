@@ -30,11 +30,11 @@ export type ToolDetailProps = {
 };
 
 export default function ToolDetailClient({
-  toolName,
-  heroHeadline,
+  toolName = "",
+  heroHeadline = "",
   heroSubline,
   heroEinleitung,
-  highlights,
+  highlights = [],
   checkTitel = "Der Bernd-Wiese-Check",
   checkTextLead = "Warum empfehle ich dieses Tool?",
   checks = [],
@@ -472,7 +472,7 @@ export default function ToolDetailClient({
             <p className="sec-eyebrow">Plattform Features</p>
             <h2 className="sec-title">Key-<em>Highlights</em></h2>
             <div className="mitnahmen-grid">
-              {highlights.map((mitnahme, i) => (
+              {highlights?.map((mitnahme, i) => (
                 <div 
                   className="mitnahme-card" 
                   key={i}
@@ -481,8 +481,8 @@ export default function ToolDetailClient({
                 >
                   <div className="mitnahme-num">{mitnahme.nummer || `0${i + 1}`}</div>
                   <p className="mitnahme-text">
-                    <strong>{mitnahme.titel}</strong>
-                    <span dangerouslySetInnerHTML={{ __html: mitnahme.text }} />
+                    <strong>{mitnahme?.titel}</strong>
+                    <span dangerouslySetInnerHTML={{ __html: mitnahme?.text || "" }} />
                   </p>
                 </div>
               ))}
