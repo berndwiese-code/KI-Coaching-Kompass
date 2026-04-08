@@ -439,7 +439,7 @@ export default function ToolDetailClient({
             <div className="mitnahmen-grid">
               {highlights.map((mitnahme, i) => (
                 <div className="mitnahme-card" key={i}>
-                  <div className="mitnahme-num">{mitnahme.nummer || \`0\${i + 1}\`}</div>
+                  <div className="mitnahme-num">{mitnahme.nummer || `0${i + 1}`}</div>
                   <p className="mitnahme-text">
                     <strong>{mitnahme.titel}</strong>
                     <span dangerouslySetInnerHTML={{ __html: mitnahme.text }} />
@@ -454,7 +454,7 @@ export default function ToolDetailClient({
         <section className="ws-enthalten">
           <div className="enthalten-inner">
             <p className="sec-eyebrow">Warum dieses Tool?</p>
-            <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: checkTitel.replace(checkTitel.split(" ").slice(-1)[0], \`<em>\${checkTitel.split(" ").slice(-1)[0]}</em>\`) }} />
+            <h2 className="sec-title" dangerouslySetInnerHTML={{ __html: checkTitel.replace(checkTitel.split(" ").slice(-1)[0], `<em>${checkTitel.split(" ").slice(-1)[0]}</em>`) }} />
             <p className="sec-lead">{checkTextLead}</p>
             {checks && checks.length > 0 && (
               <div className="enthalten-grid">
