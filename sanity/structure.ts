@@ -4,49 +4,25 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .title('Seiten & Inhalte')
     .items([
-      // SINGLETONS
+      // EINZELSEITEN (mit Liste, um UUID-Fehler der Vergangenheit aufzufangen)
       S.listItem()
         .title('Startseite')
-        .child(
-          S.document()
-            .schemaType('startseite')
-            .documentId('startseite')
-        ),
+        .child(S.documentTypeList('startseite').title('Startseite (Klicken zum Bearbeiten)')),
       S.listItem()
         .title('Workshop')
-        .child(
-          S.document()
-            .schemaType('workshop')
-            .documentId('workshop')
-        ),
+        .child(S.documentTypeList('workshop').title('Workshop (Klicken zum Bearbeiten)')),
       S.listItem()
         .title('Beratung')
-        .child(
-          S.document()
-            .schemaType('beratung')
-            .documentId('beratung')
-        ),
+        .child(S.documentTypeList('beratung').title('Beratung (Klicken zum Bearbeiten)')),
       S.listItem()
         .title('Zuhören')
-        .child(
-          S.document()
-            .schemaType('zuhoeren')
-            .documentId('zuhoeren')
-        ),
+        .child(S.documentTypeList('zuhoeren').title('Zuhören (Klicken zum Bearbeiten)')),
       S.listItem()
         .title('Über mich')
-        .child(
-          S.document()
-            .schemaType('ueberMich')
-            .documentId('ueberMich')
-        ),
+        .child(S.documentTypeList('ueberMich').title('Über mich (Klicken zum Bearbeiten)')),
       S.listItem()
         .title('KI-Coaching (Hub)')
-        .child(
-          S.document()
-            .schemaType('kiCoaching')
-            .documentId('kiCoaching')
-        ),
+        .child(S.documentTypeList('kiCoaching').title('KI-Coaching (Hub) (Klicken)')),
       
       S.divider(),
       
