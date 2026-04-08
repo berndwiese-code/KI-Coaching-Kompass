@@ -322,7 +322,8 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
           <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
             <Link href="/" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/ki-coaching/beratung" className="sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" className="sub-item" onClick={() => setMenuOpen(false)}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" className="sub-item" onClick={() => setMenuOpen(false)}>Coaches</Link>
             <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
@@ -356,9 +357,9 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
           <div className="um-contact">
             <div className="um-contact-label">{data?.contactLabel ?? "Kontakt"}</div>
             <div className="um-contact-links">
-              <a href={data?.emailUrl ?? "mailto:Wiese@ISHA.de"} className="um-contact-item">
-                {data?.emailText ?? "Wiese@ISHA.de"}
-              </a>
+              <Link href="/kontakt" className="um-contact-item">
+                {data?.emailText ?? "Per E-Mail schreiben"}
+              </Link>
               <a
                 href={data?.linkedInUrl ?? "https://www.linkedin.com/in/bernd-wiese-9303341/"}
                 target="_blank"
@@ -378,7 +379,8 @@ export default function UeberMichClient({ data }: { data?: UeberMich | null }) {
         <footer className="um-footer">
           <div className="um-footer-links">
             <Link href="/">Start</Link>
-            <Link href="/ki-coaching/beratung">Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen">Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches">Coaches</Link>
             <Link href="/ki-coaching/workshop">Workshop</Link>
             <Link href="/ki-coaching/kompass">Kompass</Link>
             <Link href="/zuhoeren">Gehört werden</Link>

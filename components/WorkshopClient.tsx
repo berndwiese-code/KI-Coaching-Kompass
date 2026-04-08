@@ -35,11 +35,12 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
   if (!mounted) return null;
 
   const fallbackNav = [
-    { label: "Beratung", url: "/ki-coaching/beratung" },
+    { label: "Unternehmen", url: "/ki-coaching/beratung-unternehmen" },
+    { label: "Coaches", url: "/ki-coaching/beratung-coaches" },
     { label: "Workshop", url: "/ki-coaching/workshop" },
     { label: "Zuhören ↗", url: "https://isha.de", isExternal: true },
     { label: "Kompass", url: "/ki-coaching/kompass" },
-    { label: "Kontakt", url: "#" }
+    { label: "Kontakt", url: "/kontakt" }
   ];
 
   const currentNav = workshop?.navLinks?.length ? workshop.navLinks : fallbackNav;
@@ -564,9 +565,9 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           </ul>
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
-            <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="nav-cta">
+            <Link href="/kontakt" className="nav-cta">
               {workshop?.navCta ?? "Anmelden"}
-            </a>
+            </Link>
             <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menü öffnen">
               <span /><span /><span />
             </button>
@@ -574,7 +575,8 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
             <Link href="/" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/ki-coaching/beratung" className="sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" className="sub-item" onClick={() => setMenuOpen(false)}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" className="sub-item" onClick={() => setMenuOpen(false)}>Coaches</Link>
             <Link href="/ki-coaching/workshop" className="active sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
@@ -596,7 +598,7 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
               <span className="fact-pill highlight">{workshop?.heroPill4 ?? "399 EUR pro Person"}</span>
             </div>
             <div className="ws-hero-cta">
-              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-primary">{workshop?.heroCtaPrimary ?? "Jetzt anmelden"}</a>
+              <Link href="/kontakt" className="btn-primary">{workshop?.heroCtaPrimary ?? "Jetzt anmelden"}</Link>
               <a href="#was-passiert" className="btn-outline">{workshop?.heroCtaSecondary ?? "Mehr erfahren"}</a>
             </div>
           </div>
@@ -785,8 +787,8 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
             <p className="cta-preis-label">{workshop?.ctaPreisLabel ?? "pro Person · inkl. aller Materialien und Gespräche"}</p>
             <div className="cta-termin">{workshop?.ctaTermin ?? "Nächster Termin: wird bekannt gegeben"}</div>
             <div className="cta-buttons">
-              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-primary">{workshop?.ctaButton ?? "Jetzt anmelden"}</a>
-              <a href={`mailto:${workshop?.ctaEmail ?? "kontakt@ki-coaching-kompass.de"}`} className="btn-outline">{workshop?.ctaButtonSecondary ?? "Fragen vorab schreiben"}</a>
+              <Link href="/kontakt" className="btn-primary">{workshop?.ctaButton ?? "Jetzt anmelden"}</Link>
+              <Link href="/kontakt" className="btn-outline">{workshop?.ctaButtonSecondary ?? "Fragen vorab schreiben"}</Link>
             </div>
             <p className="cta-note">
               {workshop?.ctaBody ?? "Mit Anmeldung erhalten Sie sofort Zugang zu Ihren Vorbereitungsmaterialien und einen Buchungslink für Ihr persönliches Vorgespräch."}
@@ -800,7 +802,8 @@ export default function WorkshopClient({ workshop }: WorkshopClientProps) {
           <div className="footer-links">
             {(workshop?.footerLinks?.length ? workshop.footerLinks : [
               { label: "Start", url: "/" },
-              { label: "Beratung", url: "/ki-coaching/beratung" },
+              { label: "Unternehmen", url: "/ki-coaching/beratung-unternehmen" },
+              { label: "Coaches", url: "/ki-coaching/beratung-coaches" },
               { label: "Kompass", url: "/ki-coaching/kompass" },
               { label: "Gehört werden", url: "/zuhoeren" },
               { label: "Über mich", url: "/ueber-mich" },

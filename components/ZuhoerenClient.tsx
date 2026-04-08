@@ -491,7 +491,7 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           <div className="nav-center" />
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
-            <a href="mailto:bernd.wiese@googlemail.com" className="nav-cta">Termin anfragen</a>
+            <Link href="/kontakt" className="nav-cta">Kontakt</Link>
             <button
               className={`hamburger ${menuOpen ? "open" : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -503,7 +503,8 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
             <Link href="/" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/ki-coaching/beratung" className="sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" className="sub-item" onClick={() => setMenuOpen(false)}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" className="sub-item" onClick={() => setMenuOpen(false)}>Coaches</Link>
             <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <Link href="/zuhoeren" className="active" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
@@ -524,9 +525,9 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
             <p className="zh-hero-subtitle" style={{ whiteSpace: "pre-line" }}>
               {zuhoeren?.heroSubtitel ?? "Hier geht es nicht um Antworten.\nSondern darum, dass du dich selbst wieder hörst."}
             </p>
-            <a href={`mailto:${zuhoeren?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="zh-hero-cta">
+            <Link href="/kontakt" className="zh-hero-cta">
               {zuhoeren?.heroCta ?? "Gespräch anfragen"}
-            </a>
+            </Link>
           </div>
           <div className="zh-hero-image" style={{ position: "relative" }}>
             <img
@@ -692,9 +693,9 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
           <span className="zh-cta-eyebrow">{zuhoeren?.ctaEyebrow ?? "Einladung"}</span>
           <h2 className="zh-cta-title" style={{ whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: zuhoeren?.ctaTitel ?? "Wenn du das Gefühl hast,<br />dass es Zeit ist, einmal<br /><em>wirklich gehört zu werden.</em>" }} />
           <p className="zh-cta-body" style={{ whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: zuhoeren?.ctaBody ?? "Du musst nichts vorbereiten.\nDu darfst genau so kommen, wie du gerade bist." }} />
-          <a href={`mailto:${zuhoeren?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="zh-cta-btn">
+          <Link href="/kontakt" className="zh-cta-btn">
             {zuhoeren?.ctaButton ?? "Gespräch anfragen"}
-          </a>
+          </Link>
           <p className="zh-cta-note">{zuhoeren?.ctaNote ?? "Ohne Verpflichtung. Einfach, um es einmal zu erleben."}</p>
         </section>
 
@@ -713,7 +714,8 @@ export default function ZuhoerenClient({ zuhoeren }: ZuhoerenClientProps) {
         }}>
           <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
             <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>Start</Link>
-            <Link href="/ki-coaching/beratung" style={{ color: "var(--gold)", textDecoration: "none" }}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" style={{ color: "var(--gold)", textDecoration: "none" }}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" style={{ color: "var(--gold)", textDecoration: "none" }}>Coaches</Link>
             <Link href="/ki-coaching/workshop" style={{ color: "var(--gold)", textDecoration: "none" }}>Workshop</Link>
             <Link href="/ki-coaching/kompass" style={{ color: "var(--gold)", textDecoration: "none" }}>Kompass</Link>
             <Link href="/ueber-mich" style={{ color: "var(--gold)", textDecoration: "none" }}>Über mich</Link>

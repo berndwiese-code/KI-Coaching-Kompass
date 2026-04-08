@@ -5,17 +5,15 @@ import Link from "next/link";
 import { Beratung } from "@/sanity/lib/queries";
 
 type Theme = "light" | "dark";
-type Tab = "unternehmen" | "coaches";
 
-type BeratungClientProps = {
+type Props = {
   beratung?: Beratung | null;
 };
 
-export default function BeratungClient({ beratung }: BeratungClientProps) {
+export default function BeratungCoachesClient({ beratung }: Props) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<Tab>("unternehmen");
 
   useEffect(() => {
     const stored = localStorage.getItem("kck-theme") as Theme | null;
@@ -229,32 +227,6 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           margin-bottom: 3rem;
         }
 
-        /* ── TABS ── */
-        .tab-bar {
-          display: flex; gap: 0; border-bottom: 1px solid var(--border);
-          max-width: 900px; margin: 0 auto 0;
-          position: relative; z-index: 1;
-        }
-        .tab-btn {
-          flex: 1; padding: 1rem 2rem;
-          font-family: 'DM Sans', sans-serif;
-          font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
-          font-weight: 500; color: var(--muted);
-          background: none; border: none; border-bottom: 2px solid transparent;
-          cursor: pointer; transition: color 0.2s, border-color 0.2s;
-          margin-bottom: -1px;
-        }
-        .tab-btn:hover { color: var(--text2); }
-        .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
-
-        /* ── TAB CONTENT ── */
-        .tab-panel {
-          max-width: 1100px; margin: 0 auto;
-          padding: 5rem 2rem 7rem;
-          display: none;
-        }
-        .tab-panel.active { display: block; }
-
         /* ── SECTION HEADINGS ── */
         .br-section-label {
           font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
@@ -347,12 +319,6 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
         }
         .cluster-tools strong { color: var(--text); }
 
-        /* ── DIVIDER ── */
-        .br-divider {
-          border: none; border-top: 1px solid var(--border);
-          margin: 4rem 0;
-        }
-
         /* ── CTA BLOCK ── */
         .br-cta-block {
           background: var(--bg2); border: 1px solid var(--border);
@@ -395,6 +361,12 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           color: var(--muted); margin-top: 0.3rem;
         }
 
+        /* Content Container */
+        .content-container {
+          max-width: 1100px; margin: 0 auto;
+          padding: 5rem 2rem 7rem;
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
           .br-nav { padding: 0.9rem 1.5rem; }
@@ -406,14 +378,13 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           .nav-cta { display: none; }
           .mobile-menu { left: auto; right: 0; width: min(88vw, 300px); }
           .br-hero { padding: 8rem 1.5rem 3rem; }
-          .tab-btn { padding: 0.85rem 1rem; font-size: 0.72rem; }
-          .tab-panel { padding: 3rem 1.25rem 5rem; }
           .process-grid { grid-template-columns: 1fr; }
           .leistung-grid { grid-template-columns: 1fr; }
           .cluster-grid { grid-template-columns: 1fr; }
           .br-cta-block { padding: 2.5rem 1.5rem; }
           .challenge-box { padding: 1.5rem; }
           .facts-row { gap: 1.5rem; }
+          .content-container { padding: 3rem 1.25rem 5rem; }
         }
       `}</style>
 
@@ -426,7 +397,7 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           <div className="nav-center" />
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
-            <Link href="/workshop" className="nav-cta">Workshop</Link>
+            <Link href="/kontakt" className="nav-cta">Kontakt</Link>
             <button
               className={`hamburger ${menuOpen ? "open" : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -438,7 +409,8 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
             <Link href="/" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/ki-coaching/beratung" className="active sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" className="sub-item" onClick={() => setMenuOpen(false)}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" className="active sub-item" onClick={() => setMenuOpen(false)}>Coaches</Link>
             <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
@@ -450,30 +422,14 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
         <section className="br-hero">
           <div className="hero-content">
             <div className="br-hero-orb" />
-            <div className="eyebrow">{beratung?.heroEyebrow ?? "Beratung"}</div>
+            <div className="eyebrow">{beratung?.coachesLeistungenLabel ?? "Beratung für Coaches"}</div>
             <h1 
               className="br-hero-title"
-              dangerouslySetInnerHTML={{ __html: beratung?.heroTitel ?? "KI-Coaching-Software<br /><em>gezielt einsetzen.</em>" }}
+              dangerouslySetInnerHTML={{ __html: beratung?.coachesLeistungenTitel ?? "Orientierung im<br /><em>KI-Tool-Dschungel</em>" }}
             />
             <p className="br-hero-lead">
-              {beratung?.heroLead ?? "Der Markt für KI-Coaching-Tools wächst rasant — über 249 Lösungen, jede mit eigenen Stärken, Risiken und Anwendungsfällen. Ich helfe Unternehmen und Coaches, in diesem Markt die richtige Wahl zu treffen."}
+              {beratung?.coachesLeistungenBody ?? "Ich begleite Coaches dabei, KI-Tools sinnvoll, sicher und qualitätsbewusst in ihre Praxis zu integrieren — von der ersten Orientierung bis zur vollständigen Einbindung in den eigenen Prozess."}
             </p>
-
-            {/* TABS */}
-            <div className="tab-bar">
-              <button
-                className={`tab-btn ${activeTab === "unternehmen" ? "active" : ""}`}
-                onClick={() => setActiveTab("unternehmen")}
-              >
-                Für Unternehmen
-              </button>
-              <button
-                className={`tab-btn ${activeTab === "coaches" ? "active" : ""}`}
-                onClick={() => setActiveTab("coaches")}
-              >
-                Für Coaches
-              </button>
-            </div>
           </div>
           <div className="hero-portrait" style={{ pointerEvents: "auto" }}>
             <img src="/bernd-wiese.jpg" alt="Bernd Wiese" />
@@ -497,180 +453,8 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           </div>
         </section>
 
-        {/* ══════════════ TAB: UNTERNEHMEN ══════════════ */}
-        <div className={`tab-panel ${activeTab === "unternehmen" ? "active" : ""}`}>
-
-          {/* Challenge */}
-          <div className="challenge-box">
-            <p dangerouslySetInnerHTML={{ __html: beratung?.unternehmenChallenge ?? "<strong>Die Ausgangssituation:</strong> Unternehmen erkennen, dass Coaching ein strategisches Werkzeug für Führungskräfteentwicklung, Mitarbeiterbindung und kulturellen Wandel ist. Doch der Markt ist unübersichtlich: Soll es eine All-in-One-Plattform sein, oder spezialisierte Tools? Wie lässt sich Qualität messen? Was kostet wirklich was — und was rechnet sich? Und wie stellt man DSGVO-Konformität sicher, wenn KI-Systeme sensible Gesprächsdaten verarbeiten?" }} />
-          </div>
-
-          {/* Facts */}
-          <div className="facts-row">
-            {beratung?.unternehmenFacts?.map((fact, i) => (
-              <div className="fact-item" key={i}>
-                <div className="fact-num">{fact.num}</div>
-                <div className="fact-label" dangerouslySetInnerHTML={{ __html: fact.label }} />
-              </div>
-            )) ?? (
-              <>
-                <div className="fact-item">
-                  <div className="fact-num">249+</div>
-                  <div className="fact-label">KI-Coaching-Tools<br />im Markt</div>
-                </div>
-                <div className="fact-item">
-                  <div className="fact-num">9</div>
-                  <div className="fact-label">Funktionale<br />Kategorien</div>
-                </div>
-                <div className="fact-item">
-                  <div className="fact-num">∅ 3×</div>
-                  <div className="fact-label">Mehr Engagement<br />mit KI-Unterstützung</div>
-                </div>
-                <div className="fact-item">
-                  <div className="fact-num">ROI</div>
-                  <div className="fact-label">Messbar &<br />nachweisbar</div>
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* Leistungen */}
-          <div className="br-section-label">{beratung?.unternehmenLeistungenLabel ?? "Was ich biete"}</div>
-          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.unternehmenLeistungenTitel ?? "Von der Analyse bis<br /><em>zum laufenden Betrieb</em>" }} />
-          <p className="br-section-body">
-            {beratung?.unternehmenLeistungenBody ?? "Ich begleite Sie durch den gesamten Prozess der Einführung von KI-Coaching — von der ersten Bedarfsklärung bis zur nachhaltigen Verankerung in Ihrer Organisation."}
-          </p>
-
-          <div className="leistung-grid">
-            {beratung?.unternehmenLeistungenListe?.map((l, i) => (
-              <div className="leistung-card" key={i}>
-                <span className="leistung-icon">{l.icon}</span>
-                <div className="leistung-title">{l.title}</div>
-                <div className="leistung-body">{l.body}</div>
-              </div>
-            )) ?? (
-              <>
-                <div className="leistung-card">
-                  <span className="leistung-icon">🔍</span>
-                  <div className="leistung-title">Bedarfsanalyse</div>
-                  <div className="leistung-body">Was wollen Sie mit Coaching wirklich erreichen? Wir klären Zielgruppen, Anwendungsfälle, Skalierungserwartungen und kulturelle Voraussetzungen — bevor wir auch nur ein Tool in Betracht ziehen.</div>
-                </div>
-                <div className="leistung-card">
-                  <span className="leistung-icon">🧭</span>
-                  <div className="leistung-title">Tool-Auswahl & Bewertung</div>
-                  <div className="leistung-body">Auf Basis Ihres Bedarfs erstelle ich eine strukturierte Shortlist aus dem Markt: von Praxis-Management-Software über KI-Coaching-Plattformen bis hin zu spezialisierten Assessment- und Analytics-Tools.</div>
-                </div>
-                <div className="leistung-card">
-                  <span className="leistung-icon">🛡</span>
-                  <div className="leistung-title">DSGVO & Compliance</div>
-                  <div className="leistung-body">Sensible Coaching-Gespräche dürfen nicht in unsichere Systeme fließen. Ich prüfe Datenverarbeitung, Serverstandorte, Verschlüsselung und Auftragsverarbeitungsverträge — bevor der Vertrag unterschrieben wird.</div>
-                </div>
-                <div className="leistung-card">
-                  <span className="leistung-icon">🚀</span>
-                  <div className="leistung-title">Pilotierung & Rollout</div>
-                  <div className="leistung-body">Kleine Piloten mit echten Nutzern — bevor das Budget freigegeben wird. Ich begleite Pilot-Setup, Evaluierung und die strukturierte Ausweitung auf die gesamte Organisation.</div>
-                </div>
-                <div className="leistung-card">
-                  <span className="leistung-icon">📊</span>
-                  <div className="leistung-title">ROI-Messung</div>
-                  <div className="leistung-body">Coaching-Investitionen müssen sich rechtfertigen lassen. Ich helfe Ihnen, aussagekräftige KPIs zu definieren, Coaching-Daten auszuwerten und den Mehrwert intern sichtbar zu machen.</div>
-                </div>
-                <div className="leistung-card">
-                  <span className="leistung-icon">🤝</span>
-                  <div className="leistung-title">Coach-Pool & Qualität</div>
-                  <div className="leistung-body">Welche Coaches passen zu welchen Tools und Zielgruppen? Ich unterstütze beim Aufbau oder der Qualifizierung interner und externer Coach-Pools — einschließlich KI-Kompetenz als Kriterium.</div>
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* Prozess */}
-          <div className="br-section-label">{beratung?.unternehmenProzessLabel ?? "Vorgehen"}</div>
-          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.unternehmenProzessTitel ?? "Vier Phasen zum<br /><em>laufenden System</em>" }} />
-
-          <div className="process-grid">
-            {beratung?.unternehmenProzessListe?.map((step, i) => (
-              <div className="process-step" key={i}>
-                <div className="step-number">{step.number}</div>
-                <div className="step-title">{step.title}</div>
-                <div className="step-body">{step.body}</div>
-              </div>
-            )) ?? (
-              <>
-                <div className="process-step">
-                  <div className="step-number">01</div>
-                  <div className="step-title">Analyse</div>
-                  <div className="step-body">Ziele, Zielgruppen, Volumina, bestehende HR-Systeme und kulturelle Rahmenbedingungen werden erfasst. Ergebnis: ein klares Anforderungsprofil.</div>
-                </div>
-                <div className="process-step">
-                  <div className="step-number">02</div>
-                  <div className="step-title">Marktcheck</div>
-                  <div className="step-body">Systematische Bewertung relevanter Tools aus einer Datenbank von 249+ Lösungen — nach Funktion, Skalierbarkeit, Preis und DSGVO-Status.</div>
-                </div>
-                <div className="process-step">
-                  <div className="step-number">03</div>
-                  <div className="step-title">Pilot</div>
-                  <div className="step-body">3–6 Wochen Praxistest mit ausgewählter Gruppe. Messung, Feedback, Optimierung. Erst dann folgt die Entscheidung über den Rollout.</div>
-                </div>
-                <div className="process-step">
-                  <div className="step-number">04</div>
-                  <div className="step-title">Rollout</div>
-                  <div className="step-body">Skalierte Einführung mit begleitenden Trainings, Change-Kommunikation und definierten Erfolgskennzahlen für die Dauerbeobachtung.</div>
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* Relevante Plattformen */}
-          <div className="br-section-label">{beratung?.unternehmenToolsLabel ?? "Tool-Landschaft"}</div>
-          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.unternehmenToolsTitel ?? "Relevante Plattformen<br /><em>für Unternehmen</em>" }} />
-          <p className="br-section-body">
-            {beratung?.unternehmenToolsBody ?? "Je nach Anforderung kommen grundlegend verschiedene Tool-Kategorien infrage. Hier ein Überblick über die relevantesten Lösungsfelder aus der analysierten Marktdatenbank:"}
-          </p>
-
-          <div className="cluster-grid">
-            {beratung?.unternehmenToolsListe?.map((cluster, i) => (
-              <div className="cluster-card" key={i}>
-                <div className="cluster-title">{cluster.title}</div>
-                <div className="cluster-tools" dangerouslySetInnerHTML={{ __html: cluster.tools }} />
-              </div>
-            )) ?? (
-              <>
-                <div className="cluster-card">
-                  <div className="cluster-title">Skalierbare KI-Coaching-Plattformen</div>
-                  <div className="cluster-tools"><strong>Retorio, AIcoach.chat, Sherlock AI, BetterUp</strong> — KI-gestützte Coaching-Erfahrungen für große Mitarbeitergruppen, oft mit Rollenspiel-Simulationen und automatisiertem Feedback.</div>
-                </div>
-                <div className="cluster-card">
-                  <div className="cluster-title">Corporate Learning & L&D</div>
-                  <div className="cluster-tools"><strong>Sharpist, Optify, Torch, CoachHub, Excelia</strong> — Plattformen für strukturierte Führungskräfteentwicklung mit kombinierten Human-Coach- und KI-Angeboten.</div>
-                </div>
-                <div className="cluster-card">
-                  <div className="cluster-title">Analytics & ROI-Messung</div>
-                  <div className="cluster-tools"><strong>Hoolr, Cloverleaf, Flowit</strong> — Tools zur Auswertung von Coaching-Daten, Benchmarking und Nachweis messbarer Wirksamkeit gegenüber dem Management.</div>
-                </div>
-                <div className="cluster-card">
-                  <div className="cluster-title">Self-Coaching für alle Mitarbeiter</div>
-                  <div className="cluster-tools"><strong>Evoach, Bestselfy, Symbolon, Mindsera</strong> — Skalierbare Selbstcoaching-Angebote, die Coaching ohne menschlichen Coach zugänglich machen.</div>
-                </div>
-              </>
-            )}
-          </div>
-
-          <div className="br-cta-block">
-            <h3 className="br-cta-title">
-              {beratung?.unternehmenCtaTitel ?? <>Bereit für den ersten Schritt<br /><em>in Ihrer Organisation?</em></>}
-            </h3>
-            <p className="br-cta-body">
-              {beratung?.unternehmenCtaBody ?? "Ein unverbindliches Erstgespräch klärt, ob und wie KI-Coaching zu Ihrem Unternehmen passt. Ohne Tool-Bias, ohne Verkaufsdruck."}
-            </p>
-            <a href={`mailto:${beratung?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="br-cta-btn">
-              {beratung?.unternehmenCtaButton ?? "Erstgespräch anfragen"}
-            </a>
-          </div>
-        </div>
-
-        {/* ══════════════ TAB: COACHES ══════════════ */}
-        <div className={`tab-panel ${activeTab === "coaches" ? "active" : ""}`}>
+        {/* CONTENT */}
+        <div className="content-container">
 
           {/* Challenge */}
           <div className="challenge-box">
@@ -706,11 +490,10 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
             )}
           </div>
 
-          {/* Leistungen */}
-          <div className="br-section-label">{beratung?.coachesLeistungenLabel ?? "Was ich biete"}</div>
-          <h2 className="br-section-title" dangerouslySetInnerHTML={{ __html: beratung?.coachesLeistungenTitel ?? "Orientierung im<br /><em>KI-Tool-Dschungel</em>" }} />
+          <div className="br-section-label">Was ich biete</div>
+          <h2 className="br-section-title">Die Praxis zukunftssicher aufstellen.</h2>
           <p className="br-section-body">
-            {beratung?.coachesLeistungenBody ?? "Ich begleite Coaches dabei, KI-Tools sinnvoll, sicher und qualitätsbewusst in ihre Praxis zu integrieren — von der ersten Orientierung bis zur vollständigen Einbindung in den eigenen Prozess."}
+            Statt dem neuesten Hype hinterherzulaufen, finden wir genau die Tools, die Ihnen wirklich helfen.
           </p>
 
           <div className="leistung-grid">
@@ -843,9 +626,9 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
             <p className="br-cta-body">
               {beratung?.coachesCtaBody ?? "60 Minuten, in denen wir Ihre aktuelle Praxis anschauen und klären, welche KI-Tools für Sie wirklich sinnvoll sind — und welche nicht."}
             </p>
-            <a href={`mailto:${beratung?.kontaktEmail ?? "bernd.wiese@googlemail.com"}`} className="br-cta-btn">
+            <Link href="/kontakt" className="br-cta-btn">
               {beratung?.coachesCtaButton ?? "Orientierungsgespräch buchen"}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -862,8 +645,10 @@ export default function BeratungClient({ beratung }: BeratungClientProps) {
           alignItems: "center",
           gap: "0.75rem"
         }}>
-          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" as const, justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
             <Link href="/" style={{ color: "var(--gold)", textDecoration: "none" }}>Start</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" style={{ color: "var(--gold)", textDecoration: "none" }}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" style={{ color: "var(--gold)", textDecoration: "none" }}>Coaches</Link>
             <Link href="/ki-coaching/workshop" style={{ color: "var(--gold)", textDecoration: "none" }}>Workshop</Link>
             <Link href="/ki-coaching/kompass" style={{ color: "var(--gold)", textDecoration: "none" }}>Kompass</Link>
             <Link href="/zuhoeren" style={{ color: "var(--gold)", textDecoration: "none" }}>Gehört werden</Link>

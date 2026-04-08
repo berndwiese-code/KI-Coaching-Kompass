@@ -278,7 +278,7 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
           </Link>
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Theme wechseln" />
-            <a href={data?.navCtaUrl ?? "mailto:bernd.wiese@googlemail.com"} className="nav-cta">{data?.navCta ?? "Kontakt"}</a>
+            <Link href="/kontakt" className="nav-cta">{data?.navCta ?? "Kontakt"}</Link>
             <button
               className={`hamburger ${menuOpen ? "open" : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -290,7 +290,8 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
           <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
             <Link href="/" onClick={() => setMenuOpen(false)}>Start</Link>
             <Link href="/ki-coaching" className="active" onClick={() => setMenuOpen(false)}>KI-Coaching</Link>
-            <Link href="/ki-coaching/beratung" className="sub-item" onClick={() => setMenuOpen(false)}>Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen" className="sub-item" onClick={() => setMenuOpen(false)}>Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches" className="sub-item" onClick={() => setMenuOpen(false)}>Coaches</Link>
             <Link href="/ki-coaching/workshop" className="sub-item" onClick={() => setMenuOpen(false)}>Workshop</Link>
             <Link href="/ki-coaching/kompass" className="sub-item" onClick={() => setMenuOpen(false)}>Kompass</Link>
             <Link href="/zuhoeren" onClick={() => setMenuOpen(false)}>Gehört werden</Link>
@@ -345,7 +346,7 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
               title: "KI-Coaching einführen — strukturiert und sicher",
               body: "Von der Bedarfsanalyse über die Toolauswahl bis zum Rollout: ich begleite Organisationen durch den gesamten Prozess.",
               arrowText: "Zur Beratung →",
-              url: "/ki-coaching/beratung"
+              url: "/ki-coaching/beratung-unternehmen"
             },
             {
               icon: "🎯",
@@ -353,7 +354,7 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
               title: "KI-Tools sinnvoll in die eigene Praxis integrieren",
               body: "Orientierung im Tool-Dschungel, DSGVO-Check, Hands-on Testing — für Coaches, die KI nutzen wollen, ohne ihre Qualität zu kompromittieren.",
               arrowText: "Zur Beratung →",
-              url: "/ki-coaching/beratung"
+              url: "/ki-coaching/beratung-coaches"
             }
           ]).map((card, i) => (
             <Link key={i} href={card.url ?? "#"} className="kc-card">
@@ -380,7 +381,8 @@ export default function KICoachingClient({ data }: { data?: KICoaching | null })
         <footer className="kc-footer">
           <div className="kc-footer-links">
             <Link href="/">Start</Link>
-            <Link href="/ki-coaching/beratung">Beratung</Link>
+            <Link href="/ki-coaching/beratung-unternehmen">Unternehmen</Link>
+            <Link href="/ki-coaching/beratung-coaches">Coaches</Link>
             <Link href="/ki-coaching/workshop">Workshop</Link>
             <Link href="/ki-coaching/kompass">Kompass</Link>
             <Link href="/zuhoeren">Gehört werden</Link>
