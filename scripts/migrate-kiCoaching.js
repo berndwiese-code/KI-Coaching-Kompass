@@ -28,7 +28,7 @@ const kiCoachingDoc = {
       title: "KI-Coaching einführen — strukturiert und sicher",
       body: "Von der Bedarfsanalyse über die Toolauswahl bis zum Rollout: ich begleite Organisationen durch den gesamten Prozess.",
       arrowText: "Zur Beratung →",
-      url: "/ki-coaching/beratung"
+      url: "/ki-coaching/beratung-unternehmen"
     },
     {
       _key: "card-coaches",
@@ -37,7 +37,7 @@ const kiCoachingDoc = {
       title: "KI-Tools sinnvoll in die eigene Praxis integrieren",
       body: "Orientierung im Tool-Dschungel, DSGVO-Check, Hands-on Testing — für Coaches, die KI nutzen wollen, ohne ihre Qualität zu kompromittieren.",
       arrowText: "Zur Beratung →",
-      url: "/ki-coaching/beratung"
+      url: "/ki-coaching/beratung-coaches"
     }
   ],
   links: [
